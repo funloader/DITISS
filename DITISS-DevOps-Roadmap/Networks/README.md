@@ -181,3 +181,15 @@ By completing this module, you will:
 
 📚 **Reference:**  
 *Data Communications and Networking — Behrouz A. Forouzan, McGraw Hill Education*
+
+### Available Editions of Data Communications and Networking
+
+| Edition | Publication Year | Button Link |
+| :---: | :---: | :---: |
+| **6th Edition** | 2022 | [![View PDF](https://img.shields.io/badge/6th%20Edition-View%20PDF-red?style=flat-square)](http://121.121.140.173:8887/filesharing/kohasharedfolders/Data%20Communications%20and%20Networking%20with%20TCPIP%20Protocol%20Suite%20(Behrouz%20A.%20Forouzan)%20(2022).pdf) |
+| **5th Edition** | 2013 | [![View PDF](https://img.shields.io/badge/5th%20Edition-View%20PDF-blue?style=flat-square)](https://jcer.in/jcer-docs/E-Learning/Digital%20Library%20/E-Books/Data-Communications-and-Network-5e.pdf) |
+| **4th Edition** | 2007 | [![View on Google Books](https://img.shields.io/badge/4th%20Edition-Google%20Books-lightgrey?style=flat-square)](https://www.google.co.in/books/edition/Data_Communications_and_Networking/bwUNZvJbEeQC?hl=en&gbpv=1&pg=PR3&printsec=frontcover) |
+
+***
+**Note:** For *Chapter 2 Network Models*, it is suggested to read only from the **5th or 4th edition** for consistency.
+***
