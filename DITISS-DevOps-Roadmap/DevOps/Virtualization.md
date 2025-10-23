@@ -1,4 +1,4 @@
-# 💻 Virtualization — Session 8
+# 🧭 Virtualization Fundamentals (Session 8)
 
 **Duration:** 2 Theory Hours + Lab Assignment  
 **Module:** DevOps (CDAC PG-DITISS)  
@@ -10,7 +10,7 @@ To understand the fundamentals of virtualization, its types, cluster architectur
 ## 📘 **Theory Checklist**
 
 ### 🧩 Introduction to Virtualization
-- [ ] Understand the concept of **virtualization** and its purpose in DevOps.  
+- [ ] Understand the concept of **virtualization** and its role in DevOps.  
 - [ ] Learn how virtualization abstracts hardware resources to create multiple virtual machines.  
 - [ ] Study **Hardware Virtualization**, **Para-Virtualization**, and **Operating System Virtualization**.  
 
@@ -31,9 +31,9 @@ To understand the fundamentals of virtualization, its types, cluster architectur
 ---
 
 ### 🧰 Virtualization Components
-- [ ] Understand **Cloning**, **Snapshots**, and **Templates** for VMs.  
+- [ ] Understand **Cloning**, **Snapshots**, and **Templates** for virtual machines.  
 - [ ] Learn how these features support version control and deployment efficiency.  
-- [ ] Explore how virtualization forms the foundation for cloud computing and containerization.
+- [ ] Explore how virtualization forms the foundation for **Cloud Computing** and **Containerization**.  
 
 ---
 
@@ -41,30 +41,35 @@ To understand the fundamentals of virtualization, its types, cluster architectur
 
 ### 🔧 Practical Tasks
 - [ ] **Create and configure** a Virtual Machine using **VirtualBox**.  
-- [ ] Deploy a simple **code or web application** on the virtual machine.  
+- [ ] Deploy a sample **web or code application** on the virtual machine.  
 - [ ] Practice **VM cloning** and **snapshot management**.  
-- [ ] Observe system resource allocation and isolation between VMs.  
-- [ ] Verify successful deployment and environment consistency.
+- [ ] Observe **system resource allocation** and isolation between VMs.  
+- [ ] Verify **successful deployment** and environment consistency.  
 
 ---
 
 ## 🧰 **Tools & Platforms**
-- 🖥️ VirtualBox  
-- 🧩 VMware Workstation / KVM  
-- ⚙️ Operating Systems: Linux (Ubuntu/CentOS), Windows Server  
-- 📡 Optional: Vagrant for VM automation
+| Category | Tools |
+|-----------|-------|
+| Virtualization | VirtualBox, VMware Workstation, KVM |
+| OS | Linux (Ubuntu/CentOS), Windows Server |
+| Automation | Vagrant (optional) |
 
 ---
 
 ## 🎯 **Learning Outcomes**
 By completing this session, you will:
-- ✅ Understand the architecture and types of virtualization  
-- ✅ Set up and configure virtual machines for development environments  
-- ✅ Apply clustering concepts for scalability and high availability  
-- ✅ Establish a foundation for future modules (Cloud, CI/CD, Containers)
+- ✅ Understand the architecture and types of virtualization.  
+- ✅ Set up and configure virtual machines for development and testing environments.  
+- ✅ Apply clustering concepts for scalability and high availability.  
+- ✅ Establish a foundation for Cloud, CI/CD, and Container modules.  
 
 ---
 
-📚 **Reference:**  
-*Cloud Computing Black Book — Kogent Learning, Kailash (Wiley, 2024)*
+## ✍️ **Personal Notes**
+> Use this section for setup commands, notes, or screenshots from your virtualization lab.
 
+```bash
+# Example commands
+vboxmanage list vms
+vboxmanage startvm "DITISS_Lab_VM" --type headless
