@@ -31,4 +31,53 @@ To introduce **Infrastructure as Code (IaC)** concepts, focusing on **Terraform*
 
 ## 🧪 **Lab Assignments**
 
-#
+### 1️⃣ Setting Up the Terraform Environment
+- [x] Install Terraform on a local machine.  
+- [x] Configure **AWS credentials** to enable cloud interactions.  
+- [x] Write a simple Terraform configuration to **provision an EC2 instance** on AWS.  
+
+---
+
+### 2️⃣ Writing and Organizing Configuration Files
+- [x] Write configuration files to create a **VPC, subnet, and EC2 instance**.  
+- [x] Use **variables and outputs** for flexible configuration.  
+- [x] Apply and verify created resources in the AWS Management Console.  
+
+---
+
+### 3️⃣ State Management and Modules
+- [x] Develop a **Terraform module** for EC2 instance creation with security groups.  
+- [x] Reuse the module to provision multiple EC2 instances in different subnets.  
+- [x] Manage **Terraform state** using AWS S3 as a remote backend.  
+
+---
+
+## 🧰 **Tools & Platforms**
+| Category | Tools |
+|-----------|-------|
+| IaC | Terraform |
+| Cloud Provider | AWS |
+| CLI | AWS CLI, Terraform CLI |
+| Configuration Language | HCL (HashiCorp Configuration Language) |
+| Backend | AWS S3 (Remote State) |
+
+---
+
+## 🎯 **Learning Outcomes**
+By completing this session, you will:
+- ✅ Understand the principles of **Infrastructure as Code (IaC)**.  
+- ✅ Set up and manage Terraform for cloud provisioning.  
+- ✅ Write modular and reusable Terraform code.  
+- ✅ Implement **remote state management** and collaborate effectively in teams.  
+
+---
+
+## ✍️ **Personal Notes**
+> Use this section to record your own Terraform workflows, scripts, or troubleshooting notes.
+
+```bash
+# Example commands
+terraform init
+terraform plan
+terraform apply
+terraform destroy
