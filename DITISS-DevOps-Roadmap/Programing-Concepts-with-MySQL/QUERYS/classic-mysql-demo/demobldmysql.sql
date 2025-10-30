@@ -1,7 +1,3 @@
-CREATE DATABASE classic_demo;
-
-USE classic_demo;
-
 CREATE TABLE EMP
        (EMPNO INT(4) NOT NULL,
         ENAME varchar(10),
@@ -88,4 +84,5 @@ CREATE TABLE DUMMY
 INSERT INTO DUMMY VALUES (0);
 
 COMMIT;
+
 
