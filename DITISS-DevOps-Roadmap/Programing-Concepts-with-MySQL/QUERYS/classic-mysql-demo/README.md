@@ -43,3 +43,17 @@ FROM
 JOIN
     DEPT d ON e.DEPTNO = d.DEPTNO;
 ```
+### Q.Calculated Annual Salaries
+
+The calculation logic is: 
+$$\text{Total Annual Salary} = ( \text{Monthly Salary} \times 12 ) + ( \text{Adjusted Monthly Commission} \times 12 )$$
+
+The SQL query to calculate the annual salary is:
+```
+SELECT
+    ENAME,
+    (SAL * 12) + (COALESCE(COMM, 0) * 12) AS Total_Annual_Salary
+FROM
+    EMP;
+```
+In a MySQL database, you would use the COALESCE or IFNULL function to treat any NULL (no commission) values in the COMM column as a zero, ensuring they don't break the arithmetic.
