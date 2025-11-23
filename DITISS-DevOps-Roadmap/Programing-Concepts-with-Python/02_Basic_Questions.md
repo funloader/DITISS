@@ -1,5 +1,7 @@
 ## ❓ Q11. Find working of various functions (min 7) from math library of python which is provided as standard library. 
-``https://docs.python.org/3/library/math.html`` You can also try it yourself.
+ 
+ You can also try it yourself   [![Python Math Library](https://img.shields.io/badge/Python%20Math%20Library-Click%20Here-blue?logo=python)](https://docs.python.org/3/library/math.html)
+
 
 Ex. 
 ```python
