@@ -126,3 +126,29 @@ It simplifies memory management but restricts true multithreading for CPU-bound 
 ✅ Where does GIL exist?
 Only in CPython, the default and most common Python implementation.
 Other Python interpreters do NOT have GIL
+
+### Q. Which language is used to write python interpreter?
+-  Python interpreter (CPython) is written in C language.
+```
+| Interpreter      | Written In                  | Notes                                    |
+| ---------------- | --------------------------- | ---------------------------------------- |
+| CPython          | C                           | Official & default Python implementation |
+| PyPy             | RPython (Restricted Python) | Faster, JIT compiler                     |
+| Jython           | Java                        | Runs on JVM                              |
+| IronPython       | C# (.NET)                   | Runs on .NET CLR                         |
+| Stackless Python | C                           | Optimized for concurrency                |
+```
+
+### Q. When variable is created what is on stack and what part is on heap ?
+-  The variable name (reference) is stored on the Stack
+-  The actual object/value is stored on the Heap
+
+### Q. What is a Garbage Collector in Python?
+-  The Garbage Collector (GC) in Python is a system that automatically manages memory.
+-  Its job is to free memory by deleting objects that are no longer needed by the program.
+Python mainly uses:
+-  Reference Counting (primary method)
+-  Generational Garbage Collection (to remove cyclic references)
+
+### Q. How does Reference Counting work ?
+-  Every object in Python has a reference count, which tells how many variables/objects are currently referring to it.
