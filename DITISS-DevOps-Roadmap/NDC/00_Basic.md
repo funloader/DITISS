@@ -30,7 +30,7 @@ Example: 192.168.1.10/24
 
 ### 🏷️ 2. Classes of IP Addresses (IPv4)
 
-### 🔄 4. Types of IP Addresses
+### 🔄 3. Types of IP Addresses
 1️⃣ **Private IP**
 *Used inside networks, not routable on internet.
 Ranges:*
@@ -47,7 +47,7 @@ Ranges:*
 4️⃣ **Dynamic IP**
 - Assigned automatically by DHCP.
 
-### ⚡ 5. Special IPs (Important for Interviews)
+### ⚡ 4. Special IPs (Important for Interviews)
 🔁 **Loopback IP**
  - 127.0.0.1
  - Used for *self-testing*, checking TCP/IP stack
@@ -60,12 +60,48 @@ Ranges:*
  - Device can only communicate within local subnet
  - Common interview keyword: "DHCP fallback mechanism"
 
- What happens if gateway is misconfigured?
+### 🧭 6. IP Assignment: Static vs Dynamic
+**Static IP**
+- Manually assigned
+- Used for: Servers, Printers, Routers, Firewalls, CCTV/NVR
+- Pros: Predictable, stable
+- Cons: Time-consuming, prone to conflicts if misconfigured
 
-What is default route (0.0.0.0/0)?
+**Dynamic IP**
+- Assigned by DHCP server
+- Common for clients, mobile devices
+- Pros: Easy, automatic, reduces admin overhead
+- Cons: IP changes frequently (unless DHCP reservation is used)
 
-What is the difference between DNS and Gateway?
+### 🌐 7. What is Network IP (Network Address)?
 
-What is subnet mask?
+*The network IP is the first address in a subnet, used to represent the network itself.*
+- Example: ``192.168.1.0/24`` → Network IP = 192.168.1.0
+- Use: - Routing
+       - Identifying subnet boundaries
+       - Not assignable to hosts
 
-How does DHCP work?
+### 🚪 8. What is a Gateway? Why and When Do We Need It?
+*A gateway is the device that connects one network to another, typically the router.*
+
+A gateway is the router IP that allows devices to communicate outside their local network. Without a gateway, communication is restricted to the same subnet.
+
+**Why Gateway Is Needed**
+- To reach external networks
+- To access the internet
+- To communicate across VLANs
+- To route traffic between subnets
+- Example:
+  - PC: 192.168.1.10
+  - Gateway: 192.168.1.1
+→ Traffic destined for any network other than 192.168.1.0/24 goes to the gateway.
+
+### 📌 Common Interview Follow-up Questions
+- What happens if gateway is misconfigured?
+- What is default route (0.0.0.0/0)?
+- What is the difference between DNS and Gateway?
+- What is subnet mask?
+- How does DHCP work?
+
+### 🚀 Real-world Example 
+In a typical corporate LAN, users get dynamic IPs via DHCP. The router acts as the default gateway. Servers like DNS or web servers have static IPs. Loopback is used for internal testing, and APIPA appears when DHCP is unreachable.
