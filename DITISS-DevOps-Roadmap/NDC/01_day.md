@@ -1,3 +1,4 @@
+# 🛠️ Tcpdump installation, verification and basic usage of tcpdump (*Lab 14*)
 ## 📡 tcpdump
 *tcpdump is a command-line packet capture tool used to sniff, analyze, and troubleshoot network traffic at the packet level*
 - Works at Layer 2–4 (captures frames/packets).
@@ -5,12 +6,16 @@
 - Uses libpcap library (same as Wireshark backend).
 - Supports filtering using **BPF (Berkeley Packet Filter) syntax** so you capture only what you need.
 
-🎯 **Why is tcpdump used ?**
+---
+
+### 🎯 Why is tcpdump used ?
 
 
 tcpdump is used for low-level network troubleshooting, security analysis, and validating traffic flows. It helps identify issues like dropped packets, ARP problems, DNS failures, routing mismatches, and suspicious traffic. It's extremely lightweight and works even on servers without GUI, which makes it ideal for Linux admins, SOC analysts, and DevOps engineers.
 
-### 🧩 What Problems Does tcpdump Solve?
+---
+
+### 🧩 What Problems Does tcpdump Solve ?
 
 🔧 **Troubleshooting**
 - DNS resolution issues
@@ -38,14 +43,16 @@ What problem its solves?
 How to use it ?
 Lab 14 Tcpdump installation, verification and basic usage of tcpdump
 
-⚙️ **How to Use tcpdump**
+---
 
-1️⃣ Install tcpdump (Linux) 
+### ⚙️ How to Use tcpdump
+
+1️⃣ **Install tcpdump (Linux)** 
 ``` 
 sudo apt install tcpdump -y
 ```
 
-2️⃣Verify Installation
+2️⃣ **Verify Installation**
 ```
 tcpdump --version
 tcpdump -h
