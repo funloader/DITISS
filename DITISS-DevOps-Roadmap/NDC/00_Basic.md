@@ -1,6 +1,7 @@
 ### ✅ 1. What is an IP Address?
 
-*One-line definition*
+*One-line definition :*
+
 ✅ An IP address is a logical address used to uniquely identify a device on a network.
 
 🎤 An IP address is a numerical label assigned to every device on a network for identification and communication. It has two parts: the Network ID, which identifies the network, and the Host ID, which identifies the specific device.
@@ -96,12 +97,67 @@ A gateway is the router IP that allows devices to communicate outside their loca
   - Gateway: 192.168.1.1
 → Traffic destined for any network other than 192.168.1.0/24 goes to the gateway.
 
+### 📚 What is a Library?
+
+*A library is a collection of pre-written code, functions, or modules that developers can reuse instead of writing everything from scratch.*
+
+A library is reusable code that provides specific functionality—like networking, encryption, packet capture, file handling, etc. Instead of writing low-level code, we call library functions to perform tasks efficiently and reliably.
+
+🔹 **1. PCAP (libpcap) — Linux/macOS**
+
+- **What it is:**
+A packet capture library used by tools like Wireshark, tcpdump, Snort.
+- **Function:**
+Provides APIs to capture, filter, and analyze raw network packets.
+- **Used in:**
+SOC analysis, traffic capture, IDS, debugging.
+
+**🔹 2. WinPcap — Windows**
+
+- **What it is:**
+Windows implementation of libpcap.
+- **Function:**
+Allows Windows systems to capture network packets.
+- **Used by:**
+Older versions of Wireshark, Nmap, Snort, Network Miner.
+
+**🔹 3. Npcap — Modern Windows replacement for WinPcap**
+
+- **What it is:**
+An enhanced, secure, and faster alternative to WinPcap.
+- **Features:**
+ - Works with Windows 10/11
+ - Supports loopback traffic
+ - Captures 802.11 Wi-Fi packets
+ - Used by latest Wireshark and Nmap
+
+**🔹 4. Libcap (capabilities library)***
+
+- **What it is:**
+Not packet capture
+Linux capability library for managing POSIX capabilities.
+- **Used for:**
+Granting fine-grained root privileges to programs (e.g., ping, tcpdump).
+
+**🔹 5. AirPcap**
+
+- **What it is:**
+Library + hardware dongle for Wi-Fi packet capture on Windows.
+- **Used in:**
+Wireless security testing, WPA/WEP handshake capture.
+
+ **🔹 6. Ncap / Libncap (older/custom builds)**
+- Sometimes used as custom packet capture solutions or enhancements built on top of libpcap.
+
 ### 📌 Common Interview Follow-up Questions
 - What happens if gateway is misconfigured?
 - What is default route (0.0.0.0/0)?
 - What is the difference between DNS and Gateway?
 - What is subnet mask?
 - How does DHCP work?
+- What’s the difference between a library and a framework?
+- What is DLL vs SO?
+- What is pcap used for?
 
 ### 🚀 Real-world Example 
 In a typical corporate LAN, users get dynamic IPs via DHCP. The router acts as the default gateway. Servers like DNS or web servers have static IPs. Loopback is used for internal testing, and APIPA appears when DHCP is unreachable.
