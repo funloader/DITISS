@@ -86,6 +86,46 @@ In a Zoom call:
 ### 🔁 1.1.2 Data Flow (Simplex, Half-Duplex, Full-Duplex)
 *Data flow defines how signals travel between two devices — in one direction or both.*
 
+📘 **2. Short Technical Explanation**
+Data communication can happen in three modes:
+- Simplex → *one-way only* Entire channel bandwidth is used for sending in one direction.
+- Half-Duplex → *both ways, but not simultaneously* Bandwidth is shared; only one device speaks at a time.
+- Full-Duplex → *both ways, at the same time* There are two main ways this is achieved:
+1. Two Separate Physical Paths
+  - How it works : One physical path is dedicated to **sending** & A second, separate physical path is dedicated to **receiving**
+  - *No interference because transmit and receive signals never share the same medium.*
+  - Examples : Ethernet (older twisted-pair & fiber links) , One wire/fiber pair for TX, another for RX
+  - Advantages : Simple design, True simultaneous communication, Minimal signal processing
+  - Disadvantages :  Requires extra physical resources (wires/fibers)
+
+2. Channel Division (Shared Medium)
+       - a) Frequency Division Duplex (FDD / FDM-style)
+         - How it works : Transmit and receive use **different frequency bands**. Both operate simultaneously
+         - Examples : Cellular networks (LTE, 5G FDD), DSL (Digital Subscriber Line) internet connections
+         - Advantages : Continuous two-way communication & No waiting to transmit
+         - Disadvantages : Requires careful frequency planning & Needs filters to avoid interference
+       - b) Time Division Duplex (TDD / TDM-style)
+         - How it works : Transmit and receive use the **same frequency**.Time is divided into **rapid alternating time slots**
+         - *Appears simultaneous to users, but at any instant only one direction is active*
+         - Examples : Wi-Fi, 5G TDD, Walkie-talkie systems with fast switching
+         - Advantages : Efficient use of spectrum & Flexible allocation of bandwidth
+         - Disadvantages : Requires tight synchronization & Slight latency due to switching
+```
+
+| Method         | Physical Medium | Separation Method | True Simultaneous?    |
+| -------------- | --------------- | ----------------- | --------------------- |
+| Separate paths | Two             | Physical          | ✅ Yes                |
+| FDD            | One             | Frequency         | ✅ Yes                |
+| TDD            | One             | Time              | ⚠️ Quasi-simultaneous |
+
+```
+
+These modes determine link capacity, performance, and use cases.
+
+🎤 There are three data flow modes. Simplex is one-way communication like a keyboard to a monitor. Half-duplex allows both transmit and receive but not simultaneously, like walkie-talkies. Full-duplex supports simultaneous transmission and reception, such as a phone call. Modern networks mostly use full-duplex for better bandwidth utilization.
+
+
+
 ### 1.2 NETWORKS
 
 ## 🧭 Who Owns “The Internet”?
