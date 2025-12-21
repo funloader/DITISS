@@ -228,3 +228,180 @@ Aggregate functions and grouped queries allow efficient data analysis in MySQL. 
 
 ---
 
+Below is a **complete MySQL Lab Assignment** written in a **formal lab-record format**, focused specifically on **aggregate functions, GROUP BY, and HAVING**.
+
+---
+
+# **Lab Assignment: Aggregate Functions, GROUP BY, and HAVING**
+
+---
+
+## **Aim**
+
+To perform calculations on dataset columns using aggregate functions (`SUM`, `COUNT`, `AVG`), group data using the `GROUP BY` clause, and filter grouped data using the `HAVING` clause in MySQL.
+
+---
+
+## **Requirements**
+
+* MySQL Server
+* Database: `lab_db`
+* Table: `employees`
+
+---
+
+## **Table Structure**
+
+```sql
+CREATE TABLE employees (
+    emp_id INT PRIMARY KEY AUTO_INCREMENT,
+    emp_name VARCHAR(50),
+    department VARCHAR(30),
+    salary INT
+);
+```
+
+---
+
+## **Sample Data**
+
+```sql
+INSERT INTO employees (emp_name, department, salary) VALUES
+('Alice', 'HR', 40000),
+('Bob', 'IT', 55000),
+('Charlie', 'IT', 60000),
+('David', 'HR', 42000),
+('Eva', 'Finance', 50000),
+('Frank', 'IT', 58000);
+```
+
+---
+
+## **1. Aggregate Functions**
+
+### **a) COUNT – Total number of employees**
+
+```sql
+SELECT COUNT(*) AS total_employees
+FROM employees;
+```
+
+---
+
+### **b) SUM – Total salary of all employees**
+
+```sql
+SELECT SUM(salary) AS total_salary
+FROM employees;
+```
+
+---
+
+### **c) AVG – Average salary**
+
+```sql
+SELECT AVG(salary) AS average_salary
+FROM employees;
+```
+
+---
+
+## **2. GROUP BY Clause**
+
+### **a) Number of employees in each department**
+
+```sql
+SELECT department, COUNT(*) AS employee_count
+FROM employees
+GROUP BY department;
+```
+
+---
+
+### **b) Average salary by department**
+
+```sql
+SELECT department, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department;
+```
+
+---
+
+### **c) Total salary by department**
+
+```sql
+SELECT department, SUM(salary) AS total_salary
+FROM employees
+GROUP BY department;
+```
+
+---
+
+## **3. HAVING Clause**
+
+### **a) Departments with average salary greater than 50,000**
+
+```sql
+SELECT department, AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 50000;
+```
+
+---
+
+### **b) Departments having more than 2 employees**
+
+```sql
+SELECT department, COUNT(*) AS employee_count
+FROM employees
+GROUP BY department
+HAVING COUNT(*) > 2;
+```
+
+---
+
+## **4. Combined GROUP BY and HAVING Example**
+
+```sql
+SELECT department,
+       COUNT(*) AS employee_count,
+       AVG(salary) AS avg_salary
+FROM employees
+GROUP BY department
+HAVING AVG(salary) > 45000;
+```
+
+---
+
+## **Result**
+
+* Calculated total, average, and count values using aggregate functions
+* Grouped records based on department
+* Filtered grouped data using aggregate conditions
+
+---
+
+## **Conclusion**
+
+Aggregate functions combined with `GROUP BY` and `HAVING` clauses enable effective data analysis in MySQL. They are essential for summarizing and filtering grouped information in real-world applications.
+
+---
+
+## **Key Difference**
+
+| Clause | Usage          |
+| ------ | -------------- |
+| WHERE  | Filters rows   |
+| HAVING | Filters groups |
+
+---
+
+## **Viva / Exam Questions**
+
+1. Why can’t aggregate functions be used in `WHERE`?
+2. What is the purpose of `GROUP BY`?
+3. Can `HAVING` be used without `GROUP BY`?
+
+---
