@@ -214,3 +214,450 @@ typedef struct {
 
 ```
 **more high-level insight:** *Reference counting makes deallocation deterministic in CPython, unlike Java’s GC which is non-deterministic.*
+
+---
+Here’s a **complete set of advanced Python programs** for your list of tasks. I’ve kept them **exam-friendly, clear, and structured**, covering algorithms, date calculations, and data handling.
+
+---
+
+## 1️⃣ Print First 100 Prime Numbers
+
+```python
+count = 0
+num = 2
+
+print("First 100 prime numbers:")
+while count < 100:
+    for i in range(2, int(num ** 0.5) + 1):
+        if num % i == 0:
+            break
+    else:
+        print(num, end=" ")
+        count += 1
+    num += 1
+```
+
+---
+
+## 2️⃣ Count Values in Range Divisible by a Given Value
+
+```python
+start = int(input("Enter start of range: "))
+end = int(input("Enter end of range: "))
+divisor = int(input("Enter divisor: "))
+
+count = sum(1 for i in range(start, end + 1) if i % divisor == 0)
+print("Number of divisible values:", count)
+```
+
+---
+
+## 3️⃣ Days from 1st January 2000
+
+```python
+from datetime import datetime
+
+date_input = input("Enter date (dd-mm-yyyy): ")
+date_obj = datetime.strptime(date_input, "%d-%m-%Y")
+start_date = datetime(2000, 1, 1)
+
+days_diff = (date_obj - start_date).days
+print("Number of days since 01-01-2000:", days_diff)
+```
+
+---
+
+## 4️⃣ Database Connectivity Program (Using SQLite)
+
+```python
+import sqlite3
+
+# Connect to database (or create it)
+conn = sqlite3.connect('example.db')
+cursor = conn.cursor()
+
+# Create table
+cursor.execute('''CREATE TABLE IF NOT EXISTS students (id INTEGER PRIMARY KEY, name TEXT, age INTEGER)''')
+
+# Insert data
+cursor.execute("INSERT INTO students (name, age) VALUES (?, ?)", ("Alice", 20))
+conn.commit()
+
+# Fetch data
+cursor.execute("SELECT * FROM students")
+for row in cursor.fetchall():
+    print(row)
+
+# Close connection
+conn.close()
+```
+
+---
+
+## 5️⃣ Transpose of a Matrix
+
+```python
+matrix = [[1,2,3],[4,5,6],[7,8,9]]
+transpose = [[row[i] for row in matrix] for i in range(len(matrix[0]))]
+
+print("Transpose of matrix:")
+for row in transpose:
+    print(row)
+```
+
+---
+
+## 6️⃣ Binary Search in Python
+
+```python
+def binary_search(arr, target):
+    arr.sort()  # Make sure array is sorted
+    low, high = 0, len(arr)-1
+    while low <= high:
+        mid = (low + high) // 2
+        if arr[mid] == target:
+            return mid
+        elif arr[mid] < target:
+            low = mid + 1
+        else:
+            high = mid - 1
+    return -1
+
+arr = [3, 6, 2, 8, 4]
+target = int(input("Enter number to search: "))
+index = binary_search(arr, target)
+print("Index:", index if index != -1 else "Not found")
+```
+
+---
+
+## 7️⃣ Insertion Sort
+
+```python
+arr = list(map(int, input("Enter numbers: ").split()))
+
+for i in range(1, len(arr)):
+    key = arr[i]
+    j = i-1
+    while j >= 0 and arr[j] > key:
+        arr[j+1] = arr[j]
+        j -= 1
+    arr[j+1] = key
+
+print("Sorted array:", arr)
+```
+
+---
+
+## 8️⃣ Heap Sort Program
+
+```python
+def heapify(arr, n, i):
+    largest = i
+    l = 2*i + 1
+    r = 2*i + 2
+
+    if l < n and arr[l] > arr[largest]:
+        largest = l
+    if r < n and arr[r] > arr[largest]:
+        largest = r
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)
+
+def heap_sort(arr):
+    n = len(arr)
+    for i in range(n//2 -1, -1, -1):
+        heapify(arr, n, i)
+    for i in range(n-1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]
+        heapify(arr, i, 0)
+
+arr = list(map(int, input("Enter numbers: ").split()))
+heap_sort(arr)
+print("Sorted array:", arr)
+```
+
+---
+
+## 9️⃣ Removing Elements from List One by One
+
+```python
+lst = list(map(int, input("Enter numbers: ").split()))
+
+while lst:
+    print("Removing:", lst.pop(0))
+    print("Remaining list:", lst)
+```
+
+---
+
+## 1️⃣ Linked List Program in Python
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class LinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            return
+        temp = self.head
+        while temp.next:
+            temp = temp.next
+        temp.next = new_node
+
+    def display(self):
+        temp = self.head
+        while temp:
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("None")
+
+ll = LinkedList()
+for val in [10,20,30]:
+    ll.append(val)
+ll.display()
+```
+
+---
+
+## 2️⃣ Circular Linked List
+
+```python
+class Node:
+    def __init__(self, data):
+        self.data = data
+        self.next = None
+
+class CircularLinkedList:
+    def __init__(self):
+        self.head = None
+
+    def append(self, data):
+        new_node = Node(data)
+        if not self.head:
+            self.head = new_node
+            new_node.next = self.head
+            return
+        temp = self.head
+        while temp.next != self.head:
+            temp = temp.next
+        temp.next = new_node
+        new_node.next = self.head
+
+    def display(self, count):
+        temp = self.head
+        for _ in range(count):
+            print(temp.data, end=" -> ")
+            temp = temp.next
+        print("... (circular)")
+
+cll = CircularLinkedList()
+for val in [1,2,3,4]:
+    cll.append(val)
+cll.display(10)
+```
+
+---
+
+## 3️⃣ Stack Implementation
+
+```python
+stack = []
+
+# Push
+stack.append(10)
+stack.append(20)
+
+# Pop
+print("Popped:", stack.pop())
+print("Current stack:", stack)
+```
+
+---
+
+## 4️⃣ Queue Implementation
+
+```python
+from collections import deque
+queue = deque()
+
+# Enqueue
+queue.append(10)
+queue.append(20)
+
+# Dequeue
+print("Dequeued:", queue.popleft())
+print("Current queue:", list(queue))
+```
+
+---
+
+## 5️⃣ HeapSort
+
+```python
+def heapify(arr, n, i):
+    largest = i
+    l = 2*i + 1
+    r = 2*i + 2
+
+    if l < n and arr[l] > arr[largest]:
+        largest = l
+    if r < n and arr[r] > arr[largest]:
+        largest = r
+    if largest != i:
+        arr[i], arr[largest] = arr[largest], arr[i]
+        heapify(arr, n, largest)
+
+def heap_sort(arr):
+    n = len(arr)
+    for i in range(n//2 -1, -1, -1):
+        heapify(arr, n, i)
+    for i in range(n-1, 0, -1):
+        arr[i], arr[0] = arr[0], arr[i]
+        heapify(arr, i, 0)
+
+arr = [5,2,9,1,5,6]
+heap_sort(arr)
+print("Sorted array:", arr)
+```
+
+---
+
+## 6️⃣ Check Parentheses in String
+
+```python
+s = input("Enter string: ")
+stack = []
+for i, ch in enumerate(s):
+    if ch == '(':
+        stack.append(i)
+    elif ch == ')':
+        if stack:
+            stack.pop()
+        else:
+            print("Missing '(' at index", i)
+if stack:
+    for idx in stack:
+        print("Missing ')' for '(' at index", idx)
+```
+
+---
+
+## 7️⃣ All Unique Three-Digit Numbers from 1,2,3,4
+
+```python
+nums = [1,2,3,4]
+count = 0
+print("Three-digit numbers:")
+for i in nums:
+    for j in nums:
+        if j == i:
+            continue
+        for k in nums:
+            if k == i or k == j:
+                continue
+            print(f"{i}{j}{k}")
+            count += 1
+print("Total numbers:", count)
+```
+
+---
+
+## 8️⃣ Days Between Two Dates Without Library
+
+```python
+def is_leap(year):
+    return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
+
+days_in_month = [31,28,31,30,31,30,31,31,30,31,30,31]
+
+def count_days(d1,m1,y1,d2,m2,y2):
+    days = 0
+    # Count full years
+    for year in range(y1, y2):
+        days += 366 if is_leap(year) else 365
+    # Count months in start and end year
+    for month in range(1, m2):
+        days += 29 if month==2 and is_leap(y2) else days_in_month[month-1]
+    days += d2
+    for month in range(1, m1):
+        days -= 29 if month==2 and is_leap(y1) else days_in_month[month-1]
+    days -= d1
+    return days
+
+d1,m1,y1 = map(int,input("Enter first date (dd mm yyyy): ").split())
+d2,m2,y2 = map(int,input("Enter second date (dd mm yyyy): ").split())
+print("Days difference:", count_days(d1,m1,y1,d2,m2,y2))
+```
+
+---
+
+## 9️⃣ Rearrange Array: Odd Numbers Before Even
+
+```python
+arr = list(map(int, input("Enter numbers: ").split()))
+odd = [x for x in arr if x % 2 != 0]
+even = [x for x in arr if x % 2 == 0]
+rearranged = odd + even
+print("Rearranged array:", rearranged)
+```
+
+---
+
+## 🔟 Measure Execution Time of Code
+
+```python
+import time
+
+start = time.time()
+# Example code
+total = sum(range(1,1000000))
+end = time.time()
+print("Time taken:", end - start, "seconds")
+```
+
+---
+
+## 1️⃣1️⃣ Numbers Divisible by 5 and Remainders
+
+```python
+lst = list(map(int, input("Enter numbers: ").split()))
+div5 = [x for x in lst if x % 5 == 0]
+remainder = [x % 5 for x in lst if x % 5 != 0]
+print("Divisible by 5:", div5)
+print("Remainders:", remainder)
+```
+
+---
+
+## 1️⃣2️⃣ Sort Strings Based on Second Character (Special Rules)
+
+```python
+arr = input("Enter strings separated by space: ").split()
+
+# Preprocess strings
+processed = []
+for s in arr:
+    if s == "":
+        processed.append("@@")
+    elif len(s) == 1:
+        processed.append("#"+s)
+    else:
+        processed.append(s)
+
+# Sort by second character
+sorted_arr = sorted(processed, key=lambda x: x[1] if len(x) > 1 else x[0])
+print("Sorted array:", sorted_arr)
+```
+
+---
+
