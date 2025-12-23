@@ -266,3 +266,45 @@ Bandwidth is the capacity of a medium to carry data.
 - Not scalable
 - All devices may act as both clients and servers which can slow their performance
 
+### 🔄 2.3 Network Infrastructure
+- End devices : An end device (or host) is either the source or destination of a message transmitted over the network.
+  - Computers (workstations, laptops, file servers, web servers)
+  - Network printers
+  - Telephones and teleconferencing equipment
+  - Security cameras
+  - Mobile devices (such as smart phones, tablets, PDAs, and wireless debit/credit card readers and barcode scanners)
+- Intermediate devices :
+  - Wirless Router
+  - Lan Switch
+  - Router
+  - Muiltilayer Switch
+  - Firewall Appliance
+- Network media :
+  - Wireless Media
+  - LAN Media
+  - WAN Media
+    
+### 🔄 2.3 ISP Services
+  - An Internet Service Provider (ISP) provides the link between the home network and the internet.
+  - ISPs are connected in a hierarchical manner that ensures that internet traffic generally takes the shortest path from the source to the destination.
+  - Two common methods ate cable and DSL. Other option include cellular, satellite and dail-up telephone.
+
+---
+
+  1️⃣ **Cable**
+   - Typically offered by cable television service providers, the internet data signal is carried on the same coaxial cable that delivers cable television.
+   - It provides a high bandwidth, always on, connection to the internet.
+   - A special cable modem separates the internet data signal from the other signals carried on the cable and provides an Ethernet connection to a host computer or LAN.
+
+---
+
+  2️⃣ **DSL ( Digital Subscriber Line )**
+   - Digital Subscriber Line provides a high bandwidth, always on, connection to the internet.
+   - It requires a special high-speed modem that separates the DSL signal from the telephone signal and provides an Ethernet connection to a host computer or LAN.
+   - DSL runs over a telephone line, with the line split into three channels.
+     - One channel is used for voice telephone calls. This channel allows an individual to receive phone calls without disconnecting from the internet.
+     - Second channel is a faster download channel, used to receive information from the internet.
+     - Third channel is used for sending or uploading information. This channel is usually slightly slower than the download channel.
+   - The quality and speed of the DSL connection depends mainly on the quality of the phone line and the distance from the central office of your phone company The farther you are from the central office, the slower the connection.
+
+---
