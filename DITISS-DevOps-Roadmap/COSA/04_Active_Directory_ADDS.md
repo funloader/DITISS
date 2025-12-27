@@ -55,6 +55,7 @@ AD DS logical components are structures that you use to implement an AD DS desig
 Physical components in AD DS are those objects that are tangible, or that described tangible components in the real world.
 
 A screenshot of Active Directory Sites and Services. The administrator has selected the Sites node. Displayed are two sites, Seattle and Vancouver. Also displayed are two subnets.
+![Diagram](images/Physical components.png).
 
 The following table describes some of the physical components of AD DS.
 
@@ -80,6 +81,7 @@ The username.
 - A user password.
 - Group memberships.
 - A user account also contains settings that you can configure based on your organizational requirements.
+![Diagram](images/m6-user-89703b1f.png).
 
 The username and password of a user account serve as the user’s sign-in credentials. A user object also includes several other attributes that describe and manage the user. You can use the following to create and manage user objects in AD DS:
 
@@ -139,6 +141,8 @@ For example, if several users need the same level of access to a folder, it's mo
 
 Before you implement groups in your organization, you must understand the scope of various AD DS group types. In addition, you must understand how to use group types to manage access to resources or to assign management rights and responsibilities.
 
+![Diagram](images/m6-group-39cc1f7d.png).
+
 ### Group types
 In a Windows Server enterprise network, there are two types of groups, described in the following table.
 
@@ -179,6 +183,8 @@ A computer account begins its lifecycle when you create the computer object and 
 - Moving the computer between OUs.
 - Managing the computer itself.
 Renaming, resetting, disabling, enabling, and eventually deleting the computer object.
+![Diagram](images/m6-computer-c09654bd.png).
+
 
 ### Computers container
 Before you create a computer object in AD DS, you must have a place to put it. The Computers container is a built-in container in an AD DS domain. This container is the default location for the computer accounts when a computer joins the domain.
@@ -303,6 +309,8 @@ You can use OUs to represent the hierarchical, logical structures within your or
 ### What are the generic containers?
 
 AD DS has several built-in containers, or generic containers, such as Users and Computers. These containers store system objects or function as the default parent objects to new objects that you create. Don't confuse these generic container objects with OUs. The primary difference between OUs and containers is the management capabilities. Containers have limited management capabilities. For example, you can't apply a GPO directly to a container.
+![Diagram](images/m6-objects-4501913a.png).
+
 
 Installing AD DS creates the Domain Controllers OU and several generic container objects by default. AD DS primarily uses some of these default objects, which are also hidden by default. The following objects are displayed by default:
 
@@ -343,6 +351,8 @@ Managing the AD DS environment is one of the most common tasks an IT pro perform
 
 ### Active Directory Administrative Center
 The Active Directory Administrative Center provides a GUI that is based on Windows PowerShell. This enhanced interface allows you to perform AD DS object management by using task-oriented navigation, and it replaces the functionality of Active Directory Users and Computers.
+![Diagram](images/m6-administrative-center-195c7431.png).
+
 
 Tasks that you can perform by using the Active Directory Administrative Center include:
 - Creating and managing user, computer, and group accounts.
@@ -362,6 +372,8 @@ Windows Admin Center works with any browser that is compliant with modern standa
 > You shouldn’t install Windows Admin Center on a server computer that is configured as an AD DS domain controller.
 
 With a decreasing number of exceptions, Windows Admin Center supports most current Windows Server and Windows 10 administrative functionality. However, Microsoft intends that Windows Admin Center will eventually support all the administrative functionality that is presently available through RSAT.
+![Diagram](images/m6-windows-admin-center-9057410f.png).
+
 
 To use Windows Admin Center, you must first download and install it. You can download Windows Admin Center from the Microsoft download website. After downloading and installing Windows Admin Center, you must enable the appropriate TCP port on the local firewall. On a Windows 10 computer (in standalone mode), this defaults to 6516. On Windows Server (in gateway mode), this defaults to TCP 443. In both cases, you can change it during setup.
 
@@ -370,6 +382,8 @@ To use Windows Admin Center, you must first download and install it. You can dow
 
 ### Remote Server Administration Tools
 RSAT is a collection of tools which enables you to manage Windows Server roles and features remotely.
+![Diagram](images/m6-add-optional-feature-dialog-box-cc4ed1ad.png).
+
 
 > [!NOTE]
 > You enable RSAT tools from the Settings app. In Settings, search for Manage optional features, select Add a feature, and then select the appropriate RSAT tools from the returned list. Select Install to add the feature.
@@ -386,6 +400,14 @@ Other management tools that you use to perform AD DS administration are describe
 | **Active Directory Sites and Services** | An MMC snap-in used to manage replication, network topology, and related services. |
 | **Active Directory Domains and Trusts** | An MMC snap-in used to configure and maintain trust relationships at the domain and forest functional levels. |
 | **Active Directory Schema Snap-in** | An MMC snap-in used to examine and modify definitions of AD DS attributes and object classes. It is not commonly modified and is not registered by default. |
+
+---
+
+## Summary
+
+Contoso's IT staff are migrating Contoso on-premises servers to Windows Server 2025. As part of the migration, Contoso evaluated its current AD DS environment. As a Windows Server administrator, you've been responsible for managing AD DS objects, such as users, groups, and OUs. You now understand the fundamental AD DS structure and how users, groups, and group managed service accounts relate to OUs.
+
+---
 
 ## Check your knowledge
 
