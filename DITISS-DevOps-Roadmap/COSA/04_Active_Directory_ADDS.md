@@ -204,3 +204,32 @@ A forest is a top-level container in AD DS. Each forest is a collection of one o
 The forest root domain contains objects that don't exist in other domains in the forest. Because you always create these objects on the first domain controller, a forest can consist of as few as one domain with a single domain controller, or it can consist of several domains across multiple domain trees.
 
 The following graphic displays `Contoso.com` as the forest root domain. Beneath are two domains, `Adatum.com` in a separate tree, and `Seattle.Contoso.com` as a child of `Contoso.com`
+
+![Diagram](images/m6-forest-bc4595bc.png)
+
+The following objects exist in the forest root domain:
+- The schema master role.
+- The domain naming master role.
+- The Enterprise Admins group.
+- The Schema Admins group.
+
+> [!NOTE]
+> Although the schema and domain naming master roles are assigned initially in the root domain on the first domain controller you create, you can move them to other domain controllers anywhere in the forest.
+
+An AD DS forest is often described as:
+- A security boundary. By default, no users from outside the forest can access any resources inside the forest. In addition, all the domains in a forest automatically trust the other domains in the forest. This makes it easy to enable access to resources for all the users in a forest, regardless of the domain to which they belong.
+- A replication boundary. An AD DS forest is the replication boundary for the configuration and schema partitions in the AD DS database. Therefore, organizations that want to deploy applications with incompatible schemas must deploy additional forests. The forest is also the replication boundary for the global catalog. The global catalog makes it possible to find objects from any domain in the forest.
+
+> [!TIP]
+> Typically, an organization creates only one forest.
+
+The following objects exist in each domain (including the forest root):
+- The RID master role.
+- The Infrastructure master role.
+- The PDC emulator master role.
+- The Domain Admins group.
+
+### What is an AD DS domain?
+An AD DS domain is a logical container for managing user, computer, group, and other objects. The AD DS database stores all domain objects, and each domain controller stores a copy of the database.
+
+The following graphic displays an AD DS domain. It contains users, computers, and groups.
