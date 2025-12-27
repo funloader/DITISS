@@ -262,3 +262,144 @@ An AD DS domain provides:
 > [!TIP]
 > Organizations with decentralized administrative structures or multiple locations might consider implementing multiple domains in the same forest to accommodate their administrative needs.
 
+### What are trust relationships?
+AD DS trusts enable access to resources in a complex AD DS environment. When you deploy a single domain, you can easily grant access to resources within the domain to users and groups from the domain. When you implement multiple domains or forests, you should ensure that the appropriate trusts are in place to enable the same access to resources.
+
+In a multiple-domain AD DS forest, two-way transitive trust relationships generate automatically between AD DS domains so that a path of trust exists between all the AD DS domains.
+
+> [!NOTE]
+> The trusts that create automatically in the forest are all transitive trusts, which means that if domain A trusts domain B, and domain B trusts domain C, then domain A trusts domain C.
+
+You can deploy other types of trusts. The following table describes the main trust types.
+
+| Trust Type | Direction | Description |
+|------------|-----------|-------------|
+| **Parent and Child** | Transitive, Two-way | When you add a new AD DS domain to an existing AD DS tree, you create new parent and child trusts. |
+| **Tree-Root** | Transitive, Two-way | When you create a new AD DS tree in an existing AD DS forest, you automatically create a new tree-root trust. |
+| **External** | Nontransitive, One-way or Two-way | External trusts enable resource access with a Windows NT 4.0 domain or an AD DS domain in another forest. They can also be used to provide a framework for migration. |
+| **Realm** | Transitive or Nontransitive, One-way or Two-way | Realm trusts establish an authentication path between a Windows Server AD DS domain and a Kerberos v5 protocol realm that is implemented using a directory service other than AD DS. |
+| **Forest (Complete or Selective)** | Transitive, One-way or Two-way | Trusts between AD DS forests allow two forests to share resources. |
+| **Shortcut** | Nontransitive, One-way or Two-way | Shortcut trusts reduce authentication time between AD DS domains in different parts of the same forest. These trusts are not created by default and must be manually configured. |
+
+When you set up trusts between domains within the same forest, across forests, or with an external realm, Windows Server creates a trusted domain object to store the trusts' information, such as transitivity and type, in AD DS. Windows Server stores this trusted domain object in the System container in AD DS.
+
+# Define OUs
+
+An OU is a container object within a domain that you can use to consolidate users, computers, groups, and other objects. You can link Group Policy Objects (GPOs) directly to an OU to manage the users and computers contained in the OU. You can also assign an OU manager and associate a COM+ partition with an OU.
+
+You can create new OUs in AD DS by using:
+ - Active Directory Administrative Center.
+ - Active Directory Users and Computers.
+ - Windows Admin Center.
+ - Windows PowerShell with the Active Directory PowerShell module.
+
+### Why create OUs?
+There are two reasons to create an OU:
+- To consolidate objects to make it easier to manage them by applying GPOs to the collective. When you assign GPOs to an OU, the settings apply to all the objects within the OU. GPOs are policies that administrators create to manage and configure settings for computers or users. You deploy the GPOs by linking them to OUs, domains, or sites.
+- To delegate administrative control of objects within the OU. You can assign management permissions on an OU, thereby delegating control of that OU to a user or a group within AD DS, in addition to the Domain Admins group.
+
+You can use OUs to represent the hierarchical, logical structures within your organization. For example, you can create OUs that represent the departments within your organization, the geographic regions within your organization, or a combination of both departmental and geographic regions. You can use OUs to manage the configuration and use of user, group, and computer accounts based on your organizational model.
+
+### What are the generic containers?
+
+AD DS has several built-in containers, or generic containers, such as Users and Computers. These containers store system objects or function as the default parent objects to new objects that you create. Don't confuse these generic container objects with OUs. The primary difference between OUs and containers is the management capabilities. Containers have limited management capabilities. For example, you can't apply a GPO directly to a container.
+
+Installing AD DS creates the Domain Controllers OU and several generic container objects by default. AD DS primarily uses some of these default objects, which are also hidden by default. The following objects are displayed by default:
+
+- Domain. The top level of the domain organizational hierarchy.
+Builtin container. A container that stores several default groups.
+- Computers container. The default location for new computer accounts that you create in the domain.
+- Foreign Security Principals container. The default location for trusted objects from domains outside the local AD DS domain that you add to a group in the local AD DS domain.
+- Managed Service Accounts container. The default location for managed service accounts. AD DS provides automatic password management in managed service accounts.
+- Users container. The default location for new user accounts and groups that you create in the domain. The Users container also holds the administrator, the guest accounts for the domain, and some default groups.
+- Domain Controllers OU. The default location for domain controllers' computer accounts. This is the only OU that is present in a new installation of AD DS.
+
+There are several containers that you can review when you select Advanced Features. The following table describes the objects that are hidden by default.
+
+| Object | Description |
+|--------|-------------|
+| **LostAndFound** | This container holds orphaned objects. |
+| **Program Data** | This container holds Active Directory data for Microsoft applications, such as Active Directory Federation Services (AD FS). |
+| **System** | This container holds the built-in system settings. |
+| **NTDS Quotas** | This container holds directory service quota data. |
+| **TPM Devices** | This container stores the recovery information for Trusted Platform Module (TPM) devices. |
+
+> [!NOTE]
+> Containers in an AD DS domain can't have GPOs linked to them. To link GPOs to apply configurations and restrictions, create a hierarchy of OUs and then link the GPOs to them.
+
+Use a hierarchical design
+The administrative needs of the organization dictate the design of an OU hierarchy. Geographic, functional, resource, or user classifications could all influence the design. Whatever the order, the hierarchy should make it possible to administer AD DS resources as effectively and flexibly as possible. For example, if you need to configure all IT administrators’ computers in a certain way, you can group all the computers in an OU and then assign a GPO to manage those computers.
+
+You also can create OUs within other OUs. For example, your organization might have multiple offices, each with its own IT administrator who is responsible for managing user and computer accounts. In addition, each office might have different departments with different computer-configuration requirements. In this situation, you can create an OU for each office, and then within each of those OUs, create an OU for the IT administrators and an OU for each of the other departments.
+
+Although there's no limit to the number of levels in your OU structure, limit your OU structure to a depth of no more than 10 levels to ensure manageability. Most organizations use five levels or fewer to simplify administration.
+
+> [!NOTE]
+> Applications that work with AD DS can impose restrictions on the OU depth within the hierarchy for the parts of the hierarchy that they use.
+
+# Manage objects and their properties in AD DS
+
+Managing the AD DS environment is one of the most common tasks an IT pro performs. There are several tools that you can use to manage AD DS.
+
+### Active Directory Administrative Center
+The Active Directory Administrative Center provides a GUI that is based on Windows PowerShell. This enhanced interface allows you to perform AD DS object management by using task-oriented navigation, and it replaces the functionality of Active Directory Users and Computers.
+
+Tasks that you can perform by using the Active Directory Administrative Center include:
+- Creating and managing user, computer, and group accounts.
+- Creating and managing OUs.
+- Connecting to and managing multiple domains within a single instance of the Active Directory Administrative Center.
+- Searching and filtering AD DS data by building queries.
+- Creating and managing fine-grained password policies.
+- Recovering objects from the Active Directory Recycle Bin.
+- Managing objects that the Dynamic Access Control feature requires.
+
+### Windows Admin Center
+Windows Admin Center is a web-based console that you can use to manage server computers and computers that are running Windows 10. Typically, you use Windows Admin Center to manage servers instead of using Remote Server Administration Tools (RSAT).
+
+Windows Admin Center works with any browser that is compliant with modern standards, and you can install it on computers that run Windows 10 and Windows Server with Desktop Experience.
+
+> [!NOTE]
+> You shouldn’t install Windows Admin Center on a server computer that is configured as an AD DS domain controller.
+
+With a decreasing number of exceptions, Windows Admin Center supports most current Windows Server and Windows 10 administrative functionality. However, Microsoft intends that Windows Admin Center will eventually support all the administrative functionality that is presently available through RSAT.
+
+To use Windows Admin Center, you must first download and install it. You can download Windows Admin Center from the Microsoft download website. After downloading and installing Windows Admin Center, you must enable the appropriate TCP port on the local firewall. On a Windows 10 computer (in standalone mode), this defaults to 6516. On Windows Server (in gateway mode), this defaults to TCP 443. In both cases, you can change it during setup.
+
+> [!NOTE]
+> Unless you're using a certificate from a trusted CA, the first time you run Windows Admin Center, it prompts you to select a client certificate. Ensure you select the certificate labeled Windows Admin Center Client.
+
+### Remote Server Administration Tools
+RSAT is a collection of tools which enables you to manage Windows Server roles and features remotely.
+
+> [!NOTE]
+> You enable RSAT tools from the Settings app. In Settings, search for Manage optional features, select Add a feature, and then select the appropriate RSAT tools from the returned list. Select Install to add the feature.
+
+You can install the consoles available within RSAT on computers running Windows 10 or on server computers that are running the Server with Desktop Experience option of a Windows Server installation. Until the introduction of Windows Admin Center, RSAT consoles were the primary graphical tools for administering the Windows Server operating system.
+
+### Other AD DS management tools
+Other management tools that you use to perform AD DS administration are described in the following table.
+
+| Management Tool | Description |
+|-----------------|-------------|
+| **Active Directory Module for Windows PowerShell** | Supports AD DS administration and is one of the most important management components. Server Manager and the Active Directory Administration Center are based on Windows PowerShell and use cmdlets to perform their tasks. |
+| **Active Directory Users and Computers** | An MMC snap-in used to manage common resources such as users, groups, and computers. While widely used, it is being replaced by the Active Directory Administrative Center, which offers more capabilities. |
+| **Active Directory Sites and Services** | An MMC snap-in used to manage replication, network topology, and related services. |
+| **Active Directory Domains and Trusts** | An MMC snap-in used to configure and maintain trust relationships at the domain and forest functional levels. |
+| **Active Directory Schema Snap-in** | An MMC snap-in used to examine and modify definitions of AD DS attributes and object classes. It is not commonly modified and is not registered by default. |
+
+## Check your knowledge
+
+### 1. Which PowerShell command could you use to add a user?
+
+- [ ] `Get-ADUser`
+- [ ] `New-ADUser`
+- [ ] `Set-ADUser`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `New-ADUser`  
+💡 Used to create a new Active Directory user account.
+💡 Use this cmdlet to create a new user account.
+</details>
+
