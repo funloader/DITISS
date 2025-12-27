@@ -207,6 +207,7 @@ The following graphic displays `Contoso.com` as the forest root domain. Beneath 
 
 ![Diagram](images/m6-forest-bc4595bc.png)
 
+
 The following objects exist in the forest root domain:
 - The schema master role.
 - The domain naming master role.
@@ -233,3 +234,31 @@ The following objects exist in each domain (including the forest root):
 An AD DS domain is a logical container for managing user, computer, group, and other objects. The AD DS database stores all domain objects, and each domain controller stores a copy of the database.
 
 The following graphic displays an AD DS domain. It contains users, computers, and groups.
+![Diagram](images/m6-domain-755853b7.png).
+
+The most commonly used objects are described in the following table:
+| Object | Description |
+|--------|-------------|
+| **User Accounts** | User accounts contain information about users, including the information required to authenticate a user during the sign-in process and to build the user’s access token. |
+| **Computer Accounts** | Each domain-joined computer has an account in AD DS. You can use computer accounts for domain-joined computers in the same way that you use user accounts for users. |
+| **Groups** | Groups organize users or computers to simplify the management of permissions and Group Policy Objects (GPOs) within the domain. |
+
+> [!NOTE]
+> AD DS allows a single domain to contain nearly two billion objects. This means that most organizations need only deploy a single domain.
+
+An AD DS domain is often described as:
+
+- A replication boundary. When you make changes to any object in the domain, the domain controller where the change occurred replicates that change to all other domain controllers in the domain. If multiple domains exist in the forest, only subsets of the changes replicate to other domains. AD DS uses a multi-master replication model that allows every domain controller to make changes to objects in the domain.
+- An administrative unit. The AD DS domain contains an Administrator account and a Domain Admins group. By default, the Administrator account is a member of the Domain Admins group, and the Domain Admins group is a member of every local Administrators group of domain-joined computers. Also, by default, the Domain Admins group members have full control over every object in the domain.
+
+> [!NOTE]
+> The Administrator account in the forest root domain has additional rights.
+
+An AD DS domain provides:
+
+- Authentication. Whenever a domain-joined computer starts or a user signs in to a domain-joined computer, AD DS authenticates it. Authentication verifies that computer or user has the proper identity in AD DS by verifying its credentials.
+- Authorization. Windows uses authorization and access control technologies to determine whether to allow authenticated users to access resources.
+
+> [!TIP]
+> Organizations with decentralized administrative structures or multiple locations might consider implementing multiple domains in the same forest to accommodate their administrative needs.
+
