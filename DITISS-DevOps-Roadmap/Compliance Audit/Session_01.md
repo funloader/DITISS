@@ -176,7 +176,7 @@ It ensures the organization is meeting both external and internal compliance obl
 
 
 # D. Types of Security Audit
-```
+
 | Audit Type               | Purpose / Objective                             | Methodology                                 | Common Usage                                |
 | ------------------------ | ----------------------------------------------- | ------------------------------------------- | ------------------------------------------- |
 | 🏢 Internal Audit         | Continuous internal review; assess policies & controls | Interviews, checklists                      | Continuous review                           |
@@ -190,7 +190,7 @@ It ensures the organization is meeting both external and internal compliance obl
 | 🚨 Event-driven Audit     | Analyze after major changes/events              | Focused review post-incident/event         | Incident response, mergers                  |
 | 🧑‍💻 Social Engineering   | Test human susceptibility                        | Simulated attacks (phishing, etc.)         | User awareness training                      |
 
-```
+
 
 ### Types of Security Compliance Audits
 - **Regulatory Audits** → PCI DSS, HIPAA, SOX, GDPR
