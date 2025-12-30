@@ -214,23 +214,6 @@ Critical to guide organizations in determining the scope, methods, and focus are
 
 📜 Organizations weigh these factors to design a security audit that addresses their most pressing risks, complies with standards, and maintains a robust cybersecurity posture.
 
-Evidence
-
-Sufficiency (quantity)
-
-Appropriateness (quality)
-
-Professional Judgment
-
-Regulatory requirements
-
-Stakeholder expectations
-
-Previous audit findings
-
-Organizational changes
-
-
 🌐 **Materiality** : Defining the magnitude of misstatements that would influence the economic decisions of users.
 
 ⚠️ **Audit Risk** : The risk that the auditor expresses an inappropriate opinion when financial statements are materially misstated.
@@ -347,28 +330,29 @@ The principles of auditing are foundational guidelines that ensure audits are co
 
 Focusing on areas of greater risk ensures audits are efficient and impactful, addressing the most significant threats to the audited entity.
 
-* **Integrity**
-* **Objectivity & Independence**
-* **Confidentiality**
-* **Professional Competence & Due Care**
-* **Evidence-based Approach**
-* **Fair Presentation**
-* **Planning & Documentation**
-* **Risk-based Approach**
+* **Integrity :** Auditors must act with honesty and uphold strong ethical standards throughout the audit. Integrity ensures findings and reports are trustworthy.
+* **Objectivity & Independence :** Auditors should remain impartial and free from conflicts of interest, ensuring unbiased assessments and recommendations. The independence of thought and execution is vital for trustworthy results.
+* **Confidentiality :** All information acquired during the audit must be kept secure and not disclosed to external parties without proper authority. Confidentiality maintains trust with stakeholders and protects sensitive information.
+* **Professional Competence & Due Care :** Auditors should possess up-to-date expertise, skills, and competency relevant to audit tasks. They must execute audits with diligent care, professional judgment, and in accordance with standards.
+* **Evidence-based Approach :** Conclusions and audit opinions must be based on sufficient and appropriate evidence rather than assumptions or biases. This ensures accuracy and reliability in audit outcomes.
+* **Fair Presentation :** Audit findings must be reported truthfully, accurately, and without suppression or distortion of significant facts, maintaining full transparency in results.
+* **Planning & Documentation :** Auditors must properly plan their work, set clear objectives, and thoroughly document evidence, methodologies, and findings. Proper planning and documentation support audit quality and future reference.
+* **Risk-based Approach :** Focusing on areas of greater risk ensures audits are efficient and impactful, addressing the most significant threats to the audited entity.
 
 ---
 
 ### I. Auditor Personal Abilities
 
-* Attention to detail
-* Analytical & critical thinking
-* Effective communication
-* Problem-solving
-* Technical knowledge
-* Ethical judgment
-* Time management
-* Interpersonal & collaboration skills
-* Adaptability & continuous learning
+* **Attention to detail :** Auditors must notice small discrepancies or unusual patterns that could indicate errors or fraud. This precision is critical to reliable audit outcomes.
+* **Analytical & critical thinking :** Strong analytical skills enable auditors to interpret complex financial data, audit trails, and controls, identifying problems and root causes efficiently.
+* **Effective communication :** Auditors need to clearly and convincingly explain findings in verbal and written form to diverse stakeholders, including technical teams and executives.
+* **Problem-solving :** Ability to develop practical solutions and recommendations for audit findings, addressing unique and complex organizational issues
+* **Technical knowledge :** Proficiency in auditing standards, accounting principles, IT systems, and industry- specific regulations is necessary for accurate assessments.
+* **Ethical judgment :** Auditors must maintain impartiality, integrity, and confidentiality throughout the audit process to ensure trustworthiness and fairness.
+* **Time management :** Managing audit activities efficiently to meet deadlines while ensuring thoroughness and quality of work is crucial.
+* **Interpersonal & collaboration skills :** Auditors often work across departments, requiring teamwork, negotiation, and relationship-building skills.
+* **Critical Thinking :** Examining evidence critically without bias to deliver accurate, well-founded conclusions is vital for audit reliability.
+* **Adaptability & continuous learning :** Auditors must stay current with evolving standards, technologies, and industry trends to maintain professional competence.
 
 ---
 
@@ -403,18 +387,3 @@ Focusing on areas of greater risk ensures audits are efficient and impactful, ad
 * Audit ≠ Automated scan
 
 ---
-
-## 7. Corrections / Improvements / Suggested Substitutions
-
-* PPT mixes **financial audit risk model** with **security audit** → acceptable for exam, but clarify:
-
-  * Audit Risk Model applies conceptually to IT audits as well.
-* Replace informal analogy (“School rules”) with:
-
-  * **Policy–Control–Assurance model**
-* Excessive impact figures → focus only on:
-
-  * GDPR €20M
-  * Customer trust loss (1 in 2 customers)
-* Consolidated **Audit Phases** to a single standard 6-step model for clarity.
-
