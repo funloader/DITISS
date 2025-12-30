@@ -302,3 +302,119 @@ Audit is a cyclical process, not a one-time scan.
   The audit report is the final product. It must speak two languages:
   - **Executive Summary:** For the Board/CEO. Focuses on business risk, cost, and impact. "We are at risk of a $1M fine due to data leakage."
   - **Technical Details:** For IT Admins. Focuses on root cause and remediation code. "Server X is missing Patch KB5043 on Port 443."
+
+# G. Requirements of Internal Audit Team
+
+An effective internal audit team must meet rigorous requirements related to qualifications, certifications, skills, experience, ethics, and composition. This ensures the team can competently and objectively assess internal controls, compliance, and risk management.
+
+Meeting these requirements helps internal audit teams deliver robust, credible results supporting continuous improvement and risk reduction.
+
+**1. Qualifications**
+
+* Bachelor’s (Accounting / IT / Cybersecurity)
+* Advanced degrees preferred
+
+**2. Certifications**
+
+* **CIA**, **CISA**, **CISSP**
+* Sector-specific: DISA, GSNA
+
+**3. Experience**
+
+* Typically **2–5 years**
+
+**4. Skills**
+
+* Analytical
+* Communication
+* Technical & risk skills
+
+**5. Ethics & Independence**
+
+* Integrity, confidentiality, objectivity
+
+**6. Team Composition**
+
+* Finance + IT + Compliance mix
+
+**7. Continuous Training**
+
+* Team members should participate in continuing professional development to stay updated with regulatory, technological, and risk environment changes
+
+# H. Principles of Audits
+
+The principles of auditing are foundational guidelines that ensure audits are conducted ethically, objectively, and with professional rigor. These principles underpin the credibility and reliability of audit processes and outcomes.
+
+Focusing on areas of greater risk ensures audits are efficient and impactful, addressing the most significant threats to the audited entity.
+
+* **Integrity**
+* **Objectivity & Independence**
+* **Confidentiality**
+* **Professional Competence & Due Care**
+* **Evidence-based Approach**
+* **Fair Presentation**
+* **Planning & Documentation**
+* **Risk-based Approach**
+
+---
+
+### I. Auditor Personal Abilities
+
+* Attention to detail
+* Analytical & critical thinking
+* Effective communication
+* Problem-solving
+* Technical knowledge
+* Ethical judgment
+* Time management
+* Interpersonal & collaboration skills
+* Adaptability & continuous learning
+
+---
+
+## 4. Important Facts / Points for MCQs
+
+* Maximum GDPR fine: **€20 million**
+* **Detection Risk** is controllable by auditor
+* Cloud security follows **Shared Responsibility Model**
+* Audit evidence must be **sufficient & appropriate**
+* Compliance audit focuses on **proof**
+* Security focuses on **protection**
+* Audit focuses on **verification**
+
+---
+
+## 5. Examples (Exam-Relevant)
+
+* **WannaCry (2017)** – Ransomware
+* **British Airways fine (2020)** – GDPR breach
+* **SolarWinds (2020)** – Supply chain attack
+* **Target breach (2013)** – Third-party risk
+
+---
+
+## 6. MCQ Pointers / Exam Traps
+
+* **ISO 27001 ≠ GDPR** (Standard vs Law)
+* **VAPT ≠ Compliance Audit**
+* **Internal Audit ≠ External Audit**
+* **Risk Assessment ≠ Penetration Testing**
+* DR is adjustable, **IR & CR are not**
+* Audit ≠ Automated scan
+
+---
+
+## 7. Corrections / Improvements / Suggested Substitutions
+
+* PPT mixes **financial audit risk model** with **security audit** → acceptable for exam, but clarify:
+
+  * Audit Risk Model applies conceptually to IT audits as well.
+* Replace informal analogy (“School rules”) with:
+
+  * **Policy–Control–Assurance model**
+* Excessive impact figures → focus only on:
+
+  * GDPR €20M
+  * Customer trust loss (1 in 2 customers)
+* Consolidated **Audit Phases** to a single standard 6-step model for clarity.
+
