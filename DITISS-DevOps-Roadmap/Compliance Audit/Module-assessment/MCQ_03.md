@@ -155,4 +155,529 @@ The AI RMF helps ensure AI systems are trustworthy, compliant, and risk-aware.
 
 ---
 
-If you want, I can also convert this into a **Google Form**, **Canvas quiz**, or **exam-ready format**.
+### 10. Which U.S. government department does NIST operate under?
+
+* [ ] Department of Defense
+* [ ] Department of Homeland Security
+* [ ] Department of Commerce
+* [ ] Department of Energy
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Department of Commerce**
+NIST is a non-regulatory standards body under the U.S. Department of Commerce.
+
+</details>
+
+---
+
+### 11. In which year was NIST established?
+
+* [ ] 1947
+* [ ] 1970
+* [ ] 1901
+* [ ] 2001
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **1901**
+NIST was established to advance measurement science and standards.
+
+</details>
+
+---
+
+### 12. The NIST Cybersecurity Framework is best described as:
+
+* [ ] A control checklist
+* [ ] A certification standard
+* [ ] A risk-based framework
+* [ ] A penetration testing methodology
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **A risk-based framework**
+NIST CSF focuses on managing cybersecurity risk, not prescribing controls.
+
+</details>
+
+---
+
+### 13. Which of the following is NOT a core component of the NIST CSF?
+
+* [ ] Core
+* [ ] Implementation Tiers
+* [ ] Profiles
+* [ ] Controls
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Controls**
+CSF is outcome-based and does not mandate specific controls.
+
+</details>
+
+---
+
+### 14. What does the CSF Core primarily represent?
+
+* [ ] Audit checklist
+* [ ] Taxonomy of cybersecurity outcomes
+* [ ] Incident response plan
+* [ ] Compliance matrix
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Taxonomy of cybersecurity outcomes**
+The Core organizes outcomes into functions, categories, and subcategories.
+
+</details>
+
+---
+
+### 15. Which hierarchy correctly represents the CSF Core structure?
+
+* [ ] Categories → Functions → Controls
+* [ ] Functions → Categories → Subcategories
+* [ ] Subcategories → Controls → Functions
+* [ ] Functions → Profiles → Tiers
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Functions → Categories → Subcategories**
+This hierarchy defines the CSF Core.
+
+</details>
+
+---
+
+### 16. Which CSF Function focuses on understanding assets, risks, and dependencies?
+
+* [ ] Protect
+* [ ] Detect
+* [ ] Identify
+* [ ] Respond
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Identify**
+The Identify function establishes organizational context and risk understanding.
+
+</details>
+
+---
+
+### 17. Which CSF Function is responsible for implementing safeguards?
+
+* [ ] Identify
+* [ ] Protect
+* [ ] Detect
+* [ ] Recover
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Protect**
+Protect ensures delivery of critical services through safeguards.
+
+</details>
+
+---
+
+### 18. Detection of cybersecurity incidents is handled under which CSF Function?
+
+* [ ] Respond
+* [ ] Recover
+* [ ] Detect
+* [ ] Protect
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Detect**
+Detect focuses on identifying anomalous activities and events.
+
+</details>
+
+---
+
+### 19. Which CSF Function emphasizes containment and mitigation?
+
+* [ ] Identify
+* [ ] Protect
+* [ ] Respond
+* [ ] Recover
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Respond**
+Respond includes incident response and mitigation activities.
+
+</details>
+
+---
+
+### 20. Restoring services after an incident falls under which CSF Function?
+
+* [ ] Detect
+* [ ] Respond
+* [ ] Recover
+* [ ] Protect
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Recover**
+Recover supports resilience and service restoration.
+
+</details>
+
+---
+
+### 21. Which statement about CSF Functions is CORRECT?
+
+* [ ] They are compliance controls
+* [ ] They apply only to large organizations
+* [ ] They represent a cybersecurity lifecycle
+* [ ] They are incident response steps only
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **They represent a cybersecurity lifecycle**
+Functions provide a strategic view of cybersecurity risk management.
+
+</details>
+
+---
+
+### 22. Which CSF Implementation Tier reflects ad-hoc and reactive practices?
+
+* [ ] Tier 1 – Partial
+* [ ] Tier 2 – Risk Informed
+* [ ] Tier 3 – Repeatable
+* [ ] Tier 4 – Adaptive
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Tier 1 – Partial**
+Tier 1 organizations have immature and reactive risk practices.
+
+</details>
+
+---
+
+### 23. Which CSF Tier indicates formally documented and consistent practices?
+
+* [ ] Tier 1
+* [ ] Tier 2
+* [ ] Tier 3
+* [ ] Tier 4
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Tier 3 – Repeatable**
+Processes are formalized and consistently applied.
+
+</details>
+
+---
+
+### 24. An organization with continuous improvement and agile risk management is at:
+
+* [ ] Tier 1
+* [ ] Tier 2
+* [ ] Tier 3
+* [ ] Tier 4
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Tier 4 – Adaptive**
+Tier 4 reflects proactive and continuously improving practices.
+
+</details>
+
+---
+
+### 25. CSF Implementation Tiers primarily measure:
+
+* [ ] Technical controls
+* [ ] Regulatory compliance
+* [ ] Risk management maturity
+* [ ] Incident frequency
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Risk management maturity**
+Tiers describe how cybersecurity risk is managed, not compliance.
+
+</details>
+
+---
+
+### 26. What is the main purpose of a CSF Organizational Profile?
+
+* [ ] Tool selection
+* [ ] Security certification
+* [ ] Describe current and target posture
+* [ ] Incident detection
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Describe current and target posture**
+Profiles align CSF outcomes with business needs.
+
+</details>
+
+---
+
+### 27. Which activity compares the Current Profile with the Target Profile?
+
+* [ ] Risk assessment
+* [ ] Gap analysis
+* [ ] Threat modeling
+* [ ] Asset inventory
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Gap analysis**
+Gap analysis identifies areas needing improvement.
+
+</details>
+
+---
+
+### 28. Which is the FIRST step in CSF implementation?
+
+* [ ] Conduct risk assessment
+* [ ] Create Target Profile
+* [ ] Prioritize and scope
+* [ ] Implement controls
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Prioritize and scope**
+This step defines business context and scope.
+
+</details>
+
+---
+
+### 29. Which NIST publication series focuses on cybersecurity and risk management?
+
+* [ ] NIST SP 500
+* [ ] NIST SP 800
+* [ ] NIST SP 900
+* [ ] NIST SP 1000
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **NIST SP 800**
+The SP 800 series covers information security and risk.
+
+</details>
+
+---
+
+### 30. Which framework focuses specifically on privacy risk management?
+
+* [ ] NIST CSF
+* [ ] NIST AI RMF
+* [ ] NIST Privacy Framework
+* [ ] ISO/IEC 27001
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **NIST Privacy Framework**
+It addresses privacy risks beyond cybersecurity.
+
+</details>
+
+---
+
+### 31. NIST CSF is best described as:
+
+* [ ] Mandatory for all organizations
+* [ ] Certification-based
+* [ ] Voluntary and flexible
+* [ ] Legally enforceable
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Voluntary and flexible**
+CSF adoption is optional but widely recommended.
+
+</details>
+
+---
+
+### 32. Which characteristic best defines the NIST CSF?
+
+* [ ] Technology-specific
+* [ ] Country-specific
+* [ ] Outcome-based
+* [ ] Tool-driven
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Outcome-based**
+CSF focuses on desired cybersecurity outcomes.
+
+</details>
+
+---
+
+### 33. NIST CSF supports which broader organizational objective?
+
+* [ ] Only IT operations
+* [ ] Enterprise risk management
+* [ ] Software development lifecycle
+* [ ] Marketing strategy
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Enterprise risk management**
+CSF integrates cybersecurity into business risk decisions.
+
+</details>
+
+---
+
+### 34. Which standard focuses on IT governance and aligns well with NIST CSF?
+
+* [ ] HIPAA
+* [ ] PCI DSS
+* [ ] COBIT
+* [ ] GDPR
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **COBIT**
+COBIT complements CSF with governance structures.
+
+</details>
+
+---
+
+### 35. Which standard provides technical security baseline controls?
+
+* [ ] COBIT
+* [ ] CIS Controls
+* [ ] HIPAA
+* [ ] ISO 22301
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **CIS Controls**
+CIS provides prioritized technical security safeguards.
+
+</details>
+
+---
+
+### 36. NIST CSF can be used to support compliance with which regulation in healthcare?
+
+* [ ] PCI DSS
+* [ ] SOX
+* [ ] HIPAA
+* [ ] GLBA
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **HIPAA**
+CSF supports safeguarding PHI under HIPAA.
+
+</details>
+
+---
+
+### 37. Which CSF Function would SIEM implementation primarily support?
+
+* [ ] Identify
+* [ ] Protect
+* [ ] Detect
+* [ ] Recover
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Detect**
+SIEM helps identify anomalous and malicious activity.
+
+</details>
+
+---
+
+### 38. Which CSF Function includes disaster recovery planning?
+
+* [ ] Respond
+* [ ] Recover
+* [ ] Protect
+* [ ] Identify
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Recover**
+Recover focuses on resilience and service restoration.
+
+</details>
+
+---
+
+### 39. Which statement about NIST CSF is FALSE?
+
+* [ ] It is sector-neutral
+* [ ] It prescribes specific tools
+* [ ] It is applicable globally
+* [ ] It uses common language
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **It prescribes specific tools**
+CSF intentionally avoids tool prescriptions.
+
+</details>
+
+---
+
+### 40. CSF Functions should be viewed as:
+
+* [ ] Strictly linear steps
+* [ ] Independent silos
+* [ ] Interrelated and iterative
+* [ ] Incident-response-only phases
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Interrelated and iterative**
+Functions are sequential in concept but iterative in practice.
+
+</details>
+
+---
