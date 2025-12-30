@@ -172,3 +172,173 @@ Assurance levels show stakeholders the reliability and robustness of security co
 </details>
 
 ---
+
+### 11. Which core principle distinguishes a security evaluation from a compliance audit?
+
+* [ ] Verification of regulatory adherence
+* [ ] Assessment of documentation completeness
+* [ ] Measurement of security control effectiveness
+* [ ] Enforcement of security policies
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Measurement of security control effectiveness**
+Security evaluation focuses on how well controls work, whereas audits focus on compliance.
+
+</details>
+
+---
+
+### 12. Which component of security evaluation identifies possible threat sources and attack vectors?
+
+* [ ] Risk analysis
+* [ ] Threat assessment
+* [ ] Control effectiveness review
+* [ ] Assurance assignment
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Threat assessment**
+Threat assessment systematically identifies credible threats and exposure points.
+
+</details>
+
+---
+
+### 13. In the evaluation methodology, which step defines the **Target of Evaluation (TOE)**?
+
+* [ ] Information gathering
+* [ ] Threat modeling
+* [ ] Scoping
+* [ ] Test specification
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Scoping**
+Scoping establishes boundaries and defines what systems and controls will be evaluated.
+
+</details>
+
+---
+
+### 14. Which evaluation phase includes vulnerability analysis and control testing?
+
+* [ ] Preparation
+* [ ] Evaluation (Execution)
+* [ ] Conclusion
+* [ ] Assurance assignment
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Evaluation (Execution)**
+This phase involves active testing and analysis of security controls.
+
+</details>
+
+---
+
+### 15. Which ISO/IEC standard defines the Common Criteria used for Evaluation Assurance Levels?
+
+* [ ] ISO/IEC 27001
+* [ ] ISO/IEC 29119
+* [ ] ISO/IEC 31000
+* [ ] ISO/IEC 15408
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **ISO/IEC 15408**
+ISO/IEC 15408 specifies the Common Criteria and EAL framework.
+
+</details>
+
+---
+
+### 16. Which Evaluation Assurance Level involves **methodical design, testing, and review**?
+
+* [ ] EAL2
+* [ ] EAL3
+* [ ] EAL4
+* [ ] EAL5
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **EAL4**
+EAL4 adds structured design review along with testing.
+
+</details>
+
+---
+
+### 17. Which assurance level category typically requires **semi-formal modeling and vulnerability analysis**?
+
+* [ ] Levels 1–3
+* [ ] Levels 2–4
+* [ ] Levels 4–5
+* [ ] Levels 6–7
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Levels 4–5**
+These levels provide substantial assurance using semi-formal techniques.
+
+</details>
+
+---
+
+### 18. Which activity ensures that implemented controls **operate as intended and provide intended protection**?
+
+* [ ] Risk prioritization
+* [ ] Control effectiveness review
+* [ ] Asset classification
+* [ ] Assurance declaration
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Control effectiveness review**
+CER validates that controls function correctly in real environments.
+
+</details>
+
+---
+
+### 19. Which CIA triad element is MOST impacted by weak access controls?
+
+* [ ] Confidentiality
+* [ ] Integrity
+* [ ] Availability
+* [ ] Non-repudiation
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **Confidentiality**
+Weak access controls primarily lead to unauthorized data disclosure.
+
+</details>
+
+---
+
+### 20. Which statement about higher Evaluation Assurance Levels is CORRECT?
+
+* [ ] They are suitable for all systems
+* [ ] They reduce evaluation cost
+* [ ] They increase rigor, cost, and confidence
+* [ ] They eliminate the need for testing
+
+<details>
+<summary><strong>Answer</strong></summary>
+
+✅ **They increase rigor, cost, and confidence**
+Higher EALs require more extensive analysis and formal verification.
+
+</details>
+
+---
