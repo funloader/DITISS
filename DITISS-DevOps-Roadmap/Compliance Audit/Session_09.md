@@ -1,3 +1,4 @@
+# **Session 9: COBIT framework, Cobit Components & Cobit VS ITIL**
 
 
 ### **1. COBIT Framework**
@@ -160,5 +161,11 @@ COBIT 2019 recommends **seven phases** for implementation:
 
 ---
 
+### 7. **MCQ Pointers / Exam Traps**
 
-Do you want me to do that?
+   * Don’t confuse **COBIT** (governance) with **ITIL** (service delivery).
+   * Remember **COBIT domains** vs **ITIL lifecycle stages**.
+   * COBIT is **top-down**, ITIL is **bottom-up**.
+   * COBIT focuses on **alignment with business goals**, ITIL on **service quality**.
+
+---
