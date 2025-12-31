@@ -6,6 +6,8 @@
 
 **Focus:** IT Auditing, Internal Controls, Risk, Security, and Governance
 
+*Read by youself here* [![PDF: IT Audit, Control & Security](https://img.shields.io/badge/Download-PDF-blue?style=flat-square)](DITISS-DevOps-Roadmap/Compliance%20Audit/Module-assessment/IT%20Audit%20Control%20and%20Security%20Robert.PDF)
+
 ---
 
 ## 🧩 PART ONE: Auditing Internal Controls in an IT Environment (Ch. 1–5)
