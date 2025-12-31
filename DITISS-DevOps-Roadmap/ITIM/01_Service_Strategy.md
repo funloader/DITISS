@@ -296,14 +296,3 @@ Service Strategy is effectively managed using **three key processes**:
 * Utility = *What* | Warranty = *How well*
 
 ---
-
-## 7. Corrections / Improvements / Suggested Substitutions
-
-* PPT implies Demand Management only reduces uncertainty → **Correct:** It reduces but cannot eliminate uncertainty
-* Financial Management scope should explicitly include **budgeting, costing, and charging**
-* Service Strategy should explicitly mention **Strategic Asset concept** (important exam term)
-* Service Provider Types not clearly structured in PPT → Structured as Type I, II, III for exam clarity
-
----
-
-✅ **End of Session 1 – Service Strategy (PG-DITISS Ready Notes)**
