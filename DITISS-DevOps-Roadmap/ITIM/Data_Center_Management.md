@@ -60,7 +60,7 @@ By completing this session, you will:
 - ✅ Be familiar with the tools and processes used for managing a modern, high-availability Data Center.
 
 ---
-# Session 6 : Data Center Architecture, Requirements & Planning**
+# Session 6 : Data Center Architecture, Requirements & Planning
 ---
 
 ## 1. **Concept Overview**
@@ -399,4 +399,304 @@ Support critical enterprise services:
 
 ---
 
+# Session 7 : Infrastructure in a Data Center
 
+---
+
+## 1. Concept Overview
+
+A **Data Center** is a centralized facility that houses **computing, storage, networking, security, and management infrastructure** to support enterprise IT services with **high availability, scalability, and security**.
+This session focuses on **physical + network infrastructure**, **modular cabling**, **security**, **servers**, **capacity planning**, **monitoring**, and **best practices**, aligned strictly with the PG-DITISS syllabus.
+
+* **Hybrid Data Center** – A model combining on-premises infrastructure with cloud-based resources for flexibility, scalability, and cost optimization.
+* **Colocation Data Center** – Third-party facility hosting enterprise servers.
+* **Software-Defined Data Center (SDDC)** – Compute, storage, and networking virtualized and managed via software.
+
+
+---
+
+## 2. Key Definitions (MCQ-Important)
+
+* **Data Center:** A facility containing servers, storage, networking, power, cooling, and security systems for centralized data processing.
+* **Modular Cabling:** Structured cabling design using standardized, modular components for scalability and easy management.
+* **Point of Distribution (PoD):** Physical locations where network cabling terminates and distributes (e.g., MDA, IDA).
+* **NOC (Network Operations Center):** Central location for monitoring, managing, and troubleshooting network & data center operations.
+* **Server Capacity Planning:** Process of estimating computing, storage, and network resources to meet current and future demand.
+* **Disaster Recovery (DR):** Strategies and processes to restore IT services after failures or disasters.
+* **Data Center Consolidation:** Reducing the number of data centers by merging workloads to improve efficiency and reduce cost.
+* **Hyperscale Data Center:** Large-scale, highly automated DC used by cloud providers.
+* **DCIM (Data Center Infrastructure Management):** Software for monitoring power, cooling, space, and assets in a data center.
+* **Zero Trust Security:** Security model where no user or device is trusted by default.
+* **Edge Data Center:** Small, localized DC designed for low-latency processing.
+
+---
+
+## 3. Main Content
+
+---
+
+### A. Data Center Infrastructure Components
+
+#### 1. Core Hardware
+
+* **Servers (Datacenter Servers):**
+
+  * Types: **Blade, Rack, Tower**
+  * Modern DCs → **Rack servers**
+  * Function: Data processing, storage access, application hosting
+* **Storage Systems:**
+
+  * **NAS (Network Attached Storage)** – File-level access
+  * **SAN (Storage Area Network)** – Block-level, high-speed access
+* **Networking Devices:**
+
+  * Switches, routers, firewalls
+  * Fiber optics for high-speed communication
+
+#### 2. Supporting Infrastructure
+
+* **Racks & Cabinets:**
+
+  * Open racks → Easy access, less security
+  * Cabinets → Better security & stability
+* **Power Equipment:**
+
+  * UPS, backup generators
+  * Requirement: **24×7 uninterrupted power**
+* **Cooling Systems:**
+
+  * HVAC, water cooling, outdoor air cooling
+* **Policies & Procedures:**
+
+  * Maintenance schedules
+  * Downtime & housekeeping protocols
+* **Virtualization & SDDC Layer**
+
+  * Server virtualization : Technique of running multiple virtual servers on a single physical server to improve resource utilization.
+  * Software-Defined Storage (SDS) : Storage architecture where storage management is controlled by software, independent of hardware.
+  * Software-Defined Networking (SDN) : Network architecture that separates the control plane from the data plane for centralized network management.
+
+---
+
+### B. Data Center Network Architecture (Layered Design)
+
+| Layer                 | Key Role                         | MCQ Keywords                            |
+| --------------------- | -------------------------------- | --------------------------------------- |
+| **Core Layer**        | High-speed backbone, L3 routing  | OSPF, EIGRP, No single point of failure |
+| **Aggregation Layer** | Services integration, redundancy | Firewall, Load Balancer, SSL offload    |
+| **Access Layer**      | Server connectivity              | Rack servers, Blade servers             |
+
+✔ **Layered approach improves:** Scalability, performance, resiliency, maintenance
+
+> [!NOTE]
+> Modern DCs may also use **Spine–Leaf architecture** for high east–west traffic and scalability.
+> [!IMPORTANT]
+> Edge Data Centers: Small, distributed data centers located close to end users to reduce latency for IoT, 5G, and real-time applications.
+---
+
+### C. Modular Cabling Design (High-Weight Topic)
+
+#### Why Modular Cabling?
+
+* Avoids **spaghetti cabling**
+* Improves **troubleshooting & scalability**
+* Supports **IoT, cloud, big data**
+
+#### Cabling Media
+
+* Coaxial (legacy)
+* Twisted Pair
+* **Fiber Optic (most used – high speed, low loss)**
+
+#### Cabling Standards (MCQ-Focused)
+
+* **ANSI/TIA-942** → DC cabling architecture, redundancy
+* **ISO/IEC 24764** → Types of cabling for DCs
+* **ANSI/BICSI 002-2014** → DC design, operation, maintenance
+
+---
+
+### D. Points of Distribution (TIA-942 Functional Areas)
+
+| Area                             | Function                                |
+| -------------------------------- | --------------------------------------- |
+| **Entrance Room**                | External network demarcation            |
+| **MDA (Main Distribution Area)** | Core switches, routers, cross-connects  |
+| **HDA (Horizontal Distribution Area)** | Aggregates horizontal cabling from EDAs |
+| **EDA (Equipment Distribution Area)** | Location of racks, servers, and storage devices |
+
+---
+
+### E. ISP Network Infrastructure & WAN Links
+
+* Multiple **network carriers** for redundancy
+* **Fiber connectivity mandatory**
+* Separate entry points for:
+
+  * Power (North–South)
+  * Network (East–West)
+* High-speed DC links support **25G / 40G / 100G Ethernet**
+* Multiple ISPs required for carrier redundancy
+
+---
+
+### F. Network Operations Center (NOC) & Monitoring
+
+* Centralized monitoring of:
+
+  * Network health
+  * Servers
+  * Power & cooling
+* Enables:
+
+  * Proactive fault detection
+  * Faster outage response
+
+* **DCIM tools** for infrastructure monitoring (power, cooling, space)
+* **AIOps** for predictive fault detection and automated response
+
+
+---
+
+### G. Data Center Physical, Logical Security & Cleaning
+
+#### Physical Security
+
+* Controlled access
+* Biometrics, security guards
+* Enclosed & lockable racks
+
+#### Logical Security
+
+* Firewalls
+* IDS/IPS
+* Authentication & access control
+* **Zero Trust Security Model** – Continuous authentication and authorization
+
+#### Cleaning (Often Ignored – MCQ Trap)
+
+* Restricted entry reduces dust
+* Clean airflow paths
+* Prevents hardware failure
+
+---
+
+### H. Data Center Consolidation
+
+#### Reasons
+
+* Reduce operational cost
+* Improve resource utilization
+* Simplify management
+* Enhance security
+
+#### Consolidation Opportunities
+
+* Server virtualization
+* Storage consolidation (SAN)
+* Centralized monitoring (NOC)
+* Enables **cloud migration** and **hybrid data center models**
+
+---
+
+### I. Server Capacity Planning
+
+* Consider:
+
+  * CPU utilization
+  * Storage growth
+  * Network bandwidth
+  * Power & cooling headroom
+* **Leave room for growth** (floorspace, racks)
+* Capacity planning must consider **virtualized workloads** and **cloud burst capacity**
+
+---
+
+### J. Disaster Recovery (DR)
+
+* Site selection avoids:
+
+  * Earthquake zones
+  * Flood-prone areas
+* Key DR enablers:
+
+  * Redundant power & network
+  * Off-site backups
+  * Secondary data centers
+  * Cloud-based DR and geographically distributed DCs improve recovery time
+
+---
+
+### K. Security & Internet Security Guidelines
+
+* **Data Center Security Guidelines:**
+
+  * Controlled access
+  * Monitoring & logging
+  * Regular audits
+* **Internet Security:**
+
+  * Firewalls
+  * Secure WAN links
+* **Source Security Issues:**
+
+  * Unauthorized access
+  * Malware sources
+  * Weak authentication
+
+---
+
+### L. Best Practices for System Administration
+
+* Standardized procedures
+* Continuous monitoring
+* Patch & update management
+* Documentation
+
+#### System Administration Work Automation
+
+* Automated monitoring
+* Scheduled backups
+* Scripted deployments
+* Reduces human error
+* AI-assisted monitoring (AIOps)
+* Automated scaling and self-healing systems
+
+---
+
+## 4. Important Facts / Points for MCQs
+
+* SAN > NAS in performance
+* Fiber optic → preferred DC cabling
+* ANSI/TIA-942 → DC cabling standard
+* Core layer → L3 routing, no single point of failure
+* UPS + generators → mandatory
+* Cooling cost can reduce by **~40%** using airflow management
+* Rack servers dominate modern DCs
+
+---
+
+## 5. Examples (Exam-Oriented)
+
+* **Google DC in Oregon** → Cheap power + fiber availability
+* **Scandinavian DCs** → Cold climate → lower cooling cost
+* **AWS / Azure / Google** – Hyperscale data centers
+* **Edge DCs** used for 5G and IoT applications
+
+---
+
+## 6. MCQ Pointers / Exam Traps ⚠️
+
+* NAS ≠ SAN (file vs block level)
+* Physical security ≠ Logical security
+* Core layer ≠ Access layer
+* Modular cabling ≠ random cabling
+* Redundancy applies to **power + network**
+* Cooling ≠ only AC (water, outdoor air also)
+* SDDC = software-controlled infrastructure
+* Hyperscale DCs support cloud services
+* DCIM ≠ NOC
+* Zero Trust = no implicit trust
+* Edge DCs reduce latency
+
+---
