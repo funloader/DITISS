@@ -2,681 +2,601 @@
 > AI-generated content The questions and answer choices in this module assessment were generated using AI and reviewed by a human author.
 ---
 
-### 1. Which factor has become a new and critical criterion for selecting data center locations in modern architectures?
+### 1. Which workload characteristic most strongly drives the need for edge data centers?
 
-* [ ] Proximity to corporate headquarters
-* [ ] Availability of raised floor
-* [ ] Latency to end users
-* [ ] Office real estate cost
+* [ ] High storage capacity
+* [ ] High compute density
+* [ ] Low-latency response requirements
+* [ ] Batch processing efficiency
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Latency to end users
-💡 Modern applications (5G, IoT, real-time analytics) require low latency, driving edge and proximity-based DC deployments.
+✅ **Correct Answer:** Low-latency response requirements
 
 </details>
 
 ---
 
-### 2. Which data center model combines on-premises infrastructure with cloud resources?
+### 2. Which deployment model allows enterprises to retain sensitive workloads locally while scaling others to the cloud?
 
-* [ ] Hyperscale Data Center
-* [ ] Edge Data Center
-* [ ] Hybrid Data Center
-* [ ] Colocation Data Center
+* [ ] Colocation
+* [ ] Hyperscale
+* [ ] Hybrid
+* [ ] Edge
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Hybrid Data Center
-💡 Hybrid DCs integrate local infrastructure with public cloud services for flexibility and scalability.
+✅ **Correct Answer:** Hybrid
 
 </details>
 
 ---
 
-### 3. In TIA-942 standards, which area primarily houses core switches and routers?
+### 3. Which TIA-942 functional area aggregates horizontal cabling from multiple equipment areas?
 
-* [ ] Entrance Room
+* [ ] MDA
 * [ ] HDA
 * [ ] EDA
-* [ ] MDA
+* [ ] Entrance Room
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** MDA
-💡 The Main Distribution Area contains core network equipment and cross-connects.
+✅ **Correct Answer:** HDA
 
 </details>
 
 ---
 
-### 4. Which metric is used to evaluate data center energy efficiency?
+### 4. Which metric directly reflects non-IT energy overhead in a data center?
 
-* [ ] MTBF
-* [ ] PUE
 * [ ] SLA
-* [ ] RTO
+* [ ] MTTR
+* [ ] PUE
+* [ ] RPO
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** PUE
-💡 Power Usage Effectiveness measures total facility power versus IT equipment power.
 
 </details>
 
 ---
 
-### 5. Which architecture has largely replaced the traditional three-tier DC network in modern deployments?
+### 5. Why is east–west traffic dominant in modern virtualized data centers?
 
-* [ ] Bus topology
-* [ ] Ring topology
-* [ ] Leaf–Spine architecture
-* [ ] Mesh topology
+* [ ] Increased internet access
+* [ ] Inter-VM and service-to-service communication
+* [ ] Backup operations only
+* [ ] WAN replication
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Leaf–Spine architecture
-💡 Leaf–Spine supports high east–west traffic and scalable bandwidth.
+✅ **Correct Answer:** Inter-VM and service-to-service communication
 
 </details>
 
 ---
 
-### 6. What is the primary role of DCIM tools?
+### 6. Which DCIM capability is most useful for capacity forecasting?
 
-* [ ] Application development
-* [ ] Infrastructure monitoring and optimization
-* [ ] User authentication
-* [ ] Network packet filtering
+* [ ] User access control
+* [ ] Power and thermal trend analysis
+* [ ] Packet inspection
+* [ ] Firewall policy enforcement
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Infrastructure monitoring and optimization
-💡 DCIM monitors power, cooling, space, and assets in data centers.
+✅ **Correct Answer:** Power and thermal trend analysis
 
 </details>
 
 ---
 
-### 7. Which data center tier offers full fault tolerance?
+### 7. Which Uptime Institute tier supports **concurrent maintainability** but not full fault tolerance?
 
 * [ ] Tier I
 * [ ] Tier II
 * [ ] Tier III
 * [ ] Tier IV
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Tier IV
-💡 Tier IV supports complete redundancy and fault tolerance.
+✅ **Correct Answer:** Tier III
 
 </details>
 
 ---
 
-### 8. What is the main advantage of modular cabling in data centers?
+### 8. Which cabling practice most improves fault isolation?
 
-* [ ] Reduced hardware cost
-* [ ] Random cable routing
-* [ ] Improved scalability and troubleshooting
-* [ ] Increased latency
+* [ ] Point-to-point cabling
+* [ ] Modular cabling with labeled patch panels
+* [ ] Long cable runs
+* [ ] Daisy-chained cabling
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Improved scalability and troubleshooting
-💡 Modular cabling avoids spaghetti cabling and simplifies expansion.
+✅ **Correct Answer:** Modular cabling with labeled patch panels
 
 </details>
 
 ---
 
-### 9. Which storage solution provides block-level access with high performance?
+### 9. Which workload type benefits MOST from block-level storage?
 
-* [ ] NAS
-* [ ] Object Storage
-* [ ] SAN
-* [ ] Tape Storage
+* [ ] Media streaming
+* [ ] File sharing
+* [ ] Relational databases
+* [ ] Backup archives
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** SAN
-💡 SAN delivers block-level access over high-speed networks.
+✅ **Correct Answer:** Relational databases
 
 </details>
 
 ---
 
-### 10. Which component separates the control plane from the data plane?
-
-* [ ] SAN
-* [ ] SDS
-* [ ] SDN
-* [ ] NAS
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** SDN
-💡 Software Defined Networking centralizes network control.
-
-</details>
-
----
-
-### 11. Which area in TIA-942 directly connects servers and storage devices?
-
-* [ ] MDA
-* [ ] Entrance Room
-* [ ] HDA
-* [ ] EDA
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** EDA
-💡 Equipment Distribution Area contains racks, servers, and storage.
-
-</details>
-
----
-
-### 12. Which factor is the second-highest operational cost in data centers?
-
-* [ ] Networking
-* [ ] Cooling
-* [ ] Power
-* [ ] Security
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** Power
-💡 Power accounts for approximately 13% of operational expenses.
-
-</details>
-
----
-
-### 13. Which cooling method is increasingly required for AI and GPU-heavy workloads?
-
-* [ ] Traditional air conditioning
-* [ ] Outdoor air cooling
-* [ ] Liquid cooling
-* [ ] Raised floor cooling
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** Liquid cooling
-💡 High-density GPU racks generate heat beyond traditional AC capabilities.
-
-</details>
-
----
-
-### 14. What is the primary function of a Network Operations Center (NOC)?
-
-* [ ] Application deployment
-* [ ] Infrastructure design
-* [ ] Centralized monitoring and troubleshooting
-* [ ] Software licensing
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** Centralized monitoring and troubleshooting
-💡 NOC enables proactive detection and faster response to failures.
-
-</details>
-
----
-
-### 15. Which security model assumes no implicit trust inside the network?
-
-* [ ] Perimeter Security
-* [ ] VLAN Security
-* [ ] Zero Trust
-* [ ] DMZ
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** Zero Trust
-💡 Zero Trust enforces continuous authentication and authorization.
-
-</details>
-
----
-
-### 16. Which Ethernet speeds are commonly supported by modern data center WAN links?
-
-* [ ] 1G / 10G
-* [ ] 10G / 25G
-* [ ] 25G / 40G / 100G
-* [ ] 5G / LTE
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** 25G / 40G / 100G
-💡 High-speed fiber links support modern DC traffic demands.
-
-</details>
-
----
-
-### 17. Which design strategy can reduce cooling costs by up to 40%?
-
-* [ ] Raised flooring
-* [ ] Hot aisle / cold aisle design
-* [ ] Over-provisioned AC units
-* [ ] Cable bundling
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** Hot aisle / cold aisle design
-💡 Optimized airflow reduces cooling inefficiencies.
-
-</details>
-
----
-
-### 18. Which data center type is designed to be close to users for low latency?
-
-* [ ] Hyperscale DC
-* [ ] Colocation DC
-* [ ] Edge Data Center
-* [ ] Enterprise DC
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** Edge Data Center
-💡 Edge DCs support real-time, latency-sensitive workloads.
-
-</details>
-
----
-
-### 19. Which technology enables multiple virtual servers on one physical host?
-
-* [ ] SAN
-* [ ] Container runtime
-* [ ] Hypervisor
-* [ ] Load balancer
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** Hypervisor
-💡 Hypervisors allow server virtualization.
-
-</details>
-
----
-
-### 20. Which component ensures uninterrupted power during outages?
-
-* [ ] CRAC
-* [ ] UPS
-* [ ] Generator
-* [ ] PDU
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** UPS
-💡 UPS provides immediate backup power before generators start.
-
-</details>
-
----
-
-### 21. Which DC structure is preferred for new large-scale deployments?
-
-* [ ] Multi-storey buildings
-* [ ] Underground facilities
-* [ ] Single-storey buildings
-* [ ] High-rise towers
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** Single-storey buildings
-💡 They support better load distribution and scalability.
-
-</details>
-
----
-
-### 22. What is the primary purpose of disaster recovery planning?
-
-* [ ] Improve application performance
-* [ ] Prevent cyberattacks
-* [ ] Restore services after failures
-* [ ] Reduce hardware cost
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** Restore services after failures
-💡 DR ensures business continuity.
-
-</details>
-
----
-
-### 23. Which storage access method is used by NAS?
-
-* [ ] Block-level
-* [ ] File-level
-* [ ] Object-level
-* [ ] Sector-level
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** File-level
-💡 NAS provides file-based access over networks.
-
-</details>
-
----
-
-### 24. Which factor is NOT a valid reason for data center consolidation?
-
-* [ ] Improved utilization
-* [ ] Reduced cost
-* [ ] Increased complexity
-* [ ] Centralized management
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** Increased complexity
-💡 Consolidation simplifies operations, not complicates them.
-
-</details>
-
----
-
-### 25. Which technology is commonly used for predictive fault detection?
-
-* [ ] VLAN
-* [ ] IDS
-* [ ] AIOps
-* [ ] RAID
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** AIOps
-💡 AI-driven analytics help predict failures before they occur.
-
-</details>
-
----
-
-### 26. Which cabling standard specifically addresses data center design?
-
-* [ ] ISO 27001
-* [ ] ANSI/TIA-942
-* [ ] IEEE 802.3
-* [ ] ITIL
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** ANSI/TIA-942
-💡 It defines DC cabling architecture and redundancy.
-
-</details>
-
----
-
-### 27. Which access layer device connects directly to servers?
-
-* [ ] Core switch
-* [ ] Aggregation router
-* [ ] Access switch
-* [ ] Firewall
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** Access switch
-💡 Access layer provides physical server connectivity.
-
-</details>
-
----
-
-### 28. What is the role of blanking panels in racks?
-
-* [ ] Aesthetic enhancement
-* [ ] Cable routing
-* [ ] Airflow optimization
-* [ ] Power distribution
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** Airflow optimization
-💡 They prevent hot air recirculation.
-
-</details>
-
----
-
-### 29. Which battery technology is replacing lead-acid in modern DCs?
-
-* [ ] Nickel-cadmium
-* [ ] Alkaline
-* [ ] Lithium-ion
-* [ ] Zinc-carbon
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** Lithium-ion
-💡 Li-ion batteries offer higher density and longer life.
-
-</details>
-
----
-
-### 30. Which component detects smoke at very early stages?
-
-* [ ] Fire extinguisher
-* [ ] VESDA
-* [ ] Sprinkler system
-* [ ] Heat sensor
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** VESDA
-💡 Very Early Smoke Detection Apparatus prevents fire escalation.
-
-</details>
-
----
-
-### 31. Which factor makes raised floors optional in modern DCs?
-
-* [ ] Reduced cabling
-* [ ] Overhead cooling adoption
-* [ ] Lower server density
-* [ ] Increased humidity
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** Overhead cooling adoption
-💡 Many hyperscale DCs use slab-based designs.
-
-</details>
-
----
-
-### 32. Which WAN feature eliminates single points of failure?
-
-* [ ] Single ISP
-* [ ] Redundant carriers
-* [ ] VLAN segmentation
+### 10. Which SDN characteristic enables centralized traffic engineering?
+
+* [ ] Distributed forwarding
+* [ ] Control-plane abstraction
+* [ ] Hardware acceleration
 * [ ] Static routing
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Redundant carriers
-💡 Multiple ISPs ensure network availability.
+✅ **Correct Answer:** Control-plane abstraction
 
 </details>
 
 ---
 
-### 33. Which factor directly affects rack load planning?
+### 11. Which environmental factor MOST impacts server failure rates?
 
-* [ ] Network latency
-* [ ] Floor load-bearing capacity
-* [ ] Cooling airflow direction
-* [ ] Cable labeling
+* [ ] Ambient lighting
+* [ ] Dust and particulate contamination
+* [ ] Cable color coding
+* [ ] Floor tiles
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Floor load-bearing capacity
-💡 Heavy racks require structural support.
+✅ **Correct Answer:** Dust and particulate contamination
 
 </details>
 
 ---
 
-### 34. Which architecture supports east–west traffic most efficiently?
+### 12. Which operational cost increases linearly with server density?
 
-* [ ] 3-tier
-* [ ] Star
-* [ ] Leaf–Spine
-* [ ] Bus
+* [ ] Land cost
+* [ ] Cooling and power
+* [ ] Security staffing
+* [ ] Documentation effort
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Leaf–Spine
-💡 It provides predictable low-latency paths.
+✅ **Correct Answer:** Cooling and power
 
 </details>
 
 ---
 
-### 35. Which component enables cloud burst capacity?
+### 13. Why is liquid cooling preferred for AI training clusters?
 
-* [ ] Physical firewall
-* [ ] Virtualized workloads
-* [ ] Raised flooring
-* [ ] Tape storage
+* [ ] Lower installation cost
+* [ ] Ability to handle very high thermal density
+* [ ] Reduced cabling
+* [ ] Simplified maintenance
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Virtualized workloads
-💡 Virtualization allows scaling into cloud resources.
+✅ **Correct Answer:** Ability to handle very high thermal density
 
 </details>
 
 ---
 
-### 36. Which design principle minimizes dust-related failures?
+### 14. Which NOC activity is considered proactive rather than reactive?
 
-* [ ] Open access
-* [ ] Frequent entry
-* [ ] Restricted access and cleaning
-* [ ] High humidity
+* [ ] Incident resolution
+* [ ] Root cause analysis
+* [ ] Threshold-based alerting
+* [ ] Hardware replacement
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Restricted access and cleaning
-💡 Clean airflow prevents hardware damage.
+✅ **Correct Answer:** Threshold-based alerting
 
 </details>
 
 ---
 
-### 37. Which facility type is most commonly used by enterprises lacking in-house DCs?
+### 15. Which Zero Trust principle applies MOST directly to data center access?
 
-* [ ] Hyperscale DC
-* [ ] Edge DC
-* [ ] Colocation DC
-* [ ] Tier IV DC
+* [ ] Trust internal traffic
+* [ ] Verify explicitly
+* [ ] Implicit VLAN trust
+* [ ] Perimeter-only security
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Colocation DC
-💡 Colocation allows enterprises to host equipment externally.
+✅ **Correct Answer:** Verify explicitly
 
 </details>
 
 ---
 
-### 38. Which factor is critical for disaster recovery site selection?
+### 16. Why are 100G links increasingly deployed inside data centers?
 
-* [ ] Office proximity
-* [ ] Same power grid
-* [ ] Geographic separation
-* [ ] Identical building design
+* [ ] Internet access
+* [ ] Backup traffic
+* [ ] East–west traffic growth
+* [ ] Management access
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Geographic separation
-💡 DR sites must avoid common disaster zones.
+✅ **Correct Answer:** East–west traffic growth
 
 </details>
 
 ---
 
-### 39. Which DC component enables centralized authentication and access control?
+### 17. Which airflow mistake causes hot-air recirculation?
 
-* [ ] HVAC
-* [ ] Firewall
-* [ ] Authentication systems
-* [ ] PDU
+* [ ] Use of blanking panels
+* [ ] Open rack spaces
+* [ ] Cold aisle containment
+* [ ] Raised cable trays
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Authentication systems
-💡 Logical security enforces access policies.
+✅ **Correct Answer:** Open rack spaces
 
 </details>
 
 ---
 
-### 40. Which statement best describes SDDC?
+### 18. Which facility trait distinguishes hyperscale data centers?
 
-* [ ] Hardware-only infrastructure
-* [ ] Manual configuration-based DC
-* [ ] Software-controlled compute, storage, and networking
-* [ ] Legacy enterprise architecture
+* [ ] Urban proximity
+* [ ] Massive scale and automation
+* [ ] Small footprint
+* [ ] Manual operations
 
-<details>
-<summary><strong>Show Answer</strong></summary>
+<details><summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Software-controlled compute, storage, and networking
-💡 SDDC abstracts physical resources using software.
+✅ **Correct Answer:** Massive scale and automation
+
+</details>
+
+---
+
+### 19. Which hypervisor type runs directly on hardware?
+
+* [ ] Hosted hypervisor
+* [ ] Type-1 hypervisor
+* [ ] Container engine
+* [ ] Emulator
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Type-1 hypervisor
+
+</details>
+
+---
+
+### 20. What is the PRIMARY role of generators in power architecture?
+
+* [ ] Voltage regulation
+* [ ] Short-term power
+* [ ] Long-duration outage support
+* [ ] Load balancing
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Long-duration outage support
+
+</details>
+
+---
+
+### 21. Why are single-storey DCs preferred structurally?
+
+* [ ] Cheaper land
+* [ ] Reduced vertical load stress
+* [ ] Easier networking
+* [ ] Improved aesthetics
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Reduced vertical load stress
+
+</details>
+
+---
+
+### 22. Which DR metric defines acceptable data loss?
+
+* [ ] RTO
+* [ ] MTBF
+* [ ] RPO
+* [ ] SLA
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** RPO
+
+</details>
+
+---
+
+### 23. Which NAS protocol is commonly used in enterprise environments?
+
+* [ ] iSCSI
+* [ ] NFS
+* [ ] Fibre Channel
+* [ ] FCoE
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** NFS
+
+</details>
+
+---
+
+### 24. Which consolidation outcome MOST improves security posture?
+
+* [ ] Hardware diversity
+* [ ] Centralized monitoring
+* [ ] Increased access points
+* [ ] Distributed policies
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Centralized monitoring
+
+</details>
+
+---
+
+### 25. Which AIOps input is MOST critical for prediction accuracy?
+
+* [ ] Static configuration
+* [ ] Historical telemetry data
+* [ ] User manuals
+* [ ] Vendor datasheets
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Historical telemetry data
+
+</details>
+
+---
+
+### 26. Which ANSI/TIA-942 aspect MOST affects uptime?
+
+* [ ] Cable color
+* [ ] Redundancy level
+* [ ] Rack height
+* [ ] Label font size
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Redundancy level
+
+</details>
+
+---
+
+### 27. Why are access switches typically deployed in pairs?
+
+* [ ] Load balancing
+* [ ] Cost efficiency
+* [ ] Redundancy
+* [ ] Simplified cabling
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Redundancy
+
+</details>
+
+---
+
+### 28. Which rack component MOST improves cooling efficiency?
+
+* [ ] Shelves
+* [ ] Blanking panels
+* [ ] Cable organizers
+* [ ] PDUs
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Blanking panels
+
+</details>
+
+---
+
+### 29. Why are lithium-ion UPS systems preferred?
+
+* [ ] Higher discharge noise
+* [ ] Longer lifespan and smaller footprint
+* [ ] Lower energy density
+* [ ] Manual maintenance
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Longer lifespan and smaller footprint
+
+</details>
+
+---
+
+### 30. Which fire suppression system is safest for electronic equipment?
+
+* [ ] Water sprinklers
+* [ ] CO₂ flooding
+* [ ] Clean-agent gas systems
+* [ ] Foam suppression
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Clean-agent gas systems
+
+</details>
+
+---
+
+### 31. Which modern DC trend reduces dependency on raised floors?
+
+* [ ] Higher humidity
+* [ ] Overhead power and cooling
+* [ ] Slower servers
+* [ ] Thicker cables
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Overhead power and cooling
+
+</details>
+
+---
+
+### 32. Why are diverse fiber entry points recommended?
+
+* [ ] Better aesthetics
+* [ ] Reduced cable length
+* [ ] Protection from physical cuts
+* [ ] Lower bandwidth cost
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Protection from physical cuts
+
+</details>
+
+---
+
+### 33. Which planning factor limits maximum rack density?
+
+* [ ] Network speed
+* [ ] Floor load rating
+* [ ] VLAN count
+* [ ] IP address space
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Floor load rating
+
+</details>
+
+---
+
+### 34. Why does Leaf–Spine provide predictable latency?
+
+* [ ] Fewer cables
+* [ ] Equal-cost paths between nodes
+* [ ] Static routing
+* [ ] Centralized switching
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Equal-cost paths between nodes
+
+</details>
+
+---
+
+### 35. Which feature enables seamless cloud bursting?
+
+* [ ] Bare-metal servers
+* [ ] Virtual machine portability
+* [ ] Raised floors
+* [ ] Static IPs
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Virtual machine portability
+
+</details>
+
+---
+
+### 36. Which practice MOST reduces contamination-related failures?
+
+* [ ] Increased staff entry
+* [ ] Open racks
+* [ ] Controlled access & cleaning schedules
+* [ ] High airflow turbulence
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Controlled access & cleaning schedules
+
+</details>
+
+---
+
+### 37. Why do enterprises choose colocation facilities?
+
+* [ ] Full ownership
+* [ ] Lower latency to HQ
+* [ ] Avoid capital expenditure
+* [ ] Unlimited customization
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Avoid capital expenditure
+
+</details>
+
+---
+
+### 38. Which DR principle prevents correlated failures?
+
+* [ ] Same city placement
+* [ ] Shared utilities
+* [ ] Geographic diversity
+* [ ] Identical hardware
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Geographic diversity
+
+</details>
+
+---
+
+### 39. Which logical security control enforces least privilege?
+
+* [ ] HVAC zoning
+* [ ] RBAC
+* [ ] Fire suppression
+* [ ] Cable locking
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** RBAC
+
+</details>
+
+---
+
+### 40. What is the defining characteristic of an SDDC?
+
+* [ ] Manual provisioning
+* [ ] Hardware-bound services
+* [ ] Policy-driven software abstraction
+* [ ] Fixed network topology
+
+<details><summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Policy-driven software abstraction
 
 </details>
 
