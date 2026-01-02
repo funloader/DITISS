@@ -1363,3 +1363,344 @@
 
 ---
 
+### 81. Which artifact is most useful for reconstructing **recent network activity** on a Windows machine?
+
+* [ ] System32 folder contents
+* [ ] Event Logs (Security and System)
+* [ ] Recycle Bin
+* [ ] Browser bookmarks
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Event Logs (Security and System)
+💡 Event logs record **network logons, connections, and service events**, aiding forensic reconstruction.
+
+</details>
+
+---
+
+### 82. Which FTK feature allows **analysis of password-protected files**?
+
+* [ ] Case Manager
+* [ ] Data carving
+* [ ] Decryption module
+* [ ] Registry Viewer
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Decryption module
+💡 FTK can **analyze encrypted or password-protected archives** during investigations.
+
+</details>
+
+---
+
+### 83. During live system acquisition, why is it critical to capture **pagefile.sys**?
+
+* [ ] It contains system logs
+* [ ] It may contain fragments of running processes and sensitive memory
+* [ ] It holds user passwords only
+* [ ] It speeds up imaging
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** It may contain fragments of running processes and sensitive memory
+💡 Pagefile.sys often contains **RAM remnants**, making it valuable for malware or forensic analysis.
+
+</details>
+
+---
+
+### 84. In forensic analysis, why is evidence **hashing** repeated at multiple stages?
+
+* [ ] To compress data
+* [ ] To verify evidence integrity throughout handling
+* [ ] To encrypt files
+* [ ] To speed up searches
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** To verify evidence integrity throughout handling
+💡 Re-hashing ensures **any accidental or intentional modifications** are detected.
+
+</details>
+
+---
+
+### 85. Which Linux tool can capture **live system memory** for forensic analysis?
+
+* [ ] dd or dc3dd
+* [ ] ps
+* [ ] chmod
+* [ ] top
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** dd or dc3dd
+💡 These tools can **create raw memory or disk images**, essential for live forensic capture.
+
+</details>
+
+---
+
+### 86. What is the main challenge of cloud forensic investigations?
+
+* [ ] Lack of internet access
+* [ ] Data commingling between tenants and jurisdiction issues
+* [ ] Slow hard drives
+* [ ] Missing GUI tools
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Data commingling between tenants and jurisdiction issues
+💡 Cloud environments require **strict evidence isolation and legal compliance**.
+
+</details>
+
+---
+
+### 87. Which forensic artifact would best indicate **malware persistence** on Windows?
+
+* [ ] System Restore points
+* [ ] Autoruns registry entries or startup programs
+* [ ] Temp files
+* [ ] User Documents
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Autoruns registry entries or startup programs
+💡 Malware often **registers itself in startup locations** for persistence.
+
+</details>
+
+---
+
+### 88. Which Sysinternals tool is used for **real-time monitoring of filesystem, registry, and process activity**?
+
+* [ ] Process Monitor
+* [ ] TCPView
+* [ ] PsExec
+* [ ] RAMMap
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Process Monitor
+💡 Process Monitor tracks **file, registry, and process/thread operations** for incident investigation.
+
+</details>
+
+---
+
+### 89. What is the key difference between **logical and physical acquisition**?
+
+* [ ] Logical captures raw disk sectors; physical captures specific files
+* [ ] Logical captures only selected files/folders; physical captures entire disk bit-for-bit
+* [ ] Logical requires write blockers; physical does not
+* [ ] Logical is only for Linux systems
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Logical captures only selected files/folders; physical captures entire disk bit-for-bit
+💡 Physical acquisition **recovers deleted or hidden files**, while logical acquisition targets **specific files**.
+
+</details>
+
+---
+
+### 90. Which of the following artifacts is most likely to reveal **user login times** on Linux?
+
+* [ ] /etc/shadow
+* [ ] last command output
+* [ ] /usr/bin
+* [ ] /tmp
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** last command output
+💡 `last` provides a **list of recent logins, logouts, and reboots**, critical for timeline analysis.
+
+</details>
+
+---
+
+### 91. Which forensic tool allows indexing and **fast keyword searches** across terabytes of evidence?
+
+* [ ] Autopsy
+* [ ] FTK (Case Manager)
+* [ ] Wireshark
+* [ ] TCPView
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** FTK (Case Manager)
+💡 FTK **indexes evidence**, enabling rapid keyword searches across large datasets.
+
+</details>
+
+---
+
+### 92. During mobile forensics, what is the advantage of **physical over logical acquisition**?
+
+* [ ] Requires less storage
+* [ ] Captures deleted and hidden data, including system areas
+* [ ] Captures only contacts and SMS
+* [ ] Avoids device encryption
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Captures deleted and hidden data, including system areas
+💡 Physical acquisition is **comprehensive**, while logical acquisition is limited to visible files.
+
+</details>
+
+---
+
+### 93. Which forensic principle ensures **evidence remains legally admissible**?
+
+* [ ] Privacy by design
+* [ ] Chain of custody
+* [ ] File hashing
+* [ ] Data encryption
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Chain of custody
+💡 Maintaining a documented chain of custody **proves integrity and handling compliance**.
+
+</details>
+
+---
+
+### 94. Which forensic artifact is critical for **network intrusion analysis**?
+
+* [ ] Browser cache
+* [ ] Firewall logs and TCP/UDP connection records
+* [ ] System32 files
+* [ ] .bash_history
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Firewall logs and TCP/UDP connection records
+💡 These records help **identify malware communication or unauthorized access**.
+
+</details>
+
+---
+
+### 95. Which Sysinternals tool displays **all handles and DLLs loaded by a process**?
+
+* [ ] RAMMap
+* [ ] Process Explorer
+* [ ] Autoruns
+* [ ] PsExec
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Process Explorer
+💡 Process Explorer provides **detailed insight into running processes**, useful for malware analysis.
+
+</details>
+
+---
+
+### 96. Why is **metadata analysis** important in forensic investigations?
+
+* [ ] To compress data
+* [ ] To extract hidden details like creation, modification times, and file authorship
+* [ ] To encrypt sensitive files
+* [ ] To format storage
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** To extract hidden details like creation, modification times, and file authorship
+💡 Metadata can **reveal timelines, ownership, and modifications**, critical for investigation.
+
+</details>
+
+---
+
+### 97. Which type of artifact is most affected if a system is **immediately shut down** during live forensics?
+
+* [ ] Hard disk files
+* [ ] Volatile memory (RAM) and running processes
+* [ ] Log files on disk
+* [ ] Encrypted archives
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Volatile memory (RAM) and running processes
+💡 Sudden shutdown **erases RAM contents**, which may include active malware or network connections.
+
+</details>
+
+---
+
+### 98. Which forensic technique focuses on **recovering deleted or partially overwritten files**?
+
+* [ ] File carving
+* [ ] Disk imaging
+* [ ] Hash verification
+* [ ] Chain of custody
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** File carving
+💡 File carving reconstructs **files without relying on filesystem metadata**, often recovering deleted evidence.
+
+</details>
+
+---
+
+### 99. Which Linux command provides a snapshot of **recent user logins**?
+
+* [ ] ps
+* [ ] last
+* [ ] top
+* [ ] df
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** last
+💡 `last` shows **login/logout records and terminal usage**, vital for timeline reconstruction.
+
+</details>
+
+---
+
+### 100. In cloud forensic investigations, what is the **primary legal consideration**?
+
+* [ ] Bandwidth usage
+* [ ] Jurisdiction and multi-tenant data separation
+* [ ] VM snapshot speed
+* [ ] Cloud provider brand
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Jurisdiction and multi-tenant data separation
+💡 Investigators must **comply with legal regulations** while ensuring other tenants’ data is not accessed.
+
+</details>
+
+---
+
+
