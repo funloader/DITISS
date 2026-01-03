@@ -25,6 +25,16 @@ reviews
 - IIA & ISACA : PROFESSIONAL STANDARDS FOR INTERNAL AND IT AUDITORS.
 - ISO STANDARDS : INTERNATIONAL STANDARDS FOR QUALITY, SECURITY, AND RISK (E.G., ISO 27001, 9001)
 
+> [!NOTE]
+> **IT Audit vs IS Audit:** IT Audit focuses mainly on technical and infrastructure controls, while IS Audit covers both IT systems and related business processes.
+
+🛡️ **Types of Controls:**
+
+* **Preventive** → stop issues before they occur (firewalls)
+* **Detective** → identify issues after occurrence (logs, IDS)
+* **Corrective** → fix issues and restore systems (patching)
+
+
 # B. Cyber Security Challenges for Organizations
 
 ### 1. Evolving Threat Landscape
@@ -34,7 +44,7 @@ reviews
 - Insider Threats : Employees misusing privileges, either maliciously (stealing data) or unintentionally (falling for phishing).
 - Threats are becoming smarter, faster, and more targeted.
 ---
-**Evolution :** 🦠 Virus → 🐛 Worm → 🎣 Phishing → 🔐 Ransomware → 🕵️‍♂️ APT → 🤖⚠️ AI Attacks
+**Evolution :** 🦠 Virus → 🐛 Worm → 🎣 Phishing → 🔐 Ransomware → 🕵️‍♂️ APT → 🤖⚠️ AI-powered phishing & deepfakes
 
 ---
 
@@ -42,8 +52,10 @@ reviews
 
 - **Data Explosion:** Every organization collects, processes, and stores vast amounts of personal and business data.
 - **Regulations:** GDPR(EU), HIPAA (USA Healthcare), CCPA, DORA (EU Banking)
+  - **DPDP Act 2023 (India)** – India’s primary data protection law governing the collection, processing, and protection of digital personal data, emphasizing consent, lawful use, and accountability of data fiduciaries. 
 - *Example:* British Airways fined £20M (2020) for inadequate cybersecurity that exposed 400,000+ customers’ personal and payment data.
 - **Cloud Data Security:** Data stored across multiple regions and vendors increases risks of unauthorized access.
+- * Cyber risks impact **Confidentiality, Integrity, Availability (CIA)** → leads to **financial loss, regulatory fines, downtime, reputational damage**
 ---
 Data Protection Pressure Points : 📥 Collection → 🗄️ Storage → ⚙️ Processing → 🔄 Sharing → 🗑️ Disposal
 
@@ -174,6 +186,14 @@ It ensures the organization is meeting both external and internal compliance obl
     - Environmental Protection laws
     - Health and Safety standards
 
+#### 🔴 Compliance vs Security vs Audit (Classic MCQ Trap)
+
+| Term       | Focus                      |
+| ---------- | -------------------------- |
+| Security   | Protect assets             |
+| Compliance | Follow rules/laws          |
+| Audit      | Verify & provide assurance |
+
 
 # D. Types of Security Audit
 
@@ -190,6 +210,8 @@ It ensures the organization is meeting both external and internal compliance obl
 | 🚨 Event-driven Audit     | Analyze after major changes/events              | Focused review post-incident/event         | Incident response, mergers                  |
 | 🧑‍💻 Social Engineering   | Test human susceptibility                        | Simulated attacks (phishing, etc.)         | User awareness training                      |
 
+> [!NOTE]
+> **VAPT ≠ Audit** → VAPT is **technical testing**, audit is **governance + evidence-based**
 
 
 ### Types of Security Compliance Audits
@@ -224,7 +246,7 @@ Critical to guide organizations in determining the scope, methods, and focus are
 
 ### The Audit Risk Model
 
-` AR = 1R x CR x DR`
+` AR = IR x CR x DR`
 - Inherent Risk (IR) : The natural susceptibility of an account to misstatement before considering controls (e.g., complex estimates, cash).
 - Control Risk (CR) : The risk that a client's internal controls will fail to prevent or detect a misstatement.
 - Detection Risk (DR) : The risk that audit procedures will fail to detect a misstatement. *This is the only risk the auditor can control.*
@@ -254,6 +276,10 @@ Critical to guide organizations in determining the scope, methods, and focus are
 📝 **Reporting :** Summarize audit findings, outlining discovered vulnerabilities, risk prioritizations, improvement recommendations, and evidence supporting conclusions. Reports serve as actionable documents for decision-makers.
 
 🛠️ **Remediation & Follow-up :** Coordinate with organizational teams to address issues found during the audit, implement changes, monitor improvements, and schedule future audits as required. Continuous improvement is reinforced by this phase.
+
+📜 **Audit Charter :**  A formal, executive-approved document that authorizes the audit and defines its purpose, scope, authority, roles, and expectations.
+
+🗣️ **Exit Meeting :**  A closing discussion with stakeholders to review key findings, validate accuracy, and align on remediation before the final report.
 
 These phases structure the audit process for repeatability, completeness, and effectiveness, supporting organizations in sustaining high standards of cybersecurity.
 ```
@@ -301,6 +327,7 @@ Meeting these requirements helps internal audit teams deliver robust, credible r
 
 * **CIA**, **CISA**, **CISSP**
 * Sector-specific: DISA, GSNA
+* **CISM** – Information Security Management (ISACA)
 
 **3. Experience**
 
@@ -338,7 +365,7 @@ Focusing on areas of greater risk ensures audits are efficient and impactful, ad
 * **Fair Presentation :** Audit findings must be reported truthfully, accurately, and without suppression or distortion of significant facts, maintaining full transparency in results.
 * **Planning & Documentation :** Auditors must properly plan their work, set clear objectives, and thoroughly document evidence, methodologies, and findings. Proper planning and documentation support audit quality and future reference.
 * **Risk-based Approach :** Focusing on areas of greater risk ensures audits are efficient and impactful, addressing the most significant threats to the audited entity.
-
+* **Professional Skepticism** – questioning mindset
 ---
 
 ### I. Auditor Personal Abilities
