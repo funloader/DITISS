@@ -2,7 +2,7 @@
 > AI-generated content The questions and answer choices in this module assessment were generated using AI and reviewed by a human author.
 ---
 
-### 1. Enter the protocol and port that must be specified within an interface ACL to allow a management connection to be terminated on the router:
+### 1. Which protocol and port must be allowed in an interface ACL to permit secure remote management access to a router?
 
 * [ ] TCP 443
 * [ ] UDP 500
@@ -12,31 +12,31 @@
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** UDP 500
-💡 UDP port 500 is used for ISAKMP/IKE Phase 1 management connections, and must be allowed in an interface ACL for proper VPN setup.
+✅ **Correct Answer:** TCP 22
+💡 TCP port 22 is used by SSH, which provides secure remote management access to routers.
 
 </details>
 
 ---
 
-### 2. If you omit a parameter in an ISAKMP/IKE Phase 1 policy, a default value is used. Which of the following is **not** a default value?
+### 2. If a parameter is omitted in an ISAKMP/IKE Phase 1 policy on modern Cisco IOS, which of the following is **not** a default value?
 
-* [ ] MD5
 * [ ] DES
+* [ ] SHA-1
 * [ ] DH group 1
-* [ ] RSA signatures
+* [ ] MD5
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** MD5
-💡 SHA-1 is the default HMAC function if omitted; MD5 is **not** the default.
+💡 Modern Cisco IOS defaults to SHA-1 for hashing; MD5 is no longer the default.
 
 </details>
 
 ---
 
-### 3. What is the default lifetime of data Security Associations (SAs) if not overridden?
+### 3. What is the default lifetime of IPSec data Security Associations (SAs) if not configured?
 
 * [ ] 300 seconds
 * [ ] 600 seconds
@@ -47,64 +47,64 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** 3,600 seconds
-💡 Data SAs default to a 3,600-second lifetime unless explicitly overridden in the configuration.
+💡 IPSec Phase 2 SAs default to a lifetime of 3,600 seconds.
 
 </details>
 
 ---
 
-### 4. What is the default mode for a transform set if omitted?
+### 4. What is the default IPSec transform mode if not explicitly specified?
 
 * [ ] Transport
+* [ ] Symmetric
 * [ ] Transform
-* [ ] Symmetrical
 * [ ] Tunnel
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Tunnel
-💡 Tunnel mode is the default transform set mode for site-to-site IPSec VPNs.
+💡 Tunnel mode is the default and encapsulates the entire IP packet.
 
 </details>
 
 ---
 
-### 5. Which of the following is **not required** in a crypto map entry?
+### 5. Which of the following is **not required** in a static crypto map configuration?
 
 * [ ] Crypto ACL
-* [ ] Router's local IP address
 * [ ] Transform set name
-* [ ] Connection method: manual or dynamic (ISAKMP/IKE)
+* [ ] Peer IP address
+* [ ] Local router IP address
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Router's local IP address
-💡 The remote peer's IP address must be specified, not the local router’s IP address.
+✅ **Correct Answer:** Local router IP address
+💡 The router’s local address is inferred from the interface.
 
 </details>
 
 ---
 
-### 6. Which of the following traffic is **dropped** when using static crypto maps and IPSec?
+### 6. Which traffic is dropped when using static crypto maps with IPSec?
 
-* [ ] Inbound traffic that is protected and matches a crypto ACL entry
-* [ ] Inbound traffic that doesn't match a crypto ACL entry
-* [ ] Inbound traffic that matches a crypto ACL entry and is in clear text
-* [ ] Outbound traffic that matches a crypto ACL and is already protected by IPSec
+* [ ] Encrypted inbound traffic matching the crypto ACL
+* [ ] Inbound traffic not matching the crypto ACL
+* [ ] Inbound traffic matching the crypto ACL but sent in clear text
+* [ ] Outbound encrypted traffic
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Inbound traffic that matches a crypto ACL entry and is in clear text
-💡 Routers drop inbound traffic that matches a crypto ACL but is unencrypted to enforce IPSec protection.
+✅ **Correct Answer:** Inbound traffic matching the crypto ACL but sent in clear text
+💡 Traffic that should be protected but arrives unencrypted is dropped.
 
 </details>
 
 ---
 
-### 7. What state will a management connection be in if it is successfully set up?
+### 7. Which ISAKMP state indicates that Phase 2 (Quick Mode) negotiation is complete?
 
 * [ ] MM_NO_STATE
 * [ ] QM_IDLE
@@ -115,211 +115,211 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** QM_IDLE
-💡 QM_IDLE indicates the management connection has successfully negotiated the Phase 2 SAs.
+💡 QM_IDLE indicates successful IPSec SA establishment.
 
 </details>
 
 ---
 
-### 8. Which debug crypto isakmp output indicates a **failed policy negotiation**?
+### 8. Which debug message indicates a failed ISAKMP policy negotiation?
 
-* [ ] %CRYPTO-6-IKMP_SA_NOT_OFFERED: Remote peer responded with attribute not offered
-* [ ] %CRYPTO-6-IKMP_SA_NOT_AUTH: Cannot accept Quick Mode exchange if SA is not authenticated
-* [ ] IPSec(validate_transform_proposal): proxy identities not supported
-* [ ] IPSEC(validate_proposal): invalid local address
+* [ ] %CRYPTO-6-IKMP_SA_NOT_OFFERED
+* [ ] %CRYPTO-6-IKMP_SA_NOT_AUTH
+* [ ] IPSEC(validate_transform_proposal)
+* [ ] IPSEC(validate_proposal)
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** %CRYPTO-6-IKMP_SA_NOT_OFFERED: Remote peer responded with attribute not offered
-💡 This indicates that the remote peer did not offer the expected attributes, causing negotiation to fail.
+✅ **Correct Answer:** %CRYPTO-6-IKMP_SA_NOT_OFFERED
+💡 The peers could not agree on policy attributes.
 
 </details>
 
 ---
 
-### 9. What crypto map command is used to specify the crypto ACL to use?
+### 9. Which crypto map command specifies the ACL that defines interesting traffic?
 
 * [ ] set transform-set
 * [ ] match address
-* [ ] set address
-* [ ] set crypto-acl
+* [ ] set peer
+* [ ] set authentication
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** match address
-💡 The `match address` command in the crypto map specifies which ACL defines the traffic to be protected by IPSec.
+💡 This command links traffic selection to an ACL.
 
 </details>
 
 ---
 
-### 10. In creating an ISAKMP/IKE Phase 1 policy with preshared keys, which of the following commands sets the preshared key for peer 192.1.1.1?
+### 10. Which command configures a preshared key for an ISAKMP peer at 192.1.1.1?
 
-* [ ] crypto key generate rsa 1024
-* [ ] crypto isakmp key 0 abc123 address 192.1.1.1
-* [ ] crypto isakmp policy 100 authentication pre-share
-* [ ] crypto transform-set 3des
+* [ ] crypto key generate rsa
+* [ ] crypto isakmp key abc123 address 192.1.1.1
+* [ ] crypto isakmp policy authentication pre-share
+* [ ] crypto transform-set esp-3des
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** crypto isakmp key 0 abc123 address 192.1.1.1
-💡 This command binds the preshared key `abc123` to the specified peer IP for Phase 1 authentication.
+✅ **Correct Answer:** crypto isakmp key abc123 address 192.1.1.1
+💡 This command binds the preshared key to the peer.
 
 </details>
 
 ---
 
-### 11. Atbash is an example of a ____________________
+### 11. Atbash is an example of a:
 
-* [ ] Substitution Cipher
-* [ ] Transposition Cipher
-* [ ] All of the above
-* [ ] None of the above
+* [ ] Substitution cipher
+* [ ] Transposition cipher
+* [ ] Stream cipher
+* [ ] Block cipher
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Substitution Cipher
-💡 Atbash is a classical monoalphabetic substitution cipher where each letter is mapped to its reverse in the alphabet.
+✅ **Correct Answer:** Substitution cipher
+💡 Atbash maps each letter to its alphabetic opposite.
 
 </details>
 
 ---
 
-### 12. ______________ cipher replaces bits, characters, or blocks of characters with different bits, characters, or blocks.
+### 12. Which cipher replaces bits, characters, or blocks with other values?
 
 * [ ] Substitution
-* [ ] XORing
 * [ ] Transposition
-* [ ] Transportation
+* [ ] Hashing
+* [ ] Permutation
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Substitution
-💡 Substitution ciphers replace the original elements with other symbols or values.
+💡 Substitution changes symbols; transposition changes order.
 
 </details>
 
 ---
 
-### 13. Who is known as the Father of Modern Cryptography?
+### 13. Who is known as the father of modern cryptography?
 
-* [ ] Archie Walls
-* [ ] William Frederick Friedman
-* [ ] John Warren
-* [ ] Donald N Wilber
+* [ ] Claude Shannon
+* [ ] William F. Friedman
+* [ ] Whitfield Diffie
+* [ ] Bruce Schneier
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** William Frederick Friedman
-💡 Friedman was a pioneering cryptographer who contributed to modern cryptographic methods.
+✅ **Correct Answer:** William F. Friedman
+💡 Friedman laid foundational work in modern cryptology.
 
 </details>
 
 ---
 
-### 14. __________ refers to the set of all possible keys that can be used to initialize a cipher.
+### 14. What term describes the total number of possible keys for a cipher?
 
-* [ ] Cryptology
 * [ ] Cryptanalysis
-* [ ] Key Space
-* [ ] Encryption algorithm
+* [ ] Key space
+* [ ] Entropy
+* [ ] Algorithm strength
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Key Space
-💡 Key space defines the total number of possible keys that a cryptographic algorithm can use.
+✅ **Correct Answer:** Key space
+💡 Larger key spaces increase resistance to brute-force attacks.
 
 </details>
 
 ---
 
-### 15. A 20-bit key would have a key space of __________________
+### 15. A 20-bit key has a key space of:
 
-* [ ] 1,084,572
-* [ ] 1,048,578
 * [ ] 1,084,576
 * [ ] 1,048,576
+* [ ] 1,024,000
+* [ ] 1,000,000
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** 1,048,576
-💡 Key space = 2^20 = 1,048,576 possible keys.
+💡 Key space = 2²⁰.
 
 </details>
 
 ---
 
-### 16. The frequency of brute force attacks has increased because:
+### 16. Why have brute-force attacks become more feasible?
 
-* [ ] The use of permutations and transpositions in algorithms has increased
-* [ ] As algorithms get stronger, they get less complex
-* [ ] Processor speed and power has increased
-* [ ] Key length reduces over time
+* [ ] Algorithms are weaker
+* [ ] Keys are shorter
+* [ ] Increased processing power
+* [ ] Reduced encryption rounds
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Processor speed and power has increased
-💡 Faster computing power allows attackers to attempt more keys per second, making brute force attacks more practical.
+✅ **Correct Answer:** Increased processing power
+💡 Faster CPUs and GPUs allow more key attempts per second.
 
 </details>
 
 ---
 
-### 17. What is the primary purpose of using one-way hashing on user passwords?
+### 17. Why are passwords stored using one-way hashes?
 
-* [ ] Minimizes storage requirements
-* [ ] Prevents anyone from reading passwords in plaintext
-* [ ] Avoids excessive processing by asymmetric algorithms
-* [ ] Prevents replay attacks
+* [ ] To reduce storage space
+* [ ] To prevent plaintext recovery
+* [ ] To speed authentication
+* [ ] To prevent replay attacks
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Prevents anyone from reading passwords in plaintext
-💡 One-way hashing ensures passwords are stored securely and cannot be reversed easily.
+✅ **Correct Answer:** To prevent plaintext recovery
+💡 Hashes cannot be feasibly reversed.
 
 </details>
 
 ---
 
-### 18. What is the definition of an algorithm's work factor?
+### 18. What does an algorithm’s work factor measure?
 
-* [ ] The time it takes to encrypt and decrypt the same plaintext
-* [ ] The time it takes to break the encryption
-* [ ] The time it takes to implement 16 rounds of computation
-* [ ] The time it takes to apply substitution functions
+* [ ] Encryption speed
+* [ ] Decryption speed
+* [ ] Effort required to break it
+* [ ] Number of rounds used
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** The time it takes to break the encryption
-💡 Work factor quantifies the effort needed to successfully attack a cryptographic algorithm.
+✅ **Correct Answer:** Effort required to break it
+💡 Higher work factor means stronger security.
 
 </details>
 
 ---
 
-### 19. Which of the following is a U.S. federal government algorithm developed for creating secure message digests?
+### 19. Which U.S. standard defines secure hash functions?
 
-* [ ] Data Encryption Algorithm
-* [ ] Digital Signature Standard
-* [ ] Secure Hash Algorithm
-* [ ] Data Signature Algorithm
+* [ ] DSS
+* [ ] DEA
+* [ ] SHA
+* [ ] DSA
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Secure Hash Algorithm
-💡 SHA is a family of cryptographic hash functions standardized by NIST.
+✅ **Correct Answer:** SHA
+💡 SHA is standardized by NIST.
 
 </details>
 
@@ -327,33 +327,33 @@
 
 ### 20. What does DEA stand for?
 
-* [ ] Data Encoding Algorithm
-* [ ] Data Encoding Application
 * [ ] Data Encryption Algorithm
 * [ ] Digital Encryption Algorithm
+* [ ] Data Encoding Algorithm
+* [ ] Digital Encoding Algorithm
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Data Encryption Algorithm
-💡 DEA is the basis of the DES symmetric-key encryption standard.
+💡 DEA underlies the DES standard.
 
 </details>
 
 ---
 
-### 21. If different keys generate the same ciphertext for the same message, what is this called?
+### 21. When multiple keys produce the same ciphertext for the same plaintext, this is called:
 
 * [ ] Collision
-* [ ] Secure hashing
-* [ ] MAC
 * [ ] Key clustering
+* [ ] Hash overlap
+* [ ] Key exhaustion
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Collision
-💡 A collision occurs when two different keys or messages produce the same ciphertext or hash value.
+✅ **Correct Answer:** Key clustering
+💡 Key clustering weakens encryption by reducing uniqueness.
 
 </details>
 
@@ -363,303 +363,294 @@
 
 * [ ] Data Encryption System
 * [ ] Data Encryption Standard
+* [ ] Digital Encryption Standard
 * [ ] Data Encoding Standard
-* [ ] Data Encryption Signature
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Data Encryption Standard
-💡 DES is a symmetric-key algorithm for encrypting data in blocks.
+💡 DES is a symmetric block cipher.
 
 </details>
 
 ---
 
-### 23. Many countries restrict the use or exportation of cryptographic systems because:
+### 23. Why do some governments regulate cryptographic systems?
 
-* [ ] Without standards, there would be interoperability issues
-* [ ] The systems can be used against local populations
-* [ ] Criminals could use encryption to avoid detection
+* [ ] Criminal misuse concerns
+* [ ] National security
+* [ ] Interoperability
 * [ ] All of the above
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** All of the above
-💡 Cryptography restrictions are imposed for national security, interoperability, and crime prevention.
+💡 Regulations balance security, commerce, and law enforcement.
 
 </details>
 
 ---
 
-### 24. Which of the following is true about data encryption to protect data?
+### 24. Which statement about encryption is true?
 
-* [ ] It verifies integrity and accuracy
+* [ ] It guarantees integrity
 * [ ] It requires careful key management
-* [ ] It does not require system resources
-* [ ] It requires keys to be escrowed
+* [ ] It eliminates access control
+* [ ] It requires key escrow
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** It requires careful key management
-💡 Effective encryption requires secure handling and storage of keys to maintain security.
+💡 Key protection is critical to encryption security.
 
 </details>
 
 ---
 
-### 25. Which of the following is not a property of a one-way hash function?
+### 25. Which is NOT a property of a one-way hash function?
 
-* [ ] Converts message of arbitrary length into fixed-length value
-* [ ] Computationally infeasible to find message from digest
-* [ ] Impossible or rare to derive same digest from two messages
-* [ ] Converts message of fixed length to arbitrary-length value
+* [ ] Fixed-length output
+* [ ] Preimage resistance
+* [ ] Collision resistance
+* [ ] Variable-length output
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Converts message of fixed length to arbitrary-length value
-💡 One-way hashes always produce fixed-length outputs.
+✅ **Correct Answer:** Variable-length output
+💡 Hashes always produce fixed-length digests.
 
 </details>
 
 ---
 
-### 26. The generation of keys using random values is referred to as Key Derivation Functions (KDFs). Which value is **not commonly used**?
+### 26. Which input is NOT commonly used by key derivation functions?
 
-* [ ] Hashing values
-* [ ] Asymmetric values
-* [ ] Salts
 * [ ] Passwords
+* [ ] Salts
+* [ ] Master keys
+* [ ] Asymmetric keys
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Asymmetric values
-💡 KDFs typically use salts, passwords, or hash values to generate strong cryptographic keys.
+✅ **Correct Answer:** Asymmetric keys
+💡 KDFs typically derive keys from symmetric secrets.
 
 </details>
 
 ---
 
-### 27. What is the goal of cryptanalysis?
+### 27. What is the primary goal of cryptanalysis?
 
-* [ ] To determine the strength of an algorithm
-* [ ] To increase substitution in algorithms
-* [ ] To decrease transposition in algorithms
-* [ ] To determine permutations used
+* [ ] Improve encryption speed
+* [ ] Recover plaintext or keys without authorization
+* [ ] Increase key length
+* [ ] Design algorithms
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** To determine the strength of an algorithm
-💡 Cryptanalysis studies cryptographic systems to find weaknesses or vulnerabilities.
+✅ **Correct Answer:** Recover plaintext or keys without authorization
+💡 Cryptanalysis seeks to break cryptographic protections.
 
 </details>
 
 ---
 
-### 28. How many bits make up the effective length of the DES key?
+### 28. What is the effective key length of DES?
 
-* [ ] 56
-* [ ] 64
-* [ ] 32
-* [ ] 16
+* [ ] 64 bits
+* [ ] 56 bits
+* [ ] 48 bits
+* [ ] 32 bits
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** 56
-💡 DES uses a 64-bit key, but 8 bits are used for parity, leaving 56 effective bits.
+✅ **Correct Answer:** 56 bits
+💡 8 bits are used for parity.
 
 </details>
 
 ---
 
-### 29. Who was involved in developing the first public key algorithm?
+### 29. Who co-developed the first public key cryptosystem?
 
 * [ ] Adi Shamir
-* [ ] Ross Anderson
-* [ ] Bruce Schneier
 * [ ] Martin Hellman
+* [ ] Bruce Schneier
+* [ ] Ron Rivest
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Martin Hellman
-💡 Hellman, along with Diffie, developed the first public key cryptography system.
+💡 Hellman and Diffie introduced public key cryptography.
 
 </details>
 
 ---
 
-### 30. Which of the following uses a symmetric key and a hashing algorithm?
+### 30. Which uses a secret key combined with a hash function?
 
-* [ ] HMAC
-* [ ] Triple-DES
-* [ ] ISAKMP-OAKLEY
 * [ ] RSA
+* [ ] Triple-DES
+* [ ] HMAC
+* [ ] Diffie-Hellman
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** HMAC
-💡 HMAC combines a secret key with a hash function to provide integrity and authentication.
+💡 HMAC ensures integrity and authentication.
 
 </details>
 
 ---
 
-### 31. The word Cryptography is derived from the Greek word _____________, meaning "hidden, secret".
+### 31. The word cryptography comes from the Greek word meaning “hidden”:
 
-* [ ] Krios
 * [ ] Kyros
 * [ ] Kerberos
 * [ ] Kryptos
+* [ ] Krypto
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Kryptos
-💡 “Kryptos” in Greek means secret or hidden.
 
 </details>
 
 ---
 
-### 32. DES performs how many rounds of permutation and substitution?
+### 32. How many rounds does DES use?
 
+* [ ] 8
 * [ ] 16
 * [ ] 32
 * [ ] 64
-* [ ] 56
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** 16
-💡 DES applies 16 rounds of Feistel structure processing.
 
 </details>
 
 ---
 
-### 33. Kerckhoffs principle states that _____________
+### 33. Kerckhoffs’ principle states that:
 
-* [ ] The keyspace should be public
-* [ ] The algorithm should be public
-* [ ] The key should be public
-* [ ] None of the above
+* [ ] The key must be public
+* [ ] The algorithm must be public
+* [ ] The system must be secret
+* [ ] Keys must be escrowed
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** The algorithm should be public
-💡 Security should rely only on secrecy of the key, not the algorithm.
+✅ **Correct Answer:** The algorithm must be public
 
 </details>
 
 ---
 
-### 34. In symmetric algorithms, if 100 people need to communicate securely with each other, how many keys are required?
+### 34. How many symmetric keys are needed for 100 users to communicate securely?
 
 * [ ] 3,820
 * [ ] 4,480
 * [ ] 4,950
-* [ ] 3,480
+* [ ] 5,000
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** 4,950
-💡 For N users: Number of keys = N*(N-1)/2 = 100*99/2 = 4,950.
 
 </details>
 
 ---
 
-### 35. Which of the following best describes a certificate authority (CA)?
+### 35. What is the role of a Certificate Authority (CA)?
 
-* [ ] Issues private keys and algorithms
-* [ ] Validates encryption processes
-* [ ] Verifies encryption keys
-* [ ] Issues digital certificates
+* [ ] Encrypt data
+* [ ] Issue digital certificates
+* [ ] Generate private keys
+* [ ] Store passwords
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Issues digital certificates
-💡 CAs validate identities and issue certificates binding identities to public keys.
+✅ **Correct Answer:** Issue digital certificates
 
 </details>
 
 ---
 
-### 36. Simple substitution and transposition ciphers are vulnerable to:
+### 36. Classical substitution ciphers are vulnerable to:
 
-* [ ] Ping of Death
-* [ ] Frequency Analysis
-* [ ] Denial of Service
-* [ ] SQL Injection
+* [ ] SQL injection
+* [ ] Frequency analysis
+* [ ] Denial of service
+* [ ] Buffer overflow
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Frequency Analysis
-💡 Classic ciphers can be broken by analyzing letter or symbol frequencies.
+✅ **Correct Answer:** Frequency analysis
 
 </details>
 
 ---
 
-### 37. Which cryptosystem is based on the difficulty of factoring large numbers into primes?
+### 37. Which cryptosystem relies on integer factorization?
 
+* [ ] DES
 * [ ] ECC
 * [ ] RSA
-* [ ] DES
 * [ ] Diffie-Hellman
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** RSA
-💡 RSA relies on the hardness of prime factorization.
 
 </details>
 
 ---
 
-### 38. ___________ is mono-alphabetic substitution while ___________ is not.
+### 38. Which cipher is monoalphabetic?
 
-* [ ] Caesar, Vigenere
-* [ ] Vigenere, Caesar
-* [ ] MD4, MD5
-* [ ] MD5, MD4
+* [ ] Caesar
+* [ ] Vigenère
+* [ ] AES
+* [ ] DES
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Caesar, Vigenere
-💡 Caesar cipher is mono-alphabetic; Vigenere uses multiple alphabets.
+✅ **Correct Answer:** Caesar
 
 </details>
 
 ---
 
-### 39. What would indicate that a message had been modified?
+### 39. What indicates that a message was modified?
 
-* [ ] Public key altered
-* [ ] Private key altered
-* [ ] Message digest altered
-* [ ] Message encrypted properly
+* [ ] Encryption used
+* [ ] Message digest changed
+* [ ] Public key changed
+* [ ] Ciphertext length changed
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Message digest altered
-💡 Hash functions detect modifications by producing different digests.
+✅ **Correct Answer:** Message digest changed
 
 </details>
 
