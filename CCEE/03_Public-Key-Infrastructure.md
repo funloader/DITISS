@@ -13,7 +13,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Digital certificate of user and private key of user
-💡 A PKCS#12 file bundles the user's certificate and corresponding private key (optionally CA certificates).
+💡 A PKCS#12 file bundles the user's certificate and corresponding private key. Optionally, it can include CA certificates.
 
 </details>
 
@@ -36,7 +36,7 @@
 
 ---
 
-### 3. Which of the following formats is specifically designed to securely store private keys?
+### 3. Which format is primarily used to securely store private keys and certificates in Java applications?
 
 * [ ] PEM
 * [ ] DER
@@ -47,24 +47,24 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** JKS
-💡 Java KeyStore (JKS) is explicitly designed to securely store private keys and certificates.
+💡 Java KeyStore (JKS) is designed for securely storing private keys and certificates. PEM/DER can store private keys too, but JKS is Java-specific.
 
 </details>
 
 ---
 
-### 4. The Caesar Cipher is an example of which cryptographic technique?
+### 4. The Caesar Cipher is an example of which type of cryptographic technique?
 
 * [ ] Symmetric
 * [ ] Asymmetric
-* [ ] Transposition
+* [ ] Substitution
 * [ ] Steganography
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Symmetric
-💡 Caesar cipher uses the same key for encryption and decryption.
+💡 Caesar cipher uses the same key for encryption and decryption. More specifically, it is a substitution cipher.
 
 </details>
 
@@ -81,7 +81,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** X.509
-💡 X.509 defines the structure and format of digital certificates.
+💡 X.509 defines the structure and format of digital certificates used in PKI.
 
 </details>
 
@@ -98,7 +98,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Two-way, One-way
-💡 Encryption is reversible; hashing is not.
+💡 Encryption is reversible; hashing is irreversible.
 
 </details>
 
@@ -140,16 +140,16 @@
 
 ### 9. A Certificate Signing Request (CSR) contains:
 
-* [ ] Private key and user credentials
-* [ ] Only user credentials
-* [ ] Public key and user credentials
+* [ ] Private key and user identity
+* [ ] Only user identity
+* [ ] Public key and user identity
 * [ ] Only the private key
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Public key and user credentials
-💡 A CSR never contains a private key.
+✅ **Correct Answer:** Public key and user identity
+💡 A CSR never contains a private key. It includes the public key and subject information.
 
 </details>
 
@@ -166,7 +166,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** DigiCert
-💡 DigiCert is not licensed as an Indian Root CA.
+💡 DigiCert is a global CA but not licensed as a root CA in India.
 
 </details>
 
@@ -183,13 +183,13 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** 128 bits
-💡 AES always operates on 128-bit blocks.
+💡 AES always operates on 128-bit blocks, regardless of key size.
 
 </details>
 
 ---
 
-### 12. Which pair of Linux commands produces the same SHA-1 message digest?
+### 12. Which pair of Linux commands produces the same SHA-1 message digest by default?
 
 * [ ] md4sum, md5sum
 * [ ] sha1sum, shasum
@@ -200,13 +200,13 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** sha1sum, shasum
-💡 Both commands compute SHA-1 by default.
+💡 Both commands compute SHA-1 by default on most Linux systems.
 
 </details>
 
 ---
 
-### 13. Which cryptographic algorithms are commonly used in SSL/TLS?
+### 13. Which cryptographic algorithms are commonly used together in TLS/SSL?
 
 * [ ] DES only
 * [ ] RSA only
@@ -217,7 +217,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** AES and RSA
-💡 TLS uses RSA for key exchange/authentication and AES for encryption.
+💡 TLS often uses RSA for key exchange/authentication and AES for encryption.
 
 </details>
 
@@ -234,7 +234,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** 3
-💡 Authentication Server, Ticket Granting Server, and Application Server.
+💡 Authentication Server (AS), Ticket Granting Server (TGS), and Application Server (service).
 
 </details>
 
@@ -268,7 +268,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** CRL must be frequently updated to remain current
-💡 This is the primary limitation of CRLs.
+💡 CRLs list revoked certificates, but the list may become outdated quickly. OCSP provides real-time status without downloading the entire list.
 
 </details>
 
@@ -285,7 +285,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Tunnel
-💡 Tunnel mode encapsulates the entire IP packet.
+💡 Tunnel mode encapsulates the entire IP packet, adding a new header.
 
 </details>
 
@@ -302,7 +302,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** AH
-💡 Authentication Header provides integrity and authentication only.
+💡 Authentication Header (AH) provides integrity and authentication only.
 
 </details>
 
@@ -319,7 +319,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Non-repudiation
-💡 Digital signatures provide non-repudiation.
+💡 Digital signatures provide non-repudiation by linking the sender to the message.
 
 </details>
 
@@ -336,7 +336,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** RC4
-💡 RC4 is a classic stream cipher.
+💡 RC4 encrypts data one byte at a time, making it a stream cipher.
 
 </details>
 
@@ -353,7 +353,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Private key was compromised
-💡 Compromise of the private key invalidates trust.
+💡 If the private key is compromised, the certificate can no longer be trusted and must be revoked.
 
 </details>
 
@@ -370,13 +370,13 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Diffie-Hellman
-💡 Diffie-Hellman is a key exchange algorithm.
+💡 Diffie-Hellman is a key exchange algorithm, not an encryption algorithm.
 
 </details>
 
 ---
 
-### 23. What key length is NOT supported by AES?
+### 23. What AES key lengths are supported?
 
 * [ ] 128 bits
 * [ ] 192 bits
@@ -386,8 +386,8 @@
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** 512 bits
-💡 AES supports only 128, 192, and 256-bit keys.
+✅ **Correct Answer:** 128, 192, 256 bits
+💡 AES does not support 512-bit keys; it only supports 128, 192, and 256-bit keys.
 
 </details>
 
@@ -404,7 +404,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** ESP
-💡 ESP (Encapsulating Security Payload) provides encryption, integrity, and optional authentication at the IP layer.
+💡 Encapsulating Security Payload (ESP) provides encryption, integrity, and optional authentication at the IP layer.
 
 </details>
 
@@ -421,7 +421,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Cipher suite
-💡 A cipher suite specifies the algorithms used for a TLS session.
+💡 A cipher suite specifies all the algorithms used in a TLS session.
 
 </details>
 
@@ -438,7 +438,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Both public and private keys
-💡 PGP uses asymmetric cryptography for secure email exchange.
+💡 PGP uses asymmetric cryptography: the public key encrypts and the private key decrypts messages.
 
 </details>
 
@@ -489,30 +489,13 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** IDS
-💡 Intrusion Detection Systems use both anomaly and signature-based detection.
+💡 Intrusion Detection Systems (IDS) use anomaly and signature-based detection to identify attacks.
 
 </details>
 
 ---
 
-### 30. Which of the following is an example of a stream cipher?
-
-* [ ] AES
-* [ ] DSA
-* [ ] SHA-256
-* [ ] RC4
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** RC4
-💡 RC4 encrypts data one byte at a time, making it a stream cipher.
-
-</details>
-
----
-
-### 31. What does OCSP stand for in public key infrastructure?
+### 30. What does OCSP stand for in public key infrastructure?
 
 * [ ] Online Certificate Service Provider
 * [ ] Open Certificate Security Protocol
@@ -523,13 +506,13 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Online Certificate Status Protocol
-💡 OCSP provides real-time certificate revocation status.
+💡 OCSP provides real-time certificate revocation status without downloading the full CRL.
 
 </details>
 
 ---
 
-### 32. Which of the following is a disadvantage of asymmetric cryptography?
+### 31. Which of the following is a disadvantage of asymmetric cryptography?
 
 * [ ] Does not provide confidentiality
 * [ ] Slower than symmetric cryptography
@@ -540,30 +523,13 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Slower than symmetric cryptography
-💡 Asymmetric algorithms are computationally expensive.
+💡 Asymmetric algorithms require more computation than symmetric algorithms.
 
 </details>
 
 ---
 
-### 33. Which AES key size is NOT supported?
-
-* [ ] 128 bits
-* [ ] 192 bits
-* [ ] 256 bits
-* [ ] 512 bits
-
-<details>
-<summary><strong>Show Answer</strong></summary>
-
-✅ **Correct Answer:** 512 bits
-💡 AES supports only 128, 192, and 256-bit keys.
-
-</details>
-
----
-
-### 34. Which term refers specifically to the science of breaking cryptographic systems?
+### 32. Which term refers specifically to the science of breaking cryptographic systems?
 
 * [ ] Cryptography
 * [ ] Cryptology
@@ -574,13 +540,13 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Cryptanalysis
-💡 Cryptanalysis focuses on breaking encryption and codes.
+💡 Cryptanalysis focuses on analyzing and breaking encryption methods.
 
 </details>
 
 ---
 
-### 35. A secret key used only once for encrypting data is called a:
+### 33. A secret key used only once for encrypting data is called a:
 
 * [ ] Public key
 * [ ] Private key
@@ -591,13 +557,13 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Session key
-💡 Session keys are temporary and used for a single communication session.
+💡 Session keys are temporary keys used for a single communication session.
 
 </details>
 
 ---
 
-### 36. Which statement is NOT true about SSL/TLS?
+### 34. Which statement is NOT true about SSL/TLS?
 
 * [ ] Provides encryption and integrity
 * [ ] Uses public key cryptography
@@ -608,13 +574,13 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Provides VPN services by itself
-💡 SSL/TLS is not a VPN technology.
+💡 SSL/TLS is not a VPN technology; it secures application-layer connections.
 
 </details>
 
 ---
 
-### 37. An attack where the attacker can choose ciphertext and obtain the corresponding plaintext is called:
+### 35. An attack where the attacker can choose ciphertext and obtain the corresponding plaintext is called:
 
 * [ ] Ciphertext-only attack
 * [ ] Known-plaintext attack
@@ -625,13 +591,13 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Chosen-ciphertext attack
-💡 The attacker selects ciphertexts and analyzes decrypted outputs.
+💡 The attacker selects ciphertexts and analyzes decrypted outputs to learn the key or plaintext.
 
 </details>
 
 ---
 
-### 38. Kerberos is primarily a(n) __________ protocol.
+### 36. Kerberos is primarily a(n) __________ protocol.
 
 * [ ] Session initiation
 * [ ] Authentication
@@ -642,13 +608,13 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Authentication
-💡 Kerberos provides secure authentication using tickets.
+💡 Kerberos provides secure authentication using tickets issued by a trusted authority.
 
 </details>
 
 ---
 
-### 39. Which of the following statements is TRUE?
+### 37. Which of the following statements is TRUE?
 
 * [ ] SHA-256 hashes can be reversed
 * [ ] HTTPS protects against keyloggers
@@ -659,24 +625,58 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Digital signatures depend on the signed content
-💡 Any modification to the content invalidates the signature.
+💡 Any modification to the signed content invalidates the signature.
 
 </details>
 
 ---
 
-### 40. Which statement is TRUE?
+### 38. Which AES key size is NOT supported?
 
-* [ ] SHA-256 hashes can be reversed easily
-* [ ] HTTPS protects against keyloggers
-* [ ] Digital signatures depend on the signed content
-* [ ] Digital certificates contain private keys
+* [ ] 128 bits
+* [ ] 192 bits
+* [ ] 256 bits
+* [ ] 512 bits
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Digital signatures depend on the signed content
-💡 Any content change invalidates the signature.
+✅ **Correct Answer:** 512 bits
+💡 AES only supports 128, 192, and 256-bit keys.
+
+</details>
+
+---
+
+### 39. Which security service ensures the authenticity of the sender?
+
+* [ ] Confidentiality
+* [ ] Integrity
+* [ ] Authentication
+* [ ] Non-repudiation
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Authentication
+💡 Authentication verifies the identity of the sender.
+
+</details>
+
+---
+
+### 40. Which of the following is an example of a stream cipher?
+
+* [ ] AES
+* [ ] DSA
+* [ ] SHA-256
+* [ ] RC4
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** RC4
+💡 RC4 encrypts data one byte at a time, making it a classic stream cipher.
 
 </details>
 
