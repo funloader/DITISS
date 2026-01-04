@@ -13,64 +13,64 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Characters are replaced by other characters
-💡 Substitution ciphers replace each element of the plaintext with a corresponding element of ciphertext.
+💡 Substitution ciphers replace each plaintext character with a corresponding ciphertext character.
 
 </details>
 
 ---
 
-### 2. Redundancy of plaintext increases in:
+### 2. Which concept spreads the influence of one plaintext symbol over many ciphertext symbols to reduce patterns?
 
-* [ ] Diffusion
 * [ ] Confusion
-* [ ] Both confusion & diffusion
-* [ ] Neither confusion nor diffusion
+* [ ] Diffusion
+* [ ] Encryption
+* [ ] Substitution
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Diffusion
-💡 Diffusion spreads the influence of a single plaintext bit over many ciphertext bits to reduce redundancy.
+💡 Diffusion reduces plaintext redundancy by spreading patterns across the ciphertext.
 
 </details>
 
 ---
 
-### 3. If p=11 and q=17, which of the following pairs represent valid public and private keys for RSA encryption?
+### 3. If p = 11 and q = 17, which of the following represents a valid RSA public/private key pair (for illustration only)?
 
 * [ ] (7, 187) and (23, 87)
 * [ ] (3, 187) and (107, 187)
 * [ ] (5, 187) and (23, 187)
-* [ ] Both a and b
+* [ ] (11, 17) and (187, 1)
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** (3, 187) and (107, 187)
-💡 RSA keys are generated using `n = p * q`, φ(n), and selecting e & d such that `e*d ≡ 1 mod φ(n)`.
+💡 RSA requires e·d ≡ 1 (mod φ(n)), where n = p × q.
 
 </details>
 
 ---
 
-### 4. Vernam cipher is also called:
+### 4. The Vernam cipher is also known as:
 
-* [ ] Rail fence technique
+* [ ] Rail fence cipher
 * [ ] Book cipher
 * [ ] One-time pad
-* [ ] Running key cipher
+* [ ] Caesar cipher
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** One-time pad
-💡 Vernam cipher uses a random key as long as the message, providing theoretically unbreakable encryption.
+💡 When used correctly, the one-time pad provides perfect secrecy.
 
 </details>
 
 ---
 
-### 5. The number of unique keys that can be generated with a 3-bit key is:
+### 5. How many unique keys can be generated with a 3-bit key?
 
 * [ ] 6
 * [ ] 8
@@ -81,234 +81,234 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** 8
-💡 A 3-bit key has `2^3 = 8` possible combinations.
+💡 A key of length n bits has 2ⁿ possible values.
 
 </details>
 
 ---
 
-### 6. Playfair cipher is an example of:
+### 6. The Playfair cipher is best described as a:
 
-* [ ] Substitution cipher
 * [ ] Transposition cipher
-* [ ] Both of the above
-* [ ] None of the above
+* [ ] Monoalphabetic substitution cipher
+* [ ] Polygraphic substitution cipher
+* [ ] Stream cipher
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Substitution cipher
-💡 Playfair cipher encrypts digraphs (pairs of letters) using a substitution scheme.
+✅ **Correct Answer:** Polygraphic substitution cipher
+💡 Playfair encrypts pairs of letters rather than single characters.
 
 </details>
 
 ---
 
-### 7. Knowledge-based authentication is based on:
+### 7. Knowledge-based authentication relies on:
 
-* [ ] What the users possess
-* [ ] What the users know
-* [ ] What the users are
-* [ ] All of the above
+* [ ] What the user possesses
+* [ ] What the user knows
+* [ ] What the user is
+* [ ] Where the user is
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** What the users know
-💡 Knowledge-based authentication relies on secrets like passwords or PINs.
+✅ **Correct Answer:** What the user knows
+💡 Passwords and PINs are examples of knowledge-based authentication.
 
 </details>
 
 ---
 
-### 8. Which technique is used for hiding a message?
+### 8. Which technique hides the *existence* of a message?
 
 * [ ] Cryptography
 * [ ] Steganography
-* [ ] Cryptology
-* [ ] Both a and b
+* [ ] Encryption
+* [ ] Hashing
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Steganography
-💡 Steganography hides the existence of a message within another medium (image, audio, text).
+💡 Steganography conceals messages inside other media such as images or audio.
 
 </details>
 
 ---
 
-### 9. The concept crucial for asymmetric cryptography is:
+### 9. Which mathematical concept is fundamental to RSA encryption?
 
-* [ ] Integers
-* [ ] Prime numbers
-* [ ] Negative numbers
 * [ ] Fractions
+* [ ] Negative numbers
+* [ ] Prime numbers
+* [ ] Matrices
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Prime numbers
-💡 Asymmetric encryption like RSA relies on the difficulty of factoring large prime numbers.
+💡 RSA relies on the difficulty of factoring large prime numbers.
 
 </details>
 
 ---
 
-### 10. The three primary attributes of information security are:
+### 10. What are the three core principles of information security?
 
-* [ ] Confidentiality, Integrity & Availability
-* [ ] Authentication, Authorization & Non-repudiation
-* [ ] Confidentiality, Access Control & Non-repudiation
-* [ ] Availability, Access Control & Authorization
+* [ ] Authentication, Authorization, Accounting
+* [ ] Confidentiality, Integrity, Availability
+* [ ] Integrity, Authentication, Encryption
+* [ ] Availability, Access Control, Authorization
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Confidentiality, Integrity & Availability
-💡 These three form the CIA triad, the core of information security.
+✅ **Correct Answer:** Confidentiality, Integrity, Availability
+💡 These three principles form the CIA triad.
 
 </details>
 
 ---
 
-### 11. Infectors that reside in specific areas of the PC’s hard disk executed at boot time are called:
+### 11. Malware that infects the boot sector and executes at startup is called:
 
-* [ ] Boot Sector Viruses
-* [ ] Resident Viruses
-* [ ] Non-resident Viruses
-* [ ] File Infectors
+* [ ] File infector
+* [ ] Worm
+* [ ] Boot sector virus
+* [ ] Trojan horse
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Boot Sector Viruses
-💡 Boot sector viruses attach themselves to the boot sector and execute when the system starts.
+✅ **Correct Answer:** Boot sector virus
+💡 These viruses execute before the operating system loads.
 
 </details>
 
 ---
 
-### 12. Malicious software that spreads across networks is called:
+### 12. Malware that self-replicates and spreads across networks is known as:
 
 * [ ] Virus
 * [ ] Worm
-* [ ] Backdoor
-* [ ] Trapdoor
+* [ ] Trojan
+* [ ] Rootkit
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Worm
-💡 Worms are self-replicating programs that spread over networks without user intervention.
+💡 Worms spread without requiring user interaction.
 
 </details>
 
 ---
 
-### 13. Which of the following is **not** a biometric authentication technique?
+### 13. Which of the following is NOT a biometric authentication method?
 
-* [ ] Password
 * [ ] Fingerprint
-* [ ] Voice
 * [ ] Retina scan
+* [ ] Voice recognition
+* [ ] Password
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Password
-💡 Biometrics rely on physical characteristics like fingerprints, retina, or voice, not knowledge-based secrets.
+💡 Passwords are knowledge-based, not biometric.
 
 </details>
 
 ---
 
-### 14. Complex file infectors that change physical forms are called:
+### 14. Viruses that change their code to evade detection are called:
 
-* [ ] Polymorphic Virus
-* [ ] Boot Sector Virus
-* [ ] Stealth Virus
-* [ ] Non-resident Virus
+* [ ] Stealth viruses
+* [ ] Polymorphic viruses
+* [ ] Boot viruses
+* [ ] Macro viruses
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Polymorphic Virus
-💡 Polymorphic viruses modify their code to avoid detection by signature-based antivirus tools.
+✅ **Correct Answer:** Polymorphic viruses
+💡 They alter their appearance while keeping the same functionality.
 
 </details>
 
 ---
 
-### 15. Firewall should be situated:
+### 15. A firewall should be placed:
 
-* [ ] Inside a corporate network
-* [ ] Outside a corporate network
-* [ ] Between a corporate network and the outside world
-* [ ] None of these
+* [ ] Inside the LAN only
+* [ ] Outside the LAN only
+* [ ] Between the internal network and external networks
+* [ ] On every workstation
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Between a corporate network and the outside world
-💡 Firewalls monitor and control traffic between internal and external networks.
+✅ **Correct Answer:** Between the internal network and external networks
+💡 Firewalls control traffic entering and leaving a network.
 
 </details>
 
 ---
 
-### 16. A cryptanalyst is a person who:
+### 16. A cryptanalyst is someone who:
 
-* [ ] Devises cryptography solutions
-* [ ] Attempts to break cryptography solutions
-* [ ] None of these
-* [ ] Both of these
+* [ ] Designs encryption algorithms
+* [ ] Breaks or analyzes cryptographic systems
+* [ ] Manages encryption keys
+* [ ] Implements secure protocols
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Attempts to break cryptography solutions
-💡 Cryptanalysts study ciphers to find vulnerabilities and decrypt without keys.
+✅ **Correct Answer:** Breaks or analyzes cryptographic systems
+💡 Cryptanalysis focuses on finding weaknesses in cryptography.
 
 </details>
 
 ---
 
-### 17. Allowing certain users specific access implies implementation of:
+### 17. Granting users specific permissions to resources is known as:
 
-* [ ] Confidentiality
-* [ ] Integrity
 * [ ] Authentication
+* [ ] Integrity
 * [ ] Access control
+* [ ] Confidentiality
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Access control
-💡 Access control ensures users have permissions only for authorized resources.
+💡 Access control enforces authorization policies.
 
 </details>
 
 ---
 
-### 18. What does a hash function do?
+### 18. What does a cryptographic hash function produce?
 
-* [ ] Creates a secure tunnel
-* [ ] Breaks encryption by trying every possible key
-* [ ] Multiplies two very large primes
-* [ ] Creates a unique digest of a message
+* [ ] An encrypted message
+* [ ] A variable-length output
+* [ ] A fixed-length message digest
+* [ ] A secret key
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Creates a unique digest of a message
-💡 Hash functions convert messages into fixed-length outputs to ensure integrity and detect changes.
+✅ **Correct Answer:** A fixed-length message digest
+💡 Hash functions map data of any size to a fixed-size output.
 
 </details>
 
 ---
 
-### 19. How many keys exist in a public/private key pair?
+### 19. How many keys are used in asymmetric encryption?
 
 * [ ] 1
 * [ ] 2
@@ -319,13 +319,13 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** 2
-💡 A public/private key pair consists of two keys: one for encryption (public) and one for decryption (private).
+💡 One public key and one private key are used.
 
 </details>
 
 ---
 
-### 20. How many keys are needed for symmetric key encryption?
+### 20. How many keys are required for symmetric encryption?
 
 * [ ] 1
 * [ ] 2
@@ -336,228 +336,228 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** 1
-💡 Symmetric encryption uses a single shared key for both encryption and decryption.
+💡 The same key is used for encryption and decryption.
 
 </details>
 
 ---
 
-### 21. Which of the following key lengths would be considered uncrackable? (Choose all that apply)
+### 21. Which symmetric key length is currently considered secure against brute-force attacks?
 
-* [ ] 512
-* [ ] 256
-* [ ] 128
-* [ ] 64
+* [ ] 64-bit
+* [ ] 96-bit
+* [ ] 128-bit
+* [ ] 56-bit
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** 256, 128
-💡 Keys of 128 bits or more are generally considered secure against brute-force attacks.
+✅ **Correct Answer:** 128-bit
+💡 128-bit symmetric keys are considered computationally infeasible to brute-force.
 
 </details>
 
 ---
 
-### 22. What algorithm outputs a 128-bit message digest regardless of the length of the input?
+### 22. Which algorithm produces a 128-bit message digest but is no longer considered secure?
 
-* [ ] SHA
+* [ ] SHA-256
+* [ ] SHA-3
 * [ ] MD5
-* [ ] RC4
-* [ ] RC6
+* [ ] AES
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** MD5
-💡 MD5 produces a fixed 128-bit hash for any input size.
+💡 MD5 is broken and should not be used for security purposes.
 
 </details>
 
 ---
 
-### 23. What algorithm outputs a 160-bit key with variable-length input?
+### 23. Which hashing algorithm produces a 256-bit digest and is widely used today?
 
-* [ ] SHA
+* [ ] SHA-1
 * [ ] MD5
+* [ ] SHA-256
 * [ ] RC4
-* [ ] RC6
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** SHA
-💡 SHA-1 produces a 160-bit hash from inputs of any length.
+✅ **Correct Answer:** SHA-256
+💡 SHA-256 is part of the SHA-2 family and remains secure.
 
 </details>
 
 ---
 
-### 24. Which algorithm is used in the digital signature process?
+### 24. Which algorithm is used to create digital signatures?
 
-* [ ] RC4
-* [ ] RC5
-* [ ] Blowfish
 * [ ] MD5
+* [ ] AES
+* [ ] RSA
+* [ ] RC4
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** MD5
-💡 MD5 is commonly used to generate a message digest as part of digital signature creation.
+✅ **Correct Answer:** RSA
+💡 Digital signatures use asymmetric algorithms like RSA or ECDSA.
 
 </details>
 
 ---
 
-### 25. What is cryptography?
+### 25. Cryptography is best defined as:
 
-* [ ] The study of computer science
 * [ ] The study of mathematics
-* [ ] The study of encryption
-* [ ] The creation of encryption algorithms
+* [ ] The study of encryption only
+* [ ] The science of secure communication
+* [ ] The creation of computer programs
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** The study of encryption
-💡 Cryptography is the science of secure communication through encryption and decryption.
+✅ **Correct Answer:** The science of secure communication
+💡 Cryptography includes encryption, hashing, signatures, and key exchange.
 
 </details>
 
 ---
 
-### 26. What is the process of changing the order of some characters in an encryption key?
+### 26. Rearranging characters without changing them is known as:
 
-* [ ] Transposition
-* [ ] Subtraction
 * [ ] Substitution
-* [ ] Transrelation
+* [ ] Transposition
+* [ ] Encryption
+* [ ] Hashing
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Transposition
-💡 Transposition rearranges characters without changing their identity.
+💡 Transposition changes order, not identity.
 
 </details>
 
 ---
 
-### 27. Data encrypted with the server's public key can be decrypted with which key?
+### 27. Data encrypted with a server’s public key can be decrypted using:
 
-* [ ] The server's public key
-* [ ] The server's private key
-* [ ] The client's public key
-* [ ] The client's private key
+* [ ] The server’s public key
+* [ ] The server’s private key
+* [ ] The client’s public key
+* [ ] The client’s private key
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** The server's private key
-💡 In asymmetric encryption, data encrypted with the public key is decrypted with the corresponding private key.
+✅ **Correct Answer:** The server’s private key
+💡 Only the matching private key can decrypt the data.
 
 </details>
 
 ---
 
-### 28. Which type of encryption is the fastest to use for large amounts of data?
+### 28. Which type of encryption is fastest for large volumes of data?
 
-* [ ] Symmetric
-* [ ] Public
-* [ ] Private
 * [ ] Asymmetric
+* [ ] Public key
+* [ ] Symmetric
+* [ ] Hash-based
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Symmetric
-💡 Symmetric encryption is computationally faster and suitable for large datasets.
+💡 Symmetric encryption is computationally efficient.
 
 </details>
 
 ---
 
-### 29. What is the goal of a known–plain text attack?
+### 29. The goal of a known-plaintext attack is to:
 
-* [ ] To read the encrypted data
-* [ ] To gain access to the public key
-* [ ] To discover the encryption key
-* [ ] To validate the sender of the data
+* [ ] Verify message authenticity
+* [ ] Discover the encryption key
+* [ ] Modify encrypted data
+* [ ] Block data transmission
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** To discover the encryption key
-💡 Known-plaintext attacks use knowledge of plaintext-ciphertext pairs to deduce the key.
+✅ **Correct Answer:** Discover the encryption key
+💡 Known plaintext helps attackers infer the key.
 
 </details>
 
 ---
 
-### 30. Which cryptographic attack attempts to crack the code by looking for patterns and using statistical analysis?
+### 30. Which attack uses only intercepted ciphertext to break encryption?
 
-* [ ] Cipher text–only attack
-* [ ] Chosen–plain text attack
-* [ ] Chosen–cipher text attack
+* [ ] Known-plaintext attack
+* [ ] Chosen-plaintext attack
+* [ ] Ciphertext-only attack
 * [ ] Brute-force attack
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Cipher text–only attack
-💡 This attack relies solely on ciphertext and statistical analysis to find patterns in the encryption.
+✅ **Correct Answer:** Ciphertext-only attack
+💡 The attacker has access only to encrypted data.
 
 </details>
 
 ---
 
-### 31. Which two factors are of concern when using brute-force attacks against encryption?
+### 31. What primarily limits the feasibility of brute-force attacks?
 
-* [ ] Time
-* [ ] Money
-* [ ] Knowledge of the sender
-* [ ] The ability to capture data
+* [ ] Network speed
+* [ ] Time and computational resources
+* [ ] User behavior
+* [ ] Data format
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Time, Money
-💡 Brute-force attacks require computational time and financial resources to attempt all possible keys.
+✅ **Correct Answer:** Time and computational resources
+💡 Brute-force attacks scale exponentially with key size.
 
 </details>
 
 ---
 
-### 32. Which program is useful in ensuring the integrity of a file downloaded from the Internet?
+### 32. Which tool is commonly used to verify file integrity using hashes?
 
-* [ ] Tripwire
-* [ ] Norton Internet Security
 * [ ] Snort
-* [ ] WinMD5
+* [ ] Tripwire
+* [ ] Hash verification tool
+* [ ] Firewall
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** WinMD5
-💡 WinMD5 generates a checksum to verify downloaded file integrity.
+✅ **Correct Answer:** Hash verification tool
+💡 Hashes confirm that files have not been altered.
 
 </details>
 
 ---
 
-### 33. What are some of the common fields in an x.509 certificate? (Choose all that apply)
+### 33. Which field is included in an X.509 digital certificate?
 
-* [ ] Secret Key
-* [ ] Expiration Date
-* [ ] Issuer
-* [ ] Public Key
+* [ ] Private key
+* [ ] Password
+* [ ] Public key
+* [ ] Symmetric key
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Expiration Date, Issuer, Public Key
-💡 x.509 certificates contain public key info, issuer, and expiration metadata.
+✅ **Correct Answer:** Public key
+💡 Certificates bind public keys to identities.
 
 </details>
 
@@ -565,107 +565,110 @@
 
 ### 34. What is the standard format for digital certificates?
 
-* [ ] x.500
-* [ ] x.509
-* [ ] x.25
+* [ ] X.25
+* [ ] X.400
+* [ ] X.509
 * [ ] XOR
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** x.509
-💡 x.509 is the standard for public key certificates used in PKI.
+✅ **Correct Answer:** X.509
+💡 X.509 is used in PKI systems worldwide.
 
 </details>
 
 ---
 
-### 35. What would the cipher text result be of a value of 1 in plain text and 0 in the secret key after an XOR process?
+### 35. What is the result of XORing 1 and 0?
 
-* [ ] 1
 * [ ] 0
+* [ ] 1
+* [ ] 2
+* [ ] Undefined
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** 1
-💡 XOR operation outputs 1 when inputs are different and 0 when inputs are the same.
+💡 XOR outputs 1 when the inputs differ.
 
 </details>
 
 ---
 
-### 36. What are two components of a PKI?
+### 36. Which is a core component of a Public Key Infrastructure (PKI)?
 
 * [ ] User passwords
-* [ ] Digital certificates
-* [ ] Encrypted data
-* [ ] CA
+* [ ] Certificate Authority (CA)
+* [ ] Firewalls
+* [ ] Hash tables
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Digital certificates, CA
-💡 PKI relies on certificate authorities and digital certificates to manage secure communication.
+✅ **Correct Answer:** Certificate Authority (CA)
+💡 CAs issue and verify digital certificates.
 
 </details>
 
 ---
 
-### 37. What element of the CIA triad ensures that the data sent is the same data received?
+### 37. Which CIA triad element ensures data is not altered in transit?
 
 * [ ] Confidentiality
 * [ ] Integrity
+* [ ] Availability
 * [ ] Authentication
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Integrity
-💡 Integrity ensures data is not altered during transmission.
+💡 Integrity guarantees data accuracy and consistency.
 
 </details>
 
 ---
 
-### 38. What is the purpose of a hash?
+### 38. The primary purpose of a hash function is to ensure:
 
-* [ ] To ensure confidentiality when using a public network such as the Internet
-* [ ] To ensure integrity of a transferred file
-* [ ] To ensure only authorized users are accessing a file
-* [ ] To ensure the data is available to authorized users
+* [ ] Confidentiality
+* [ ] Availability
+* [ ] Integrity
+* [ ] Authorization
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** To ensure integrity of a transferred file
-💡 Hash functions create a unique digest to verify that data has not been tampered with.
+✅ **Correct Answer:** Integrity
+💡 Hashes detect unauthorized changes to data.
 
 </details>
 
 ---
 
-### 39. Which of the following is considered a **post-quantum cryptography algorithm** designed to resist quantum attacks?
+### 39. Which cryptographic approach is designed to resist quantum attacks?
 
 * [ ] RSA
-* [ ] ECC
-* [ ] Lattice-based cryptography
 * [ ] DES
+* [ ] Lattice-based cryptography
+* [ ] ECC
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Lattice-based cryptography
-💡 Post-quantum cryptography algorithms, like lattice-based schemes, are designed to be secure against attacks by quantum computers.
+💡 These algorithms are candidates for post-quantum security.
 
 </details>
 
 ---
 
-### 40. Which of the following ensures **end-to-end encryption** in modern messaging apps?
+### 40. Which protocol provides end-to-end encryption in modern messaging apps?
 
-* [ ] TLS only
 * [ ] HTTPS
+* [ ] TLS
 * [ ] Signal Protocol
 * [ ] MD5
 
@@ -673,7 +676,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Signal Protocol
-💡 The Signal Protocol provides end-to-end encryption, ensuring that only the communicating parties can read the messages.
+💡 It ensures only communicating users can read the messages.
 
 </details>
 
