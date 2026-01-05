@@ -391,6 +391,15 @@ An administrator must copy all files and subfolders of the PolicyDefinitions fol
 > You must update the PolicyDefinitions folder for each feature update and for other software, such as Windows 10 Version 2004 and Microsoft Office 2019 .admx files.
 
 ---
+### Summary
+
+Contoso, Ltd. is a financial services company in Seattle with major offices located throughout the world. Most of its compute environment runs on-premises on Windows Server. This includes virtualized workloads on Windows Server 2016 hosts.
+
+Contoso IT staff is migrating Contoso on-premises servers to Windows Server 2022. As a Windows Server administrator at Contoso, you're responsible for configuring user and computer settings. These settings are applied by using GPOs.
+
+After completing this module, you’ll understand how group policies work in a Windows Server Active Directory environment.
+
+---
 ## Check your knowledge
 
 ---
@@ -451,13 +460,5 @@ A user in the Sales department based in Windsor, whose user and computer account
 💡 You can use security filtering to allow or deny the application of a GPO to specific users or groups.
 </details>
 
----
-
-### Summary
-Contoso, Ltd. is a financial services company in Seattle with major offices located throughout the world. Most of its compute environment runs on-premises on Windows Server. This includes virtualized workloads on Windows Server 2016 hosts.
-
-Contoso IT staff is migrating Contoso on-premises servers to Windows Server 2022. As a Windows Server administrator at Contoso, you're responsible for configuring user and computer settings. These settings are applied by using GPOs.
-
-After completing this module, you’ll understand how group policies work in a Windows Server Active Directory environment.
 
 ---
