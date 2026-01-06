@@ -1,3 +1,7 @@
+> [!WARNING]
+> This content is currently being edited and is not yet finalized.
+
+
 # Introduction
 
 ---
@@ -180,5 +184,3 @@ The Enterprise Administrator account is only required when you install and confi
 > [!CAUTION]
 > You shouldn't change the service account for Microsoft Entra Connect after you install Microsoft Entra Connect, because Microsoft Entra Connect always attempts to run using the account created during setup. If you change the account, Microsoft Entra Connect stops running and the scheduled synchronizations no longer occur.
 
-> [!WARNING]
-> Content under process !
