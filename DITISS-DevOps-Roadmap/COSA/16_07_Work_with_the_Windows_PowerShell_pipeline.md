@@ -1,7 +1,3 @@
-> [!WARNING]
-> This content is currently being edited and is not yet finalized.
-
-
 # Understand the Windows PowerShell pipeline
 
 ## Introduction 
@@ -807,6 +803,274 @@ In this module, you've learned how to send pipeline data to files and in various
 * Windows PowerShell has the ConvertTo-Html command that you can use when you need to display your Windows PowerShell output in a web browser or send it to a process, like the Send-MailMessage command, which accepts HTML input.
 * PowerShell provides various other options for controlling output.
 
+---
+## Pass pipeline objects
+
+### Introduction
+
+In this module, you will learn how the Windows PowerShell command-line interface passes objects from one command to another in the pipeline. Windows PowerShell has two techniques it can use: passing data ByValue and ByPropertyName. By knowing how these techniques work and which one to use in a given scenario, you can construct more useful and complex command lines.
+
+After completing this module, you'll be able to:
+
+* Describe pipeline parameter binding.
+* Identify ByValue parameters.
+* Pass data by using ByValue.
+* Identify ByPropertyName parameters.
+* Pass data ByPropertyName.
+* Pass pipeline data ByPropertyName.
+* Use manual parameters to override the pipeline.
+* Use parenthetical commands.
+* Expand property values.
+
+### Prerequisites:
+Familiarity with:
+
+* Windows networking technologies and implementation.
+* Windows Server administration, maintenance, and troubleshooting.
+* Windows PowerShell and its commands to perform specific tasks.
+* PowerShell cmdlets used for system administration tasks related to Active Directory, network configuration, server administration, and Windows 10 device administration.
+
+---
+## Pipeline parameter binding
+
+A Windows PowerShell command can only use one of its parameters each time it runs to specify the object on which it operates. When piping data from one command to another, you do not need to specify that parameter. This makes the complete command statement easier to read. However, it might not be obvious how the command works when you run the command. Consider the following command:
+
+```powershell
+Get-ADUser -Filter {Name -eq 'Perry Brill'} | Set-ADUser -City Seattle
+```
+
+In this example, Set-ADUser accepts input in an indirect manner; that is, it needs a user object as input. If running Set-ADUser directly, you might pass the user name to identify the user, but this command does not do this. Instead, the object that Get-ADUser produces is picked up out of the pipeline by Set-ADUser. Set-ADUser is passed two parameters, not the one parameter that you can see. Windows PowerShell invisibly uses the other parameter in a process that is known as pipeline parameter binding.
+
+When you connect two commands in the pipeline, pipeline parameter binding takes the output of the first command and decides what to do with it. The process selects one of the parameters of the second command to receive that output. Windows PowerShell has two techniques that it uses to make that decision. The first technique, which is the one that Windows PowerShell always tries to use first, is named ByValue. The second technique is named ByPropertyName, and it is used only when ByValue fails.
+
+---
+## Identify ByValue parameters
+
+If you read the full Help for a command, you can see the pipeline input capability of each parameter. For example, in the Help file for Sort-Object, you will find the following information:
+
+```powershell
+-InputObject <PSObject>
+    Specifies the objects to be sorted.
+ 
+    To sort objects, pipe them to Sort-Object.
+
+Required?                    false
+    Position?                    Named 
+    Default value                None
+    Accept pipeline input?       true (ByValue)
+    Accept wildcard characters?  false
+```
+
+The Accept pipeline input? attribute is true because the –InputObject parameter accepts pipeline input. Additionally, Help shows a list of techniques the parameter supports. In this case, it supports only the ByValue technique.
+
+---
+##Pass data by using ByValue
+
+When data is passed using ByValue, a parameter can accept complete objects from the pipeline when those objects are of the type that the parameter accepts. A single command can have more than one parameter accepting pipeline input ByValue, but each parameter must accept a different kind of object.
+
+For example, Get-Service can accept pipeline input ByValue on both its –InputObject and –Name parameters. Each of those parameters accepts a different kind of object. –InputObject accepts objects of the type ServiceController, and –Name accepts objects of the type String. Consider the following example:
+
+```powershell
+'BITS','WinRM' | Get-Service
+```
+
+Here, two string objects are piped into Get-Service. They attach to the –Name parameter because that parameter accepts that kind of object, ByValue, from the pipeline.
+
+To predict the function that Windows PowerShell performs with the object in the pipeline, you need to determine the kind of object in the pipeline. For this purpose, you can pipe the object to Get-Member. The first line of output tells you the kind of object that the pipeline contained. For example:
+
+```powershell
+"BITS","WinRM" | Get-Member
+ 
+   TypeName: System.String
+
+Name             MemberType            Definition
+----             ----------            ----------
+```
+
+Here, the pipeline contains objects of the type System.String. Windows PowerShell often abbreviates type names to include only the last portion. In this example, that last portion is String.
+
+Then you examine the full Help for the next command in the pipeline. In this example, it's Get-Service, and you would find that both the –InputObject and –Name parameters accept input from the pipeline ByValue. Because the pipeline contains objects of the type String, and because the –Name parameter accepts objects of the type String from the pipeline ByValue, the objects in the pipeline attach to the –Name parameter.
+
+### Generic object types
+Windows PowerShell recognizes two generic kinds of object, Object and PSObject. Parameters that accept these kinds of objects can accept any kind of object. When you perform ByValue pipeline parameter binding, Windows PowerShell first looks for the most specific object type possible. If the pipeline contains a String, and a parameter can accept String, that parameter will receive the objects.
+
+If there's no match for a specific data type, Windows PowerShell will try to match generic data types. That behavior is why commands like Sort-Object and Select-Object work. Each of those commands has a parameter named –InputObject that accepts objects of the type PSObject from the pipeline ByValue. This is why you can pipe any type of object to those commands. Their –InputObject parameter will receive any object from the pipeline because it accepts objects of any kind.
+
+---
+
+## Pass data by using ByPropertyName
+
+If Windows PowerShell is unable to bind pipeline input by using the ByValue technique, it tries to use the ByPropertyName technique. When Windows PowerShell uses the ByPropertyName technique, it attempts to match a property of the object passed to a parameter of the command to which the object was passed. This match occurs in a simple manner. If the input object has a Name property, it will be matched with the parameter Name because they're spelled the same. However, it will only pass the property if the parameter is programmed to accept a value by property name. This means that you can pass output from one command to another when they don't logically go together.
+
+For example:
+```powershell
+Get-LocalUser | Stop-Process
+```
+
+The first command puts objects of the type LocalUser into the pipeline. The second command has no parameters that can accept that kind of object. The second command also has no parameters that accept a generic Object or PSObject. Therefore, the ByValue technique fails.
+
+Because the ByValue technique fails, Windows PowerShell changes to the ByPropertyName technique. To predict what it will try to do, you can review the properties of the objects that the first command produces. In this example, run the following command:
+
+```powershell
+Get-LocalUser | Get-Member
+```
+
+You also need to make a list of parameters of the second command that can accept pipeline input by using ByPropertyName. To make that list, view Help for the second command:
+
+```powershell
+Get-Help Stop-Process -ShowWindow
+```
+
+By making this list, you'll see that the Stop-Process command has more than one parameter that accepts pipeline input by using ByPropertyName. Those parameters are –Name and –Id. The objects that Get-LocalUser produces don't have an ID property, so the –Id parameter isn't considered. The objects that Get-LocalUser produces have a Name property. Therefore, the contents of the Name property attach to the –Name parameter of Stop-Service. This means that Stop-Service will try to stop a service with a name that is the same as a user. If you try this step in Windows PowerShell, you'll notice that any errors that you receive are because a process can't be found with the target name. However, you wouldn't want to do this step in a real-world scenario.
+
+
+### Renaming properties
+Most often, a property name from an output object doesn't match the name of an input parameter exactly. You can change the name of the property by using Select-Object and create a calculated property. For example, to view the processes running on all computers in your Windows Server Active Directory, try running the following command:
+
+```powershell
+Get-ADComputer -Filter * | Get-Process
+```
+
+However, this command doesn't work. No parameter for Get-Process matches a property name for the output of Get-ADComputer. View the output of Get-ADComputer | Get-Member and Get-Help Get-Process and you'll see that what you want is to match the Name property of Get-ADComputer with the -ComputerName parameter of Get-Process. You can do that by using Select-Object and changing the property name for the Get-ADComputer command’s Name property to ComputerName, and then passing the results to Get-Process. The following command will work:
+
+```powershell
+Get-ADComputer -Filter * | Select-Object @{n='ComputerName';e={$PSItem.Name}} | Get-Process
+```
+
+Another common use of the ByPropertyName technique is when you import data from comma-separated value (CSV) or similar files, and you feed that data to a command so that you can process a specific list of users, computers, or other resources.
+
+---
+## Identify ByPropertyName parameters
+
+Like ByValue parameters, you can see the parameters that accept pipeline input by using the ByPropertyName technique and examining the full Help for the command. For example, run the command Get-Help Stop-Process -Full and you'll see the following parameters:
+
+```powershell
+-ID <Int32[]>
+
+Required?                    true
+    Position?                    0
+    Default value                None
+    Accept pipeline input?       True (ByPropertyName)
+    Accept wildcard characters?  False
+
+-InputObject <Process[]>
+
+Required?                    true
+    Position?                    0
+    Default value                None
+    Accept pipeline input?       True (ByValue)
+    Accept wildcard characters?  false
+
+-Name <String[]>
+
+Required?                    true
+    Position?                    named
+    Default value                None
+    Accept pipeline input?       True (ByPropertyName)
+    Accept wildcard characters?  false
+```
+
+Notice that two parameters potentially accept input ByPropertyName. Keep in mind that only one parameter can accept input at a time. Further, because there's a parameter that accepts ByValue, Windows PowerShell will try that one first.
+
+It's also possible to have a single parameter that accepts pipeline input by using both ByValue and ByPropertyName. Again, Windows PowerShell will always try ByValue first and will use ByPropertyName only if ByValue fails.
+
+---
+## Use manual parameters to override the pipeline
+
+Anytime that you manually type a parameter for a command, you override any pipeline input that the parameter might have accepted. You don't force Windows PowerShell to select another parameter for pipeline parameter binding. Consider the following example:
+
+```powershell
+Get-Process -Name Notepad | Stop-Process –Name Notepad
+```
+
+In this example, Get-Process gets a process object that has the Name property and passes that object to Stop-Process. However, in this example, the –Name parameter was already used manually. That stops pipeline parameter binding. Windows PowerShell won't look for another parameter to bind the input even though there are parameters that accept other properties. In the example above, a parameter that Windows PowerShell wanted to use is taken, so the process is over.
+
+In this case, and in most cases, you'll receive an error even though the property value matches the value you specified for the parameter. For the above command, you receive the following error:
+
+```powershell
+Stop-Process : The input object cannot be bound to any parameters for the command either because the command does not take pipeline input or the input and its properties do not match any of the parameters that take pipeline input.
+```
+
+The error is misleading. It says, “… the command doesn't take pipeline input.” However, the command does take pipeline input. In this example, you've disabled the command’s ability to accept the pipeline input because you manually specified the parameter that Windows PowerShell wanted to use.
+
+---
+## Use parenthetical commands
+
+Another option for passing the results of one command to the parameters of another is by using parenthetical commands. A parenthetical command is a command that is enclosed in parentheses. Just as in math, parentheses tell Windows PowerShell to execute the enclosed command first. The parenthetical command runs, and the results of the command are inserted in its place.
+
+You can use parenthetical commands to pass values to parameters that do not accept pipeline input. This means you can have a pipeline that includes data inputs from multiple sources. Consider the following command:
+
+```powershell
+Get-ADGroup "London Users" | Add-ADGroupMember -Members (Get-ADUser -Filter {City -eq 'London'})
+```
+
+In this example, output of Get-ADGroup passes to Add-ADGroupMember, telling it which group to modify. However, that is only part of the information needed. We also need to tell Add-ADGroupMember what users to add to the group. The -Members parameter does not accept piped input, and even if it did, we have already piped data to the command. Therefore, we need to use a parenthetical command to provide a list of users that we want added to the group.
+
+Parenthetical commands do not rely on pipeline parameter binding. They work with any parameter if the parenthetical command produces the kind of object that the parameter expects.
+
+---
+## Expand property values
+
+You can use parenthetical commands to provide parameter input without using the pipeline. In some cases, however, you might have to manipulate the objects produced by a parenthetical command so that the command’s output is of the type that the parameter requires.
+
+For example, you might want to list all the processes that are running on every computer in the domain. In this example, imagine that you have a very small lab domain that contains just a few computers. You can get a list of every computer in the domain by running the following command:
+
+```powershell
+Get-ADComputer –Filter *
+```
+
+However, this command produces objects of the type ADComputer. You couldn't use those objects directly in a parenthetical command such as in the following command:
+
+```powershell
+Get-Process –ComputerName (Get-ADComputer –Filter *)
+```
+
+The –ComputerName parameter expects objects of the type String. However, the parenthetical command doesn't produce String type objects. The –ComputerName parameter only wants a computer name. However, the command provides it an object that contains a name, an operating system version, and several other properties.
+
+You could try the following command:
+
+```powershell
+Get-Process –ComputerName (Get-ADComputer –Filter * | Select-Object –Property Name)
+```
+
+This command selects only the Name property. This property is still a member of a whole ADComputer object. It's the Name property of an object. Although the Name property contains a string, it isn't itself a string. The –ComputerName parameter expects a string, not an object with a property. Therefore, that command doesn't work either.
+
+The following command achieves the goal of passing the computer name as a string to the -ComputerName parameter:
+
+```powershell
+Get-Process –ComputerName (Get-ADComputer –Filter * | Select-Object –ExpandProperty Name)
+```
+The –ExpandProperty parameter accepts one, and only one, property name. When you use that parameter, only the contents of the specified property are produced by Select-Object. Some people refer to this feature as extracting the property contents. The official description of the feature is expanding the property contents.
+
+In the preceding command, the result of the parenthetical command is a collection of strings that are passed as individual strings, not an array, and that is what the –ComputerName parameter expects. The command will work correctly; however, it might produce an error if one or more of the computers can't be reached on the network.
+
+Expanding property values also works when piping output. Consider the following example:
+
+```powershell
+Get-ADUser Ty -Properties MemberOf | Get-ADGroup
+```
+
+This command returns an error because Windows PowerShell can't match the MemberOf property to any property of Get-ADGroup.
+
+However, if you expand the value of the MemberOf property, as in the following example, Windows PowerShell can match the resulting output to a value that Get-ADGroup understands as valid input:
+
+```powershell
+Get-ADUser Ty -Properties MemberOf | Select-Object -ExpandProperty MemberOf | Get-ADGroup
+```
+
+---
+### Summary
+
+In this module, you've learned how the Windows PowerShell command-line interface passes objects from one command to another in the pipeline. The following are the key takeaways:
+
+* When you connect two commands in the pipeline, pipeline parameter binding takes the output of the first command and decides what to do with it. The process selects one of the parameters of the second command to receive that output. Windows PowerShell has two techniques that it uses to make that decision. The first technique, which is the one that Windows PowerShell always tries to use first, is named ByValue. The second technique is named ByPropertyName, and it's used only when ByValue fails.
+* If you read the full Help for a command, you can see the pipeline input capability of each parameter, and a list of techniques the parameter supports.
+* When data is passed using ByValue, a parameter can accept complete objects from the pipeline when those objects are of the type that the parameter accepts. A single command can have more than one parameter accepting pipeline input ByValue, but each parameter must accept a different kind of object.
+* If Windows PowerShell is unable to bind pipeline input by using the ByValue technique, it tries to use the ByPropertyName technique. When Windows PowerShell uses the ByPropertyName technique, it attempts to match a property of the object passed to a parameter of the command to which the object was passed.
+* Like ByValue parameters, you can see the parameters that accept pipeline input by using the ByPropertyName technique and examining the full Help for the command.
+* Anytime you manually type a parameter for a command, you override any pipeline input that the parameter might have accepted. You don't force Windows PowerShell to select another parameter for pipeline parameter binding.
+* Another option for passing the results of one command to the parameters of another is by using parenthetical commands, which are commands that are enclosed in parentheses. The parentheses tell Windows PowerShell to execute the enclosed command first. The parenthetical command runs, and the results of the command are inserted in its place.
+* The –ExpandProperty parameter accepts one, and only one, property name. When you use that parameter, only the contents of the specified property are produced by Select-Object. Some people refer to this feature as extracting the property contents. The official description of the feature is expanding the property contents.
 
 ---
 ## Check your knowledge
@@ -968,6 +1232,38 @@ In this module, you've learned how to send pipeline data to files and in various
 
 ✅ **Correct Answer:** `>`
 💡 The `>` redirection operator overwrites the contents of an existing file (similar to `Out-File` without `-Append`).
+
+</details>
+
+---
+
+### 11. Which technique does Windows PowerShell always try to use first when the command-line interface passes objects from one command to another in the pipeline?
+
+* [ ] ByPropertyName
+* [ ] ByValue
+* [ ] Neither is preferred over the other
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** **ByValue**
+💡 PowerShell always attempts **ByValue** parameter binding first. If that fails, it then tries **ByPropertyName**.
+
+</details>
+
+---
+
+### 12. How can a user determine the pipeline input capability of each parameter and the technique(s) the parameter supports?
+
+* [ ] All parameters accept pipeline input and support both techniques
+* [ ] Use the Get-PSSessionCapability cmdlet
+* [ ] Read the full Help for each command
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** **Read the full Help for each command**
+💡 Running `Get-Help <CmdletName> -Full` shows whether each parameter accepts pipeline input and whether it supports **ByValue**, **ByPropertyName**, or both.
 
 </details>
 
