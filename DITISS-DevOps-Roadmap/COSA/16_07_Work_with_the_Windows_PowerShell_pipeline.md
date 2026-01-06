@@ -1,5 +1,6 @@
 > [!WARNING]
-> Content under process !
+> This content is currently being edited and is not yet finalized.
+
 
 # Understand the Windows PowerShell pipeline
 
@@ -378,10 +379,210 @@ In this module, you've learned to manipulate objects in the pipeline by using co
 ---
 # Filter objects out of the pipeline
 
+## Introduction
+
+In this module, you'll learn how to filter objects out of the pipeline by using the Where-Object cmdlet to specify various criteria. This differs from the ability of Select-Object to select several objects from a collection because it provides more flexibility. With this new technique, you'll be able to keep or remove objects based on criteria of almost any complexity.
+
+### Learning objectives
+After completing this module, you'll be able to:
+
+* List the major PowerShell comparison operators.
+* Explain how to filter objects by using basic syntax.
+* Explain how to filter objects by using advanced syntax.
+* Explain how to optimize filtering performance in the pipeline.
+
+## Prerequisites
+Familiarity with:
+
+* Windows networking technologies and implementation.
+* Windows Server administration, maintenance, and troubleshooting.
+* Windows PowerShell and its commands to perform specific tasks.
+* PowerShell cmdlets used for system administration tasks related to Active Directory, network configuration, server administration, and Windows 10 device administration.
+
+---
+## Learn about the comparison operators in PowerShell
+
+To start filtering, you need a way to let PowerShell know which objects you want to keep and which ones you want to remove from the pipeline. You can do this task by specifying criteria for the objects that you want to keep. You do so by using one of the PowerShell comparison operators to compare a particular property of an object to a value that you specify. PowerShell keeps the object if the comparison is true and removes it if the comparison is false.
+
+The following table lists the basic comparison operators and what they mean.
+
+Table 1: Comparison operators
+
+| Operator | Description                  |
+|----------|------------------------------|
+| -eq      | Equal to                     |
+| -ne      | Not equal to                 |
+| -gt      | Greater than                 |
+| -lt      | Less than                    |
+| -le      | Less than or equal to        |
+| -ge      | Greater than or equal to     |
+
+These operators are case-insensitive when used with strings. This means that the results are the same whether the letters are capitalized or not. A case-sensitive version of each operator is available and begins with the letter c, such as -ceq and -cne.
+
+PowerShell also contains the -like operator and its case-sensitive companion, -clike. The -like operator resembles -eq but supports the use of the question mark (?) and asterisk (*) wildcard characters in string comparisons.
+
+Other, more advanced operators exist that are beyond the scope of this course. These operators include:
+
+* The -in and -contains operators, which test whether an object exists in a collection.
+* The -as operator, which tests whether an object is of a specified type.
+* The -match and -cmatch operators, which compare a string to a regular expression.
+
+PowerShell also contains many operators that reverse the logic of the comparison, such as -notlike and -notin.
+
+You can make comparisons directly at the command prompt, which returns either True or False. Here's an example:
+
+```powershell
+100 -gt 10
+True
+'hello' -eq 'HELLO'
+True
+'hello' -ceq 'HELLO'
+False
+```
+This technique makes it easy to test comparisons before you use them in a command.
+
+---
+## Review basic filter syntax in the pipeline
+
+The Where-Object command and its alias, Where, have two syntax forms: basic and advanced. These two forms are defined by an extensive list of parameter sets—one for each comparison operator. This allows for an easy-to-review syntax, especially in the basic form.
+
+For example, to display a list of only the running services, enter the following command in the console, and then press the Enter key:
+
+```powershell
+Get-Service | Where Status –eq Running
+```
+
+You start this basic syntax with the Where alias (you can also specify the full command name, Where-Object), followed by the property that you want PowerShell to compare. Then you specify a comparison operator, followed by the value that you want PowerShell to compare. Every object that has the specified value in the specified property will be kept.
+
+If you misspell the property name, or if you provide the name of a nonexistent property, PowerShell won't generate an error. Instead, your command won't generate any output. For example, consider the following command:
+
+```powershell
+Get-Service | Where Stat –eq Running
+```
+
+This command produces no output, because no service object has a Stat property that contains the value Running. In fact, none of the service objects have a Stat property. The comparison returns False for every object, which filters out all objects from the results.
 
 
+> [!NOTE]
+> Because of the large number of parameter sets needed to make the basic syntax functional, the help file for **Where-Object** is very long and might be difficult to review. Consider skipping the initial syntax section and going directly to the description or examples if you need help with this command.
 
+### Limitations of the basic syntax
+You can use the basic syntax for only a single comparison. You can't, for example, display a list of the services that are stopped and have a start mode of Automatic, because that requires two comparisons.
 
+You can't use the basic syntax with complex expressions. For example, the Name property of a service object consists of a string of characters. PowerShell uses a System.String object to contain that string of characters, and a System.String object has a Length property. The following command won't work with the basic filtering syntax:
+
+```powershell
+Get-Service | Where Name.Length –gt 5
+```
+The intent is to display all the services that have a name longer than five characters. However, this command will never produce output. As soon as you exceed the capabilities of the basic syntax, you must move to the advanced filtering syntax.
+
+---
+## Review advanced filter syntax in the pipeline
+
+The advanced syntax of Where-Object uses a filter script. A filter script is a script block that contains the comparison and that you pass by using the *-FilterScript* parameter. Within that script block, you can use the built-in `$PSItem` variable (or `$_`, which is also valid in versions of Windows PowerShell older than 3.0) to reference whatever object was piped into the command. Your filter script runs one time for each object that's piped into the command. When the filter script returns True, that object is passed down the pipeline as output. When the filter script returns False, that object is removed from the pipeline.
+
+The following two commands are functionally identical. The first uses the basic syntax, and the second uses the advanced syntax to do the same thing:
+
+```powershell
+Get-Service | Where Status –eq Running
+
+Get-Service | Where-Object –FilterScript { $PSItem.Status –eq 'Running' }
+```
+The *-FilterScript* parameter is positional, and most users omit it. Most users also use the Where alias or the ? alias, which is even shorter. Experienced Windows PowerShell users also use the `$_` variable instead of `$PSItem`, because only `$_` is allowed in Windows PowerShell 1.0 and Windows PowerShell 2.0. The following commands perform the same task as the previous two commands:
+
+```powershell
+Get-Service | Where {$PSItem.Status –eq 'Running'}
+
+Get-Service | ? {$_.Status –eq 'Running'}
+```
+The single quotation marks (' ') around **Running** in these examples are required to make it clear that it's a string. Otherwise, PowerShell will try to run a command called **Running**, which will fail because no such command exists.
+
+### Combining multiple criteria
+The advanced syntax allows you to combine multiple criteria by using the -and and -or Boolean, or logical, operators. Here's an example:
+
+```powershell
+Get-EventLog –LogName Security –Newest 100 |
+Where { $PSItem.EventID –eq 4672 –and $PSItem.EntryType –eq 'SuccessAudit' }
+```
+The logical operator must have a complete comparison on either side of it. In the preceding example, the first comparison checks the EventID property, and the second comparison checks the EntryType property. The following example is one that many beginning users try. It's incorrect, because the second comparison is incomplete:
+
+```powershell
+Get-Process | Where { $PSItem.CPU –gt 30 –and VM –lt 10000 }
+```
+
+The problem is that VM has no meaning, but $PSItem.VM would be correct. Here's another common mistake:
+
+```powershell
+Get-Service | Where { $PSItem.Status –eq 'Running' –or 'Starting' }
+```
+
+The problem is that 'Starting' isn't a complete comparison. It's just a string value, so $PSItem.Status -eq 'Starting' would be the correct syntax for the intended result.
+
+### Accessing properties that contain True or False
+Remember that the only purpose of the filter script is to produce a True or False value. Usually, you produce those values by using a comparison operator, like in the examples that you've learned up to this point. However, when a property already contains either True or False, you don't have to explicitly make a comparison. For example, the objects produced by Get-Process have a property named Responding. This property contains either True or False. This value indicates whether the process represented by the object is currently responding to the operating system. To obtain a list of the processes that are responding, you can use either of the following commands:
+
+```powershell
+Get-Process | Where { $PSItem.Responding –eq $True }
+
+Get-Process | Where { $PSItem.Responding }
+```
+
+In the first command, the special shell variable $True is used to represent the Boolean value True. The second command has no comparison at all, but it works because the Responding property already contains True or False.
+
+It's similar to reverse the logic to list only the processes that aren't responding:
+
+```powershell
+Get-Process | Where { -not $PSItem.Responding }
+```
+
+In the preceding example, the -not logical operator changes True to False, and it changes False to True. Therefore, if a process isn't responding, its Responding property is False. The -not operator changes the result to True, which causes the process to be passed into the pipeline and included in the final output of the command.
+
+### Accessing properties without limitations
+Although the basic filtering syntax can access only the direct properties of the object being evaluated, the advanced syntax doesn't have that limitation. For example, to display a list of all the services that have names longer than eight characters, use this command:
+
+```powershell
+Get-Service | Where {$PSItem.Name.Length –gt 8}
+```
+---
+
+## Optimize the filter performance in the pipeline
+
+The way you create your commands can have a significant effect on performance. Imagine that you have a container of plastic blocks. Each block is red, green, or blue. Each block has a letter of the alphabet printed on it. You have to put all the red blocks in alphabetical order. What would you do first?
+
+Consider creating this task as a Windows PowerShell command by using the fictional Get‑Block command. Which of the following two examples do you think will be faster?
+
+```powershell
+Get-Block | Sort-Object –Property Letter | Where-Object –FilterScript { $PSItem.Color –eq 'Red' }
+
+Get-Block | Where-Object –FilterScript { $PSItem.Color –eq 'Red' } | Sort-Object –Property Letter
+```
+
+The second command will be faster, because it removes unwanted blocks from the pipeline so that only the remaining blocks are sorted. The first command sorts all the blocks and then removes many of them. This means that much of the sorting effort was wasted.
+
+Many PowerShell scripters use a mnemonic, which is a phrase that serves as a simple reminder, to help them remember to do the correct thing when they're optimizing performance. The phrase is filter left, and it means that any filtering should occur as far to the left, or as close to the beginning of the command line, as possible.
+
+Sometimes, moving filtering as far to the left as possible means that you'll not use Where-Object. For example, the Get-ChildItem command can produce a list that includes files and folders. Each object produced by the command has a property named PSIsContainer. It contains True if the object represents a folder and False if the object represents a file. The following command will produce a list that includes only files:
+
+```powershell
+Get-ChildItem | Where { -not $PSItem.PSIsContainer }
+```
+
+However, this isn't the most efficient way to produce the result. The Get-ChildItem command has a parameter that limits the command’s output:
+
+```powershell
+Get-ChildItem -File
+```
+When it's possible, check the help files for the commands that you use, to check whether they contain a parameter that can do the filtering you want.
+
+---
+### Summary
+
+In this module, you've learned how to filter objects out of the pipeline by using the Where-Object cmdlet to specify various criteria. The following are the key takeaways:
+
+* The PowerShell comparison operators are used to compare a particular property of an object to a value. They help inform PowerShell of the objects that need to be retained and those that need to be removed from the pipeline.
+* The Where-Object command has basic and advanced forms of syntax. Both forms are defined by an extensive list of parameter sets—one for each comparison operator.
+* The advanced syntax of Where-Object uses a filter script, which is a script block that contains the comparison and that you pass by using the -FilterScript parameter.
+* Many PowerShell scripters use the mnemonic filter left to help them remember to do the correct thing when they're optimizing performance.
 
 ---
 ## Check your knowledge
@@ -447,6 +648,38 @@ In this module, you've learned to manipulate objects in the pipeline by using co
 
 ✅ **Correct Answer:** Select-Object  
 💡 The `Select-Object` cmdlet lets you choose specific properties to include in the output, making it useful for filtering and shaping data.
+
+</details>
+
+---
+
+### 5. Which of the following commands provides a more efficient way to produce a list of services that have names beginning with **svc**?
+
+* [ ] `Get-Service | Where Name –like svc*`
+* [x] `Get-Service –Name svc*`
+* [ ] `Get-Service | Where Name -eq svc`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `Get-Service –Name svc*`  
+💡 Using the `-Name` parameter performs filtering at the cmdlet level, which is more efficient than piping results to `Where-Object`.
+
+</details>
+
+---
+
+### 6. Of the variables `$_` and `$PSItem`, which one would many experienced Windows PowerShell users prefer to use?
+
+* [ ] `$_`
+* [ ] `$PSItem`
+* [ ] Without exception, both can be used interchangeably
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `$_`  
+💡 Although `$_` and `$PSItem` are interchangeable, many experienced PowerShell users prefer `$_` due to long-standing convention and familiarity.
 
 </details>
 
