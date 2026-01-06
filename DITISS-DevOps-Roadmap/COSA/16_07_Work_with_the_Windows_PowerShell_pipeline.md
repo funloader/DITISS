@@ -585,6 +585,107 @@ In this module, you've learned how to filter objects out of the pipeline by usin
 * Many PowerShell scripters use the mnemonic filter left to help them remember to do the correct thing when they're optimizing performance.
 
 ---
+# Enumerate objects in the pipeline
+
+## Introduction
+
+In this module, you'll learn how to enumerate objects in the pipeline so that you can work with one object at a time during automation. Enumerating objects builds on the skills you already learned, and it's a building block for creating automation scripts.
+
+### Learning objectives
+After completing this module, you'll be able to:
+
+* Explain the purpose of enumeration.
+* Explain how to enumerate objects by using basic syntax.
+* Explain how to enumerate objects by using advanced syntax.
+
+### Prerequisites
+Familiarity with:
+
+* Windows networking technologies and implementation.
+* Windows Server administration, maintenance, and troubleshooting.
+* Windows PowerShell and its commands to perform specific tasks.
+* PowerShell cmdlets used for system administration tasks related to Active Directory, network configuration, server administration, and Windows 10 device administration.
+
+---
+## Learn about enumerations in the pipeline
+
+*Enumeration* is the process of performing a task on each object, one at a time, in a collection. Frequently, PowerShell doesn't require you to explicitly enumerate objects. For example, if you need to stop every running Notepad process on your computer, you can run either of these two commands:
+
+```powershell
+Get-Process –Name Notepad | Stop-Process
+
+Stop-Process –Name Notepad
+```
+
+One common scenario that requires enumeration is when you run a method of an object, and no command provides the same functionality as that method. For example, consider an object produced when you run Get-ChildItem -File to list files on a disk drive. The resulting object type, System.IO.FileInfo, has a method named Encrypt that can encrypt a file by using the current user account’s encryption certificate. No equivalent command is built into Windows PowerShell, so, if you want to run that method on many file objects, enumeration allows you to accomplish this with a single command.
+
+---
+## Review basic syntax to enumerate objects in the pipeline
+
+The ForEach-Object command performs enumeration. It has two common aliases: ForEach and %. Like Where-Object, ForEach-Object has a basic syntax and an advanced syntax.
+
+In the basic syntax, you can run a single method or access a single property of the objects that were piped into the command. Here's an example:
+
+```powershell
+Get-ChildItem –Path C:\Encrypted\  -File | ForEach-Object  -MemberName Encrypt
+```
+
+With this syntax, you don't include the parentheses after the member name if the member is a method. Because this basic syntax is meant to be short, you'll frequently notice it without the -MemberName parameter name, and you might notice it with an alias instead of the full command name. For example, both of the following commands perform the same action:
+
+```powershell
+Get-ChildItem –Path C:\Encrypted\ -File | ForEach Encrypt
+
+Get-ChildItem –Path C:\Encrypted\ -File | % Encrypt
+```
+
+> [!NOTE]
+> You might not run into many scenarios that require enumeration. Each new operating system and version of PowerShell introduces new PowerShell commands. Newer operating systems typically introduce new commands which perform actions that previously required enumeration.
+
+### Limitations of the basic syntax
+The basic syntax can access only a single property or method. It can't perform logical comparisons that use -and or -or; it can't make decisions; and it can't run any other commands or code. For example, the following command doesn't run, and it produces an error:
+
+```powershell
+Get-Service | ForEach -MemberName Stop -and -MemberName Close
+```
+---
+## Review advanced syntax to enumerate objects in the pipeline
+
+The advanced syntax for enumeration provides more flexibility and functionality than the basic syntax. Instead of letting you access a single object member, you can run a whole script. That script can include one command, or it can include many commands in sequence.
+
+For example, to encrypt a set of files by using the advanced syntax, enter the following command in the console, and then select Enter:
+
+```powershell
+Get-ChildItem –Path C:\ToEncrypt\ -File | ForEach-Object –Process { $PSItem.Encrypt() }
+```
+
+The ForEach-Object command can accept any number of objects from the pipeline. It has the -Process parameter that accepts a script block. This script block runs one time for each object that was piped in. Every time that the script block runs, the built-in variable $PSItem (or $_) can be used to refer to the current object. In the preceding example command, the Encrypt() method of each file object runs.
+
+> [!NOTE]
+> When used with the advanced syntax, method names are always followed by opening and closing parentheses, even when the method doesn't have any input arguments. For methods that do need input arguments, provide them as a comma-separated list inside the parentheses. Don't include a space or other characters between the method name and the opening parenthesis.
+
+
+### Advanced techniques
+In some situations, you might need to repeat a particular task a specified number of times. You can use ForEach-Object for that purpose when you pass it an input that uses the range operator. The range operator is two periods (..) with no space between them. For example, run the following command:
+
+```powershell
+1..100 | ForEach-Object { Get-Random }
+```
+In the preceding command, the range operator produces integer objects from 1 through 100. Those 100 objects are piped to ForEach-Object, forcing the script block to run 100 times. However, because neither $_ nor $_PSItem display in the script block, the actual integers aren't used. Instead, the Get-Random command runs 100 times. The integer objects are used only to set the number of times the script block runs.
+
+---
+### Summary
+
+In this module, you've learned how to enumerate objects in the pipeline so that you can work with one object at a time during automation. The following are the key takeaways:
+
+* Enumeration is the process of performing a task on each object, one at a time, in a collection. If you want to run a method on many file objects, where no command provides the same functionality as that method, enumeration will help you accomplish this with a single command.
+* The ForEach-Object command that performs enumeration has a basic syntax and an advanced syntax. In the basic syntax, you can run a single method or access a single property of the objects that were piped into the command.
+* The advanced syntax for enumeration provides more flexibility and functionality than the basic syntax. Instead of letting you access a single object member, you can run a whole script. That script can include one command, or it can include many commands in sequence.
+
+---
+
+
+
+---
 ## Check your knowledge
 
 ---
@@ -656,7 +757,7 @@ In this module, you've learned how to filter objects out of the pipeline by usin
 ### 5. Which of the following commands provides a more efficient way to produce a list of services that have names beginning with **svc**?
 
 * [ ] `Get-Service | Where Name –like svc*`
-* [x] `Get-Service –Name svc*`
+* [ ] `Get-Service –Name svc*`
 * [ ] `Get-Service | Where Name -eq svc`
 
 <details>
@@ -684,3 +785,36 @@ In this module, you've learned how to filter objects out of the pipeline by usin
 </details>
 
 ---
+
+### 7. Which symbol represents the range operator?
+
+* [ ] `%`
+* [ ] `$_`
+* [ ] `..`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `..`
+💡 The range operator (`..`) is used to generate a sequence of values, such as `1..5`.
+
+</details>
+
+---
+
+### 8. Which symbol represents the alias of the `ForEach-Object` cmdlet?
+
+* [ ] `$_`
+* [ ] `%`
+* [ ] `..`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `%`
+💡 `%` is the commonly used alias for the `ForEach-Object` cmdlet in PowerShell.
+
+</details>
+
+---
+
