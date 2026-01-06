@@ -682,7 +682,130 @@ In this module, you've learned how to enumerate objects in the pipeline so that 
 * The advanced syntax for enumeration provides more flexibility and functionality than the basic syntax. Instead of letting you access a single object member, you can run a whole script. That script can include one command, or it can include many commands in sequence.
 
 ---
+# Send and pass data as output from the pipeline
 
+## Introduction
+
+When you provide information about your network infrastructure, it's often a requirement that you provide the information in specific formats, such as for displaying on the screen, for printing a hard copy, or for storing in a file for later use. In this module, you'll learn how to send pipeline data to files and in various output formats.
+
+### Learning objectives
+After completing this module, you'll be able to:
+
+* Explain how to write pipeline data to a file.
+* Explain how to convert pipeline data to the comma-separated values (CSV), XML, JavaScript Object Notation (JSON), and HTML formats.
+* Explain how to send pipeline data to other locations.
+
+### Prerequisites
+Familiarity with:
+
+* Windows networking technologies and implementation.
+* Windows Server administration, maintenance, and troubleshooting.
+* Windows PowerShell and its commands to perform specific tasks.
+* PowerShell cmdlets used for system administration tasks related to Active Directory, network configuration, server administration, and Windows 10 device administration.
+
+---
+## Write pipeline data to a file
+
+PowerShell provides several ways to write output to a file. The Out-File command can accept input from the pipeline and write that data to a file. It can render objects as text by using the same technique that Windows PowerShell uses to render objects as text for on-screen display. That is, whatever you pipe into Out-File is the same as what would otherwise display on the screen.
+
+PowerShell also supports converting and exporting objects, which the next topics examine. The Out-File behavior differs from converting or exporting the objects, because you don’t change the form of the objects. Instead, PowerShell captures what would have displayed on the screen.
+
+Various Out-File parameters allow you to specify a file name, append content to an existing file, specify character encoding, and more. PowerShell also supports the text redirection operators (> and >>) that cmd.exe uses. These operators act as an alias for Out-File. The greater than sign (>) at the end of a pipeline directs output to a file, overwriting the content. Two consecutive greater than signs (>>) direct output to a file, appending the output to any text already in the file.
+
+Out-File is the easiest way to move data from PowerShell to external storage. However, the text files that Out-File creates are usually intended for reviewing by a person. Therefore, reading the data back into Windows PowerShell in a way that enables data manipulation, sorting, selection, and measurement is frequently difficult or impractical.
+
+Out-File doesn't produce any output of its own, which means that the command doesn't put objects into the pipeline. After you run the command, you should expect no output on the screen.
+
+### Keeping track of what the pipeline contains
+As you begin to create more complex commands in PowerShell, you need to become accustomed to keeping track of the pipeline’s contents. As each command in the pipeline runs, it might produce output different from the input it received. Therefore, the next command will work with something different.
+
+For example, review the following pipeline:
+
+```powershell
+Get-Service |
+Sort-Object –Property Status, Name |
+Select-Object –Property DisplayName,Status |
+Out-File –FilePath ServiceList.csv
+```
+The preceding example contains five commands in a single command line, or pipeline:
+
+* After **Get-Service** runs, the pipeline contains objects of type System.ServiceProcess.ServiceController. These objects have a known set of properties and methods.
+* After **Sort-Object** runs, the pipeline still contains those ServiceController objects. Sort-Object produces output that has the same kind of object that was put into it.
+* After **Select-Object** runs, the pipeline no longer contains ServiceController objects. Instead, it contains objects of type
+* **Selected.System.ServiceProcess.ServiceController**. This behavior indicates that the objects derive from the regular **ServiceController** but have had some of their members removed. In this case, the objects contain only their **DisplayName** and Status properties, so you can no longer sort them by Name, because that property no longer exists.
+* After **Out-File** runs, the pipeline contains nothing. Therefore, nothing displays on the screen after this complete command runs.
+
+> [!NOTE]
+> When you have a complex, multiple‑command pipeline such as this one, you might have to debug it if it doesn't run correctly the first time. The best way to debug is to start with one command and check what it produces. Then add the second command, and check what happens. Continue to add one command at a time, verifying that each one produces the output you expect before you add the next command. For example, the output of the previous command might not seem to be correctly sorted, because the sorting was done on the Name property and not the DisplayName property.
+
+---
+## Convert pipeline objects to other forms of data representation in PowerShell
+
+PowerShell includes the ability to convert pipeline objects to other forms of data representation. For example, you can convert a collection of objects to the comma-separated value (CSV) format. Converting to CSV is useful for reviewing and manipulating large amounts of data, because you can easily open the resulting file in a program such as Microsoft Excel.
+
+PowerShell uses two distinct verbs for conversion: ConvertTo and Export. A command that uses ConvertTo, such as ConvertTo-Csv accepts objects as input from the pipeline and produces converted data as output to the pipeline. That is, the data remains in PowerShell. You can pipe the data to another command that writes the data to a file or manipulates it in another way.
+
+Here's an example:
+
+```powershell
+Get-Service | ConvertTo-Csv | Out-File Services.csv
+```
+A command that uses Export, such as Export-Csv, performs two operations: it converts the data and then writes the data to external storage, such as a file on disk.
+
+Here's an example:
+```powershell
+Get-Service | Export-Csv Services.csv
+```
+
+Export commands, such as Export-Csv, combine the functionality of ConvertTo with a command such as Out-File. Export commands don't usually put any output into the pipeline. Therefore, nothing displays on the screen after an export command runs.
+
+A key part of both operations is that the form of the data changes. The structure referred to as objects no longer contains the data, which is instead represented in another form entirely. When you convert data to another form, it's generally more difficult to manipulate within Windows PowerShell. For example, you can't easily sort, select, or measure data that's been converted.
+
+As noted previously, the output of Export-Csv is a text file. The command writes the property names to the first row, as headers. One advantage of the CSV output format is that Windows PowerShell also supports importing the format with the Import-Csv command. Import-Csv creates objects that have properties matching the columns in the CSV file.
+
+### Converting output to XML
+PowerShell also supports writing output in the XML format. XML separates the data from the display format. The data then becomes highly portable and can be consumed by other processes and applications that don't need to know what format the data was originally presented in.
+
+Another advantage of XML is that properties containing multiple values are easily identifiable because a new XML element, which is a data container in the XML file, is created for each value. Finally, standard ways exist to query, parse, and transform XML data.
+
+PowerShell converts data to XML by using the ConvertTo-Clixml and Export-Clixml commands. As with ConvertTo-Csv and Export-Csv, the ConvertTo version of the command doesn't send output to a file but leaves the output in memory for further processing. The Export version of the command creates an XML file in the full path specified by the -Path positional parameter.
+
+### Converting output to JSON
+Another lightweight and increasingly popular data format is the JavaScript Object Notation (JSON) format. JSON is very popular in web application development because of its compact size and flexibility. As the name might suggest, it's very easy for JavaScript to process.
+
+The JSON format represents data in name-value pairs that resemble and work like hash tables. So, like a hash table, JSON doesn't consider what kind of data exists in the name or value. It's up to the script or application consuming the JSON data to understand what kind of data is represented.
+
+In PowerShell, you create JSON‑formatted data by using the ConvertTo-Json command. As with the other ConvertTo commands, no output file is created. Unlike XML and CSV, however, JSON doesn't have an Export command for converting the data and creating an output file. Therefore, you must use Out-File or one of the text redirection operators to send the JSON data to a file.
+
+### Converting output to HTML
+Sometimes, you need to display your Windows PowerShell output in a web browser or send it to a process, like the Send-MailMessage command, which accepts HTML input. Windows PowerShell supports this through the ConvertTo-Html command. As with the other ConvertTo commands, no output file is created. You must direct the output by using Out-File or one of its aliases.
+
+ConvertTo-Html creates a simple list or table that's coded as HTML. You can control the HTML format in a limited way through a variety of parameters, such as:
+
+* *‑Head*. Specifies the content of an HTML head section.
+* *‑Title*. Sets the value of the HTML title tag.
+* *‑PreContent*. Defines any content that should display before the table or list output.
+* *‑PostContent*. Defines any content that should display after the table or list output.
+
+---
+## Control additional output options in PowerShell
+
+PowerShell provides a variety of other options for controlling output. For example, you might not want to scroll through a long list of data returned by a command such as Get-ADUser. You can use the Out-Host command to force PowerShell to pause during each page of data it returns. You can force Out-Host to page the output when you use the -Paging parameter which causes PowerShell to prompt you for input after it displays one page of data on the screen.
+
+If you want to print output, you can use the Out-Printer command to pipe data to your default printer (if you specify no parameter) or to a specific printer (if you specify the -Name positional parameter). If you want to review, sort, filter, and analyze output, and you don't need or want to keep a more permanent copy of the data stored in a CSV file or spreadsheet, you can send the output to a grid view window by using the Out-GridView command. The grid view window is an interactive window that works very much like a Microsoft Excel spreadsheet. It allows you to sort different columns, filter the data, and even copy data from the window to other programs. The one thing you can't do is save the data directly from the grid view window.
+
+--- 
+### Summary
+
+In this module, you've learned how to send pipeline data to files and in various output formats. The following are the key takeaways:
+
+* PowerShell provides several ways to write output to a file. The Out-File command can accept input from the pipeline and write that data to a file. Its behavior differs from converting or exporting the objects, because you don’t change the form of the objects.
+* PowerShell includes the ability to convert pipeline objects to other forms of data representation. It uses two distinct verbs for conversion: ConvertTo and Export. A command that uses ConvertTo, such as ConvertTo-Csv accepts objects as input from the pipeline and produces converted data as output to the pipeline. That is, the data remains in PowerShell.
+* A command that uses Export, such as Export-Csv, performs two operations: it converts the data and then writes the data to external storage, such as a file on disk. Export commands combine the functionality of ConvertTo with a command such as Out-File. They don't usually put any output into the pipeline.
+* PowerShell converts data to XML by using the ConvertTo-Clixml and Export-Clixml commands.
+* In PowerShell, you create JSON‑formatted data by using the ConvertTo-Json command. Unlike XML and CSV, however, JSON doesn't have an Export command for converting the data and creating an output file. Therefore, you must use Out-File or one of the text redirection operators to send the JSON data to a file.
+* Windows PowerShell has the ConvertTo-Html command that you can use when you need to display your Windows PowerShell output in a web browser or send it to a process, like the Send-MailMessage command, which accepts HTML input.
+* PowerShell provides various other options for controlling output.
 
 
 ---
@@ -818,3 +941,34 @@ In this module, you've learned how to enumerate objects in the pipeline so that 
 
 ---
 
+### 9. Which cmdlet should a user pipe the output of `Get-ADUser` to in order to be able to display the list of results one page at a time in the PowerShell window?
+
+* [ ] `Out-Host`
+* [ ] `ConvertTo-HTML`
+* [ ] `Out-File`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `Out-Host`
+💡 When used with the `-Paging` parameter (`Out-Host -Paging`), this cmdlet displays output one screen at a time in the PowerShell console.
+
+</details>
+
+---
+
+### 10. Which symbol represents the alias of the `Out-File` cmdlet that results in overwriting content of an existing file?
+
+* [ ] `$_`
+* [ ] `%`
+* [ ] `>`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `>`
+💡 The `>` redirection operator overwrites the contents of an existing file (similar to `Out-File` without `-Append`).
+
+</details>
+
+---
