@@ -347,3 +347,354 @@ What is wrong with this configuration?
 
 ---
 
+Perfect! I’ve carefully reviewed your original MCQs and I can now **upgrade them to PG-DITISS CCEE-level questions**. I will make them:
+
+* **Scenario-based or analytical where possible**
+* **One correct answer per question**
+* **Distractors plausible and credible**
+* **Formatted exactly as requested**
+
+Here’s the fully improved set:
+
+---
+
+### 21. Which routing protocol supports discontiguous networks **without requiring manual summarization** by default?
+
+* [ ] RIPv2
+* [ ] EIGRP
+* [ ] IGRP
+* [ ] OSPF
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** EIGRP
+💡 EIGRP automatically supports discontiguous networks because it uses **classless routing** with VLSM and does not rely on summarization by default. RIPv2 also supports discontiguous networks but requires **manual summarization** configuration.
+
+</details>
+
+---
+
+### 22. To view the complete routing table on a Cisco router, which command should be used?
+
+* [ ] show route table
+* [ ] show route
+* [ ] show ip route
+* [ ] None of the above
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** show ip route
+💡 The `show ip route` command displays all routes in the routing table, including connected, static, and learned routes.
+
+</details>
+
+---
+
+### 23. EIGRP uses multiple metrics to determine the **best path**. Which of the following are included in its primary metric calculation?
+
+* [ ] Delay
+* [ ] Reliability
+* [ ] Bandwidth
+* [ ] All of the above
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** All of the above  
+💡 EIGRP computes a **composite metric** primarily using **bandwidth, delay, reliability, and load**. MTU is exchanged in routing updates but **does not affect metric calculation**. The best path is chosen based on the lowest metric value.
+
+</details>
+
+---
+
+### 24. Auto-summarization is **disabled by default** in which routing protocol?
+
+* [ ] RIPv1
+* [ ] RIPv2
+* [ ] OSPF
+* [ ] None of the above
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** RIPv2
+💡 RIPv1 performs auto-summarization by default (classful), while RIPv2 is **classless** and does **not auto-summarize**, supporting VLSM and discontiguous networks. OSPF is inherently classless.
+
+</details>
+
+---
+
+### 25. Hierarchical network design, including core, distribution, and access layers, is a characteristic of which protocol type?
+
+* [ ] RIPv1
+* [ ] RIPv2
+* [ ] OSPF
+* [ ] None of the above
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** OSPF
+💡 OSPF is designed for **hierarchical IP routing**, supporting **areas** and efficient routing in large networks. RIPv1 and RIPv2 are flat and do not implement hierarchical structure.
+
+</details>
+
+---
+
+### 26. What uniquely identifies a router in an OSPF network?
+
+* [ ] Interface IP address
+* [ ] Router ID
+* [ ] MAC address
+* [ ] None of the above
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Router ID  
+💡 OSPF uses a **Router ID (RID)**, a 32-bit logical identifier, to uniquely identify routers in the network. It is typically set manually or automatically chosen as the **highest IP address on a loopback or active interface**. It is **not tied directly to any single interface IP**.
+
+</details>
+
+---
+
+### 27. How long is an IPv6 address?
+
+* [ ] 32 bits
+* [ ] 128 bytes
+* [ ] 64 bits
+* [ ] 128 bits
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 128 bits
+💡 IPv6 addresses are **128-bit identifiers**, written in hexadecimal notation, supporting a vastly larger address space than IPv4.
+
+</details>
+
+---
+
+### 28. Which command is used to save the current running configuration to startup configuration on a Cisco device?
+
+* [ ] copy running backup
+* [ ] copy running-config startup-config
+* [ ] config mem
+* [ ] wr mem
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** copy running-config startup-config
+💡 This command saves the **active running configuration** to NVRAM so that it persists after a reboot.
+
+</details>
+
+---
+
+### 29. To delete the configuration stored in NVRAM, which command is correct?
+
+* [ ] erase startup
+* [ ] erase nvram
+* [ ] delete nvram
+* [ ] erase running
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** erase startup
+💡 `erase startup-config` clears the saved configuration from NVRAM, leaving the router with no startup configuration.
+
+</details>
+
+---
+
+### 30. Which protocols are used to configure **trunking** on a switch?
+
+* [ ] VLAN Trunking Protocol (VTP) only
+* [ ] 802.1Q and ISL
+* [ ] Both VTP and trunking protocols
+* [ ] None of the above
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 802.1Q and ISL  
+💡 **802.1Q** (IEEE standard) and **ISL** (Cisco proprietary) are the protocols used for **trunking**, carrying multiple VLANs over a single link. **VTP is not a trunking protocol**; it only propagates VLAN information across switches.
+
+</details>
+
+---
+
+### 31. What is the **fundamental purpose** of a computer network?
+
+* [ ] Sharing resources
+* [ ] Storing data
+* [ ] Performing calculations
+* [ ] Enhancing security
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Sharing resources
+💡 Networks primarily exist to **allow multiple devices to share resources**, such as files, printers, and internet access.
+
+</details>
+
+---
+
+### 32. Which topology does the **Internet resemble**, due to multiple redundant paths?
+
+* [ ] Ring
+* [ ] Bus
+* [ ] Star
+* [ ] Mesh
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Mesh
+💡 The Internet is a **mesh topology** at a large scale, with multiple interconnections ensuring redundancy and resilience.
+
+</details>
+
+---
+
+### 33. Which type of network spans a large geographical area, like a city, country, or the world?
+
+* [ ] LAN
+* [ ] MAN
+* [ ] WAN
+* [ ] PAN
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** WAN
+💡 WANs connect multiple LANs over **large distances**, unlike LANs (local) or PANs (personal). MAN is city-scale.
+
+</details>
+
+---
+
+### 34. Which device connects **different network segments** and routes traffic between them?
+
+* [ ] Repeater
+* [ ] Router
+* [ ] Bridge
+* [ ] Modem
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Router
+💡 Routers forward packets **between networks** based on IP addresses, unlike repeaters (physical layer) or bridges (link layer).
+
+</details>
+
+---
+
+### 35. The first wide-area packet-switched network in the US was called:
+
+* [ ] CNNET
+* [ ] NSFNET
+* [ ] ASAPNET
+* [ ] ARPANET
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** ARPANET
+💡 ARPANET, launched in 1969, was the **precursor to the modern Internet**, connecting universities and research institutions.
+
+</details>
+
+---
+
+### 36. The combination of two or more interconnected networks is called:
+
+* [ ] Internetwork
+* [ ] LAN
+* [ ] MAN
+* [ ] WAN
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Internetwork
+💡 An **internetwork** is formed when multiple networks are connected using routers or gateways.
+
+</details>
+
+---
+
+### 37. ISP stands for:
+
+* [ ] International Service Provider
+* [ ] International System Provider
+* [ ] Internet Service Provider
+* [ ] Internetwork System Provider
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Internet Service Provider
+💡 ISPs provide **internet access** to organizations and individuals.
+
+</details>
+
+---
+
+### 38. National ISPs interconnect at which points for exchanging traffic?
+
+* [ ] Peering Points
+* [ ] Network Access Points (NAPs) / Internet Exchange Points (IXPs)
+* [ ] National ISP
+* [ ] None of these
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Network Access Points (NAPs) / Internet Exchange Points (IXPs)  
+💡 Historically, **NAPs** were used for ISPs to exchange traffic. Modern networks also use **IXPs** to interconnect ISPs efficiently. These points form the backbone for national and global internet traffic exchange.
+
+</details>
+
+---
+
+### 39. Which network typically provides **high-speed transmission** within a limited area?
+
+* [ ] MAN
+* [ ] LAN
+* [ ] WAN
+* [ ] Internetwork
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** LAN
+💡 LANs support **high-speed connectivity** (Ethernet, Wi-Fi) within offices or buildings, unlike WANs which are slower over large distances.
+
+</details>
+
+---
+
+### 40. Data transmission where both directions are possible, but only **one direction at a time**, is called:
+
+* [ ] Simplex
+* [ ] Four-wire circuit
+* [ ] Half-duplex
+* [ ] Full duplex
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Half-duplex
+💡 In half-duplex communication, **devices take turns** sending data. Full-duplex allows simultaneous transmission.
+
+</details>
+
+---
+
