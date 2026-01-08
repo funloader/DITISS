@@ -1,232 +1,246 @@
-# 📘 Session 14: NAT, IPv6 & WAN Technologies
----
-
-## 🌐 **1. NAT (Network Address Translation)**
-
-### 📌 **Concept Overview**
-
-* **NAT** allows **private (internal) IP addresses** to communicate with **public (external) networks** by translating IP addresses.
-* Commonly implemented on **routers / firewalls / gateways**.
-* Widely used due to **IPv4 address exhaustion**.
+# 📌 Session 14 – Linux Networking Services (PG-DITISS – COSA) 🖧
 
 ---
 
-### 📖 **Key Definitions**
+## 🧩 **1️⃣ The Samba Server: Networking with Windows Systems** 🪟🔗
 
-* **Private IP Address**: Non-routable IP (e.g., 10.x.x.x, 172.16–31.x.x, 192.168.x.x)
-* **Public IP Address**: Globally routable IP assigned by ISP
-* **Translation Table**: Mapping maintained by NAT device
-* **PAT (Port Address Translation)**: Uses port numbers along with IP
+### 🔹 **Concept Overview**
 
----
+* **Samba** is an **open-source implementation of SMB/CIFS protocol**
+* Enables **file & printer sharing** between **Linux and Windows systems**
+* Allows Linux to act as:
 
-### 🧱 **Types of NAT**
-
-| Type                   | Description                                              |
-| ---------------------- | -------------------------------------------------------- |
-| **Static NAT**         | One private IP ↔ One public IP (fixed mapping)           |
-| **Dynamic NAT**        | Private IP mapped to any IP from public pool             |
-| **PAT / NAT Overload** | Multiple private IPs share **one public IP** using ports |
+  * File Server
+  * Print Server
+  * Windows Domain Member / Controller (basic)
 
 ---
 
-### ⭐ **Advantages of NAT**
+### 📘 **Key Definitions**
 
-* Conserves IPv4 addresses
-* Improves internal network security
-* Hides internal IP structure
+* **SMB (Server Message Block):** Network file-sharing protocol used by Windows
+* **CIFS:** Enhanced version of SMB
+* **Samba Daemons:**
 
-### ⚠️ **Disadvantages of NAT**
-
-* Breaks **end-to-end connectivity**
-* Issues with some protocols (VoIP, FTP active mode)
-* Adds processing overhead
+  * `smbd` → File & printer sharing
+  * `nmbd` → NetBIOS name resolution
+* **Workgroup:** Logical Windows network grouping
 
 ---
 
-### 🧠 **Important Facts for MCQs**
+### 📚 **Main Content**
 
-* NAT works at **Network Layer (Layer 3)**
-* PAT uses **Layer 4 (Port numbers)** additionally
-* NAT is **not a security mechanism**, but provides obscurity
-* Private IPs are defined in **RFC 1918**
+#### 🔸 **Samba Components**
 
----
+* `smb.conf` → Main configuration file (`/etc/samba/smb.conf`)
+* `smbd` → Handles file sharing & authentication
+* `nmbd` → Handles browsing & NetBIOS
 
-### 🧪 **Examples**
+#### 🔸 **Basic Samba Installation**
 
-* Home Wi-Fi router translating 192.168.1.x → single public IP
-* Corporate LAN accessing internet via firewall NAT
+```bash
+sudo apt install samba
+```
 
----
+#### 🔸 **Starting / Enabling Samba**
 
-### ⚠️ **MCQ Pointers / Exam Traps**
+```bash
+sudo systemctl start smbd
+sudo systemctl enable smbd
+```
 
-* ❌ NAT ≠ Firewall
-* ❌ NAT does NOT encrypt traffic
-* ✔ PAT = NAT Overload
-* ✔ NAT mainly exists due to **IPv4 limitation**
+#### 🔸 **Creating a Samba Share**
 
----
+* Add at end of `smb.conf`:
 
-### 🔧 **Corrections / Improvements / Suggested Substitutions**
+```ini
+[shared]
+path = /home/share
+browseable = yes
+writable = yes
+guest ok = yes
+```
 
-* If notes imply NAT = security → ❗Correct: **NAT only hides IPs**
-* Use term **PAT** instead of “many-to-one NAT” for accuracy
+#### 🔸 **Samba User Management**
 
----
-
----
-
-## 🌍 **2. IPv6 (Internet Protocol Version 6)**
-
-### 📌 **Concept Overview**
-
-* **IPv6** is the successor of IPv4, designed to solve **address exhaustion**.
-* Uses **128-bit addressing**.
+```bash
+sudo smbpasswd -a username
+```
 
 ---
 
-### 📖 **Key Definitions**
+### 📌 **Important Facts for MCQs**
 
-* **IPv6 Address Length**: 128 bits
-* **Hexadecimal Representation** (base 16)
-* **No NAT required** in IPv6
-
----
-
-### 🧱 **IPv6 Address Format**
-
-* Example:
-  `2001:0db8:85a3:0000:0000:8a2e:0370:7334`
-* Leading zeros can be omitted
-* Consecutive zeros replaced with `::` (once only)
-
----
-
-### 🧩 **Types of IPv6 Addresses**
-
-| Type            | Purpose                   |
-| --------------- | ------------------------- |
-| **Unicast**     | One-to-one communication  |
-| **Multicast**   | One-to-many               |
-| **Anycast**     | One-to-nearest            |
-| ❌ **Broadcast** | **Not supported in IPv6** |
-
----
-
-### ⭐ **Key Features of IPv6**
-
-* Huge address space (2¹²⁸)
-* No NAT required
-* Built-in **IPSec support**
-* Simplified header
-* Auto-configuration (SLAAC)
-
----
-
-### 🧠 **Important Facts for MCQs**
-
-* IPv6 replaces **ARP with NDP**
-* No broadcast → uses multicast
-* Header size is **fixed (40 bytes)**
-* IPv6 uses **ICMPv6**
-
----
-
-### 🧪 **Examples**
-
-* Loopback: `::1`
-* Link-local: `fe80::/10`
-* Global unicast: `2000::/3`
+* Protocol used: **SMB/CIFS**
+* Default config file: **/etc/samba/smb.conf**
+* Windows access format: `\\Linux_IP\sharename`
+* Samba ≠ FTP (file sharing vs file transfer)
 
 ---
 
 ### ⚠️ **MCQ Pointers / Exam Traps**
 
-* ❌ IPv6 does NOT use NAT
-* ❌ No broadcast in IPv6
-* ✔ IPv6 uses hexadecimal
-* ✔ IPv6 header is simpler than IPv4
+* ❌ Samba ≠ NFS (NFS is Unix-Unix)
+* ❌ `nmbd` ≠ file sharing (only name resolution)
+* ✔ Samba works on **TCP ports 139 & 445**
+* ✔ Samba allows Linux to integrate into Windows network
 
 ---
 
-### 🔧 **Corrections / Improvements / Suggested Substitutions**
+### 🔧 **Corrections / Improvements**
 
-* Replace “IPv6 is slower” → ❗Incorrect
-* Correct term: **NDP instead of ARP**
-
----
+* Modern systems rely more on **SMB2/SMB3** instead of CIFS
+* Domain Controller role is **limited** compared to Windows AD
 
 ---
 
-## 🌐 **3. WAN Technologies**
+---
 
-### 📌 **Concept Overview**
+## 🧩 **2️⃣ Configuring a DHCP Server** 📡
 
-* **WAN (Wide Area Network)** connects networks over **large geographical areas**.
-* Uses **service provider infrastructure**.
+### 🔹 **Concept Overview**
+
+* **DHCP (Dynamic Host Configuration Protocol)** automatically assigns:
+
+  * IP Address
+  * Subnet Mask
+  * Gateway
+  * DNS Server
+* Eliminates **manual IP configuration**
 
 ---
 
-### 📖 **Key Definitions**
+### 📘 **Key Definitions**
 
-* **WAN**: Network spanning cities/countries
-* **ISP**: Internet Service Provider
-* **Bandwidth**: Data transfer capacity
-
----
-
-### 🧱 **Common WAN Technologies**
-
-| Technology      | Description                    |
-| --------------- | ------------------------------ |
-| **Leased Line** | Dedicated point-to-point link  |
-| **ISDN**        | Digital telephone-based WAN    |
-| **MPLS**        | Label-based high-speed routing |
-| **Frame Relay** | Packet-switched WAN (legacy)   |
-| **ATM**         | Cell-based (53 bytes)          |
-| **DSL**         | Uses telephone lines           |
-| **VSAT**        | Satellite-based WAN            |
+* **DHCP Lease:** Time period for IP validity
+* **Scope:** Range of IP addresses
+* **Reservation:** Fixed IP for a MAC address
+* **Server Port:** UDP 67 (server), UDP 68 (client)
 
 ---
 
-### ⭐ **Advantages of WAN**
+### 📚 **Main Content**
 
-* Long-distance connectivity
-* Centralized data access
-* Scalable enterprise networks
+#### 🔸 **DHCP Package**
 
-### ⚠️ **Disadvantages**
+```bash
+sudo apt install isc-dhcp-server
+```
 
-* Expensive
-* Higher latency
-* ISP dependency
+#### 🔸 **Main Configuration File**
+
+* `/etc/dhcp/dhcpd.conf`
+
+#### 🔸 **Basic DHCP Configuration Example**
+
+```conf
+subnet 192.168.1.0 netmask 255.255.255.0 {
+  range 192.168.1.100 192.168.1.200;
+  option routers 192.168.1.1;
+  option domain-name-servers 8.8.8.8;
+}
+```
+
+#### 🔸 **Start DHCP Service**
+
+```bash
+sudo systemctl start isc-dhcp-server
+```
 
 ---
 
-### 🧠 **Important Facts for MCQs**
+### 📌 **Important Facts for MCQs**
 
-* WAN uses **Layer 2 & Layer 3 technologies**
-* MPLS is **protocol-independent**
-* ATM cell size = **53 bytes**
-* Leased line = **always-on connection**
-
----
-
-### 🧪 **Examples**
-
-* Bank branches connected via MPLS
-* Corporate HQ ↔ Branch via leased line
-* Remote areas using VSAT
+* DHCP works on **UDP**
+* Automatically assigns **network parameters**
+* Centralized IP management
+* DHCP ≠ DNS (IP assignment vs name resolution)
 
 ---
 
 ### ⚠️ **MCQ Pointers / Exam Traps**
 
-* ❌ WAN ≠ Internet
-* ✔ LAN is faster than WAN
-* ❌ Frame Relay is obsolete but still asked in exams
-* ✔ MPLS ≠ protocol, it’s a switching technique
+* ❌ DHCP uses TCP → ❌ Wrong
+* ✔ DHCP lease can expire
+* ✔ Static IP ≠ DHCP reservation
+* ✔ DHCP client port = **68**
 
 ---
+
+### 🔧 **Corrections / Improvements**
+
+* Modern Linux uses **NetworkManager + DHCP**
+* DHCP failover supported in enterprise setups
+
+---
+
+---
+
+## 🧩 **3️⃣ Configuring a DNS Server** 🌐
+
+### 🔹 **Concept Overview**
+
+* **DNS (Domain Name System)** resolves:
+
+  * Domain name → IP address
+* Acts as the **Internet’s phonebook**
+
+---
+
+### 📘 **Key Definitions**
+
+* **Forward Lookup:** Name → IP
+* **Reverse Lookup:** IP → Name
+* **Zone File:** Database of DNS records
+* **FQDN:** Fully Qualified Domain Name
+
+---
+
+### 📚 **Main Content**
+
+#### 🔸 **Common DNS Server in Linux**
+
+* **BIND (Berkeley Internet Name Domain)**
+
+#### 🔸 **Installation**
+
+```bash
+sudo apt install bind9
+```
+
+#### 🔸 **Key Files**
+
+* `/etc/bind/named.conf`
+* `/etc/bind/named.conf.local`
+* `/var/lib/bind/`
+
+#### 🔸 **DNS Records**
+
+| Record | Purpose        |
+| ------ | -------------- |
+| A      | Name → IPv4    |
+| AAAA   | Name → IPv6    |
+| CNAME  | Alias          |
+| MX     | Mail server    |
+| NS     | Name server    |
+| PTR    | Reverse lookup |
+
+---
+
+### 📌 **Important Facts for MCQs**
+
+* DNS uses **UDP 53** (TCP for zone transfer)
+* BIND is most popular Linux DNS server
+* Reverse lookup uses **PTR record**
+
+---
+
+### ⚠️ **MCQ Pointers / Exam Traps**
+
+* ❌ DNS assigns IP → ❌ DHCP does
+* ✔ One domain can have multiple A records
+* ✔ Cached DNS improves performance
+* ✔ `/etc/resolv.conf` stores DNS client info
+
+---
+Just tell me 👍
