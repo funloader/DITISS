@@ -2554,3 +2554,853 @@
 </details>
 
 ---
+
+### 151. What does IOS stand for in Cisco networking, and why is it critical for router operation?
+
+* [ ] Internal Operating System
+* [ ] Internet Operational System
+* [ ] Internetwork Operating System
+* [ ] Integrated Operating System
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Internetwork Operating System
+💡 Cisco IOS is a proprietary operating system that manages hardware and network protocols on routers and switches, enabling routing, switching, and security functions.
+
+</details>
+
+---
+
+### 152. A network engineer wants to verify the IOS version on a router before upgrading. Which command provides this information?
+
+* [ ] show config
+* [ ] show version
+* [ ] show ios
+* [ ] show startup-config
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** show version
+💡 `show version` displays IOS version, system uptime, memory, and device model — essential before performing upgrades.
+
+</details>
+
+---
+
+### 153. A technician accesses a Cisco router for the first time via CLI. Which mode will the router present?
+
+* [ ] Privileged EXEC mode
+* [ ] User EXEC mode
+* [ ] Global Configuration mode
+* [ ] ROMMON mode
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** User EXEC mode
+💡 Routers default to **User EXEC mode** on initial CLI login, allowing basic monitoring commands. Privileged EXEC requires `enable`.
+
+</details>
+
+---
+
+### 154. Which command correctly saves the running configuration to NVRAM to persist after a reboot?
+
+* [ ] save config
+* [ ] write memory
+* [ ] copy running-config startup-config
+* [ ] store config
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** copy running-config startup-config
+💡 This command ensures changes in RAM (running-config) are saved to NVRAM (startup-config) and persist after reboot.
+
+</details>
+
+---
+
+### 155. A security engineer wants to securely manage a router via SDM. Which protocol should they prefer?
+
+* [ ] Telnet
+* [ ] FTP
+* [ ] SSH
+* [ ] HTTP
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** SSH
+💡 SSH provides encrypted command-line access, unlike Telnet or HTTP, ensuring secure management of the router.
+
+</details>
+
+---
+
+### 156. Which key combination exits from configuration mode back to privileged EXEC mode?
+
+* [ ] Ctrl + Z
+* [ ] Ctrl + X
+* [ ] Ctrl + C
+* [ ] Ctrl + A
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Ctrl + Z
+💡 `Ctrl + Z` immediately returns from any configuration sub-mode to privileged EXEC mode without saving changes.
+
+</details>
+
+---
+
+### 157. What is the primary function of the `enable` command in Cisco IOS?
+
+* [ ] Restarts the router
+* [ ] Saves the configuration
+* [ ] Enters privileged EXEC mode
+* [ ] Begins global configuration
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Enters privileged EXEC mode
+💡 `enable` switches from user EXEC mode to privileged EXEC mode, providing access to configuration commands.
+
+</details>
+
+---
+
+### 158. Which command displays the router configuration currently active in RAM?
+
+* [ ] show startup-config
+* [ ] show config
+* [ ] show running-config
+* [ ] config show
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** show running-config
+💡 `show running-config` reveals the current active configuration in RAM, including interfaces, routing, and security settings.
+
+</details>
+
+---
+
+### 159. A network engineer needs to configure the router hostname. Which command is correct?
+
+* [ ] router name R1
+* [ ] hostname R1
+* [ ] set name R1
+* [ ] config hostname R1
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** hostname R1
+💡 The `hostname` command changes the router prompt name, aiding identification in large networks.
+
+</details>
+
+---
+
+### 160. In SDM, which wizard allows setting basic security policies on a router?
+
+* [ ] Firewall Wizard
+* [ ] Setup Assistant
+* [ ] Basic Security Wizard
+* [ ] SDM Express
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Basic Security Wizard
+💡 The Basic Security Wizard guides administrators in applying firewall, password, and access configurations quickly via GUI.
+
+</details>
+
+---
+
+### 161. Which command configures virtual terminal lines (VTY) for remote access on a router?
+
+* [ ] Console ports
+* [ ] HTTP access
+* [ ] Virtual terminal lines for remote access
+* [ ] USB connections
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Virtual terminal lines for remote access
+💡 `line vty 0 4` allows remote CLI access via Telnet or SSH on up to 5 simultaneous sessions.
+
+</details>
+
+---
+
+### 162. To allow secure remote CLI access to a router, which protocol should be configured?
+
+* [ ] Telnet
+* [ ] FTP
+* [ ] SSH
+* [ ] TFTP
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** SSH
+💡 SSH encrypts remote CLI sessions, providing confidentiality and integrity over unsecured networks, unlike Telnet.
+
+</details>
+
+---
+
+### 163. Which command sets a password for privileged EXEC mode securely?
+
+* [ ] password exec
+* [ ] enable password
+* [ ] exec secret
+* [ ] privileged password
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** enable password
+💡 `enable password` sets access to privileged EXEC mode. For stronger security, `enable secret` (hashed) is recommended.
+
+</details>
+
+---
+
+### 164. What is the purpose of `service password-encryption` in IOS?
+
+* [ ] Encrypts passwords stored in NVRAM
+* [ ] Secures SSH
+* [ ] Masks the console password
+* [ ] Hides the running config
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Encrypts passwords stored in NVRAM
+💡 This command encrypts all plain-text passwords in the configuration file to prevent casual viewing.
+
+</details>
+
+---
+
+### 165. Which command creates a local user account with an encrypted password?
+
+* [ ] create user admin
+* [ ] user admin secret cisco
+* [ ] username admin secret cisco
+* [ ] set-user admin cisco
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** username admin secret cisco
+💡 This command creates a user `admin` with a secret (hashed) password `cisco`, enabling secure authentication.
+
+</details>
+
+---
+
+### 166. To block HTTP access on a Cisco interface, which command is used?
+
+* [ ] no ip http server
+* [ ] disable http access
+* [ ] shutdown http
+* [ ] block http interface
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** no ip http server
+💡 Disabling the HTTP server prevents web-based access to the router, reducing attack surface.
+
+</details>
+
+---
+
+### 167. How do you restrict VTY access to SSH only?
+
+* [ ] transport input ssh
+* [ ] access-class ssh-only
+* [ ] ssh vty-only
+* [ ] set ssh line
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** transport input ssh
+💡 `transport input ssh` ensures only SSH connections are accepted on VTY lines, blocking Telnet.
+
+</details>
+
+---
+
+### 168. Which SDM feature helps evaluate a router configuration for security best practices?
+
+* [ ] Security Scanner
+* [ ] SDM Inspector
+* [ ] One-Step Lockdown
+* [ ] Security Audit
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Security Audit
+💡 The Security Audit feature checks configurations against best practices and highlights vulnerabilities for correction.
+
+</details>
+
+---
+
+### 169. Which IOS command configures an IP address on an interface?
+
+* [ ] interface ip set
+* [ ] set ip address
+* [ ] ip address [IP] [MASK]
+* [ ] assign ip [IP] [MASK]
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** ip address [IP] [MASK]
+💡 Within interface configuration mode, this command assigns the IP address and subnet mask to an interface.
+
+</details>
+
+---
+
+### 170. What is the main benefit of using SDM over CLI for security configurations?
+
+* [ ] Faster boot time
+* [ ] Text-based navigation
+* [ ] Automated policy recommendations and simplified GUI
+* [ ] Lower resource usage
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Automated policy recommendations and simplified GUI
+💡 SDM provides a GUI for configuring firewall, VPN, and access policies, reducing human error and simplifying management.
+
+</details>
+
+---
+
+### 171. Before enabling HTTPS on a Cisco router, which steps are required?
+
+* [ ] Enable SSH
+* [ ] Assign a hostname and domain, then generate RSA keys
+* [ ] Configure Telnet
+* [ ] Configure HTTP server
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Assign a hostname and domain, then generate RSA keys
+💡 HTTPS requires a router hostname, domain name, and RSA key pair for SSL encryption to function correctly.
+
+</details>
+
+---
+
+### 172. What is the purpose of the `crypto key generate rsa` command?
+
+* [ ] Encrypts passwords
+* [ ] Enables IPsec VPN
+* [ ] Generates key pair for SSH/HTTPS
+* [ ] Configures SSL VPN
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Generates key pair for SSH/HTTPS
+💡 RSA keys are needed for public-key cryptography, supporting secure SSH and HTTPS connections.
+
+</details>
+
+---
+
+### 173. In SDM, what is the purpose of configuring a Zone-Based Firewall?
+
+* [ ] Applies ACLs to all interfaces
+* [ ] Groups interfaces into zones and applies policies
+* [ ] Sets NAT rules
+* [ ] Enables DMVPN
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Groups interfaces into zones and applies policies
+💡 ZBF organizes interfaces logically and applies security policies between zones instead of per-interface ACLs.
+
+</details>
+
+---
+
+### 174. Which IOS command provides secure privilege escalation for administrators?
+
+* [ ] enable secret
+* [ ] login enable
+* [ ] privileged auth
+* [ ] usermode secret
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** enable secret
+💡 `enable secret` stores a hashed password for privileged EXEC mode, preventing clear-text exposure unlike `enable password`.
+
+</details>
+
+---
+
+### 175. Which SDM feature allows automatic firewall configuration?
+
+* [ ] Smart Firewall
+* [ ] Auto-Firewall
+* [ ] Firewall Wizard
+* [ ] IOS Guard
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Firewall Wizard
+💡 The Firewall Wizard guides through policy creation, ACLs, NAT, and other firewall settings via a GUI.
+
+</details>
+
+---
+
+### 176. Which SDM feature assists in VPN setup between two routers?
+
+* [ ] Easy VPN Client
+* [ ] VPN Wizard
+* [ ] Tunnel Builder
+* [ ] IPSec Assistant
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** VPN Wizard
+💡 The VPN Wizard automates the configuration of site-to-site or remote-access VPNs, simplifying policy deployment.
+
+</details>
+
+---
+
+### 177. Which command is required to allow SSH access to a router?
+
+* [ ] crypto key ssh
+* [ ] enable ssh access
+* [ ] crypto key generate rsa
+* [ ] ssh enable
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** crypto key generate rsa
+💡 Generating RSA keys enables the router to support SSH sessions securely.
+
+</details>
+
+---
+
+### 178. Which logging method is typically configured for storing logs externally?
+
+* [ ] Local buffer
+* [ ] Syslog
+* [ ] SNMP Trap
+* [ ] Console
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Syslog
+💡 Syslog sends logs to a remote server, providing centralized storage and easier auditing compared to local or console logging.
+
+</details>
+
+---
+
+### 179. Which command is used to enter global configuration mode on a router?
+
+* [ ] enable global
+* [ ] config
+* [ ] configure terminal
+* [ ] terminal config
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** configure terminal
+💡 This command allows the administrator to make configuration changes that affect the entire router.
+
+</details>
+
+---
+
+### 180. Which command displays the routing table on a Cisco router?
+
+* [ ] show interfaces
+* [ ] show ip route
+* [ ] show routing-table
+* [ ] route list
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** show ip route
+💡 Displays all learned and static routes, helping verify network connectivity and routing decisions.
+
+</details>
+
+---
+
+### 181. How do you enter privileged EXEC mode from user EXEC mode?
+
+* [ ] configure
+* [ ] admin
+* [ ] enable
+* [ ] exec
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** enable
+💡 `enable` elevates the user to privileged EXEC mode, necessary for configuration and management tasks.
+
+</details>
+
+---
+
+### 182. What memory stores the running configuration of a router?
+
+* [ ] NVRAM
+* [ ] ROM
+* [ ] RAM
+* [ ] Flash
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** RAM
+💡 Running-config resides in RAM; changes are active immediately but lost on reboot unless saved to NVRAM.
+
+</details>
+
+---
+
+### 183. Which prompt indicates user EXEC mode on a Cisco router?
+
+* [ ] Router#
+* [ ] Router(config)#
+* [ ] Router(config-if)#
+* [ ] Router>
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Router>
+💡 The `>` symbol indicates user EXEC mode, allowing basic monitoring commands only.
+
+</details>
+
+---
+
+### 184. What is the function of the `show ip interface brief` command?
+
+* [ ] Show detailed IP statistics
+* [ ] View routing updates
+* [ ] Display summary of interface IP status
+* [ ] Configure an IP address
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Display summary of interface IP status
+💡 Provides quick interface overview: IP addresses, operational status, and protocol status.
+
+</details>
+
+---
+
+### 185. What does the `reload` command do?
+
+* [ ] Updates the IOS
+* [ ] Saves the configuration
+* [ ] Restarts the router
+* [ ] Deletes the running config
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Restarts the router
+💡 `reload` reboots the router. Unsaved changes in running-config will be lost unless saved to startup-config.
+
+</details>
+
+---
+
+### 186. A network engineer wants to configure a static route to reach network 192.168.10.0/24 via next-hop 10.0.0.1. Which of the following is required?
+
+* [ ] Source IP address
+* [ ] Subnet broadcast address
+* [ ] Destination network and next-hop
+* [ ] Hostname of the destination router
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Destination network and next-hop
+💡 Static routes require specifying the target network and the next-hop IP or exit interface to forward packets correctly.
+
+</details>
+
+---
+
+### 187. What does the command `ip route 192.168.10.0 255.255.255.0 10.0.0.1` achieve?
+
+* [ ] Sets up NAT translation
+* [ ] Adds a default route
+* [ ] Configures a static route to 192.168.10.0/24
+* [ ] Creates a loopback interface
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Configures a static route to 192.168.10.0/24
+💡 The command tells the router to forward traffic destined for 192.168.10.0/24 to the next-hop 10.0.0.1.
+
+</details>
+
+---
+
+### 188. Which statement differentiates RIP from static routing?
+
+* [ ] Static routing learns routes dynamically
+* [ ] RIP updates are encrypted
+* [ ] RIP shares route updates periodically
+* [ ] Static routing supports classless addressing by default
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** RIP shares route updates periodically
+💡 RIP is a distance-vector protocol that automatically advertises its routing table every 30 seconds, unlike static routing which is manually configured.
+
+</details>
+
+---
+
+### 189. What is the maximum hop count supported by RIP and RIPv2?
+
+* [ ] 10
+* [ ] 15
+* [ ] 255
+* [ ] 32
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 15
+💡 RIP considers any route with a hop count greater than 15 as unreachable, which limits its suitability for large networks.
+
+</details>
+
+---
+
+### 190. RIP is classified as which type of routing protocol?
+
+* [ ] Link-state
+* [ ] Path-vector
+* [ ] Distance-vector
+* [ ] Static
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Distance-vector
+💡 RIP is a distance-vector protocol that selects routes based on hop count and periodically shares routing updates.
+
+</details>
+
+---
+
+### 191. Which command configures a default static route in Cisco IOS?
+
+* [ ] `ip route 0.0.0.0 255.255.255.255 next-hop`
+* [ ] `ip route default 0.0.0.0 next-hop`
+* [ ] `ip default-route next-hop`
+* [ ] `ip route 0.0.0.0 0.0.0.0 next-hop`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `ip route 0.0.0.0 0.0.0.0 next-hop`
+💡 The 0.0.0.0/0 network represents the default route, forwarding packets not matching any specific route to the next-hop.
+
+</details>
+
+---
+
+### 192. RIP uses which metric to select the best path to a destination?
+
+* [ ] Bandwidth
+* [ ] Delay
+* [ ] Hop count
+* [ ] Load
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Hop count
+💡 RIP selects the path with the fewest hops; paths exceeding 15 hops are considered unreachable.
+
+</details>
+
+---
+
+### 193. In RIP configuration, what is the purpose of the `network` command?
+
+* [ ] Assign an IP address to an interface
+* [ ] Advertise specific networks via RIP
+* [ ] Set the RIP version
+* [ ] Assign DNS servers
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Advertise specific networks via RIP
+💡 The `network` command enables RIP on interfaces within the specified network range. Only those interfaces will send and receive RIP updates.
+
+</details>
+
+---
+
+### 194. How is RIP version 2 enabled on a Cisco router?
+
+* [ ] `version 2`
+* [ ] `rip v2 enable`
+* [ ] `router rip2`
+* [ ] `ip rip v2`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `version 2`
+💡 Inside the `router rip` configuration mode, the `version 2` command sets RIP to use RIPv2, which supports classless routing and VLSM.
+
+</details>
+
+---
+
+### 195. In static routing, a route is removed from the routing table when:
+
+* [ ] The router restarts
+* [ ] The interface associated with the route goes down
+* [ ] There is no matching destination
+* [ ] The MAC address changes
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** The interface associated with the route goes down
+💡 Static routes are tied to interfaces or next-hop reachability. If the interface goes down, the route becomes inactive and is removed.
+
+</details>
+
+---
+
+### 196. What is the primary enhancement of RIPv2 over RIPv1?
+
+* [ ] Uses TCP for transport
+* [ ] Supports classless routing with VLSM
+* [ ] Eliminates hop count metric
+* [ ] Uses link-state advertisements
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Supports classless routing with VLSM
+💡 RIPv2 supports subnet masks, allowing for variable-length subnet masks and more flexible IP addressing.
+
+</details>
+
+---
+
+### 197. Which command displays all static routes configured on a router?
+
+* [ ] `show static-routes`
+* [ ] `show ip route static`
+* [ ] `display static routes`
+* [ ] `ip route summary`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `show ip route static`
+💡 This command filters the routing table to show only static routes.
+
+</details>
+
+---
+
+### 198. What type of authentication is supported by RIPv2?
+
+* [ ] MD5 only
+* [ ] Plain text only
+* [ ] Both plain text and MD5
+* [ ] None
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Both plain text and MD5
+💡 RIPv2 supports authentication to secure routing updates using either plain text or MD5.
+
+</details>
+
+---
+
+### 199. What is the purpose of split horizon in RIP?
+
+* [ ] Combine multiple routes
+* [ ] Prevent routing loops by not sending route information back on the same interface it was learned
+* [ ] Timer for route aging
+* [ ] Optimize bandwidth
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Prevent routing loops by not sending route information back on the same interface it was learned
+💡 Split horizon is a loop-prevention mechanism essential in distance-vector protocols like RIP.
+
+</details>
+
+---
+
+### 200. Which of the following can be used as the next-hop in a static route?
+
+* [ ] Hostname
+* [ ] IP address or interface
+* [ ] MAC address
+* [ ] Broadcast address
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** IP address or interface
+💡 A static route requires a reachable next-hop IP or exit interface to forward packets correctly.
+
+</details>
+
+---
