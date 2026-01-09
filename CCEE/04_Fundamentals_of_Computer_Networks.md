@@ -23,18 +23,18 @@
 
 ---
 
-### 2. In an enterprise internetwork, what is the primary function of a gateway?
+### 2. In an enterprise internetwork, what is the primary function of a *default gateway*?
 
 * [ ] Amplify network signals
 * [ ] Connect devices within the same network
-* [ ] Translate between different protocols to enable communication between networks
-* [ ] Filter unwanted network traffic
+* [ ] Forward traffic from a local network to external networks
+* [ ] Encrypt network traffic
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Translate between different protocols to enable communication between networks
-💡 A gateway serves as an entry/exit point between networks using different protocols, enabling interoperability, whereas routers primarily forward packets.
+✅ **Correct Answer:** Forward traffic from a local network to external networks
+💡 In modern networks, a default gateway is typically a router that forwards packets from a local network to other networks (such as the Internet). Protocol-translation gateways are specialized and uncommon in typical enterprise setups.
 
 </details>
 
@@ -108,18 +108,18 @@
 
 ---
 
-### 7. Which sequence correctly represents a basic internetwork setup from external connection to end devices?
+### 7. Which sequence correctly represents a modern basic internetwork setup from external connection to end devices?
 
 * [ ] Hub → Router → Switch
-* [ ] Router → Switch → Hub
+* [ ] Router → Switch → End Devices
 * [ ] Switch → Hub → Router
 * [ ] Router → Hub → Switch
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Router → Switch → Hub
-💡 Routers connect to external networks, switches manage local traffic, and hubs (if present) are legacy devices for simple connectivity.
+✅ **Correct Answer:** Router → Switch → End Devices
+💡 In modern networks, routers connect to external networks, switches handle LAN traffic, and end devices connect directly to switches. Hubs are obsolete and rarely used today.
 
 </details>
 
@@ -210,7 +210,7 @@
 
 ---
 
-### 13. Which OSI layer is responsible for error detection and correction in data frames?
+### 13. Which OSI layer is responsible for **error detection** in data frames?
 
 * [ ] Application Layer
 * [ ] Transport Layer
@@ -221,7 +221,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Data Link Layer
-💡 Layer 2 ensures reliable link-level delivery using error detection techniques like CRC and can request retransmission.
+💡 The Data Link Layer performs error detection using mechanisms like CRC. Error recovery through retransmission is typically handled by higher layers such as the Transport Layer.
 
 </details>
 
@@ -414,7 +414,7 @@
 
 ---
 
-### 25. Which Wi-Fi standard supports a maximum speed of approximately 1.3 Gbps?
+### 25. Which Wi-Fi standard supports **typical maximum speeds of around 1.3 Gbps**?
 
 * [ ] Wi-Fi 3 (802.11g)
 * [ ] Wi-Fi 4 (802.11n)
@@ -425,7 +425,7 @@
 <summary><strong>Show Answer</strong></summary>
 
 ✅ **Correct Answer:** Wi-Fi 5 (802.11ac)
-💡 Wi-Fi 5 introduced wider channel bandwidth (80–160 MHz) and MIMO for high-speed data transfer up to 1.3 Gbps.
+💡 Wi-Fi 5 commonly delivers up to ~1.3 Gbps in real-world configurations, though its theoretical maximum is higher under ideal conditions.
 
 </details>
 
@@ -550,18 +550,18 @@
 
 ---
 
-### 33. Which wireless standard operates on the 6 GHz frequency band?
+### 33. Which wireless standard first introduced operation in the 6 GHz frequency band?
 
-* [ ] Wi-Fi 6 (802.11ax)
-* [ ] Wi-Fi 7 (802.11be)
 * [ ] Wi-Fi 5 (802.11ac)
+* [ ] Wi-Fi 6E (802.11ax)
 * [ ] Wi-Fi 4 (802.11n)
+* [ ] Wi-Fi 3 (802.11g)
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Wi-Fi 7 (802.11be)
-💡 Wi-Fi 7 expands operation into 6 GHz (alongside 2.4 GHz and 5 GHz) for higher throughput and low latency.
+✅ **Correct Answer:** Wi-Fi 6E (802.11ax)
+💡 Wi-Fi 6E extended Wi-Fi 6 into the 6 GHz band, providing additional spectrum for higher throughput and reduced congestion.
 
 </details>
 
@@ -569,16 +569,16 @@
 
 ### 34. What is the main purpose of a mesh network?
 
-* [ ] Provide higher data rates
-* [ ] Connect multiple WAPs to extend coverage
-* [ ] Support out-of-range devices
+* [ ] Provide higher raw data rates
+* [ ] Extend coverage using self-configuring interconnected access points
 * [ ] Encrypt data between access points
+* [ ] Operate only without Internet access
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Connect multiple WAPs to extend coverage
-💡 Mesh networks use multiple interconnected nodes to provide seamless wireless coverage over a large area.
+✅ **Correct Answer:** Extend coverage using self-configuring interconnected access points
+💡 Mesh networks use multiple nodes with dynamic routing and self-healing capabilities to provide seamless coverage and reliability over large areas.
 
 </details>
 
@@ -601,18 +601,18 @@
 
 ---
 
-### 36. Which modulation technique is used in 802.11ac for high data throughput?
+### 36. Which modulation technique is used in 802.11ac to achieve high data throughput?
 
 * [ ] BPSK
 * [ ] QPSK
-* [ ] QAM
+* [ ] High-order QAM (e.g., 256-QAM)
 * [ ] DSSS
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** QAM
-💡 Quadrature Amplitude Modulation (QAM) increases bits per symbol, enabling higher Wi-Fi 5/6 throughput.
+✅ **Correct Answer:** High-order QAM (e.g., 256-QAM)
+💡 802.11ac uses higher-order QAM schemes such as 256-QAM to increase bits per symbol, enabling higher data rates.
 
 </details>
 
@@ -685,4 +685,3 @@
 </details>
 
 ---
-
