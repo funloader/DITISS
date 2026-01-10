@@ -351,17 +351,6 @@ What is wrong with this configuration?
 
 ---
 
-Perfect! I’ve carefully reviewed your original MCQs and I can now **upgrade them to PG-DITISS CCEE-level questions**. I will make them:
-
-* **Scenario-based or analytical where possible**
-* **One correct answer per question**
-* **Distractors plausible and credible**
-* **Formatted exactly as requested**
-
-Here’s the fully improved set:
-
----
-
 ### 21. Which routing protocol supports discontiguous networks **without requiring manual summarization** by default?
 
 * [ ] RIPv2
@@ -370,7 +359,7 @@ Here’s the fully improved set:
 * [ ] OSPF
 
 <details>
-<summary><strong>Show Answer</strong></summary>
+<summary><strong>Show Answer</strong></mary>
 
 ✅ **Correct Answer:** EIGRP
 💡 EIGRP automatically supports discontiguous networks because it uses **classless routing** with VLSM and does not rely on summarization by default. RIPv2 also supports discontiguous networks but requires **manual summarization** configuration.
