@@ -30,11 +30,14 @@
 * [ ] In the topology table only
 * [ ] In the topology table (with the best successor copied to the routing table)
 
+<details>
+<summary><strong>Show Answer</strong></summary>
 **✅ Correct Answer:** In the topology table (with the best successor copied to the routing table)
 
 💡 EIGRP stores **all successors and feasible successors in the topology table**.
 Only the **best successor** is installed in the routing table, while others remain as backups for fast convergence.
-
+</details>
+  
 ---
 
 ### 3. An enterprise uses OSPF for large-scale routing. Which routing algorithm enables OSPF to compute the shortest path efficiently?
@@ -129,11 +132,14 @@ Only the **best successor** is installed in the routing table, while others rema
 * [ ] show ip protocols
 * [ ] debug ip route
 
+<details>
+<summary><strong>Show Answer</strong></summary>
+
 **✅ Correct Answer:** debug ip rip
 
 💡 This command displays RIP update advertisements sent and received by the router.
 ⚠️ *Debug commands are CPU-intensive and should be used cautiously, especially on production routers.*
-
+</details>
 
 ---
 
@@ -229,9 +235,12 @@ Only the **best successor** is installed in the routing table, while others rema
 * [ ] Update
 * [ ] Reply
 
+<details>
+<summary><strong>Show Answer</strong></summary>
 **✅ Correct Answer:** Update
 
 💡 EIGRP Update packets are multicast during routine operation and unicast during retransmissions or when reliable delivery to a specific neighbor is required.
+</details>
 
 ---
 
@@ -242,9 +251,12 @@ Only the **best successor** is installed in the routing table, while others rema
 * [ ] Update
 * [ ] Query
 
+<details>
+<summary><strong>Show Answer</strong></summary>
 **✅ Correct Answer:** Reply
 
 💡 EIGRP Reply packets are **always sent as unicast** and **must be acknowledged**, ensuring reliable, loop-free convergence in the DUAL algorithm.
+</details>
 
 ---
 
@@ -255,10 +267,13 @@ Only the **best successor** is installed in the routing table, while others rema
 * [ ] Only when configured
 * [ ] Only in IPv6
 
+<details>
+<summary><strong>Show Answer</strong></summary>
 **✅ Correct Answer:** No
 
 💡 EIGRP uses **bandwidth and delay by default**, with optional reliability, load, and MTU.
 While EIGRP **tracks hop count internally for loop prevention**, it **does not use hop count in metric calculation**.
+</details>
 
 ---
 
@@ -286,10 +301,13 @@ While EIGRP **tracks hop count internally for loop prevention**, it **does not u
 * [ ] 100
 * [ ] No limit
 
+<details>
+<summary><strong>Show Answer</strong></summary>
 **✅ Correct Answer:** 255
 
 💡 IGRP supports a maximum hop count of **255**, allowing larger networks than RIP.
 ⚠️ *IGRP is obsolete and no longer supported on modern Cisco IOS, having been replaced by EIGRP.*
+</details>
 
 ---
 
@@ -436,8 +454,11 @@ While EIGRP **tracks hop count internally for loop prevention**, it **does not u
 * [ ] Network Layer
 * [ ] Application Layer
 
+<details>
+<summary><strong>Show Answer</strong></summary>
 ✅ **Correct Answer:** Application Layer
 💡 SDN does not strictly map to OSI layers, but controllers and SDN applications function as application-layer software that abstracts and controls lower-layer network behavior.
+</details>
 
 ---
 
@@ -499,8 +520,11 @@ While EIGRP **tracks hop count internally for loop prevention**, it **does not u
 * [ ] SDN application
 * [ ] Virtual router
 
+<details>
+<summary><strong>Show Answer</strong></summary>
 ✅ **Correct Answer:** SDN controller
 💡 SDN applications define *what* the network should do, but the controller computes paths and installs flow rules into switches.
+<details>
 
 ---
 
@@ -630,8 +654,12 @@ While EIGRP **tracks hop count internally for loop prevention**, it **does not u
 * [ ] SDN eliminates distributed routing entirely
 * [ ] OpenFlow does not support large networks
 
+<details>
+<summary><strong>Show Answer</strong></summary>
+
 ✅ **Correct Answer:** Centralized controllers may become performance bottlenecks
 💡 Large-scale SDN deployments often use distributed or hierarchical controllers to address scalability and fault tolerance.
+</details>
 
 ---
 
@@ -642,7 +670,9 @@ While EIGRP **tracks hop count internally for loop prevention**, it **does not u
 * [ ] NFV replaces SDN controllers
 * [ ] SDN and NFV are identical concepts
 
+<details>
+<summary><strong>Show Answer</strong></summary>
 ✅ **Correct Answer:** SDN manages control and forwarding behavior, while NFV virtualizes network functions like firewalls and load balancers
 💡 SDN and NFV are complementary: SDN controls traffic flows, while NFV runs network services as software on virtualized infrastructure.
-
+</details>
 ---
