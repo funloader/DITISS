@@ -525,7 +525,7 @@
 
 ---
 
-## **Session 3 & 4 : Linux OS**
+## **Session 4 : Linux OS**
 
 ---
 
@@ -645,10 +645,6 @@
 💡 Run level 3 is full multi-user mode with networking but no GUI.
 
 </details>
-
----
-
-## 🔸 Intermediate (14 MCQs)
 
 ---
 
@@ -887,10 +883,6 @@
 💡 Useful for troubleshooting package availability.
 
 </details>
-
----
-
-## 🔺 Difficult (9 MCQs)
 
 ---
 
