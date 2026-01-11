@@ -1691,3 +1691,479 @@ Great! Let’s continue with **Questions 22–40**, covering **intermediate and 
 </details>
 
 ---
+
+### 81. What role does OpenDaylight primarily play in a Software Defined Networking (SDN) ecosystem?
+
+* [ ] Physical router manufacturing platform
+* [ ] Network traffic visualization tool
+* [ ] Open-source SDN controller framework
+* [ ] Switch firmware management system
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Open-source SDN controller framework
+💡 OpenDaylight acts as a centralized SDN controller providing control-plane logic, APIs, and protocol plugins for programmable networks.
+
+</details>
+
+---
+
+### 82. In OpenDaylight architecture, what is the primary responsibility of the Model-Driven Service Abstraction Layer (MD-SAL)?
+
+* [ ] Monitoring switch performance metrics
+* [ ] Abstracting network services using YANG-based data models
+* [ ] Encrypting southbound traffic
+* [ ] Managing physical device firmware
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Abstracting network services using YANG-based data models
+💡 MD-SAL provides a model-driven framework where applications interact through YANG-defined data and services.
+
+</details>
+
+---
+
+### 83. Which OpenDaylight component enables OpenFlow-based southbound communication with switches?
+
+* [ ] RESTCONF
+* [ ] NETCONF
+* [ ] OpenFlow Plugin
+* [ ] BGP-LS
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** OpenFlow Plugin
+💡 The OpenFlow plugin allows the controller to install, modify, and delete flow entries in OpenFlow-enabled switches.
+
+</details>
+
+---
+
+### 84. OpenDaylight relies heavily on which programming concept to support modularity and dynamic service loading?
+
+* [ ] Functional programming
+* [ ] Reactive streams
+* [ ] OSGi framework
+* [ ] Container orchestration
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** OSGi framework
+💡 OSGi enables OpenDaylight to deploy modular bundles dynamically, improving extensibility and maintainability.
+
+</details>
+
+---
+
+### 85. What is the most significant advantage of separating the control plane from the data plane in SDN?
+
+* [ ] Increased packet encryption
+* [ ] Reduced IP address usage
+* [ ] Centralized programmability and policy enforcement
+* [ ] Lower hardware power consumption
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Centralized programmability and policy enforcement
+💡 Control-plane separation enables centralized intelligence, dynamic policy enforcement, and automation.
+
+</details>
+
+---
+
+### 86. Which real-world use case best demonstrates the benefits of SDN and OpenFlow?
+
+* [ ] Static routing in small LANs
+* [ ] Dynamic traffic engineering and load balancing
+* [ ] Client-side caching
+* [ ] DNS resolution
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Dynamic traffic engineering and load balancing
+💡 SDN enables real-time traffic optimization based on network conditions.
+
+</details>
+
+---
+
+### 87. What is the primary purpose of RESTCONF in OpenDaylight?
+
+* [ ] Encrypt controller communications
+* [ ] Provide RESTful access to YANG-modeled data and services
+* [ ] Automatically upgrade switch firmware
+* [ ] Perform DNS zone transfers
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Provide RESTful access to YANG-modeled data and services
+💡 RESTCONF allows northbound applications to interact with the controller using standard REST APIs.
+
+</details>
+
+---
+
+### 88. Which internal OpenDaylight component stores both intended configurations and real-time operational state?
+
+* [ ] Flow tables
+* [ ] VLAN database
+* [ ] MD-SAL datastore
+* [ ] ARP cache
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** MD-SAL datastore
+💡 The datastore maintains **config** (intended state) and **operational** (actual state) data.
+
+</details>
+
+---
+
+### 89. In production OpenFlow deployments, which challenge is most commonly encountered?
+
+* [ ] HTTP incompatibility
+* [ ] IP address exhaustion
+* [ ] Interoperability with legacy network devices
+* [ ] High packet loss on wired links
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Interoperability with legacy network devices
+💡 Integrating SDN with traditional networks remains a key deployment challenge.
+
+</details>
+
+---
+
+### 90. What is Mininet primarily used for in SDN development?
+
+* [ ] Managing physical switches
+* [ ] Simulating virtual network topologies for testing controllers
+* [ ] Encrypting control traffic
+* [ ] Monitoring hardware failures
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Simulating virtual network topologies for testing controllers
+💡 Mininet provides lightweight network emulation using software switches and hosts.
+
+</details>
+
+---
+
+### 91. How does the L2Switch application in OpenDaylight populate its forwarding table?
+
+* [ ] Static administrator configuration
+* [ ] DHCP snooping
+* [ ] Learning source MAC addresses from incoming frames
+* [ ] Querying an external directory service
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Learning source MAC addresses from incoming frames
+💡 The L2Switch application behaves like a learning Ethernet switch.
+
+</details>
+
+---
+
+### 92. Which clustering approach is supported by OpenDaylight to achieve high availability?
+
+* [ ] Active-passive without state sharing
+* [ ] Hardware-based clustering
+* [ ] Active-active clustering with distributed state
+* [ ] Single-node redundancy
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Active-active clustering with distributed state
+💡 Multiple controller instances share state using a distributed datastore.
+
+</details>
+
+---
+
+### 93. In MD-SAL, how are network events typically delivered to applications?
+
+* [ ] SNMP traps
+* [ ] Hardware interrupts
+* [ ] Publish-subscribe notifications via datastore changes
+* [ ] REST polling only
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Publish-subscribe notifications via datastore changes
+💡 Applications subscribe to datastore updates and receive event notifications.
+
+</details>
+
+---
+
+### 94. What ensures consistency of replicated data across OpenDaylight cluster nodes?
+
+* [ ] TLS encryption
+* [ ] Raft consensus algorithm
+* [ ] RESTCONF transactions
+* [ ] OpenFlow barriers
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Raft consensus algorithm
+💡 Raft ensures leader election, log replication, and strong consistency.
+
+</details>
+
+---
+
+### 95. Which MD-SAL datastore holds the *intended* configuration of the network?
+
+* [ ] Operational datastore
+* [ ] Config datastore
+* [ ] Backup datastore
+* [ ] Cache datastore
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Config datastore
+💡 The config datastore represents the desired network state.
+
+</details>
+
+---
+
+### 96. How does Open vSwitch implement tunneling protocols like VXLAN?
+
+* [ ] Dedicated hardware accelerators
+* [ ] Software-based virtual ports in the kernel or userspace
+* [ ] External gateway appliances
+* [ ] It does not support tunneling
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Software-based virtual ports in the kernel or userspace
+💡 OVS supports multiple tunneling protocols through software abstraction.
+
+</details>
+
+---
+
+### 97. How does the L2Switch application handle Ethernet broadcast frames?
+
+* [ ] Drops all broadcasts
+* [ ] Floods frames to all ports except the source
+* [ ] Converts broadcasts to multicast
+* [ ] Routes them via Layer-3 logic
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Floods frames to all ports except the source
+💡 This behavior mimics traditional Ethernet switching.
+
+</details>
+
+---
+
+### 98. What internal consistency model does MD-SAL primarily rely on?
+
+* [ ] Eventual consistency without locking
+* [ ] Strong consistency using transactional updates
+* [ ] Read-only replication
+* [ ] No defined consistency guarantees
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Strong consistency using transactional updates
+💡 MD-SAL uses optimistic locking and transactions for data integrity.
+
+</details>
+
+---
+
+### 99. How does OpenDaylight support multiple southbound protocols?
+
+* [ ] Single monolithic design
+* [ ] Modular plugin-based architecture
+* [ ] REST-only communication
+* [ ] Proprietary closed-source protocols
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Modular plugin-based architecture
+💡 OpenDaylight supports OpenFlow, NETCONF, BGP, OVSDB, and more via plugins.
+
+</details>
+
+---
+
+### 100. In OpenDaylight, AAA refers to which security framework?
+
+* [ ] Application Abstraction Architecture
+* [ ] Authentication, Authorization, and Accounting
+* [ ] Access Allocation Automation
+* [ ] Association and Analysis Architecture
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Authentication, Authorization, and Accounting
+💡 AAA enforces identity verification, access control, and activity logging.
+
+</details>
+
+---
+
+### 101. Which OpenDaylight service manages user roles and permissions?
+
+* [ ] MD-SAL
+* [ ] OpenFlow Plugin
+* [ ] AAA Service
+* [ ] LISP Plugin
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** AAA Service
+💡 The AAA service integrates authentication backends and role-based access control.
+
+</details>
+
+---
+
+### 102. What is the primary function of OVSDB in OpenDaylight?
+
+* [ ] Encrypting control traffic
+* [ ] Managing virtual switch configuration and state
+* [ ] Monitoring controller logs
+* [ ] Storing YANG models
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Managing virtual switch configuration and state
+💡 OVSDB provides programmatic control over Open vSwitch instances.
+
+</details>
+
+---
+
+### 103. Group Based Policy (GBP) is mainly used to achieve which SDN objective?
+
+* [ ] IP address management
+* [ ] User authentication
+* [ ] Intent-based policy definition and enforcement
+* [ ] Flow rule compression
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Intent-based policy definition and enforcement
+💡 GBP abstracts policies from low-level network configurations.
+
+</details>
+
+---
+
+### 104. Which OpenDaylight component enables service chaining of firewalls, IDS, and DPI?
+
+* [ ] Virtual Tenant Network
+* [ ] Service Function Chaining (SFC)
+* [ ] OpenFlow Plugin
+* [ ] BGP Plugin
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Service Function Chaining (SFC)
+💡 SFC defines ordered traversal of network services.
+
+</details>
+
+---
+
+### 105. LISP Flow Mapping in OpenDaylight is associated with which networking concept?
+
+* [ ] MAC address filtering
+* [ ] Endpoint identifier and locator separation
+* [ ] VLAN segmentation
+* [ ] DNS resolution
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Endpoint identifier and locator separation
+💡 LISP decouples identity (EID) from location (RLOC).
+
+</details>
+
+---
+
+### 106. In OpenDaylight, what defines permitted communication between endpoint groups in GBP?
+
+* [ ] MAC access lists
+* [ ] Contracts
+* [ ] Flow tables
+* [ ] IP blocks
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Contracts
+💡 Contracts specify allowed interactions between endpoint groups.
+
+</details>
+
+---
+
+### 107. Which backend systems are commonly integrated with OpenDaylight AAA?
+
+* [ ] Flat files only
+* [ ] LDAP or RADIUS servers
+* [ ] SNMP managers
+* [ ] Proprietary scripts
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** LDAP or RADIUS servers
+💡 AAA integrates with enterprise authentication systems.
+
+</details>
+
+---
+
+### 108. In OpenDaylight’s LISP implementation, where are EID-to-RLOC mappings maintained?
+
+* [ ] ARP cache
+* [ ] Global Mapping System (Map Server/Resolver)
+* [ ] DNS servers
+* [ ] Flow cache
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Global Mapping System (Map Server/Resolver)
+💡 The mapping system resolves endpoint identities to routing locators.
+
+</details>
+
+---
