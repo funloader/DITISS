@@ -1031,3 +1031,521 @@
 </details>
 
 ---
+
+## **Session 7: IPAM**
+
+---
+
+### 1. In an enterprise Windows Server environment, what does **IPAM** primarily stand for?
+
+* [ ] Internet Protocol Access Manager
+* [ ] Internal Process Address Manager
+* [ ] Internet Policy and Access Manager
+* [ ] IP Address Management
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** IP Address Management
+💡 IPAM refers to the centralized framework used to plan, track, and manage IP address space along with DNS and DHCP services.
+
+</details>
+
+---
+
+### 2. A system administrator deploys IPAM mainly to achieve which objective?
+
+* [ ] Improve Active Directory authentication
+* [ ] Track and manage IP address space centrally
+* [ ] Replace DNS and DHCP servers
+* [ ] Automate Windows updates
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Track and manage IP address space centrally
+💡 IPAM provides centralized visibility and control over IP address allocation, DNS, and DHCP infrastructure.
+
+</details>
+
+---
+
+### 3. In Windows Server, IPAM is installed and managed using which built-in interface?
+
+* [ ] Control Panel
+* [ ] DNS Manager
+* [ ] Server Manager
+* [ ] Group Policy Editor
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Server Manager
+💡 IPAM is deployed as a feature using the **Add Roles and Features Wizard** within Server Manager.
+
+</details>
+
+---
+
+### 4. Which combination of components can be managed using IPAM?
+
+* [ ] DNS only
+* [ ] DHCP only
+* [ ] DNS, DHCP, and IP address space
+* [ ] Static IP addresses only
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** DNS, DHCP, and IP address space
+💡 IPAM provides unified management for DNS zones, DHCP scopes, and IP address inventories.
+
+</details>
+
+---
+
+### 5. From where is the IPAM feature installed on a Windows Server?
+
+* [ ] Windows Admin Center
+* [ ] PowerShell Gallery
+* [ ] Add Roles and Features Wizard
+* [ ] DHCP Management Console
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Add Roles and Features Wizard
+💡 IPAM is installed as a server feature via Server Manager, not as a standalone download.
+
+</details>
+
+---
+
+### 6. Can a single IPAM server manage multiple DHCP servers in an enterprise network?
+
+* [ ] No, only one DHCP server
+* [ ] Yes, multiple DHCP servers
+* [ ] Only two DHCP servers
+* [ ] Only the local DHCP server
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Yes, multiple DHCP servers
+💡 IPAM is designed for centralized management of multiple DHCP and DNS servers across the domain or forest.
+
+</details>
+
+---
+
+### 7. Which protocol is primarily used by IPAM to communicate with and collect data from managed servers?
+
+* [ ] SNMP
+* [ ] HTTP
+* [ ] TCP/IP
+* [ ] Windows Remote Management (WinRM)
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Windows Remote Management (WinRM)
+💡 IPAM relies on WinRM (WS-Management) to securely collect configuration and operational data.
+
+</details>
+
+---
+
+### 8. IPAM was first introduced as a built-in feature in which Windows Server version?
+
+* [ ] Windows Server 2003
+* [ ] Windows Server 2008
+* [ ] Windows Server 2012
+* [ ] Windows Server 2016
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Windows Server 2012
+💡 Microsoft introduced IPAM to address large-scale IP address management challenges starting with Windows Server 2012.
+
+</details>
+
+---
+
+### 9. Which server roles are natively monitored and managed by IPAM?
+
+* [ ] Web Server and File Server
+* [ ] DHCP and DNS Servers
+* [ ] SQL and Terminal Servers
+* [ ] Application and Print Servers
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** DHCP and DNS Servers
+💡 IPAM integrates tightly with DHCP and DNS roles for centralized management.
+
+</details>
+
+---
+
+### 10. What is the primary organizational benefit of deploying IPAM?
+
+* [ ] Higher network throughput
+* [ ] Centralized IP, DHCP, and DNS management
+* [ ] Elimination of Active Directory
+* [ ] Reduced hardware costs
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Centralized IP, DHCP, and DNS management
+💡 IPAM improves visibility, auditing, and operational efficiency across network services.
+
+</details>
+
+---
+
+### 11. By default, which database does IPAM use to store configuration and operational data?
+
+* [ ] MySQL
+* [ ] NoSQL
+* [ ] Windows Internal Database (WID)
+* [ ] SQLite
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Windows Internal Database (WID)
+💡 WID is suitable for small-to-medium deployments; larger environments can use SQL Server.
+
+</details>
+
+---
+
+### 12. Which access mechanism must be enabled for IPAM to collect data from managed servers?
+
+* [ ] Remote Desktop
+* [ ] Manual login
+* [ ] Windows Remote Management (WinRM)
+* [ ] Remote Registry
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Windows Remote Management (WinRM)
+💡 WinRM enables secure, firewall-friendly remote management.
+
+</details>
+
+---
+
+### 13. Which IPAM provisioning method is **not** supported by Windows Server?
+
+* [ ] Manual provisioning
+* [ ] Group Policy-based provisioning
+* [ ] DHCP-based provisioning
+* [ ] Automatic provisioning
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** DHCP-based provisioning
+💡 IPAM supports **manual** and **GPO-based** provisioning, not DHCP-based provisioning.
+
+</details>
+
+---
+
+### 14. By default, how frequently does IPAM collect data from managed servers?
+
+* [ ] Every 1 minute
+* [ ] Every 15 minutes
+* [ ] Every 1 hour
+* [ ] Every 24 hours
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Every 1 hour
+💡 The default data collection interval balances performance with near-real-time visibility.
+
+</details>
+
+---
+
+### 15. IPAM supports Role-Based Access Control (RBAC). What does this ensure?
+
+* [ ] Only administrators can access IPAM
+* [ ] Permissions are tied to job roles
+* [ ] One user can access IPAM at a time
+* [ ] Access is department-based only
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Permissions are tied to job roles
+💡 RBAC ensures users receive only the permissions required for their role, improving security.
+
+</details>
+
+---
+
+### 16. Which IP versions can be tracked and managed using IPAM?
+
+* [ ] IPv4 only
+* [ ] IPv6 only
+* [ ] Both IPv4 and IPv6
+* [ ] Public IPs only
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Both IPv4 and IPv6
+💡 IPAM supports dual-stack environments common in modern enterprise networks.
+
+</details>
+
+---
+
+### 17. Before a server can be managed by IPAM, which action is required?
+
+* [ ] Promote it to Domain Controller
+* [ ] Install IIS
+* [ ] Add it to IPAM managed servers and apply GPO
+* [ ] Enable DNS recursion
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Add it to IPAM managed servers and apply GPO
+💡 GPOs configure firewall rules and permissions required for IPAM access.
+
+</details>
+
+---
+
+### 18. In IPAM terminology, what is an **IP block**?
+
+* [ ] A firewall ACL
+* [ ] A blocked MAC address
+* [ ] A large contiguous range of IP addresses
+* [ ] A reserved port range
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** A large contiguous range of IP addresses
+💡 IP blocks represent high-level address allocations such as CIDR blocks.
+
+</details>
+
+---
+
+### 19. Which IPAM view helps administrators analyze IP utilization trends over time?
+
+* [ ] Event Viewer
+* [ ] Server Manager
+* [ ] IP Address Inventory and Utilization view
+* [ ] DNS Manager
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** IP Address Inventory and Utilization view
+💡 This view provides graphical and tabular utilization statistics.
+
+</details>
+
+---
+
+### 20. What is required for IPAM to manage servers across multiple domains?
+
+* [ ] Workgroup configuration
+* [ ] Static routing
+* [ ] Forest trust relationships
+* [ ] DNS round-robin
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Forest trust relationships
+💡 IPAM relies on trust relationships to authenticate and manage resources across domains.
+
+</details>
+
+---
+
+### 21. How does native Windows IPAM handle non-Windows DHCP servers?
+
+* [ ] Full management support
+* [ ] SNMP-based integration
+* [ ] Limited visibility through manual data import
+* [ ] Automatic discovery and control
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Limited visibility through manual data import
+💡 Native IPAM does not fully manage non-Windows DHCP servers without third-party tools.
+
+</details>
+
+---
+
+## 🔴 Difficult Level (9 Questions)
+
+---
+
+### 22. Which Windows feature is **not mandatory** for IPAM Group Policy provisioning?
+
+* [ ] Remote Event Log Management
+* [ ] Remote Service Management
+* [ ] Windows Update
+* [ ] Windows Remote Management
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Windows Update
+💡 IPAM requires remote management features, not Windows Update services.
+
+</details>
+
+---
+
+### 23. What is a likely consequence if multiple IPAM servers attempt to manage the same DHCP server?
+
+* [ ] Automatic load balancing
+* [ ] DHCP service crash
+* [ ] Configuration conflicts and inconsistencies
+* [ ] Immediate IP exhaustion
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Configuration conflicts and inconsistencies
+💡 Microsoft recommends a **one-to-one IPAM management relationship** per server.
+
+</details>
+
+---
+
+### 24. In IPAM hierarchy, what best describes an **IP range**?
+
+* [ ] An entire subnet
+* [ ] A subset of an IP block
+* [ ] A MAC address pool
+* [ ] A DNS forwarder list
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** A subset of an IP block
+💡 Ranges allow granular allocation within larger address blocks.
+
+</details>
+
+---
+
+### 25. Which PowerShell cmdlet is used to add a server to IPAM management?
+
+* [ ] Add-IPAMServer
+* [ ] Add-IpamManagedServer
+* [ ] Connect-IPAMServer
+* [ ] Enable-IPAMService
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Add-IpamManagedServer
+💡 This cmdlet registers servers for monitoring and management by IPAM.
+
+</details>
+
+---
+
+### 26. How does IPAM maintain accountability and change tracking?
+
+* [ ] PowerShell command history
+* [ ] Text-based logs
+* [ ] Centralized IPAM audit trail
+* [ ] Event Viewer only
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Centralized IPAM audit trail
+💡 IPAM logs configuration changes for compliance and forensic analysis.
+
+</details>
+
+---
+
+### 27. In large enterprise deployments, which database backend is recommended for IPAM?
+
+* [ ] SQLite
+* [ ] Microsoft SQL Server
+* [ ] Microsoft Access
+* [ ] Oracle Database
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Microsoft SQL Server
+💡 SQL Server supports scalability, HA, and performance requirements.
+
+</details>
+
+---
+
+### 28. How can IPAM be deployed in a high-availability configuration?
+
+* [ ] It cannot be made HA
+* [ ] Using DNS round-robin
+* [ ] With SQL Server and multiple IPAM servers
+* [ ] Using DHCP failover only
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** With SQL Server and multiple IPAM servers
+💡 Database-level HA enables resilient IPAM deployments.
+
+</details>
+
+---
+
+### 29. When IPAM detects conflicting DNS records, what is the default behavior?
+
+* [ ] Automatically deletes records
+* [ ] Sends alerts and logs the issue
+* [ ] Disables DNS resolution
+* [ ] Shuts down DHCP scopes
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Sends alerts and logs the issue
+💡 IPAM focuses on visibility and alerting rather than destructive automation.
+
+</details>
+
+---
+
+### 30. What is a known limitation of native Windows IPAM in hybrid cloud environments?
+
+* [ ] No IPv6 support
+* [ ] Azure-only compatibility
+* [ ] Lack of native cloud DHCP management
+* [ ] No DNS monitoring
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Lack of native cloud DHCP management
+💡 Native IPAM has limited visibility into cloud-native IP services without extensions.
+
+</details>
+
+---
