@@ -516,3 +516,521 @@
 </details>
 
 ---
+
+## **Session 21 : Linux OS**
+
+---
+
+---
+
+### 1. In a Bash script, you want to save the output of a command into a file, replacing its previous content. Which symbol should you use?
+
+* [ ] `<`
+* [ ] `>`
+* [ ] `|`
+* [ ] `&`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `>`
+💡 The `>` operator redirects standard output to a file, overwriting its content if it exists. `<` is for input redirection, `|` is for piping commands, and `&` is for background execution.
+
+</details>
+
+---
+
+### 2. You need to display the value of a variable `username` on the terminal in a Bash script. Which command achieves this?
+
+* [ ] `pause`
+* [ ] `echo $username`
+* [ ] `rm $username`
+* [ ] `ls $username`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `echo $username`
+💡 `echo` prints text or variable values to the terminal. Other options either manipulate files or list directories.
+
+</details>
+
+---
+
+### 3. You have a script `deploy.sh` that needs execution. Which command runs it properly in Bash?
+
+* [ ] `run deploy.sh`
+* [ ] `bash deploy.sh`
+* [ ] `execute deploy.sh`
+* [ ] `run.sh`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `bash deploy.sh`
+💡 Using `bash scriptname.sh` explicitly invokes the Bash interpreter to run the script. Other options are invalid commands.
+
+</details>
+
+---
+
+### 4. You want to repeatedly execute a block of commands while a condition is true. Which loop is appropriate in Bash?
+
+* [ ] `if`
+* [ ] `for`
+* [ ] `while`
+* [ ] `until`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `while`
+💡 The `while` loop continues execution as long as its test condition evaluates to true. `until` loops until the condition is true.
+
+</details>
+
+---
+
+### 5. In a script, you want to capture error messages separately from normal output. Which redirection is correct?
+
+* [ ] Input redirection `<`
+* [ ] `>`
+* [ ] `2>`
+* [ ] `>>`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `2>`
+💡 `2>` redirects standard error (stderr) to a file. `>` redirects standard output, `<` is input, and `>>` appends output.
+
+</details>
+
+---
+
+### 6. You want to include an explanatory note in a Bash script without affecting execution. Which syntax is correct?
+
+* [ ] `// comment`
+* [ ] `-- comment`
+* [ ] `# comment`
+* [ ] `/**/ comment`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `# comment`
+💡 In Bash, `#` begins a comment. Other syntaxes are from languages like C (`//`), SQL (`--`), or C-style block comments (`/**/`).
+
+</details>
+
+---
+
+### 7. You need a script to accept user input into a variable. Which command achieves this?
+
+* [ ] `write`
+* [ ] `read username`
+* [ ] `open`
+* [ ] `print`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `read username`
+💡 The `read` command reads input from the user and stores it in the specified variable.
+
+</details>
+
+---
+
+### 8. You want to debug a Bash script by showing each command as it executes. Which option achieves this?
+
+* [ ] `trap -e`
+* [ ] `set -x`
+* [ ] `bg`
+* [ ] `exit on error`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `set -x`
+💡 `set -x` enables command tracing, displaying each command and its arguments as executed. This is crucial for debugging.
+
+</details>
+
+---
+
+### 9. Which of the following is the correct syntax for an if-statement in Bash?
+
+* [ ] `if (condition) {}`
+* [ ] `if [ condition ]; then`
+* [ ] `if condition:`
+* [ ] `if { condition } then`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `if [ condition ]; then`
+💡 Bash requires square brackets `[]` (or `[[ ]]`) around conditions and `then` to start the block. Other options are invalid in Bash.
+
+</details>
+
+---
+
+### 10. In a Bash script, you want a command to execute only if the previous command fails. Which operator should you use?
+
+* [ ] `&&`
+* [ ] `|`
+* [ ] `||`
+* [ ] `>>`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `||`
+💡 `||` executes the next command if the previous command returns a non-zero (failure) exit status. `&&` executes on success.
+
+</details>
+
+---
+
+### 11. You want to redirect both standard output and standard error of a command into a single file. Which is correct?
+
+* [ ] `> file 2> file`
+* [ ] `2>&1 > file`
+* [ ] `> file 2>&1`
+* [ ] `1> file &> file`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `> file 2>&1`
+💡 `> file` redirects stdout, and `2>&1` redirects stderr to the same destination as stdout. Order matters; reversing may not merge outputs correctly.
+
+</details>
+
+---
+
+### 12. You need to iterate over a predefined list of filenames in Bash. Which loop is ideal?
+
+* [ ] `while`
+* [ ] `for`
+* [ ] `do-while`
+* [ ] `select`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `for`
+💡 `for` loops iterate over lists or sequences. `while` is for conditional loops, `select` creates menus, and `do-while` is not a native Bash construct.
+
+</details>
+
+---
+
+### 13. In a script, you check `$?` immediately after a command. What information does it provide?
+
+* [ ] Script name
+* [ ] Exit status of last command
+* [ ] Number of arguments
+* [ ] All environment variables
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Exit status of last command
+💡 `$?` returns 0 for success and non-zero for failure. It is essential for conditional execution in scripts.
+
+</details>
+
+---
+
+### 14. You need to handle multiple cases for a variable value in a script. How do you start a case statement?
+
+* [ ] `switch`
+* [ ] `case value in`
+* [ ] `case {}`
+* [ ] `select value`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `case value in`
+💡 Bash uses `case value in pattern1) ... ;; pattern2) ... ;; esac`. `switch` is not a Bash keyword.
+
+</details>
+
+---
+
+### 15. Which file descriptor number corresponds to standard error in Bash?
+
+* [ ] 0
+* [ ] 1
+* [ ] 2
+* [ ] 3
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 2
+💡 Standard input = 0, standard output = 1, standard error = 2.
+
+</details>
+
+---
+
+### 16. You want a Bash script to terminate immediately if any command fails. Which setting achieves this?
+
+* [ ] `trap -e`
+* [ ] `set -e`
+* [ ] `exit on error`
+* [ ] `fail-fast`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `set -e`
+💡 `set -e` causes the script to exit when any command returns a non-zero status, preventing cascading failures.
+
+</details>
+
+---
+
+### 17. In a script, you need to shift positional parameters to access arguments sequentially. Which command is correct?
+
+* [ ] `cd`
+* [ ] `shift`
+* [ ] `repeat`
+* [ ] `echo`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `shift`
+💡 `shift` moves all positional parameters one to the left (`$2` becomes `$1`, etc.), useful in argument parsing loops.
+
+</details>
+
+---
+
+### 18. You want to provide multiline input directly to a command inside a script. Which Bash feature allows this?
+
+* [ ] Inline conditional
+* [ ] Multiline comment
+* [ ] Here-document
+* [ ] Array
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Here-document
+💡 A here-document (`<<EOF ... EOF`) feeds multiline input directly to a command within a script.
+
+</details>
+
+---
+
+### 19. Which operator appends output to an existing file without overwriting its contents?
+
+* [ ] `>`
+* [ ] `<`
+* [ ] `>>`
+* [ ] `<<`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `>>`
+💡 `>>` appends stdout to a file, preserving existing content. `>` overwrites, `<` reads input, `<<` is a here-document.
+
+</details>
+
+---
+
+### 20. You want to catch signals like SIGINT or SIGTERM in a script and execute cleanup commands. Which command is appropriate?
+
+* [ ] `trap`
+* [ ] `export`
+* [ ] `pause`
+* [ ] `rm`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `trap`
+💡 `trap "commands" SIGINT SIGTERM` allows a script to handle signals gracefully.
+
+</details>
+
+---
+
+### 21. If a Bash `for` loop is missing the `do` keyword, what will happen?
+
+* [ ] Script crashes silently
+* [ ] Syntax error is displayed
+* [ ] Loop executes anyway
+* [ ] Loop prints variables automatically
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Syntax error is displayed
+💡 `do` is mandatory in Bash loops. Omitting it triggers a syntax error, halting the script.
+
+</details>
+
+---
+
+### 22. You execute `exec 2>error.log` at the start of a script. What is the effect?
+
+* [ ] Runs `error.log`
+* [ ] Logs both stdout and stderr
+* [ ] Redirects all future stderr to `error.log`
+* [ ] Redirects only the output of `exec`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Redirects all future stderr to `error.log`
+💡 `exec 2>file` changes stderr for the entire script, not just a single command.
+
+</details>
+
+---
+
+### 23. In Bash, what does `IFS` stand for and control?
+
+* [ ] Input File Syntax
+* [ ] Internal Field Separator
+* [ ] Integer Format Settings
+* [ ] Input Formatting Scheme
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Internal Field Separator
+💡 `IFS` defines how Bash splits strings into words, critical for loops or `read` operations.
+
+</details>
+
+---
+
+### 24. What is the effect of `set -u` in a Bash script?
+
+* [ ] Tracks variable usage
+* [ ] Treats unset variables as errors
+* [ ] Ignores undefined variables
+* [ ] Skips variable expansion
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Treats unset variables as errors
+💡 `set -u` helps catch typos or undefined variables, improving script reliability.
+
+</details>
+
+---
+
+### 25. Which behavior does `set -e` enforce in a Bash script?
+
+* [ ] Ignores errors
+* [ ] Runs faster
+* [ ] Exits on first error
+* [ ] Waits for user input
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Exits on first error
+💡 Prevents subsequent commands from executing if any command fails, reducing risk of unintended effects.
+
+</details>
+
+---
+
+### 26. You want to display a menu of options to a user in a script. Which Bash construct helps?
+
+* [ ] Pause script
+* [ ] `select`
+* [ ] Exit loop
+* [ ] File descriptor selection
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `select`
+💡 `select` generates a numbered menu and reads the user's choice. Useful for interactive scripts.
+
+</details>
+
+---
+
+### 27. How can a Bash script detect when the user presses Ctrl+C (SIGINT)?
+
+* [ ] Using `catch`
+* [ ] `case SIGINT`
+* [ ] `trap "commands" SIGINT`
+* [ ] `if [ SIGINT ]`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `trap "commands" SIGINT`
+💡 `trap` allows scripts to respond to signals like SIGINT. `catch` is not a Bash feature.
+
+</details>
+
+---
+
+### 28. Which loop executes until its test condition becomes true?
+
+* [ ] `while`
+* [ ] `until`
+* [ ] `for`
+* [ ] `loop-if`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `until`
+💡 `until` loops execute while the condition is false and stop when it becomes true.
+
+</details>
+
+---
+
+### 29. What does `set -o pipefail` achieve in Bash scripting?
+
+* [ ] Silences pipeline output
+* [ ] Fails if any command in a pipeline fails
+* [ ] Enables background processing
+* [ ] Logs pipe output
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Fails if any command in a pipeline fails
+💡 Normally, a pipeline returns the exit status of the last command. `pipefail` ensures failure is detected anywhere in the pipeline.
+
+</details>
+
+---
+
+### 30. You want to debug a script showing both commands and variable expansions as they execute. Which invocation is correct?
+
+* [ ] `bash -f`
+* [ ] `bash -n`
+* [ ] `bash -x`
+* [ ] `bash -v -x`
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** `bash -v -x`
+💡 `-v` prints lines as they are read; `-x` prints commands and their expanded arguments. Combined, they give full trace for debugging.
+
+</details>
+
+---
+
+
