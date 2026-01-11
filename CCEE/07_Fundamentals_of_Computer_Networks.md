@@ -1,7 +1,7 @@
 > [!IMPORTANT]
 > AI-generated content The questions and answer choices in this module assessment were generated using AI and reviewed by a human author.
 ---
-# 200 MCQ Set
+# 230 MCQ Set
 
 ---
 
@@ -2163,6 +2163,2082 @@ Great! Let’s continue with **Questions 22–40**, covering **intermediate and 
 
 ✅ **Correct Answer:** Global Mapping System (Map Server/Resolver)
 💡 The mapping system resolves endpoint identities to routing locators.
+
+</details>
+
+---
+
+### 109. Which command is used to view the dynamic IP-to-MAC address mappings learned by a host on a local network?
+
+* [ ] netstat
+* [ ] ipconfig
+* [ ] arp
+* [ ] ping
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** arp
+💡 The `arp` command displays the ARP cache containing IP-MAC address mappings learned via ARP.
+
+</details>
+
+---
+
+### 110. Which core function is performed by the Data Link layer in Ethernet networks?
+
+* [ ] Error correction
+* [ ] Route identification
+* [ ] Encryption
+* [ ] Error detection
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Error detection
+💡 Ethernet uses Frame Check Sequence (FCS) at Layer 2 for error detection, not correction.
+
+</details>
+
+---
+
+### 111. When a host initiates a ping request, which ICMP message type is sent first?
+
+* [ ] Echo Reply
+* [ ] Ping request
+* [ ] Echo Request
+* [ ] Ping reply
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Echo Request
+💡 ICMP Echo Request is sent by the source; Echo Reply is returned by the destination.
+
+</details>
+
+---
+
+### 112. What is the first field in an Ethernet frame (excluding the preamble)?
+
+* [ ] Source MAC address
+* [ ] EtherType
+* [ ] Payload data
+* [ ] Destination MAC address
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Destination MAC address
+💡 Ethernet frames always begin with the destination MAC to allow proper frame delivery.
+
+</details>
+
+---
+
+### 113. What is the maximum standard Ethernet frame size (without jumbo frames)?
+
+* [ ] 64 bytes
+* [ ] 600 bytes
+* [ ] 1518 bytes
+* [ ] 1024 bytes
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 1518 bytes
+💡 This includes header and FCS but excludes the preamble.
+
+</details>
+
+---
+
+### 114. Which protocol prevents switching loops in managed Ethernet switches?
+
+* [ ] ICMP
+* [ ] VTP
+* [ ] NNTP
+* [ ] STP
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** STP
+💡 Spanning Tree Protocol (STP) prevents Layer-2 broadcast storms caused by loops.
+
+</details>
+
+---
+
+### 115. How much data is typically stored in a single hard disk sector?
+
+* [ ] 512 bytes
+* [ ] 512 KB
+* [ ] 512 MB
+* [ ] 512 GB
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 512 bytes
+💡 Traditional disk sectors store 512 bytes (modern disks may support 4K sectors).
+
+</details>
+
+---
+
+### 116. Fixed partition memory management primarily suffers from which type of fragmentation?
+
+* [ ] External
+* [ ] Complete
+* [ ] Internal
+* [ ] Partial
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Internal
+💡 Fixed partitions cause wasted memory inside allocated partitions.
+
+</details>
+
+---
+
+### 117. Which IP flag is used in Path MTU Discovery to determine the maximum supported MTU?
+
+* [ ] SYN
+* [ ] RST
+* [ ] ACK
+* [ ] Don’t Fragment
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Don’t Fragment
+💡 The DF flag ensures routers return ICMP errors instead of fragmenting packets.
+
+</details>
+
+---
+
+### 118. Which Cisco IOS prompt mode allows execution of the command `copy running-config startup-config`?
+
+* [ ] Switch-6J>
+* [ ] Switch-6J(config)#
+* [ ] Switch-6J#
+* [ ] Switch-6J(config-if)#
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Switch-6J#
+💡 Privileged EXEC mode is required for configuration copy operations.
+
+</details>
+
+---
+
+### 119. Which application is commonly used for terminal emulation over a router’s console port?
+
+* [ ] HyperTerminal
+* [ ] Secure Shell
+* [ ] Internet Explorer
+* [ ] Telnet
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** HyperTerminal
+💡 Terminal emulators provide serial console access for initial router configuration.
+
+</details>
+
+---
+
+### 120. Which Cisco IOS command displays RIP routing updates in real time?
+
+* [ ] show ip route
+* [ ] debug ip rip
+* [ ] show protocols
+* [ ] debug ip route
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** debug ip rip
+💡 This command shows RIP advertisements being sent and received.
+
+</details>
+
+---
+
+### 121. Which feature exists in IPv6 but not in IPv4?
+
+* [ ] Fragmentation
+* [ ] Header checksum
+* [ ] Options
+* [ ] Anycast addressing
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Anycast addressing
+💡 IPv6 natively supports Anycast; IPv4 does not define it explicitly.
+
+</details>
+
+---
+
+### 122. ICMP was primarily designed to provide which functionality?
+
+* [ ] Error reporting
+* [ ] Error correction
+* [ ] Host management queries
+* [ ] All of the mentioned
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** All of the mentioned
+💡 ICMP supports error reporting and network diagnostic messages.
+
+</details>
+
+---
+
+### 123. Which authentication protocol avoids sending the actual password over the network?
+
+* [ ] LAPB
+* [ ] PAP
+* [ ] Frame Relay
+* [ ] CHAP
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** CHAP
+💡 CHAP uses challenge-response hashing for secure authentication.
+
+</details>
+
+---
+
+### 124. Which Wi-Fi security mode integrates a RADIUS server for enterprise-level authentication?
+
+* [ ] WEP
+* [ ] WPA-Enterprise
+* [ ] WPA-Personal
+* [ ] TKIP
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** WPA-Enterprise
+💡 WPA-Enterprise uses 802.1X and RADIUS for centralized authentication.
+
+</details>
+
+---
+
+### 125. Which ICMP type is generated when a packet’s TTL value reaches zero?
+
+* [ ] 0
+* [ ] 3
+* [ ] 8
+* [ ] 11
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 11
+💡 ICMP Type 11 indicates “Time Exceeded.”
+
+</details>
+
+---
+
+### 126. For which application is UDP generally unsuitable?
+
+* [ ] DNS
+* [ ] SNMP
+* [ ] RTP
+* [ ] SMTP
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** SMTP
+💡 SMTP requires reliable, connection-oriented communication provided by TCP.
+
+</details>
+
+---
+
+### 127. Which cable type is best suited for long-distance, high-bandwidth communication?
+
+* [ ] UTP
+* [ ] Multimode fiber
+* [ ] STP
+* [ ] Single-mode fiber
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Single-mode fiber
+💡 Single-mode fiber supports long distances with minimal signal loss.
+
+</details>
+
+---
+
+### 128. A packet delivered to all hosts within a network using a special destination address is called:
+
+* [ ] Multicasting
+* [ ] Broadcasting
+* [ ] Unicasting
+* [ ] Anycasting
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Broadcasting
+💡 Broadcast frames are processed by all nodes in the broadcast domain.
+
+</details>
+
+---
+
+### 129. Which OS command displays the routing table of a host machine?
+
+* [ ] arp -all
+* [ ] netstat -r
+* [ ] showroute -all
+* [ ] Only routers have routing tables
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** netstat -r
+💡 End systems maintain routing tables for packet forwarding decisions.
+
+</details>
+
+---
+
+### 130. An inbound ACL blocks TCP/UDP ports 21, 23, and 25. Which traffic will still be allowed?
+
+* [ ] HTTP
+* [ ] SMTP
+* [ ] TELNET
+* [ ] FTP
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** HTTP
+💡 HTTP uses TCP port 80, which is not blocked.
+
+</details>
+
+---
+
+### 131. What type of network architecture exists when no node has a dedicated server role?
+
+* [ ] Mainframe
+* [ ] Peer-to-peer
+* [ ] Client-server
+* [ ] Centralized
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Peer-to-peer
+💡 All nodes act as both clients and servers.
+
+</details>
+
+---
+
+### 132. Which router configuration mode is required to configure SSH or Telnet access?
+
+* [ ] Line configuration mode
+* [ ] Global configuration mode
+* [ ] Router configuration mode
+* [ ] Interface configuration mode
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Line configuration mode
+💡 Remote access parameters are configured under VTY lines.
+
+</details>
+
+---
+
+### 133. In packet-switched networks, what ensures correct packet reassembly?
+
+* [ ] Source address
+* [ ] Sequence number
+* [ ] Priority value
+* [ ] Destination address
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Sequence number
+💡 Sequence numbers allow proper ordering at the destination.
+
+</details>
+
+---
+
+### 134. A cable wired T568A on one end and T568B on the other is known as:
+
+* [ ] Patch cable
+* [ ] Console cable
+* [ ] Crossover cable
+* [ ] Straight-through cable
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Crossover cable
+💡 Crossover cables swap transmit and receive pairs.
+
+</details>
+
+---
+
+### 135. Which statement about Layer-3 addresses is correct?
+
+* [ ] They are physical addresses
+* [ ] They are used in routing decisions
+* [ ] They are used only locally
+* [ ] They change at every router
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** They are used in routing decisions
+💡 IP addresses guide routers in forwarding packets.
+
+</details>
+
+---
+
+### 136. Which port is commonly used to connect a router’s console cable?
+
+* [ ] RS-232 serial
+* [ ] Parallel
+* [ ] IEEE-1394
+* [ ] PS/2
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** RS-232 serial
+💡 Console access uses serial communication.
+
+</details>
+
+---
+
+### 137. What is the state of a process that is ready to execute but swapped out of memory?
+
+* [ ] Ready Suspended
+* [ ] Blocked
+* [ ] Ready
+* [ ] Blocked Suspended
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Ready Suspended
+💡 The process is ready but resides in secondary storage.
+
+</details>
+
+---
+
+### 138. Which IPv4 header field is NOT related to fragmentation?
+
+* [ ] Identification
+* [ ] Fragment Offset
+* [ ] Type of Service
+* [ ] Flags
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Type of Service
+💡 ToS is used for QoS, not fragmentation.
+
+</details>
+
+---
+
+### 139. Which buffer speeds up logical-to-physical address translation in paging?
+
+* [ ] Translation Lookaside Buffer
+* [ ] Input buffer
+* [ ] Segment buffer
+* [ ] Translation local buffer
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Translation Lookaside Buffer
+💡 TLB caches recent page table entries.
+
+</details>
+
+---
+
+### 140. Which TCP flag does NOT cause a state transition?
+
+* [ ] PSH
+* [ ] RST
+* [ ] SYN
+* [ ] FIN
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** PSH
+💡 PSH only controls buffering behavior.
+
+</details>
+
+---
+
+### 141. OSPF and BGP are classified as:
+
+* [ ] Inter-AS & Intra-AS routing respectively
+* [ ] Intra-AS & Inter-AS routing respectively
+* [ ] Both Intra-AS
+* [ ] Both Inter-AS
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Intra-AS & Inter-AS routing respectively
+💡 OSPF is an IGP; BGP is an EGP.
+
+</details>
+
+---
+
+### 142. What mechanism resolves a domain name to its corresponding IP address?
+
+* [ ] Forward Lookup Zone
+* [ ] Forwarder
+* [ ] Reverse Lookup Zone
+* [ ] DHCP scope
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Forward Lookup Zone
+💡 Forward lookup resolves FQDN → IP.
+
+</details>
+
+---
+
+### 143. Which server centralizes authentication for Cisco network devices?
+
+* [ ] Active Directory
+* [ ] AAA server
+* [ ] 802.1X server
+* [ ] Terminal server
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** AAA server
+💡 AAA servers manage authentication, authorization, and accounting.
+
+</details>
+
+---
+
+### 144. Which routing approach adapts automatically to changing network conditions?
+
+* [ ] Static routing
+* [ ] Fixed alternative routing
+* [ ] Standard routing
+* [ ] Dynamic routing
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Dynamic routing
+💡 Dynamic protocols adjust routes based on topology changes.
+
+</details>
+
+---
+
+### 145. What is the destination MAC address of an ARP request frame?
+
+* [ ] Broadcast IP
+* [ ] Broadcast MAC
+* [ ] Default gateway IP
+* [ ] Default gateway MAC
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Broadcast MAC
+💡 ARP requests are sent to FF:FF:FF:FF:FF:FF.
+
+</details>
+
+---
+
+### 146. Why are twisted pairs used in UTP cables?
+
+* [ ] To reduce cost
+* [ ] To reduce cable thickness
+* [ ] To reduce electromagnetic interference
+* [ ] To increase bandwidth artificially
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** To reduce electromagnetic interference
+💡 Twisting minimizes crosstalk and noise.
+
+</details>
+
+---
+
+### 147. What is the decimal equivalent of binary number 11011010?
+
+* [ ] 186
+* [ ] 222
+* [ ] 202
+* [ ] 218
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 218
+💡 128+64+16+8+2 = 218.
+
+</details>
+
+---
+
+### 148. What enables applications to communicate using standard OS-supported networking mechanisms?
+
+* [ ] Sockets
+* [ ] Protocols
+* [ ] Ethernet
+* [ ] OSI layers
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Sockets
+💡 Sockets provide the programming interface for network communication.
+
+</details>
+
+---
+
+### 149. During a CAM table overflow attack on a Layer-2 switch, how does the switch handle incoming frames whose destination MAC addresses are unknown?
+
+* [ ] Switch drops all unknown unicast frames
+* [ ] Switch forwards frames only to the default gateway
+* [ ] Switch sends frames to the CPU for processing
+* [ ] Switch floods frames out of all ports except the source port
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Switch floods frames out of all ports except the source port
+💡 When the CAM table is full, the switch behaves like a hub for unknown unicasts, leading to flooding and potential sniffing attacks.
+
+</details>
+
+---
+
+### 150. Which protocol does **not** provide reliable, connection-oriented data delivery?
+
+* [ ] TCP
+* [ ] UDP
+* [ ] FTP
+* [ ] Telnet
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** UDP
+💡 UDP is connectionless and does not guarantee delivery, ordering, or retransmission.
+
+</details>
+
+---
+
+### 151. An IPv4 address **172.16.48.129/20** belongs to which subnet range?
+
+* [ ] 172.16.0.0 – 172.16.15.255
+* [ ] 172.16.32.0 – 172.16.47.255
+* [ ] 172.16.48.0 – 172.16.63.255
+* [ ] 172.16.48.0 – 172.16.49.255
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 172.16.48.0 – 172.16.63.255
+💡 A /20 subnet increments by 16 in the third octet (48–63).
+
+</details>
+
+---
+
+### 152. In an OSPF broadcast network, what is the primary responsibility of the Designated Router (DR)?
+
+* [ ] Assign IP addresses to routers
+* [ ] Manage multicast group membership
+* [ ] Reduce LSA flooding by acting as a central exchange
+* [ ] Perform Network Address Translation
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Reduce LSA flooding by acting as a central exchange
+💡 DR minimizes adjacencies and LSA flooding in multi-access networks.
+
+</details>
+
+---
+
+### 153. Which parameter is evaluated **first** during OSPF DR election on a broadcast network?
+
+* [ ] Highest Router ID
+* [ ] Lowest MAC address
+* [ ] Highest OSPF priority
+* [ ] Interface bandwidth
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Highest OSPF priority
+💡 Router priority is evaluated first; Router ID is used only as a tiebreaker.
+
+</details>
+
+---
+
+### 154. Which routing protocol uses **UDP port 520** and a **hop-count metric**?
+
+* [ ] OSPF
+* [ ] RIP
+* [ ] IGRP
+* [ ] EIGRP
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** RIP
+💡 RIP uses hop count as its metric with a maximum of 15 hops.
+
+</details>
+
+---
+
+### 155. What is the **administrative distance** of **EIGRP internal routes**?
+
+* [ ] 110
+* [ ] 90
+* [ ] 120
+* [ ] 100
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 90
+💡 EIGRP internal routes are highly preferred due to low AD.
+
+</details>
+
+---
+
+### 156. When multiple ACL entries match a packet, which ACL rule is applied by a Cisco router?
+
+* [ ] Last matching entry
+* [ ] Most specific entry
+* [ ] Random entry
+* [ ] First matching entry from top to bottom
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** First matching entry from top to bottom
+💡 ACLs are processed sequentially; first match wins.
+
+</details>
+
+---
+
+### 157. How does Spanning Tree Protocol (STP) prevent Layer-2 switching loops?
+
+* [ ] By load balancing traffic
+* [ ] By dynamically routing packets
+* [ ] By placing redundant ports into a blocking state
+* [ ] By disabling broadcast frames
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** By placing redundant ports into a blocking state
+💡 STP logically blocks redundant paths while maintaining physical redundancy.
+
+</details>
+
+---
+
+### 158. Given network **192.168.1.64/27**, what is the valid host IP range?
+
+* [ ] 192.168.1.64 – 192.168.1.95
+* [ ] 192.168.1.65 – 192.168.1.94
+* [ ] 192.168.1.66 – 192.168.1.93
+* [ ] 192.168.1.64 – 192.168.1.94
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 192.168.1.65 – 192.168.1.94
+💡 Network = .64, Broadcast = .95, usable hosts in between.
+
+</details>
+
+---
+
+### 159. A switch receives a frame destined for an unknown MAC address. What action does it take?
+
+* [ ] Drops the frame
+* [ ] Floods the frame to all ports except the source
+* [ ] Sends it to the default gateway
+* [ ] Logs an error and discards the frame
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Floods the frame to all ports except the source
+💡 This is known as unknown unicast flooding.
+
+</details>
+
+---
+
+### 160. Which field enables VLAN separation on a trunk link?
+
+* [ ] Source MAC address
+* [ ] Destination MAC address
+* [ ] IEEE 802.1Q VLAN tag
+* [ ] Frame Check Sequence
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** IEEE 802.1Q VLAN tag
+💡 VLAN ID inside the 802.1Q tag identifies VLAN membership.
+
+</details>
+
+---
+
+### 161. Which scenario does **not** justify the use of VLSM?
+
+* [ ] Conserving IP address space
+* [ ] Designing subnets of varying sizes
+* [ ] Implementing classless routing
+* [ ] Subnetting networks requiring identical host counts
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Subnetting networks requiring identical host counts
+💡 Fixed-size subnetting does not require VLSM.
+
+</details>
+
+---
+
+### 162. What critical information does the `show version` command provide on a Cisco router?
+
+* [ ] MAC address table
+* [ ] Startup configuration
+* [ ] IOS version and configuration register
+* [ ] Routing protocol statistics
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** IOS version and configuration register
+💡 Useful for troubleshooting boot and IOS issues.
+
+</details>
+
+---
+
+### 163. Match the correct Protocol Data Units (PDUs) for OSI Layers 3, 4, and 2 respectively.
+
+* [ ] Frame, Segment, Packet
+* [ ] Packet, Segment, Frame
+* [ ] Segment, Packet, Frame
+* [ ] Datagram, Frame, Segment
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Packet, Segment, Frame
+💡 Layer 3 = Packet, Layer 4 = Segment, Layer 2 = Frame.
+
+</details>
+
+---
+
+### 164. Which command assigns an IP address to a router sub-interface in a Router-on-a-Stick configuration?
+
+* [ ] ip vlan
+* [ ] switchport mode access
+* [ ] ip address
+* [ ] encapsulation dot1q
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** ip address
+💡 IP is assigned after defining the VLAN encapsulation.
+
+</details>
+
+---
+
+### 165. What is the primary function of NCP in PPP?
+
+* [ ] Authentication
+* [ ] Link establishment
+* [ ] Error detection
+* [ ] Network-layer protocol configuration
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Network-layer protocol configuration
+💡 NCP configures IP, IPv6, and other Layer-3 protocols.
+
+</details>
+
+---
+
+### 166. How many **usable host IPs** are available in a **/25 subnet**?
+
+* [ ] 64
+* [ ] 126
+* [ ] 128
+* [ ] 254
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 126
+💡 /25 provides 128 total addresses minus network and broadcast.
+
+</details>
+
+---
+
+### 167. Which of the following is a **valid IPv6 multicast address**?
+
+* [ ] 2001::1
+* [ ] FF02::1
+* [ ] FE80::1
+* [ ] ::1
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** FF02::1
+💡 IPv6 multicast addresses always start with FF.
+
+</details>
+
+---
+
+### 168. What metric components does EIGRP use to compute the best path?
+
+* [ ] Hop count only
+* [ ] Bandwidth and delay
+* [ ] Bandwidth only
+* [ ] Cost
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Bandwidth and delay
+💡 These are primary components of the EIGRP composite metric.
+
+</details>
+
+---
+
+### 169. You need three VLANs for **90, 50, and 20 users**. Which VLSM allocation is optimal?
+
+* [ ] /25, /26, /27
+* [ ] /24, /24, /24
+* [ ] /26, /27, /28
+* [ ] /23, /24, /26
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** /25, /26, /27
+💡 Each subnet efficiently matches host requirements.
+
+</details>
+
+---
+
+### 170. Which transport-layer mechanism prevents a fast sender from overwhelming a slow receiver?
+
+* [ ] MAC filtering
+* [ ] IP fragmentation
+* [ ] Flow control
+* [ ] Segmentation
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Flow control
+💡 TCP flow control uses window size to regulate data flow.
+
+</details>
+
+---
+
+### 171. Two routers are connected via a serial interface. What is the default encapsulation?
+
+* [ ] PPP
+* [ ] SLIP
+* [ ] HDLC
+* [ ] Ethernet
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** HDLC
+💡 Cisco routers use HDLC by default on serial links.
+
+</details>
+
+---
+
+### 172. What is the function of the **Magic Number** field in PPP?
+
+* [ ] Authenticate the peer
+* [ ] Validate frame size
+* [ ] Detect looped links
+* [ ] Negotiate encryption
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Detect looped links
+💡 Magic numbers help detect misconfigurations causing loops.
+
+</details>
+
+---
+
+### 173. Which Cisco IOS mode allows only basic monitoring commands?
+
+* [ ] Privileged EXEC
+* [ ] ROMMON
+* [ ] User EXEC
+* [ ] Global Configuration
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** User EXEC
+💡 User EXEC has limited, non-destructive commands.
+
+</details>
+
+---
+
+### 174. What is the primary purpose of STP BPDUs?
+
+* [ ] Prevent broadcast storms
+* [ ] Elect the root bridge and maintain topology
+* [ ] Assign IP addresses
+* [ ] Configure VLANs
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Elect the root bridge and maintain topology
+💡 BPDUs carry STP information between switches.
+
+</details>
+
+---
+
+### 175. Which routing protocol **does not use multicast** for updates?
+
+* [ ] OSPF
+* [ ] RIP v2
+* [ ] EIGRP
+* [ ] RIP v1
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** RIP v1
+💡 RIP v1 uses broadcast instead of multicast.
+
+</details>
+
+---
+
+### 176. ACLs that filter traffic based on **IP address, protocol, and port number** are:
+
+* [ ] Standard ACLs
+* [ ] Dynamic ACLs
+* [ ] Extended ACLs
+* [ ] Reflexive ACLs
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Extended ACLs
+💡 Extended ACLs provide granular traffic control.
+
+</details>
+
+---
+
+### 177. A router is connected to a switch via a trunk link to route VLAN traffic. What configuration is required?
+
+* [ ] Static routing
+* [ ] RIP
+* [ ] Router-on-a-Stick
+* [ ] Access port configuration
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Router-on-a-Stick
+💡 Sub-interfaces handle inter-VLAN routing.
+
+</details>
+
+---
+
+### 178. What is the main function of the **Presentation Layer** in the OSI model?
+
+* [ ] Session management
+* [ ] Encryption and compression
+* [ ] Port addressing
+* [ ] Path determination
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Encryption and compression
+💡 It ensures data is in a usable format for the application.
+
+</details>
+
+---
+
+### 179. By default, a Class C network supports how many usable hosts?
+
+* [ ] 254
+* [ ] 126
+* [ ] 64
+* [ ] 510
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 254
+💡 256 total minus network and broadcast.
+
+</details>
+
+---
+
+### 180. What is the IPv6 loopback address?
+
+* [ ] ::
+* [ ] ::1
+* [ ] FF00::1
+* [ ] FE80::1
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** ::1
+💡 Equivalent to IPv4 127.0.0.1.
+
+</details>
+
+---
+
+### 181. What traffic is permitted by the ACL entry:
+
+`access-list 101 permit tcp any host 10.10.10.1 eq 80`?
+
+* [ ] HTTPS traffic
+* [ ] ICMP traffic
+* [ ] HTTP traffic
+* [ ] Telnet traffic
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** HTTP traffic
+💡 Port 80 corresponds to HTTP.
+
+</details>
+
+---
+
+### 182. If no ACL is applied on a Cisco router interface, what happens to traffic?
+
+* [ ] All traffic denied
+* [ ] All traffic permitted
+* [ ] Only ICMP allowed
+* [ ] Only TCP forwarded
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** All traffic permitted
+💡 ACLs are implicit deny only when applied.
+
+</details>
+
+---
+
+### 183. Which cable is used for **100Base-TX Ethernet**?
+
+* [ ] Coaxial
+* [ ] Fiber optic
+* [ ] Twisted-pair Cat5e
+* [ ] Shielded twisted pair (STP)
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Twisted-pair Cat5e
+💡 100Base-TX requires Cat5 or better.
+
+</details>
+
+---
+
+### 184. What is the broadcast address for **192.168.3.0/26**?
+
+* [ ] 192.168.3.127
+* [ ] 192.168.3.63
+* [ ] 192.168.3.255
+* [ ] 192.168.3.191
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 192.168.3.63
+💡 /26 blocks increment by 64.
+
+</details>
+
+---
+
+### 185. Which Ethernet frame field supports VLAN identification?
+
+* [ ] EtherType
+* [ ] FCS
+* [ ] 802.1Q VLAN tag
+* [ ] IP protocol field
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 802.1Q VLAN tag
+💡 Contains VLAN ID and priority bits.
+
+</details>
+
+---
+
+### 186. In STP, if two switches have identical bridge priority values, how is the root bridge chosen?
+
+* [ ] Random selection
+* [ ] Highest bandwidth
+* [ ] Lowest MAC address
+* [ ] First booted switch
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Lowest MAC address
+💡 MAC address acts as the final tie-breaker.
+
+</details>
+
+---
+
+### 187. Which subnet mask provides **6 usable host IP addresses**?
+
+* [ ] 255.255.255.248
+* [ ] 255.255.255.240
+* [ ] 255.255.255.252
+* [ ] 255.255.255.255
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 255.255.255.248
+💡 /29 → 8 total, 6 usable.
+
+</details>
+
+---
+
+### 188. In a PPP-based WAN link, which authentication protocol is considered **more secure**?
+
+* [ ] PAP
+* [ ] RADIUS
+* [ ] CHAP
+* [ ] Telnet
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** CHAP
+💡 CHAP uses challenge-response and avoids plaintext passwords.
+
+</details>
+
+---
+
+### 189. Which statement best explains the significance of Classless Inter-Domain Routing (CIDR) in modern IP networking?
+
+* [ ] CIDR is applicable only to IPv6 networks and eliminates subnet masks
+* [ ] CIDR restricts address aggregation to fixed class boundaries
+* [ ] CIDR replaces classful addressing and enables flexible prefix lengths for efficient IP utilization
+* [ ] CIDR mandates the use of static routing to function correctly
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** CIDR replaces classful addressing and enables flexible prefix lengths for efficient IP utilization
+💡 CIDR allows variable-length subnet masks (VLSM), removing class boundaries and enabling route aggregation, which significantly conserves IPv4 address space.
+
+</details>
+
+---
+
+### 190. You are designing an IP addressing scheme that must support **at least 5 subnets**, each requiring **a minimum of 30 usable host addresses**. Which subnet mask best satisfies this requirement?
+
+* [ ] 255.255.255.224 (/27)
+* [ ] 255.255.255.240 (/28)
+* [ ] 255.255.255.248 (/29)
+* [ ] 255.255.255.192 (/26)
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 255.255.255.224 (/27)
+💡 A /27 subnet provides 32 total addresses and 30 usable hosts, making it the smallest mask that satisfies the requirement efficiently.
+
+</details>
+
+---
+
+### 191. A Layer-2 switch receives a broadcast Ethernet frame on one of its ports. How does the switch handle this frame?
+
+* [ ] Forwards the frame only to ports in the same VLAN
+* [ ] Drops the broadcast frame by default
+* [ ] Forwards the frame out all ports except the incoming port
+* [ ] Sends the frame to the router for further processing
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Forwards the frame out all ports except the incoming port
+💡 Broadcast frames are flooded by switches within the same VLAN to ensure all devices receive them.
+
+</details>
+
+---
+
+### 192. What is the primary purpose of implementing Access Control Lists (ACLs) on routers or switches?
+
+* [ ] To dynamically assign IP addresses
+* [ ] To encrypt traffic between communicating hosts
+* [ ] To filter and control network traffic based on defined rules
+* [ ] To detect and correct physical layer transmission errors
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** To filter and control network traffic based on defined rules
+💡 ACLs are rule-based filters that permit or deny packets based on parameters such as IP address, protocol, and port number.
+
+</details>
+
+---
+
+### 193. Which combination of protocols works together to automatically assign IP addresses to hosts and resolve hostnames to IP addresses?
+
+* [ ] TCP and IP
+* [ ] DNS and DHCP
+* [ ] FTP and HTTP
+* [ ] NAT and RADIUS
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** DNS and DHCP
+💡 DHCP provides IP configuration, while DNS resolves domain names to IP addresses, enabling seamless network communication.
+
+</details>
+
+---
+
+### 194. Which statement best describes how Point-to-Point Protocol (PPP) improves communication over traditional serial link protocols?
+
+* [ ] It provides encryption for all Layer-3 traffic by default
+* [ ] It supports multiple Layer-3 protocols and offers authentication mechanisms
+* [ ] It enables wireless connectivity using MAC-layer framing
+* [ ] It performs VLAN tagging across serial interfaces
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** It supports multiple Layer-3 protocols and offers authentication mechanisms
+💡 PPP encapsulates various network layer protocols and supports authentication methods like PAP and CHAP, unlike older protocols such as HDLC.
+
+</details>
+
+---
+
+### 195. A router receives a packet destined for a network that does not exist in its routing table. What action will the router take if a default route is configured?
+
+* [ ] Drop the packet immediately
+* [ ] Send an ICMP redirect to the source
+* [ ] Forward the packet using the default route
+* [ ] Broadcast the packet on all interfaces
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Forward the packet using the default route
+💡 A default route (0.0.0.0/0) acts as a gateway of last resort for unknown destinations.
+
+</details>
+
+---
+
+### 196. In the OSI reference model, which layer is responsible for session establishment, maintenance, synchronization, and termination between applications?
+
+* [ ] Presentation
+* [ ] Session
+* [ ] Transport
+* [ ] Application
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Session
+💡 The Session layer manages dialog control, checkpoints, and session recovery between communicating applications.
+
+</details>
+
+---
+
+### 197. Which statement about Virtual Local Area Networks (VLANs) is technically accurate?
+
+* [ ] VLANs operate exclusively at the Physical layer
+* [ ] VLANs require a Layer-3 switch to exist
+* [ ] VLANs logically segment broadcast domains within a switch
+* [ ] VLANs completely block communication between all switch ports
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** VLANs logically segment broadcast domains within a switch
+💡 VLANs allow logical segmentation independent of physical topology, improving security and reducing broadcast traffic.
+
+</details>
+
+---
+
+### 198. Which protocol is used to resolve an IPv4 address to its corresponding MAC address within a local network?
+
+* [ ] DNS
+* [ ] ICMP
+* [ ] ARP
+* [ ] DHCP
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** ARP
+💡 Address Resolution Protocol (ARP) maps IP addresses to MAC addresses for local network communication.
+
+</details>
+
+---
+
+### 199. Which routing protocol uses a composite metric based on bandwidth and delay and supports unequal-cost load balancing?
+
+* [ ] RIP
+* [ ] IGRP
+* [ ] EIGRP
+* [ ] OSPF
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** EIGRP
+💡 EIGRP uses a composite metric and supports unequal-cost load balancing via the variance feature.
+
+</details>
+
+---
+
+### 200. While configuring NAT, which technique allows multiple private IP addresses to share a single public IP using different port numbers?
+
+* [ ] Static NAT
+* [ ] Dynamic NAT
+* [ ] Port Address Translation (PAT)
+* [ ] One-to-One NAT
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Port Address Translation (PAT)
+💡 PAT, also known as NAT overload, differentiates sessions using TCP/UDP port numbers.
+
+</details>
+
+---
+
+### 201. Which IPv6 address range is reserved specifically for link-local communication?
+
+* [ ] FE80::/10
+* [ ] FC00::/7
+* [ ] 2000::/3
+* [ ] FFFF::/16
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** FE80::/10
+💡 Link-local IPv6 addresses are automatically assigned and used for communication within the local segment.
+
+</details>
+
+---
+
+### 202. Which Cisco IOS command is used to display the current IPv4 routing table?
+
+* [ ] show interface status
+* [ ] show running-config
+* [ ] show ip route
+* [ ] show version
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** show ip route
+💡 This command displays all learned routes, routing protocols, metrics, and next-hop information.
+
+</details>
+
+---
+
+### 203. How does Spanning Tree Protocol (STP) prevent switching loops in a Layer-2 network?
+
+* [ ] Disables MAC learning on non-root switches
+* [ ] Blocks redundant paths to maintain a loop-free topology
+* [ ] Divides the network into multiple broadcast domains
+* [ ] Forwards frames only to manually configured ports
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Blocks redundant paths to maintain a loop-free topology
+💡 STP calculates the best path to the root bridge and blocks alternate paths to prevent loops.
+
+</details>
+
+---
+
+### 204. What is the maximum number of usable host addresses available in a /26 IPv4 subnet?
+
+* [ ] 62
+* [ ] 64
+* [ ] 30
+* [ ] 126
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 62
+💡 A /26 subnet provides 64 total addresses; subtracting network and broadcast leaves 62 usable hosts.
+
+</details>
+
+---
+
+### 205. What is the primary role of TACACS+ in enterprise network security?
+
+* [ ] Encrypts all end-user data traffic
+* [ ] Provides NAT functionality
+* [ ] Separates authentication, authorization, and accounting processes
+* [ ] Resolves domain names
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Separates authentication, authorization, and accounting processes
+💡 TACACS+ provides granular AAA control and encrypts the entire payload, unlike RADIUS.
+
+</details>
+
+---
+
+### 206. Which statement correctly describes RADIUS?
+
+* [ ] Encrypts the entire packet payload
+* [ ] Used for routing decisions between routers
+* [ ] Combines authentication and authorization
+* [ ] Functions only on Cisco devices
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Combines authentication and authorization
+💡 RADIUS integrates authentication and authorization and encrypts only the password field.
+
+</details>
+
+---
+
+### 207. What is the primary advantage of implementing Variable Length Subnet Masking (VLSM)?
+
+* [ ] Simplifies routing configuration
+* [ ] Creates equal-sized subnets
+* [ ] Improves IP address utilization
+* [ ] Eliminates routing loops
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Improves IP address utilization
+💡 VLSM allows subnet sizes to match actual requirements, reducing address wastage.
+
+</details>
+
+---
+
+### 208. In the TCP/IP model, which layer ensures reliable data delivery through acknowledgments and retransmissions?
+
+* [ ] Application
+* [ ] Network
+* [ ] Internet
+* [ ] Transport
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Transport
+💡 The Transport layer (TCP) provides reliability, sequencing, and flow control.
+
+</details>
+
+---
+
+### 209. In Software-Defined Networking (SDN), which layer is responsible for making centralized, high-level traffic flow decisions?
+
+* [ ] Infrastructure Layer
+* [ ] Control Layer
+* [ ] Application Layer
+* [ ] Data Plane
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Control Layer
+💡 The control layer acts as the SDN controller, managing forwarding behavior across devices.
+
+</details>
+
+---
+
+### 210. Which of the following is **NOT** considered a core benefit of Software-Defined Networking (SDN) in enterprise environments?
+
+* [ ] Centralized network control
+* [ ] Vendor lock-in
+* [ ] Network automation
+* [ ] Programmability
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Vendor lock-in
+💡 SDN promotes vendor neutrality and open standards; vendor lock-in is a drawback of traditional networking, not a benefit of SDN.
+
+</details>
+
+---
+
+### 211. Which routing protocol was originally **Cisco-proprietary** and later replaced by a more advanced and scalable protocol?
+
+* [ ] OSPF
+* [ ] RIP
+* [ ] IGRP
+* [ ] BGP
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** IGRP
+💡 IGRP was Cisco-proprietary and classful; it was later replaced by EIGRP, which supports CIDR and VLSM.
+
+</details>
+
+---
+
+### 212. Which Cisco IOS command provides a concise summary of interface status and assigned IP addresses?
+
+* [ ] show running-config
+* [ ] show ip interface brief
+* [ ] show vlan
+* [ ] show mac address-table
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** show ip interface brief
+💡 This command quickly displays interface state, IP assignment, and protocol status—commonly used in troubleshooting.
+
+</details>
+
+---
+
+### 213. Which protocol uses **UDP port 1812** to perform centralized authentication for network access?
+
+* [ ] TACACS+
+* [ ] RADIUS
+* [ ] SSH
+* [ ] HTTPS
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** RADIUS
+💡 RADIUS uses UDP ports 1812 (authentication) and 1813 (accounting) and is widely used for network access control.
+
+</details>
+
+---
+
+### 214. What is the functional impact of applying an **inbound ACL** on a router interface?
+
+* [ ] Filters packets as they exit the interface
+* [ ] Filters packets as they enter the interface
+* [ ] Blocks all incoming traffic by default
+* [ ] Performs NAT translation on packets
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Filters packets as they enter the interface
+💡 Inbound ACLs inspect packets before routing decisions are made, reducing router processing overhead.
+
+</details>
+
+---
+
+### 215. An organization uses private IPv4 addresses internally and wants to allow internet access without exposing internal IPs. Which NAT solution is most appropriate?
+
+* [ ] Static NAT
+* [ ] Port Address Translation (PAT)
+* [ ] Dynamic NAT
+* [ ] Proxy NAT
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Port Address Translation (PAT)
+💡 PAT allows many internal hosts to share a single public IP using unique port numbers.
+
+</details>
+
+---
+
+### 216. Multiple redundant links between switches are causing broadcast storms. Which protocol should be enabled to resolve this issue?
+
+* [ ] OSPF
+* [ ] VLAN
+* [ ] STP
+* [ ] PPP
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** STP
+💡 Spanning Tree Protocol prevents Layer-2 loops by blocking redundant paths while maintaining network redundancy.
+
+</details>
+
+---
+
+### 217. Packets are being dropped between two routers running RIP, even though routing tables appear correct. What is the **most likely cause**?
+
+* [ ] Subnet mask mismatch
+* [ ] ACL blocking RIP updates
+* [ ] Incorrect interface speed
+* [ ] Duplicate MAC addresses
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Subnet mask mismatch
+💡 RIP requires consistent subnet masks; mismatches can cause routing inconsistencies and dropped traffic.
+
+</details>
+
+---
+
+### 218. A /30 subnet is configured between two routers, but communication is failing. What should be verified **first**?
+
+* [ ] Whether RIP is enabled
+* [ ] ACL configuration
+* [ ] Host address assignment
+* [ ] Routing protocol timers
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Host address assignment
+💡 A /30 subnet provides only two usable IPs; incorrect assignment can immediately break connectivity.
+
+</details>
+
+---
+
+### 219. You are required to create **multiple broadcast domains** for different departments while using a single physical switch. Which technology is most appropriate?
+
+* [ ] Subnetting
+* [ ] Access Control Lists
+* [ ] VLAN
+* [ ] VTP
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** VLAN
+💡 VLANs logically segment broadcast domains without requiring separate physical switches.
+
+</details>
+
+---
+
+### 220. Which address class historically allowed up to **16 million hosts per network**, making it unsuitable for efficient IP utilization?
+
+* [ ] Class A
+* [ ] Class B
+* [ ] Class C
+* [ ] Class D
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Class A
+💡 Class A networks support over 16 million hosts, leading to massive address wastage in classful addressing.
+
+</details>
+
+---
+
+### 221. Which Ethernet media type is **most suitable for high-speed backbone connections** between switches over long distances?
+
+* [ ] Cat5e
+* [ ] Cat6
+* [ ] Coaxial cable
+* [ ] Fiber optic cable
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Fiber optic cable
+💡 Fiber provides high bandwidth, low attenuation, and immunity to electromagnetic interference.
+
+</details>
+
+---
+
+### 222. Which protocol enables routers to exchange **IPv6 routing information** using a link-state approach?
+
+* [ ] RIP
+* [ ] BGP
+* [ ] OSPFv3
+* [ ] ARP
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** OSPFv3
+💡 OSPFv3 is specifically designed for IPv6 and operates independently of IPv4.
+
+</details>
+
+---
+
+### 223. Which networking device operates strictly at the **Physical layer** and floods incoming signals to all ports?
+
+* [ ] Switch
+* [ ] Router
+* [ ] Bridge
+* [ ] Hub
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Hub
+💡 Hubs regenerate electrical signals without MAC learning, causing collisions and inefficiency.
+
+</details>
+
+---
+
+### 224. Which Cisco IOS command ensures configuration changes persist after a reboot?
+
+* [ ] write memory
+* [ ] save file
+* [ ] commit config
+* [ ] reload config
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** write memory
+💡 This command saves the running configuration to NVRAM as the startup configuration.
+
+</details>
+
+---
+
+### 225. Which subnet mask provides **exactly 14 usable IPv4 host addresses**?
+
+* [ ] 255.255.255.240 (/28)
+* [ ] 255.255.255.248 (/29)
+* [ ] 255.255.255.224 (/27)
+* [ ] 255.255.255.192 (/26)
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** 255.255.255.240 (/28)
+💡 A /28 subnet has 16 total addresses; subtracting network and broadcast leaves 14 usable hosts.
+
+</details>
+
+---
+
+### 226. Which sequence correctly represents the **TCP three-way handshake**?
+
+* [ ] SYN → ACK → ACK
+* [ ] SYN → SYN-ACK → ACK
+* [ ] ACK → SYN → ACK
+* [ ] SYN-ACK → SYN → ACK
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** SYN → SYN-ACK → ACK
+💡 This process establishes a reliable TCP connection with synchronized sequence numbers.
+
+</details>
+
+---
+
+### 227. Which portion of an IPv4 address uniquely identifies a device within its network?
+
+* [ ] Subnet mask
+* [ ] Host portion
+* [ ] Network portion
+* [ ] CIDR notation
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Host portion
+💡 The host portion differentiates individual devices within the same network ID.
+
+</details>
+
+---
+
+### 228. Which routing protocol characteristic distinguishes OSPF from distance-vector protocols?
+
+* [ ] Uses hop count as its metric
+* [ ] Periodically sends full routing tables
+* [ ] Maintains a link-state database and uses Dijkstra’s algorithm
+* [ ] Does not support CIDR
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Maintains a link-state database and uses Dijkstra’s algorithm
+💡 OSPF builds a complete topology map and calculates shortest paths using SPF.
+
+</details>
+
+---
+
+### 229. In Cisco networking, which feature allows logical separation of networks while using the same physical infrastructure?
+
+* [ ] Trunking
+* [ ] Subnet masks
+* [ ] VLANs
+* [ ] NAT
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** VLANs
+💡 VLANs provide logical isolation, improved security, and efficient broadcast control.
+
+</details>
+
+---
+
+### 230. A company is migrating from a traditional network to a Software-Defined Networking (SDN) architecture. Which change most directly differentiates the SDN model from conventional network designs?
+
+* [ ] Each network device independently makes routing and forwarding decisions
+* [ ] Control logic is centralized and separated from the data forwarding plane
+* [ ] VLANs are replaced entirely by virtual routing instances
+* [ ] Network devices no longer require any routing protocols
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Control logic is centralized and separated from the data forwarding plane
+💡 SDN fundamentally decouples the control plane from the data plane, allowing centralized controllers to manage traffic flows dynamically and programmatically—an essential distinction from traditional distributed network control.
 
 </details>
 
