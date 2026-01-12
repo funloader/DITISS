@@ -243,4 +243,3 @@ sudo apt install bind9
 * ✔ `/etc/resolv.conf` stores DNS client info
 
 ---
-Just tell me 👍
