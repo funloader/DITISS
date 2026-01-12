@@ -299,5 +299,3 @@ http://localhost/squirrelmail
 | SquirrelMail | Webmail      | Browser   |
 
 ---
-
-Just tell me 👍
