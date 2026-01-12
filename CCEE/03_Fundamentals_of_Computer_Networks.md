@@ -261,10 +261,6 @@
 
 ---
 
-Perfect! Let’s continue your **PG-DITISS CCEE-level MCQ set** for **Mininet**, continuing the numbering from the previous set. I’ve **upgraded the questions** to be analytical, scenario-oriented, and single-correct option only, while following your requested formatting.
-
----
-
 ### 16. What is Mininet primarily used for in SDN research and development?
 
 * [ ] Network monitoring
