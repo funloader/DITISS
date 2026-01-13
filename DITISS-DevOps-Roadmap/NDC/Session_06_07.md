@@ -1,7 +1,3 @@
-Below are **PG-DITISS Session 6 & 7 MCQ-oriented notes**, **strictly aligned with the given syllabus points** and **derived from standard VPN concepts referenced/implicit in NDC notes (tunneling, secure communication, confidentiality, integrity)**, carefully **structured, corrected, and optimized for exam use**.
-
----
-
 # **Session 6 & 7 – VPN (Virtual Private Network) (PG-DITISS)**
 
 ---
