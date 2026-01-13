@@ -1,6 +1,3 @@
-Below are **PG-DITISS Session 12 & 13 MCQ-oriented notes**, **strictly aligned with the given syllabus points**, organized for **maximum exam scoring**, and consistent with IDS/IPS architecture concepts from earlier sessions.
-
----
 
 # **Session 12 & 13 – IDS Architecture, Sensors, DoS & Mitigation (PG-DITISS)**
 
