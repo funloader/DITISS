@@ -345,10 +345,6 @@
 
 ---
 
-Perfect! I will continue the **CCEE-level enhancement** and numbering from the previous set (we ended at 20). I will revise these firewall MCQs to make them **scenario-based, single correct answer, and PG-DITISS exam appropriate**, with plausible distractors and explanations.
-
----
-
 ### 21. What is the **primary purpose of a firewall** in a network security setup?
 
 * [ ] To store website data
