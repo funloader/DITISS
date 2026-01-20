@@ -455,3 +455,193 @@ Also, make sure that:
 * Any applications don't need to modify/write to the LDAP directory. LDAP write access to a Microsoft Entra Domain Services–managed domain isn't supported.
 * The application doesn't need a custom/extended Active Directory schema. Schema extensions aren't supported in Microsoft Entra Domain Services.
 * The applications use a username and password for authentication. Certificate or smart card–based authentication isn't supported by Microsoft Entra Domain Services.
+
+---
+
+# Implement and configure Microsoft Entra Domain Services
+
+Organizations that use cloud-only Microsoft Entra ID can enable Microsoft Entra Domain Services for an Azure VNet, and then get a new managed domain. Users and groups in Microsoft Entra ID are available in the newly created domain, which has directory services similar to on-premises AD DS, including Group Policy, Kerberos protocol, and LDAP support.
+
+You can join Azure VMs running Windows to the newly created domain, and you can manage them by using basic Group Policy settings. By enabling Microsoft Entra Domain Services, credential hashes that are required for NTLM and Kerberos authentication are stored in Microsoft Entra ID.
+
+Because Contoso is a hybrid organization, they can integrate their identities from their on-premises AD DS with Microsoft Entra Domain Services by using Microsoft Entra Connect. Users in hybrid organizations can have the same experience when accessing domain-based resources in an on-premises infrastructure, or when accessing resources from VMs that run in an Azure virtual network that integrates with Microsoft Entra Domain Services.
+
+### Implement Microsoft Entra Domain Services
+
+To implement, configure, and use Microsoft Entra Domain Services you must have a Microsoft Entra tenant created on a Microsoft Entra subscription. Additionally, to use Microsoft Entra Domain Services, you must have password hash synchronization deployed with Microsoft Entra Connect. This is necessary because Microsoft Entra Domain Services provides NTLM and Kerberos authentication, so users’ credentials are required.
+
+When you enable Microsoft Entra Domain Services for your tenant, you have to select the DNS domain name that you'll use for this service. You also need to select the domain that you'll synchronize with your on-premises environment.
+
+> [!CAUTION]
+> You shouldn't use an existing Azure or on-premises DNS domain name space.
+
+The following table describes the available DNS domain name options.
+
+| Option | Description |
+|--------|-------------|
+| Built-in domain name | By default, the directory's built-in domain name is used (a `.onmicrosoft.com` suffix). If you want to enable secure LDAP access to the managed domain over the internet, you can't create a digital certificate to secure the connection with this default domain. Microsoft owns the `.onmicrosoft.com` domain, so a Certificate Authority (CA) won't issue a certificate. |
+| Custom domain names | The most common approach is to specify a custom domain name, typically one that you already own and is routable. When you use a routable, custom domain, traffic can correctly flow as needed to support your applications. |
+| Nonroutable domain suffixes | We generally recommend that you avoid a nonroutable domain name suffix, such as `contoso.local`. The `.local` suffix isn't routable and can cause issues with DNS resolution. |
+
+> [!TIP]
+> You might need to create additional DNS records for other services in your environment or conditional DNS forwarders between existing DNS namespaces in your environment.
+
+During implementation, you must also select which type of forest to provision. A forest is a logical construct used by AD DS to group one or more domains. There are two forest types, as described in the following table.
+
+| Forest type | Description |
+|-------------|-------------|
+| User | This type of forest synchronizes all objects from Microsoft Entra ID, including any user accounts created in an on-premises AD DS environment. |
+| Resource | This type of forest synchronizes only users and groups created directly in Microsoft Entra ID. |
+
+Next, you'll need to choose the Azure location in which the managed domain should be created. If you choose a region that supports availability zones, the Microsoft Entra Domain Services resources are distributed across zones for additional redundancy.
+
+> [!NOTE]
+> You aren't required to configure Microsoft Entra Domain Services to be distributed across zones. The Azure platform automatically manages the zone distribution of resources.
+
+You must also select a VNet to which you'll connect this service. Because Microsoft Entra Domain Services provides functionalities for on-premises resources, you must have a VNet between your local and Azure environments.
+
+During provisioning, Microsoft Entra Domain Services creates two enterprise applications in your Microsoft Entra tenant. These applications are needed to service your managed domain, and therefore you shouldn't delete these applications. The enterprise applications are:
+
+* Domain Controller Services.
+* AzureActiveDirectoryDomainControllerServices.
+
+After you deploy the Microsoft Entra Domain Services instance, you must configure the VNet to enable other connected VMs and applications to use the managed domain. To provide this connectivity, you must update the DNS server settings for your VNet to point to the IP addresses associated with your Microsoft Entra Domain Services instance.
+
+To authenticate users on the managed domain, Microsoft Entra Domain Services needs password hashes in a format that's suitable for NTLM and Kerberos authentication. Microsoft Entra ID doesn't generate or store password hashes in the format that's required for NTLM or Kerberos authentication until you enable Microsoft Entra Domain Services for your tenant. For security reasons, Microsoft Entra ID also doesn't store any password credentials in clear-text form. Therefore, Microsoft Entra ID can't automatically generate these NTLM or Kerberos password hashes based on users' existing credentials. After the usable password hashes are configured, they're stored in the Microsoft Entra Domain Services-managed domain.
+
+> [!NOTE]
+> If you delete the Microsoft Entra Domain Services-managed domain, any password hashes stored at that point are also deleted.
+
+Synchronized credential information in Microsoft Entra ID can't be reused if you later create a Microsoft Entra Domain Services-managed domain - you must reconfigure the password hash synchronization to store the password hashes again. Previously domain-joined VMs or users won't be able to immediately authenticate - Microsoft Entra ID needs to generate and store the password hashes in the new Microsoft Entra Domain Services managed domain.
+
+The steps to generate and store these password hashes are different for cloud-only user accounts created in Microsoft Entra ID versus user accounts that are synchronized from your on-premises directory using Microsoft Entra Connect. A cloud-only user account is an account that was created in your Microsoft Entra directory using either the Azure portal or Microsoft Graph PowerShell cmdlets. These user accounts aren't synchronized from an on-premises directory.
+
+For cloud-only user accounts, users must change their passwords before they can use Microsoft Entra Domain Services. This password change process causes the password hashes for Kerberos authentication and NTLM authentication to be generated and stored in Microsoft Entra ID. The account isn't synchronized from Microsoft Entra ID to Microsoft Entra Domain Services until the password is changed. Either expire the passwords for all cloud users in the tenant who need to use Microsoft Entra Domain Services, which forces a password change on next sign-in, or instruct cloud users to manually change their passwords.
+
+> [!TIP]
+> Before a user can reset their password, you must configure the Microsoft Entra tenant for self-service password reset.
+
+---
+
+# Manage Windows Server in a Microsoft Entra Domain Services environment
+
+Microsoft Entra Domain Services provides a managed domain for users, applications, and services to consume. This approach changes some of the available management tasks you can do, and what privileges you have within the managed domain. These tasks and permissions might differ from what you experience with a regular on-premises AD DS environment.
+
+> [!NOTE]
+> You cannot connect to domain controllers on the Microsoft Entra Domain Services–managed domain using Microsoft Remote Desktop.
+
+### Overview
+Members of the AAD DC Administrators group are granted privileges on the Microsoft Entra Domain Services–managed domain. As a result, these administrators can perform the following tasks on the domain:
+
+* Configure the built-in GPO for the containers AADDC Computers and AADDC Users, in the managed domain.
+* Administer DNS on the managed domain.
+* Create and administer custom OUs on the managed domain.
+* Gain administrative access to computers joined to the managed domain.
+
+However, because the Microsoft Entra Domain Services–managed domain is locked down, you don't have privileges to complete certain administrative tasks on the domain. Some of the following examples are tasks you cannot perform:
+
+* Extend the schema of the managed domain.
+* Connect to domain controllers for the managed domain using Remote Desktop.
+* Add domain controllers to the managed domain.
+* Employ Domain Administrator or Enterprise Administrator privileges for the managed domain.
+
+After creating a Microsoft Entra Domain Services instance, you must join a computer to a Microsoft Entra Domain Services–managed domain. This computer is connected to an Azure VNet that provides connectivity to the Microsoft Entra Domain Services–managed domain. The process to join a Microsoft Entra Domain Services–managed domain is the same as joining a regular on-premises AD DS domain. After the computer is joined, you must install the tools to manage the Microsoft Entra Domain Services instance.
+
+> [!TIP]
+>  To securely connect to the computer, you might consider using an Azure Bastion host. With Azure Bastion, a managed host is deployed into your VNet and provides web-based Remote Desktop Protocol (RDP) or Secure Shell (SSH) connections to VMs. No public IP addresses are required for the VMs, and you don't need to open network security group rules for external remote traffic. You connect to VMs using the Azure portal.
+
+You manage Microsoft Entra Domain Services domains using the same administrative tools as on-premises AD DS environments, such as the Active Directory Administrative Center (ADAC) or Active Directory PowerShell. You can install these tools as part of the Remote Server Administration Tools (RSAT) feature on Windows Server and client computers. Members of the AAD DC Administrators group can then administer Microsoft Entra Domain Services–managed domains remotely using these Active Directory administrative tools from a computer that is joined to the managed domain.
+
+Common ADAC actions, such as resetting a user account password or managing group membership, are available. However, these actions only work for users and groups created directly in the Microsoft Entra Domain Services–managed domain. Identity information only synchronizes from Microsoft Entra ID to Microsoft Entra Domain Services; there's no writeback from Microsoft Entra Domain Services to Microsoft Entra ID. As a result, you can't change passwords or managed group membership for users synchronized from Microsoft Entra ID and have those changes synchronized back.
+
+You can also use the Active Directory module for Windows PowerShell, which is installed as part of the administrative tools, to manage common actions in your Microsoft Entra Domain Services managed domain.
+
+### Enable user accounts for Microsoft Entra Domain Services
+
+To authenticate users on the managed domain, Microsoft Entra Domain Services needs password hashes in a format that's suitable for NTLM and Kerberos authentication. Microsoft Entra ID doesn't generate or store password hashes in the format that's required for NTLM or Kerberos authentication until you enable Microsoft Entra Domain Services for your tenant. For security reasons, Microsoft Entra ID also doesn't store any password credentials in clear-text form. Therefore, Microsoft Entra ID can't automatically generate these NTLM or Kerberos password hashes based on users' existing credentials.
+
+Once appropriately configured, the usable password hashes are stored in the Microsoft Entra Domain Services–managed domain.
+
+> [!CAUTION]
+> If you delete this domain, any password hashes stored at that point are also deleted.
+
+Synchronized credential information in Microsoft Entra ID can't be re-used if you later create a Microsoft Entra Domain Services–managed domain. As a result, you must reconfigure the password hash synchronization to store the password hashes again. Even then, previously domain-joined VMs or users won't be able to immediately authenticate because Microsoft Entra ID needs to generate and store the password hashes in the new Microsoft Entra Domain Services managed domain.
+
+The steps to generate and store these password hashes are different for cloud-only user accounts created in Microsoft Entra ID versus user accounts that are synchronized from your on-premises directory using Microsoft Entra Connect. A cloud-only user account is an account that is created in your Microsoft Entra directory using either the Azure portal or Microsoft Graph PowerShell cmdlets. These user accounts aren't synchronized from an on-premises directory.
+
+For cloud-only user accounts, users must change their passwords before they can use Microsoft Entra Domain Services. This password change process causes the password hashes for both Kerberos and NTLM authentication to be generated and stored in Microsoft Entra ID. The account isn't synchronized from Microsoft Entra ID to Microsoft Entra Domain Services until the password is changed. As a result, you should either expire the passwords for all cloud users in the tenant who need to use Microsoft Entra Domain Services, which forces a password change on next sign-in, or instruct cloud users to manually change their passwords. However, you might need to enable self-service password reset for cloud users to reset their password.
+
+### Create and configure a Microsoft Entra Domain Services instance
+ * Deploy an AD DS instance using the Azure portal.
+ * Azure AD domain Services > Create > Set SKU for Standard > keep rest as it is > Create
+ * Join a Windows Server VM to a managed domain.
+
+---
+
+### Summary
+
+With more services available online and in the cloud, Contoso IT staff needs to define and manage its users’ cloud identities. As with on-premises identities, Contoso can use cloud identities to authenticate and authorize their users when they try to access company resources.
+
+Microsoft provides a cloud-based directory service in the Azure platform called Microsoft Entra ID, which Contoso can utilize to meet its needs. Microsoft Entra ID has many similarities to AD DS in terms of providing a solution for SSO access to thousands of cloud SaaS applications.
+
+In addition to—or instead of—Microsoft Entra ID, Contoso could choose to use Microsoft Entra Domain Services. Microsoft Entra Domain Services provides managed domain services such as domain join, group policy, LDAP, and Kerberos authentication or NTLM authentication that is fully compatible with Windows Server AD DS.
+
+Contoso could use these domain services without needing to deploy, manage, and patch domain controllers in the cloud. Microsoft Entra Domain Services can integrate with Contoso's existing Microsoft Entra tenant, which makes it possible for their users to sign in using their existing credentials. Contoso can also use existing groups and user accounts to secure access to resources, which provides a smoother lift-and-shift of on-premises resources to Azure.
+
+In this module, you learned how to select a Microsoft Entra integration model and plan for integration. Also, you learned to prepare and install AD DS synchronization, in addition to implement SSO and enable Microsoft Entra login for an Azure VM. Finally, you learned to plan and implement Microsoft Entra Domain Services.
+
+Equipped with this knowledge, you are prepared to guide Contoso’s IT team as it decides how to define and manage its users’ cloud identities.
+
+---
+
+### Check your knowledge
+
+---
+
+### 1. When planning to implement Microsoft Entra Domain Services, which of the following statements are true?
+
+* [ ] It's possible to extend the schema for the Microsoft Entra Domain Services domain.
+* [ ] Nested Organizational Units are supported.
+* [ ] It's not possible to target Organizational Units with built-in Group Policy Objects.
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** It's not possible to target Organizational Units with built-in Group Policy Objects.
+
+</details>
+
+---
+
+### 2. Which Microsoft Entra Domain Services security group grants the permission to administer computers joined to the managed domain?
+
+* [ ] Enterprise Admins
+* [ ] Administrators
+* [ ] AAD DC Administrators
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** AAD DC Administrators
+💡 Members of the **AAD DC Administrators** group are granted delegated administrative privileges for Microsoft Entra Domain Services, including managing domain-joined computers.
+
+</details>
+
+---
+
+### 3. Which of the following tasks can Microsoft Entra Domain Services domain administrators perform?
+
+* [ ] Add domain controllers to the managed domain.
+* [ ] Configure the built-in GPO for the AADDC Computers and AADDC Users containers.
+* [ ] Connect to domain controllers for the managed domain using Remote Desktop.
+
+<details>
+<summary><strong>Show Answer</strong></summary>
+
+✅ **Correct Answer:** Configure the built-in GPO for the AADDC Computers and AADDC Users containers
+💡 Microsoft manages domain controllers in Entra Domain Services. Admins cannot add DCs or RDP into them, but they *can* manage the built-in Group Policy Objects for the default containers.
+
+</details>
+
+---
+
