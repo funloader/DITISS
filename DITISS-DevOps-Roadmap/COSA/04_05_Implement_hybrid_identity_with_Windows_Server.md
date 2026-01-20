@@ -1,7 +1,3 @@
-> [!WARNING]
-> This content is currently being edited and is not yet finalized.
-
-
 # Introduction
 
 ---
