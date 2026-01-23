@@ -99,17 +99,22 @@ Data communication can happen in three modes:
   - Disadvantages :  Requires extra physical resources (wires/fibers)
 
 2. Channel Division (Shared Medium)
-       - a) Frequency Division Duplex (FDD / FDM-style)
-         - How it works : Transmit and receive use **different frequency bands**. Both operate simultaneously
-         - Examples : Cellular networks (LTE, 5G FDD), DSL (Digital Subscriber Line) internet connections
-         - Advantages : Continuous two-way communication & No waiting to transmit
-         - Disadvantages : Requires careful frequency planning & Needs filters to avoid interference
-       - b) Time Division Duplex (TDD / TDM-style)
-         - How it works : Transmit and receive use the **same frequency**.Time is divided into **rapid alternating time slots**
-         - *Appears simultaneous to users, but at any instant only one direction is active*
-         - Examples : Wi-Fi, 5G TDD, Walkie-talkie systems with fast switching
-         - Advantages : Efficient use of spectrum & Flexible allocation of bandwidth
-         - Disadvantages : Requires tight synchronization & Slight latency due to switching
+
+ * A. Frequency Division Duplex (FDD / FDM-style)
+
+  - How it works : Transmit and receive use **different frequency bands**. Both operate simultaneously
+  - Examples : Cellular networks (LTE, 5G FDD), DSL (Digital Subscriber Line) internet connections
+  - Advantages : Continuous two-way communication & No waiting to transmit
+  - Disadvantages : Requires careful frequency planning & Needs filters to avoid interference
+    
+* B. Time Division Duplex (TDD / TDM-style)
+
+  - How it works : Transmit and receive use the **same frequency**.Time is divided into **rapid alternating time slots**
+  - *Appears simultaneous to users, but at any instant only one direction is active*
+  - Examples : Wi-Fi, 5G TDD, Walkie-talkie systems with fast switching
+  - Advantages : Efficient use of spectrum & Flexible allocation of bandwidth
+  - Disadvantages : Requires tight synchronization & Slight latency due to switching
+   
 ```
 
 | Method         | Physical Medium | Separation Method | True Simultaneous?    |
