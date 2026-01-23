@@ -313,3 +313,110 @@ Bandwidth is the capacity of a medium to carry data.
    - The quality and speed of the DSL connection depends mainly on the quality of the phone line and the distance from the central office of your phone company The farther you are from the central office, the slower the connection.
 
 ---
+
+## 📱 3. Mobile Device Connectivity
+
+### 📶 3.1 Mobile Devices and Wi-Fi
+
+Mobile devices give us the freedom to work, learn, play, and communicate wherever we want. People using mobile devices do not need to be tied to a physical location to send and receive voice, video, and data communications.
+
+In addition, wireless facilities—such as internet cafés—are available in many countries. College campuses use wireless networks to allow students to sign up for classes, watch lectures, and submit assignments in areas where physical connections to the network are unavailable. With mobile devices becoming more powerful, many tasks that once required large computers connected to physical networks can now be completed using mobile devices on wireless networks.
+
+Almost all mobile devices are capable of connecting to Wi-Fi networks. It is advisable to connect to Wi-Fi when possible because:
+
+- Data used over Wi-Fi does **not** count against cellular data plans  
+- Wi-Fi radios consume **less power** than cellular radios, helping conserve battery life  
+
+Like other Wi-Fi–enabled devices, it is important to use security when connecting to wireless networks. The following precautions should be taken to protect Wi-Fi communications on mobile devices:
+
+- Never send login or password information using unencrypted text (plaintext)
+- Use a VPN connection when possible, especially when sending sensitive data
+- Enable security on home networks
+- Use **WPA2 or higher** encryption for better security
+
+### 🌐 3.2 Network Technologies in the Home
+
+#### 🔌 Ethernet Ports
+- These ports connect to the internal switch portion of the router.  
+- They are usually labeled **“Ethernet”** or **“LAN”**.  
+- All devices connected to the switch ports are on the same local network.
+
+#### 🌍 Internet Port
+- This port is used to connect the device to another network.  
+- The internet port connects the router to a different network than the Ethernet ports.  
+- It is often used to connect to a **cable or DSL modem** to access the internet.
+
+### 📡 3.2.1 LAN Wireless Frequencies
+
+The wireless technologies most frequently used in home networks operate in the **unlicensed 2.4 GHz and 5 GHz frequency ranges**.
+
+#### 🔵 Bluetooth (2.4 GHz)
+- Uses the **2.4 GHz band**
+- Designed for **low-speed, short-range communication**
+- Supports **one-to-many connections**
+- Commonly used for:
+  - Wireless mice 🖱️
+  - Keyboards ⌨️
+  - Printers 🖨️
+  - Audio devices (speakers & headphones) 🎧
+
+#### 📶 Wireless LAN (Wi-Fi – IEEE 802.11)
+- Operates in the **2.4 GHz and 5 GHz bands**
+- Provides:
+  - Higher transmission power
+  - Greater range
+  - Better throughput than Bluetooth
+- Used for modern wireless networking
+- These frequencies are part of the **unlicensed electromagnetic spectrum**, meaning no permit is required
+
+---
+
+### 🔌 3.2.2 Wired Network Technologies
+
+Although wireless networking is common, **wired connections** are still preferred in situations where:
+- Higher reliability is needed
+- Bandwidth must not be shared
+- Lower latency is important
+
+#### 🌐 Ethernet Technology
+- The most commonly used wired networking protocol
+- Uses a set of standards that allow devices to communicate over a **wired LAN**
+- Supports multiple types of physical cabling
+
+#### 🔗 Ethernet Cabling
+- Devices connect using **Ethernet patch cables**
+- Most commonly:
+  - **Unshielded Twisted Pair (UTP)**
+  - **RJ-45 connectors**
+- Cables are available in various lengths
+- Many modern homes already have Ethernet wall jacks
+- Homes without Ethernet wiring may use **powerline networking** as an alternative
+
+---
+
+### 🧵 Types of Network Cables
+
+### 🟩 Category 5e (Cat 5e)
+- Most commonly used LAN cable
+- Contains **4 twisted wire pairs**
+- Twisting reduces **electrical interference**
+- Supports high-speed Ethernet
+
+### 🟦 Coaxial Cable
+- Consists of:
+  - Inner conductor
+  - Insulating layer
+  - Conductive shield
+  - Outer protective jacket
+- Used in cable internet and older network setups
+
+### 🌟 Fiber-Optic Cable
+- Made of **glass or plastic fibers**
+- About the width of a human hair
+- Supports:
+  - Extremely high speeds
+  - Long-distance transmission
+  - Very high bandwidth
+- Ideal for modern high-speed networks
+
+## 5. Communication Protocols
