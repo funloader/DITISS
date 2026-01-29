@@ -189,5 +189,5 @@ By completing this module, you will:
 
 ### Computer Networks Editions
 
-* **5th Ed. (Tanenbaum):** [![View PDF](https://img.shields.io/badge/5th%20Edition-View%20PDF-blue?style=flat-square)](https://csc-knu.github.io/sys-prog/books/Andrew%20S.%20Tanenbaum%20-%20Computer%20Networks.pdf) | **6th Ed. (Global):** [![View PDF](https://img.shields.io/badge/6th%20Edition-View%20PDF-red?style=flat-square)](https://unidel.edu.ng/focelibrary/books/103computer%20networks.pdf)
+* **5th Ed. (Tanenbaum):** [![View PDF](https://img.shields.io/badge/5th%20Edition-View%20PDF-blue?style=flat-square)](https://csc-knu.github.io/sys-prog/books/Andrew%20S.%20Tanenbaum%20-%20Computer%20Networks.pdf](https://www.cs.csubak.edu/~jyang/Computer-Networks---A-Tanenbaum---5th-edition.pdf)) | **6th Ed. (Global):** [![View PDF](https://img.shields.io/badge/6th%20Edition-View%20PDF-red?style=flat-square)](https://unidel.edu.ng/focelibrary/books/103computer%20networks.pdf)
   * **Note:** For foundational reading, it is suggested to read **1. INTRODUCTION** (up to page 84) from the **5th Edition** only. The remainder can be read from the **6th Edition**.
