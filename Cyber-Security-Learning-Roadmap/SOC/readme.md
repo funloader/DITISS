@@ -13,3 +13,45 @@ Monitor endpoints for threats
 Utilise SIEM to handle incidents
 
 ### SOC Role in Blue Team
+
+![Diagram](images/Security-Hierarchy.png).
+
+Looking at the diagram above, top executives like the CEO usually focus on global business objectives and don't manage technical aspects. That's why they hire a Chief Information Security Officer (CISO) or a similar role who knows the business needs and can create the most suitable security departments.
+
+#### Security Departments
+In tiny companies, the IT department takes the role of securing the company. Small to medium-sized companies may have a generic "Information Security" team that does all sorts of tasks. For this room, we will focus on bigger companies with a CISO overseeing multiple security teams, each handling a specific task. For example:
+
+**Red Team:** Offensive security experts, pentesters, or ethical hackers who look for security issues
+
+**GRC Team:** Specialists managing policies and ensuring compliance with regulations like PCI DSS
+
+**Blue Team:** Defensive security experts like SOC analysts, engineers, or incident responders
+
+
+### Security Operations Center (SOC)
+
+Blue Team is about defensive security, meaning it constantly monitors for attacks and tries to respond to them quickly. Depending on a company's size and sector, Blue Team can include a lot of different roles and subdepartments, usually counting 3 to 50 members total. Now, let's explore the most common Blue Team departments.
+
+![Diagram](images/blue1.svg).
+
+
+That's where you are most likely to start your cyber security journey! SOC is the central hub for an organization's cyber security - they are the first line of defense, work with various alerts, and handle most attacks. You can read more about SOC structure in this room, but an efficient SOC is usually composed of the following roles:
+
+**L1 Analysts:** Junior members who triage alerts and pass complex cases to L2
+
+**L2 Analysts:** Experienced members who investigate more advanced attacks
+
+**Engineers:** Experts in configuring security tools like EDR or SIEM
+
+**Manager:** A person who manages the whole SOC team
+
+### Cyber Incident Response Team (CIRT)
+
+![Diagram](images/blue2.svg).
+
+If SOC expertise is not enough or the incident goes out of control, you urgently call the "firefighters" - CIRT, also called CSIRT or CERT. The members should have a broad knowledge of cyber threats and handle breaches without depending on tools like EDR or SIEM. A CIRT job is stressful and responsible, but also rewarding. Here are a few CIRT examples:
+
+JPCERT: Japan's CERT handling nation-wide breaches
+Mandiant: A private team responding to global cyber incidents
+AWS CIRT: Investigates security incidents of AWS customers
+
