@@ -49,9 +49,34 @@ That's where you are most likely to start your cyber security journey! SOC is th
 
 ![Diagram](images/blue2.svg).
 
-If SOC expertise is not enough or the incident goes out of control, you urgently call the "firefighters" - CIRT, also called CSIRT or CERT. The members should have a broad knowledge of cyber threats and handle breaches without depending on tools like EDR or SIEM. A CIRT job is stressful and responsible, but also rewarding. Here are a few CIRT examples:
+If SOC expertise is not enough or the incident goes out of control, you urgently call the "firefighters" - CIRT, also called CSIRT or CERT. The members should have a broad knowledge of cyber threats and handle breaches without depending on tools like EDR (Endpoint Detection and Response) or SIEM. A CIRT job is stressful and responsible, but also rewarding. Here are a few CIRT examples:
 
 JPCERT: Japan's CERT handling nation-wide breaches
 Mandiant: A private team responding to global cyber incidents
 AWS CIRT: Investigates security incidents of AWS customers
 
+### Specialized Defensive Roles
+
+![Diagram](images/blue2.svg).
+
+Large companies, technology-focused startups, and government agencies often require narrow and specialized Blue Team roles - exciting and highly valuable, but requiring deep topic knowledge and broad experience in broader fields like SOC or IT. These narrow roles can include:
+
+**Digital Forensics Analyst:** Uncover hidden threats in disk and memory
+**Threat Intelligence Analyst:** Gather data about emerging threat groups
+**AppSec Engineer:** Maintain a secure software development lifecycle
+**AI Researcher:** Study AI threats and how to defend against them
+
+### SOC Path
+Starting as a SOC L1 analyst may be a great option to broaden your cyber world awareness and better understand the more specialized roles. Moreover, even the entry-level SOC L1 role can be fun and engaging: You will deal with real attacks, protect the company from advanced threat groups, and learn a lot during the process. 
+
+#### Internal SOC vs MSSP
+Not every organization has the expertise to operate a SOC on its own and relies on a Managed Security Services Provider (MSSP), a company that delivers outsourced security services, most commonly SOC, to its clients. Working at MSSP is typically high-pressure, but it is also a good option to quickstart your career. While we recommend applying for any open SOC position as your first job, it's also important to understand the differences:
+
+Internal SOC vs MSSP Comparison
+
+| Topic | Internal SOC | MSSP |
+|-------|-------------|------|
+| **Scenario Example** | You work in a SOC team of the bank and protect the bank's systems | You work for a global MSSP protecting its sixty customers in Europe |
+| **Working Pace** | You usually have calm shifts without too much time pressure | Your shift usually starts from a queue of urgent alerts to analyze |
+| **Security Tools** | You work with just a few tools, but need to know them very well | You have to work with sixty diverse security tools and platforms |
+| **Incident Practice** | You saw and learned from just two major cyber attacks last year | Every week, you deal with attacks and breaches, and can learn from it |
