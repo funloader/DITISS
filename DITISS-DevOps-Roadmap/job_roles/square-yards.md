@@ -4,7 +4,7 @@
 
 * [ ] Data warehouse service
 * [ ] Document database service
-* [x] Relational database service
+* [ ] Relational database service
 * [ ] Object storage service
 
 <details>
@@ -21,7 +21,7 @@
 
 * [ ] Data analysis
 * [ ] Serverless computing
-* [x] Managing user permissions
+* [ ] Managing user permissions
 * [ ] Object storage
 
 <details>
@@ -36,7 +36,7 @@
 
 ### 3. Google App Engine comes under which kind of service?
 
-* [x] Compute service
+* [ ] Compute service
 * [ ] Networking service
 * [ ] Storage service
 * [ ] Big data service
@@ -56,7 +56,7 @@
 * [ ] Compute Engine
 * [ ] Google App Engine
 * [ ] Cloud Load Balancing
-* [x] Virtual Private Cloud
+* [ ] Virtual Private Cloud
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -71,7 +71,7 @@
 ### 5. In Docker, your image size is very large. What is the BEST practice to reduce it?
 
 * [ ] Use multiple RUN commands
-* [x] Use a minimal base image like alpine
+* [ ] Use a minimal base image like alpine
 * [ ] Add more layers
 * [ ] Store logs inside image
 
@@ -88,7 +88,7 @@
 ### 6. CDN comes under which kind of service?
 
 * [ ] Compute service
-* [x] Networking service
+* [ ] Networking service
 * [ ] Storage service
 * [ ] Big data service
 
@@ -105,7 +105,7 @@
 ### 7. You pushed code to Git, but the CI pipeline in Jenkins didn’t trigger. What is the most likely reason?
 
 * [ ] Jenkins server is too fast
-* [x] Webhook is not configured properly
+* [ ] Webhook is not configured properly
 * [ ] Git repository is public
 * [ ] Docker is not installed
 
@@ -121,7 +121,7 @@
 
 ### 8. Which of the following is the default Docker network driver?
 
-* [x] Bridge
+* [ ] Bridge
 * [ ] Host
 * [ ] Overlay
 * [ ] ipvlan
@@ -139,7 +139,7 @@
 ### 9. Which command shows all open files and network sockets?
 
 * [ ] netstat -tulnp
-* [x] lsof
+* [ ] lsof
 * [ ] ps aux
 * [ ] df -h
 
@@ -158,7 +158,7 @@
 * [ ] Authorization
 * [ ] Accessibility
 * [ ] Authentication
-* [x] Availability
+* [ ] Availability
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -172,7 +172,7 @@
 
 ### 11. Which type of encryption uses the same key for both encryption and decryption?
 
-* [x] Symmetric encryption
+* [ ] Symmetric encryption
 * [ ] Asymmetric encryption
 * [ ] Hybrid encryption
 * [ ] Public-key encryption
@@ -189,7 +189,7 @@
 
 ### 12. The purpose of an SSL certificate is to ____.
 
-* [x] Authenticate the identity of the server and encrypt data during transmission
+* [ ] Authenticate the identity of the server and encrypt data during transmission
 * [ ] Authenticate the identity of the client and encrypt data during transmission
 * [ ] Identify potential cyber threats in the network
 * [ ] Filter and block malicious websites
@@ -207,7 +207,7 @@
 ### 13. A filesystem shows 100% usage in df -h, but du -sh / shows much less usage. What is the MOST likely reason?
 
 * [ ] Too many small files
-* [x] Deleted file still held open by a process
+* [ ] Deleted file still held open by a process
 * [ ] Root Filesystem Full
 * [ ] Swap partition full
 * [ ] None of the above
@@ -226,7 +226,7 @@
 
 * [ ] System idle
 * [ ] CPU usage 80%
-* [x] 4 processes waiting for CPU
+* [ ] 4 processes waiting for CPU
 * [ ] Memory leak
 
 <details>
@@ -243,7 +243,7 @@
 
 * [ ] SGID
 * [ ] Sticky bit
-* [x] SUID
+* [ ] SUID
 * [ ] Immutable
 
 <details>
@@ -259,7 +259,7 @@
 ### 16. What is the purpose of "Facts" in Ansible?
 
 * [ ] They are hard-coded variables in the ansible.cfg file.
-* [x] They are system properties (IP address, OS version, etc.) gathered from the remote node.
+* [ ] They are system properties (IP address, OS version, etc.) gathered from the remote node.
 * [ ] They are the logs generated after a playbook runs.
 * [ ] None of the above
 * [ ] All of the above
@@ -274,11 +274,11 @@
 
 ---
 
-### 17. In Kubernetes, Taint prevents scheduling unless?
+### 17. In K8s,  Taint prevents scheduling unless?
 
 * [ ] NodeSelector
 * [ ] Affinity
-* [x] Toleration
+* [ ] Toleration
 * [ ] PDB
 
 <details>
@@ -291,28 +291,28 @@
 
 ---
 
-### 18. Your company is migrating a monolithic app to GCP with minimal refactoring but future scalability. What is the best approach?
+### 18. Your company is migrating a monolithic on‑premises web application to Google Cloud. The app consists of a frontend, a backend API, and a PostgreSQL database, all running on a single large server. Management wants minimal refactoring now but expects traffic to grow significantly over the next 12 months. They also want to avoid major downtime during migration. Which approach best balances quick lift‑and‑shift with a clear path to future scalability on GCP?
 
-* [ ] Deploy frontend/backend on single GKE node and keep DB on-prem via VPN
-* [x] Containerize frontend/backend, deploy to Cloud Run, migrate DB to Cloud SQL
-* [ ] Migrate entire server as single VM to Compute Engine
-* [ ] Rebuild into event-driven microservices first
+* [ ] Deploy the frontend and backend onto a single GKE cluster node and keep the database on‑premises connected via Cloud VPN indefinitely.
+* [ ] Containerize the frontend and backend, deploy to Cloud Run, and migrate the database to Cloud SQL for PostgreSQL, using a short cutover window.
+* [ ] Migrate the entire server as a single VM to Compute Engine using Migrate to Virtual Machines, keeping all components tightly coupled on one instance.
+* [ ] Rebuild the application into fully event‑driven microservices using Cloud Functions and Pub/Sub before migration.
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Containerize and deploy to Cloud Run with Cloud SQL
+✅ **Correct Answer:** Containerize the frontend and backend, deploy to Cloud Run, and migrate the database to Cloud SQL for PostgreSQL, using a short cutover window.
 💡 Provides minimal refactoring now while enabling automatic scaling and managed database services.
 
 </details>
 
 ---
 
-### 19. Best GCP service for unpredictable traffic with minimal operational overhead?
+### 19. Your startup is launching a web application on Google Cloud that needs to handle unpredictable traffic spikes during marketing campaigns. You want minimal operational overhead and automatic scaling of instances based on incoming HTTP requests. Which GCP service is the best fit for hosting this application backend?
 
 * [ ] Compute Engine managed instance group
-* [ ] Cloud Functions via Pub/Sub
-* [x] App Engine Standard environment
+* [ ] Cloud Functions triggered by Pub/Sub messages
+* [ ] App Engine Standard environment
 * [ ] Cloud Run on GKE Autopilot
 
 <details>
@@ -325,10 +325,10 @@
 
 ---
 
-### 20. Prometheus server crashes frequently due to high memory usage. BEST first step?
+### 20. Prometheus server crashes frequently due to high memory usage. What is the BEST first step?
 
 * [ ] Increase CPU
-* [x] Reduce scrape interval
+* [ ] Reduce scrape interval
 * [ ] Increase retention time
 * [ ] Enable debug logs
 
@@ -342,63 +342,63 @@
 
 ---
 
-### 21. Main purpose of a Pull Request (PR) in GitHub?
+### 21. In a CI/CD pipeline using GitHub as the version control system, what is the main purpose of a pull request (PR)?
 
-* [x] Propose changes from one branch to be reviewed and merged
-* [ ] Permanently delete a branch
-* [ ] Automatically deploy to production
-* [ ] Fork repository
+* [ ] To propose changes from one branch to be reviewed, discussed, and potentially merged into another branch.
+* [ ] To permanently delete a branch and its commit history from the repository.
+* [ ] To automatically deploy code directly to production without human review.
+* [ ] To create a copy of the repository under your own account for independent development.
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Propose changes to be reviewed and merged
+✅ **Correct Answer:** To propose changes from one branch to be reviewed, discussed, and potentially merged into another branch.
 💡 PRs enable collaboration, code review, and discussion before merging changes.
 
 </details>
 
 ---
 
-### 22. Best AWS VPC design for microservices exposing public APIs while isolating databases?
+### 22. In an AWS Virtual Private Cloud (VPC), which design best supports a microservices application that exposes public APIs while keeping databases and internal services isolated?
 
-* [ ] Microservices in one VPC, DB in another with unrestricted peering
-* [x] Public services in public subnets, databases in private subnets with NAT
-* [ ] All services in one public subnet
-* [ ] Only private subnets accessed via VPN
+* [ ] Place microservices in one VPC and databases in another VPC with unrestricted VPC peering
+* [ ] Place public-facing services in public subnets and databases in private subnets with NAT gateways
+* [ ] Place all services and databases in a single public subnet with strict security groups
+* [ ] Use only private subnets and access the application via VPN without any public endpoints
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Public subnets for APIs, private subnets for databases
+✅ **Correct Answer:** Place public-facing services in public subnets and databases in private subnets with NAT gateways
 💡 This ensures public access to APIs while keeping databases isolated from direct internet exposure.
 
 </details>
 
 ---
 
-### 23. Best IaC approach for AWS multi-account deployments?
+### 23. A DevOps team wants to implement infrastructure-as-code for deploying AWS networking, EC2 instances, and IAM roles repeatedly across multiple accounts. Which approach best balances reproducibility and cross-account separation?
 
-* [ ] Single Terraform state for all accounts
-* [x] Separate Terraform workspaces/state files with reusable modules
-* [ ] Independent CloudFormation stacks only
-* [ ] Manual Ansible ad-hoc commands
+* [ ] Use a single Terraform state file shared across all accounts and environments
+* [ ] Create separate Terraform workspaces or state files per account and environment, with reusable modules
+* [ ] Use only AWS CloudFormation stacks defined independently in each account, without shared modules
+* [ ] Use Ansible ad-hoc commands manually for each account without maintaining state
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Separate state files/workspaces with reusable modules
+✅ **Correct Answer:** Create separate Terraform workspaces or state files per account and environment, with reusable modules
 💡 Provides isolation, reproducibility, and modular infrastructure management.
 
 </details>
 
 ---
 
-### 24. SQL injection attempts observed but DB safe. Which control blocked it?
+### 24. Your company’s public web server sits in a DMZ and is fronted by a reverse proxy and a WAF. You notice repeated HTTP POSTs containing SQL keywords aimed at the login form, but the database remains uncompromised. Which control is most likely blocking these attacks?
 
-* [ ] Reverse proxy TCP termination
-* [ ] IPS inline mode
-* [x] WAF applying application-layer rules
-* [ ] Stateful firewall
+* [ ] The reverse proxy performing TCP termination
+* [ ] The IPS running in inline mode between DMZ and LAN
+* [ ] The WAF applying application-layer rules
+* [ ] The stateful firewall enforcing default deny on outbound traffic
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -410,12 +410,12 @@
 
 ---
 
-### 25. iptables filters only inbound traffic and allows all outbound. Main security risk?
+### 25. A security engineer notices that iptables on a Linux bastion host only has rules filtering inbound traffic, and all outbound traffic is allowed. What is the main security risk of this configuration?
 
-* [ ] QoS cannot be enforced
-* [ ] VPN tunnels cannot be established
+* [ ] QoS policies cannot be enforced on outbound connections
+* [ ] VPN tunnels cannot be established from the host
 * [ ] Increased inbound SYN flood risk
-* [x] None of the Above
+* [ ] None of the Above
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -427,46 +427,46 @@
 
 ---
 
-### 26. Handling 20x traffic spike on GCP with minimal long-term cost?
+### 26. A retail company runs a seasonal promotion and anticipates a 20x traffic spike to its e‑commerce API over a weekend. The API is currently deployed on a managed instance group of Compute Engine VMs behind an external HTTP(S) Load Balancer. The promotion cannot tolerate more than a few seconds of additional latency or any significant errors. How should you prepare the environment on GCP to handle the spike while keeping costs reasonable after the promotion ends?
 
-* [ ] Move to Cloud Functions
-* [x] Configure autoscaling and pre-scale managed instance group
-* [ ] Single powerful VM + CDN
-* [ ] Disable autoscaling
+* [ ] Migrate the API to Cloud Functions and rely on its automatic scaling without load balancers.
+* [ ] Configure autoscaling on the managed instance group based on CPU utilization, set appropriate min and max instances, and warm up capacity using pre‑scaling before the event.
+* [ ] Move the API to a single powerful VM instance and put Cloud CDN in front of it for all responses.
+* [ ] Increase the machine type for all existing VMs to a much larger size and disable autoscaling to keep the environment stable during the promotion.
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Configure autoscaling with pre-scaling
+✅ **Correct Answer:** Configure autoscaling on the managed instance group based on CPU utilization, set appropriate min and max instances, and warm up capacity using pre‑scaling before the event.
 💡 Autoscaling ensures capacity during spike and scales down after promotion.
 
 </details>
 
 ---
 
-### 27. GCP compliance: CMEK + tight access + audit visibility. Best solution?
+### 27. Your organization stores sensitive customer data in Cloud Storage buckets and processes it using Dataflow jobs. A new compliance requirement mandates that all data must be encrypted with customer‑managed keys and access must be tightly controlled, including visibility into who accessed which objects. Which combination of GCP features best addresses these requirements with minimal changes to your existing pipelines?
 
-* [x] Use CMEK with Cloud KMS + IAM least privilege + Data Access logs
-* [ ] Only VPC Service Controls
-* [ ] Default encryption + project audit logs
-* [ ] Move to BigQuery only
+* [] Configure Cloud Storage buckets to use CMEK from Cloud Key Management Service (KMS), set IAM policies with least privilege, and enable Data Access audit logs.
+* [ ] Rely on VPC Service Controls alone to enforce perimeter security without changing encryption settings or logging.
+* [ ] Use default Google‑managed encryption keys for Cloud Storage and enable Cloud Audit Logs only at the project level.
+* [ ] Move all data to BigQuery and enable customer‑managed encryption keys there, without changing IAM settings or audit logging.
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** CMEK + IAM + Data Access logs
+✅ **Correct Answer:** Configure Cloud Storage buckets to use CMEK from Cloud Key Management Service (KMS), set IAM policies with least privilege, and enable Data Access audit logs.
 💡 Meets encryption and audit requirements with minimal pipeline changes.
 
 </details>
 
 ---
 
-### 28. Most cost-effective Compute Engine setup for batch job tolerating preemption?
+### 28. A financial services company runs a critical risk calculation engine on Compute Engine. The workload is batch‑oriented and runs nightly, requiring a large amount of CPU and memory for about 2 hours. The team wants to reduce costs without extending the job duration significantly and can tolerate occasional job preemptions as long as the job can resume. Which Compute Engine configuration is most cost‑effective while meeting these needs?
 
-* [ ] Migrate to Cloud Functions
-* [x] Mix of regular and preemptible VMs with checkpointing
-* [ ] Standard VMs only
-* [ ] Only preemptible VMs with manual restart
+* [ ] Migrate the workload entirely to Cloud Functions, splitting the logic into many small functions.
+* [ ] Use a mix of regular and preemptible VMs in a managed instance group and design the job to checkpoint progress so it can resume if preemptions occur.
+* [ ] Run the workload on standard on‑demand VMs with no changes to the current setup.
+* [ ] Use solely preemptible VMs and restart the entire job manually if preempted.
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -478,29 +478,29 @@
 
 ---
 
-### 29. Reduce SSH brute-force risk after jump host compromise?
+### 29. An administrator configures iptables to allow SSH only from a specific management subnet and drops all other inbound SSH attempts. However, a brute-force attack is still observed coming from that subnet after a jump host there was compromised. Which additional control best reduces this risk?
 
-* [ ] Move SSH to high port
-* [x] Use key-based SSH and disable password logins
-* [ ] Port knocking
-* [ ] Move jump host to DMZ
+* [ ] Moving SSH to a non-standard high port
+* [ ] Using key-based SSH authentication and disabling password logins
+* [ ] Implementing port knocking for SSH
+* [ ] Placing the jump host into the DMZ
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** Use key-based SSH and disable passwords
+✅ **Correct Answer:** Using key-based SSH authentication and disabling password logins
 💡 Eliminates password-based brute-force attacks.
 
 </details>
 
 ---
 
-### 30. Temporary protection against zero-day API exploit?
+### 30. Your company hosts a public API in a DMZ behind a stateful firewall and an IPS. A new zero-day exploit in the API framework is being actively abused in the wild. Patches are not yet available. Which additional control provides the most targeted temporary protection?
 
-* [ ] Rate limiting
-* [x] Add custom virtual patches on WAF
-* [ ] Block all outbound traffic
-* [ ] Force VPN access
+* [ ] Rate limiting API requests on the perimeter router
+* [ ] Adding custom virtual patches on the WAF
+* [ ] Blocking all outbound traffic from the DMZ
+* [ ] Forcing clients to connect via a site-to-site VPN
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -516,7 +516,7 @@
 
 * [ ] Firewall Policy
 * [ ] Security Groups
-* [x] Target Tags
+* [ ] Target Tags
 * [ ] Labels
 
 <details>
@@ -529,12 +529,12 @@
 
 ---
 
-### 32. Unusual outbound DNS traffic with large TXT responses. Best control to prevent data exfiltration?
+### 32. A security engineer notices unusual spikes in outbound DNS traffic from a DMZ web server. Packet captures show large TXT record responses. The firewall allows DNS only to the corporate resolvers. Which control best helps prevent potential data exfiltration via DNS?
 
-* [ ] Switch DNS to TCP
-* [ ] Move server behind reverse proxy
-* [x] Enforce DNS query and response inspection with IDS/IPS
-* [ ] Block all outbound DNS
+* [ ] Switching DNS to use TCP instead of UDP
+* [ ] Moving the web server behind a reverse proxy
+* [ ] Enforcing DNS query and response inspection with IDS/IPS
+* [ ] Blocking all outbound DNS from the DMZ
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -546,12 +546,12 @@
 
 ---
 
-### 33. Best way to implement zero-trust model for internal GCP app?
+### 33. Your security team wants to implement a zero‑trust model for an internal web application hosted on GCP. Employees should only be able to access the app if they meet certain device and identity conditions, and access should be logged. The app currently runs on Compute Engine behind an internal HTTP(S) Load Balancer. What is the best way to implement this model with minimal changes to the application?
 
-* [ ] Move app to Cloud Run
-* [x] Use Identity-Aware Proxy (IAP) with BeyondCorp Enterprise
-* [ ] Implement custom authentication inside app
-* [ ] Expose publicly with IP allowlists
+* [ ] Move the app to Cloud Run, which automatically provides zero‑trust access controls.
+* [ ] Use Identity‑Aware Proxy (IAP) in combination with BeyondCorp Enterprise to enforce identity and device‑based access policies and log access.
+* [ ] Implement your own authentication and authorization layer inside the application, integrating with an external identity provider.
+* [ ] Expose the app publicly and protect it with Cloud Armor IP allowlists only.
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -563,29 +563,29 @@
 
 ---
 
-### 34. After enabling aggressive IPS signatures, web app issues occur. Most likely reason?
+### 34. You are tuning an inline IPS placed between the Internet and your DMZ. After enabling aggressive signatures, your customer-facing web application experied
 
-* [ ] DMZ routing table corrupted
-* [ ] IPS under DDoS
-* [ ] Firewall dropping SYN packets
-* [x] False positives blocking legitimate traffic
+* [ ] The DMZ routing table has become corrupted
+* [ ] The IPS is under a DDoS attack and shutting down
+* [ ] The firewall in front of the IPS is dropping all SYN packets
+* [ ] False positives in IPS signatures are blocking legitimate traffic
 
 <details>
 <summary><strong>Show Answer</strong></summary>
 
-✅ **Correct Answer:** False positives blocking legitimate traffic
+✅ **Correct Answer:** False positives in IPS signatures are blocking legitimate traffic
 💡 Aggressive IPS signatures may incorrectly block valid application traffic.
 
 </details>
 
 ---
 
-### 35. Internal clients making small periodic HTTPS connections to rare foreign ASN. Best action?
+### 35. During a threat hunting exercise, you discover that several internal clients are making outbound HTTPS connections to a rare foreign ASN at regular intervals, but only a few kilobytes are exchanged each time. Traditional firewall rules allow outbound.
 
-* [x] Use SSL decryption and packet analysis
-* [ ] Move clients to restricted VLAN
-* [ ] Increase IPS severity to critical
-* [ ] Block all foreign IPs
+* [ ] Using SSL decryption and packet analysis on those flows
+* [ ] Moving the clients into a more restricted VLAN
+* [ ] Increasing the IPS signature severity to "critical"
+* [ ] Configuring strict egress firewall rules blocking all foreign IPs
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -599,10 +599,10 @@
 
 ### 36. Purpose of subnet mask 255.255.255.0?
 
-* [ ] Indicate DNS server
-* [ ] Specify default gateway
-* [ ] Encrypt traffic
-* [x] Define network and host portions of IP address
+* [ ] To indicate the DNS server used by the clients
+* [ ] To specify the default gateway address for the network
+* [ ] To encrypt traffic between two hosts
+* [ ] To define which portion of an IP address represents the network and which represents the host
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -614,12 +614,12 @@
 
 ---
 
-### 37. Why separate management, storage, and data networks in data centers?
+### 37. In data center design for DevOps and HPC, why is separation of management, storage, and data networks a common best practice?
 
-* [ ] Required by vendors
-* [ ] Reduce number of switches
-* [ ] Reuse same IP addresses
-* [x] Isolate traffic for security, performance, troubleshooting
+* [ ] It is required by all network hardware vendors to maintain warranty.
+* [ ] It reduces the number of switches required in the data center.
+* [ ] It allows reuse of the same IP addresses on all networks without conflicts.
+* [ ] It isolates different traffic types to improve security, performance, and troubleshooting.
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -631,12 +631,12 @@
 
 ---
 
-### 38. Best Linux permission for sensitive file /etc/secret.conf?
+### 38. In Linux permissions, which setting best restricts access to a sensitive configuration file such as /etc/secret.conf?
 
 * [ ] -rw-r----- owned by root:devops
 * [ ] -rw-rw-rw-
 * [ ] -rwxr-xr-x owned by root:root
-* [x] -rw------- owned by root:root
+* [ ] -rw------- owned by root:root
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -650,7 +650,7 @@
 
 ### 39. What does $? represent in Bash?
 
-* [x] Exit status of the last executed command
+* [ ] Exit status of the last executed command
 * [ ] Current user ID
 * [ ] Background job ID
 * [ ] Last argument of previous command
@@ -668,7 +668,7 @@
 ### 40. What happens if MTU mismatch exists?
 
 * [ ] Faster throughput
-* [x] Fragmentation or packet drops
+* [ ] Fragmentation or packet drops
 * [ ] TCP reset
 * [ ] DNS failure
 
@@ -687,7 +687,7 @@
 * [ ] kubelet
 * [ ] CRI
 * [ ] CNI
-* [x] Namespaces + cgroups
+* [ ] Namespaces + cgroups
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -702,7 +702,7 @@
 ### 42. Which symbol represents a user’s home directory in Linux?
 
 * [ ] :
-* [x] ~
+* [ ] ~
 * [ ] $
 * [ ] /
 
@@ -716,12 +716,12 @@
 
 ---
 
-### 43. Users experience intermittent logouts after enabling cross-zone load balancing on ALB. Best fix?
+### 43. You run a stateful web application on Amazon EC2 instances behind an Application Load Balancer (ALB). Some users report intermittent logouts and lost shopping cart data after you enabled cross-zone load balancing. Which configuration change best addresses this while keeping the app architecture largely the same?
 
-* [ ] Increase ALB idle timeout
-* [ ] Disable cross-zone load balancing
-* [x] Enable ALB sticky sessions
-* [ ] Use NLB instead
+* [ ] Increase the ALB idle timeout so that long-lived connections are not closed prematurely by the load balancer.
+* [ ] Disable cross-zone load balancing so that each client always hits the same Availability Zone as before.
+* [ ] Enable ALB sticky sessions (session affinity) based on application cookies and ensure the cookie is set on all responses.
+* [ ] Use a Network Load Balancer (NLB) instead of an ALB so that TCP connections are preserved across AZs.
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -733,12 +733,12 @@
 
 ---
 
-### 44. Best way to enforce prefix-based least-privilege access in S3?
+### 44. You have an Amazon S3 bucket that stores log files from multiple applications. Different teams need access only to logs that start with their app-specific prefix, for example appA/ or appB/. Which approach most cleanly enforces least-privilege access without creating multiple buckets?
 
-* [ ] Enable Object Lock
-* [ ] Grant s3:* on bucket
-* [ ] Public read + encryption keys
-* [x] IAM policy with s3:prefix condition and limit GetObject to appX/*
+* [ ] Enable S3 Object Lock in compliance mode and then use retention periods to restrict who can read each prefix.
+* [ ] Create multiple IAM users, each with an inline policy granting s3:* on the entire bucket ARN, and rely on teams to only access their own prefix.
+* [ ] Apply a bucket policy that grants public read access to all objects, and use object-level encryption keys to control which team can actually read the decrypted data.
+* [ ] Attach an IAM policy to each team’s role that uses a condition on s3:prefix in s3:ListBucket and limits s3:GetObject to arn:aws:s3:::bucket-name/appX/*.
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -750,11 +750,11 @@
 
 ---
 
-### 45. Inspect scheduling issues for Pod my-pod?
+### 45. Your Pods are not starting, and you suspect an issue with the default scheduler decisions. Which kubectl command best helps you inspect the current events and scheduling-related issues for a specific Pod named my-pod in the default namespace?
 
 * [ ] kubectl get events --field-selector involvedObject.name=my-pod
 * [ ] kubectl logs my-pod
-* [x] kubectl describe pod my-pod
+* [ ] kubectl describe pod my-pod
 * [ ] kubectl get pod my-pod -o wide
 
 <details>
@@ -770,7 +770,7 @@
 ### 46. Your Pods are not starting, and you suspect an issue with the default scheduler decisions. Which kubectl command best helps you inspect the current events and scheduling-related issues for a specific Pod named my-pod in the default namespace?
 
 * [ ] kubectl exec -it my-pod -- /bin/sh
-* [x] kubectl exec -it my-pod -c sidecar -- /bin/sh
+* [ ] kubectl exec -it my-pod -c sidecar -- /bin/sh
 * [ ] kubectl run -it sidecar --image=debug-image -- /bin/sh
 * [ ] kubectl attach -it my-pod -c sidecar
 
@@ -789,7 +789,7 @@
 * [ ] kubectl run -it net-debug --image=busybox --rm --restart=Never -- nslookup kubernetes.default
 * [ ] kubectl proxy
 * [ ] kubectl port-forward pod/api-pod 8080:80
-* [x] kubectl exec -it api-pod -- nslookup kubernetes.default
+* [ ] kubectl exec -it api-pod -- nslookup kubernetes.default
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -806,7 +806,7 @@
 * [ ] kubectl get deployment worker -o yaml > backup.yaml && kubectl scale deployment worker --replicas=0
 * [ ] kubectl annotate deployment worker previous-replicas=3 && kubectl scale deployment worker --replicas=0
 * [ ] kubectl scale deployment worker --replicas=0 && kubectl rollout history deployment/worker
-* [x] kubectl scale deployment worker --current-replicas=3 --replicas=0
+* [ ] kubectl scale deployment worker --current-replicas=3 --replicas=0
 
 <details>
 <summary><strong>Show Answer</strong></summary>
@@ -821,7 +821,7 @@
 ### 49. You edited a Terraform variable default value, but on the next apply Terraform still uses the old value from a previous run. Which command lets you see exactly what input values Terraform will use, including those coming from tfvars files and the environment?
 
 * [ ] terraform plan -var
-* [x] terraform console
+* [ ] terraform console
 * [ ] terraform show
 * [ ] terraform plan -input=false -refresh=false
 
@@ -838,7 +838,7 @@
 ### 50. An administrator configures sudo with the following line: aliceALL=(root)NOPASSWD:/usr/bin/rsync∗. What subtle security issue does this introduce?
 
 * [ ] The NOPASSWD option prevents logging of Alice’s sudo commands, making auditing impossible.
-* [x] Alice can use rsync’s options to copy or overwrite arbitrary root-owned files, effectively gaining root-level file access.
+* [ ] Alice can use rsync’s options to copy or overwrite arbitrary root-owned files, effectively gaining root-level file access.
 * [ ] The line only allows Alice to sync files within her home directory, so there is no security issue
 * [ ] Alice can run rsync as root, but only with read-only permissions enforced by sudo.
 
@@ -856,7 +856,7 @@
 
 * [ ] podman save web -o mywebimage.tar
 * [ ] podman export web -o mywebimage.tar
-* [x] podman commit web mywebimage:latest
+* [ ] podman commit web mywebimage:latest
 * [ ] podman build -t mywebimage:latest web
 
 <details>
