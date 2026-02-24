@@ -397,7 +397,7 @@ In this module, you learned how to work with PowerShell drives that are the prim
 ### 1. Which of the following PowerShell drives is created by the Registry provider?
 
 * [ ] AD
-* [x] HKCU
+* [ ] HKCU
 * [ ] C
 
 <details>
@@ -412,7 +412,7 @@ In this module, you learned how to work with PowerShell drives that are the prim
 
 ### 2. Which provider is used to create PowerShell drives that are mapped to a network share?
 
-* [x] FileSystem
+* [ ] FileSystem
 * [ ] Function
 * [ ] Variable
 
