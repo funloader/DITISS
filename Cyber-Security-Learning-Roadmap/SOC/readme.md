@@ -211,7 +211,7 @@ It is generally fine for L1 to request senior support if something is unclear. E
 3. If escalation is required, assign the alert to your L2 on shift
 4. L2 will receive a notification and start from your alert report
 
-![Diagram](images/sc05.svg).
+![Diagram](images/sco5.svg).
 
 The escalation and reporting topics should sound straightforward and logical to you. But, as always, it's easier said than done, and you should be prepared for unexpected scenarios and know what to do in critical cases. In the best scenario, the SOC team has its own Crisis Communication procedures - the guides and processes to help you and your teammates resolve the issues. If not, you are advised to read the cases below and be prepared to handle them effectively.
 
@@ -234,4 +234,4 @@ Do not skip the alert - investigate what you can and report the issue to your L2
 
 ### Communication By L2
 
-![Diagram](images/sc06.svg).
+![Diagram](images/sco6.svg).
