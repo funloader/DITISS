@@ -420,3 +420,15 @@ Although wireless networking is common, **wired connections** are still preferre
 - Ideal for modern high-speed networks
 
 ## 5. Communication Protocols
+
+These rules, or protocols, must be followed in order for the message to be successfully delivered and understood. Among the protocols that govern successful human communication are these:
+
+* An identified sender and receiver
+* Agreed upon method of communicating (face-to-face, telephone, letter, photograph)
+* Common language and grammar
+* Speed and timing of delivery
+* Confirmation or acknowledgment requirements
+
+The techniques that are used in network communications share these fundamentals with human conversations.
+
+Think about the commonly accepted protocols for sending text messages to your friends.
