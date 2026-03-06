@@ -235,3 +235,119 @@ Do not skip the alert - investigate what you can and report the issue to your L2
 ### Communication By L2
 
 ![Diagram](images/sco6.svg).
+
+## Introduction to EDR
+
+The increase in the use of digital devices is undeniable. Most of the business's core functions rely on the use of these digital devices. Cyber threats, on the other hand, are also increasing day by day. To protect these devices, organizations implement several security measures, most of which are to protect the network on which they operate these digital devices. However, the fast adoption of Remote Work has exposed these devices as they are out of the perimeter protection deployed on the organization's network. 
+
+To ensure these endpoint devices are protected even out of the network, we need a security solution that guards all devices in different areas and is capable of fighting advanced threats. Endpoint Detection and Response (EDR) is a security solution that offers deep-level protection for endpoints. No matter where the endpoints are, the EDR will make sure they are monitored constantly and threats are detected.
+
+Below are some of the EDR solutions in the market:
+
+* CrowdStrike Falcon
+* SentinelOne ActiveEDR
+* Microsoft Defender for Endpoint
+* OpenEDR
+* Symantec EDR
+
+Several other EDR solutions are available in the market. Their underlying architecture is mostly similar, but the features may vary.
+
+Let's take a look at the core features of an EDR. We will be using the screenshots from CrowdStrike Falcon EDR to demonstrate the core features of EDR.
+
+### Features of EDR
+There are three main features of an EDR, which can also be referred to as the three pillars of an EDR solution.
+
+![Diagram](images/EDR.png).
+
+### Visibility 
+
+A good analysis often depends on the available level of visibility of the activity. This is one of the features of EDR that makes it unique from other endpoint security solutions. The level of visibility EDR provides is impressive. It collects detailed data from the endpoints, which includes process modifications, registry modifications, file and folder modifications, user actions, and much more. It then presents this information in a very structured format to the analyst. The analyst can see the whole process tree with a complete activity timeline of the sequence of actions. The analyst can also access the historical data of any endpoint for threat hunting or any other purpose. Any detections in the EDR land with a whole context.
+
+Process Modifications >	Registry Modifications > File And Folder Modifications > User Actions	> And Much More
+
+The following screenshot shows graphical representation of a process tree. We can see which processes were spawned on the endpoint. Each node represents a process. The lines connecting them represents their relationship. If we click on the + icon given with each process, we will be able to see all the network connections, registry changes, file changes etc. associated with that process. 
+
+![Diagram](images/EDR01.png).
+
+Along with the process trees, there are many other features available in the EDRs which maximize the visibility. 
+
+### Detection 
+The detection feature of EDR wins over traditional detection capabilities. It incorporates signature-based detections as well as behavior-based detections, such as unexpected user activities. With modern machine learning capabilities, it identifies any deviation from the baseline behavior and instantly flags it. It can also detect fileless malware that resides in memory. It also allows us to feed custom IOCs for threat detections.
+
+The following screenshot shows a dashboard of all the detections happening on the different endpoints. Each detection is represented by a row with different fields including the severity of the detection, time, triggering file, hostname, username, and more. The Tactic via Technique field maps the detection with MITRE. Any detection when clicked will show us rich details which helps a SOC analyst during the analysis.
+
+![Diagram](images/EDR02.png).
+
+### Response 
+
+EDR also empowers analysts to take action on detected threats. These actions can be taken at any endpoint within the central EDR console. Imagine getting a detection on the EDR with full-fledged details on when, where, and what happened, and you have to opt for the best possible action for that detection. As an analyst, you may decide to isolate a complete endpoint, terminate a process, or quarantine some files. You can also connect to the host remotely and execute actions independently. You can do this all from within the EDR console.
+
+The following screenshot shows the actions available that can be taken on the host after connecting to it. 
+
+![Diagram](images/EDR03.png).
+
+There are several other actions that the analyst can take during the investigation.
+
+Note: In Task #6, we will be covering the Detection and Response capabilities of an EDR in more detail.
+
+With advanced visibility, detection, and response, EDR becomes a very powerful tool. However, it's also important to remember that an EDR is a host-only security solution and does not detect network-level threats.
+
+#### Why do we need an EDR when we already have an Antivirus (AV) on the endpoints?
+Both of these security solutions have the same motive of protecting the endpoint on which they are installed. However, both differ in the level of protection they provide. Let's assume an airport is an endpoint that needs protection. One layer of protection is to check the passports of people when they pass through immigration. The immigration check (AV) monitors incoming people and matches their passports with a list of known criminals in its database. If there is a match, the entry is blocked and caught. 
+
+Sounds like a smart protection, right?
+
+But, what happens if somebody who has never been identified as a criminal in the past and has an innocent personality tries to come in? The immigration check will let them in. Now, what if this innocent person were a professional thief trained to evade basic security? The airport has an undetected threat inside!
+
+This is where an EDR comes in.
+
+An EDR in this analogy would be the security officers stationed inside the airport (endpoint). These security officers would constantly monitor the security cameras and motion sensors in the airport (endpoint). Compared to the immigration check (AV), the security officers (EDR) enhance the protection of the airport (endpoint) through CCTV monitoring and motion sensors. Even if somebody manages to evade the immigration check, the security officers will constantly be monitoring their actions, such as:
+
+Are they roaming close to restricted areas?
+Is their behaviour suspicious?
+Are they leaving their bags somewhere unattended?
+The security officers can also take action if something does not feel right to them or alert the airport management with complete details of what happened.
+
+The Antivirus (AV) may detect some basic threats, but to detect advanced threats that evade normal detections, we need an EDR. Unlike antivirus software's basic signature-based detection, it monitors and records the behaviors of the endpoint. An EDR also provides organization-wide visibility of any activity. For example, if a suspicious file is detected on one endpoint, the EDR will also check it across all the other endpoints.
+
+Let's examine an advanced malicious activity step by step on an endpoint and compare the response of an AV and EDR at each stage.
+
+#### Scenario Breakdown
+* Step #1: A user receives a phishing email with a Word document embedded with a malicious macro (VBA script)
+* Step #2: The user downloads the document and opens it
+* Step #3: The malicious macro is silently executed, and it spawns PowerShell
+* Step #4: The malicious macro runs an obfuscated PowerShell command to download a sophisticated second-stage payload
+* Step #5: The payload is injected into a legitimate svchost.exe
+* Step #6: The attacker gains remote access to the system
+
+![Diagram](images/EDR04.png).
+
+| Attack Steps | AV's Response | EDR's Response |
+|---|---|---|
+| Step #1 | Does nothing if the downloaded file has no previous signature in the database | Logs the file download activity and monitors it |
+| Step #2 | Does nothing upon the opening of the document since winword.exe is a legitimate utility | Records the execution of winword.exe and keeps monitoring |
+| Step #3 | Does nothing if the executed macro has no previous signature | Detects and flags the macro execution due to the unusual parent-child relationship of winword.exe and PowerShell.exe processes |
+| Step #4 | Typically, AVs will not detect obfuscated PowerShell scripts | Flags the obfuscated script execution |
+| Step #5 | Will not flag malicious injection into svchost.exe since it does not monitor the memory injections | Detects Process Injection in svchost.exe |
+| Step #6 | Lacks Network Level Visibility | Flags the unexpected behaviour of svchost.exe, making an outbound connection |
+| Final Action | May be marked as clean | Generates an alert with the full attack chain and enables the analyst to take actions from within the EDR |
+
+In the previous tasks, we saw how powerful an EDR is for an endpoint. However, do you know:
+
+* How does an EDR manage to provide this much visibility of the endpoints?
+* How can it detect advanced threats?
+* How can a few clicks eradicate the threat from an endpoint?
+
+This seems like magic. Let's try to understand it in a very simple way.
+
+![Diagram](images/EDR05.png).
+
+### Agents
+
+We can integrate multiple endpoints with our EDR and manage them through a centralized console. There are EDR agents that we have to deploy inside those endpoints. These agents are also sometimes referred to as sensors. They are the eyes and ears of the EDR. Their job is to sit at the endpoint and monitor all the activities. The information about these activities is sent in detail to the EDR central console in real time. The EDR agents can do some basic signature-based and behavior-based detections by themselves and send them to the EDR console, which triggers alerts.
+
+### EDR Console
+
+All the detailed data sent by the EDR agents is correlated and analyzed through complex logic and machine learning algorithms. The threat intelligence information is matched with the collected data. The EDR is just like the brain connecting all the dots. These dots connect to form a detection, often called an alert. 
+
+The following screenshot shows the dashboard of an EDR console. All the data from the endpoint agents is coming into this console, and the detections are happening here. This dashboard gives a holistic view of the current status of detections in all the endpoints. 
