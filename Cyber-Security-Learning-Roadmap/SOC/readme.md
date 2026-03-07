@@ -584,3 +584,23 @@ Linux OS stores all the related logs, such as events, errors, warnings, etc. The
 
 It is important to monitor all requests/responses coming in and out of the web server for any potential web attack attempt. In Linux, common locations to write all apache-related logs are /var/log/apache or /var/log/httpd.
 
+![Diagram](images/EDR08.png).
+
+### Log Ingestion
+All these logs provide a wealth of information and can help identify security issues. Each SIEM solution has its own way of ingesting the logs. Some common methods used by these SIEM solutions are explained below:
+
+1. Agent / Forwarder
+These SIEM solutions provide a lightweight tool called an agent (forwarder by Splunk) that gets installed on the Endpoint. It is configured to capture and send all the important logs to the SIEM server.
+
+2. Syslog
+Syslog is a widely used protocol to collect data from various systems like web servers, databases, etc., and send real-time data to the centralized destination.
+
+3. Manual Upload
+Some SIEM solutions, like Splunk, ELK, etc., allow users to ingest offline data for quick analysis. Once the data is ingested, it is normalized and made available for analysis.
+
+4. Port-Forwarding
+SIEM solutions can also be configured to listen on a certain port, and then the endpoints forward the data to the SIEM instance on the listening port.
+An example of how Splunk provides various methods for log Ingestion is shown below:
+
+![Diagram](images/EDR09.png).
+
