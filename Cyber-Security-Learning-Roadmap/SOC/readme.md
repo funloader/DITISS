@@ -625,6 +625,7 @@ Adversaries tend to remove the logs during the post-exploitation phase to remove
 **Rule:** If the Log source is WinEventLog **AND** EventID is **104** - Trigger an alert `Event Log Cleared`
 
 **Use-Case 2:**
+
 Adversaries use commands like `whoami` after the exploitation/privilege escalation phase. The following Fields will be helpful to include in the rule.
 
 * Log source: Identify the log source capturing the event logs
