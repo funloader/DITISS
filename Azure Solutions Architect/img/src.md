@@ -1,1 +1,1 @@
-![Diagram](img/azure-service-categories.png)
+![Diagram](azure-service-categories.png)
