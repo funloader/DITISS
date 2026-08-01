@@ -94,6 +94,10 @@ By the end of the course, you will be able to:
 | ⚙️ **DevOps Engineer / Cloud Engineer** | Builds automated pipelines, cloud infrastructure, and IaC-based deployments. |
 | 🧩 **Platform Engineer / SRE** | Ensures scalability, observability, and resilience of production systems. |
 
+> [!TIP]
+> Technical Test Sample
+> * [Square Yards](DITISS-DevOps-Roadmap/job_roles/square-yards.md)
+> * [DSilo](DITISS-DevOps-Roadmap/job_roles/Dsilo.md)
 ---
 
 ## 🎯 **Overall Learning Outcomes**
